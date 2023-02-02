@@ -32,10 +32,6 @@ const props = defineProps({
       return ['none', 'normal', 'medium', 'large', 'pills'].includes(value);
     },
   },
-  hover: {
-    type: Boolean,
-    default: false,
-  },
 });
 
 const colorClass = computed(() => {
