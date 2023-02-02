@@ -1,10 +1,15 @@
 <template>
-  
+  <div class="test">
+    <LButton>Boutton good</LButton>
+  </div>
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
+import LButton from './components/LButton.vue';
 </script>
 
 <style scoped>
+.test {
+  padding: 10px;
+}
 </style>
