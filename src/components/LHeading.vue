@@ -1,6 +1,10 @@
 <template>
-  <div class="l-heading" :class="[size, color, margin, padding]">
-    <component :is="tag">
+  <div class="l-heading">
+    <component
+      :is="tag"
+      class="l-heading"
+      :class="[size, color, margin, padding]"
+    >
       <slot></slot>
     </component>
   </div>
@@ -8,8 +12,6 @@
 
 <script setup>
 import { computed } from 'vue';
-import '@/styles/colors.css';
-import '@/styles/fonts.css';
 
 const props = defineProps({
   color: {
