@@ -6,8 +6,9 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import '@/colors.css';
-import '@/rounded.css';
+import '@/styles/colors.css';
+import '@/styles/hover.css';
+import '@/styles/rounded.css';
 
 const props = defineProps({
   color: {

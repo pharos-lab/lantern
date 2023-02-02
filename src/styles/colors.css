@@ -7,6 +7,10 @@
   color: white;
 }
 
+.text-slate {
+  color: #475569;
+}
+
 .slate-outlined {
   color: #64748b;
   border: 3px solid #64748b;
@@ -18,25 +22,17 @@
   color: #64748b;
 }
 
-.slate:hover {
-  background-color: #475569;
-}
-.slate-outlined:hover {
-  background-color: #64748b;
-  color: white;
-}
-
-.slate-light:hover {
-  background-color: #cbd5e1;
-}
-
 .red {
   background-color: #ef4444;
   color: white;
 }
 
+.text-red {
+  color: #dc2626;
+}
+
 .red-outlined {
-  color: #ef4444;
+  color: #dc2626;
   border: 3px solid #ef4444;
   background-color: white;
 }
@@ -46,21 +42,15 @@
   color: #b91c1c;
 }
 
-.red:hover {
-  background-color: #dc2626;
-}
-.red-outlined:hover {
-  background-color: #ef4444;
-  color: white;
-}
 
-.red-light:hover {
-  background-color: #fca5a5;
-}
 
 .orange {
   background-color: #f97316;
   color: white;
+}
+
+.text-orange {
+  color: #ea580c;
 }
 
 .orange-outlined {
@@ -74,21 +64,15 @@
   color: #c2410c;
 }
 
-.orange:hover {
-  background-color: #ea580c;
-}
-.orange-outlined:hover {
-  background-color: #f97316;
-  color: white;
-}
 
-.orange-light:hover {
-  background-color: #fdba74;
-}
 
 .yellow {
   background-color: #eab308;
   color: white;
+}
+
+.text-yellow {
+  color: #ca8a04;
 }
 
 .yellow-outlined {
@@ -102,21 +86,15 @@
   color: #a16207;
 }
 
-.yellow:hover {
-  background-color: #ca8a04;
-}
-.yellow-outlined:hover {
-  background-color: #eab308;
-  color: white;
-}
 
-.yellow-light:hover {
-  background-color: #fde047;
-}
 
 .green {
   background-color: #10b981;
   color: white;
+}
+
+.text-green {
+  color: #059669;
 }
 
 .green-outlined {
@@ -130,21 +108,15 @@
   color: #065f46;
 }
 
-.green:hover {
-  background-color: #059669;
-}
-.green-outlined:hover {
-  background-color: #10b981;
-  color: white;
-}
 
-.green-light:hover {
-  background-color: #6ee7b7;
-}
 
 .blue {
   background-color: #0ea5e9;
   color: white;
+}
+
+.text-blue {
+  color: #0284c7;
 }
 
 .blue-outlined {
@@ -158,14 +130,4 @@
   color: #075985;
 }
 
-.blue:hover {
-  background-color: #0284c7;
-}
-.blue-outlined:hover {
-  background-color: #0ea5e9;
-  color: white;
-}
 
-.blue-light:hover {
-  background-color: #7dd3fc;
-}
