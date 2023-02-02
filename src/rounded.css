@@ -1,0 +1,19 @@
+.rounded-none {
+  border-radius: 0px;
+}
+
+.rounded-normal {
+  border-radius: 4px;
+}
+
+.rounded-medium {
+  border-radius: 6px;
+}
+
+.rounded-large {
+  border-radius: 8px;
+}
+
+.rounded-pills {
+  border-radius: 9999px;
+}

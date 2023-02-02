@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    <LButton>Boutton good</LButton>
+    <LButton color="blue" rounded="pills">Boutton good</LButton>
   </div>
 </template>
 
