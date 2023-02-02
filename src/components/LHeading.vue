@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import '@/styles/colors.css';
-import '@/styles/sizes.css';
+import '@/styles/fonts.css';
 
 const props = defineProps({
   color: {

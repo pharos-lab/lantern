@@ -3,12 +3,18 @@
     <LButton color="blue" rounded="pills">Boutton good</LButton>
     <br />
     <LHeading color="green" size="xl">Un test de titre</LHeading>
+    <LAvatar
+      src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg"
+      alt="texte alternatif"
+      size="5xl"
+    ></LAvatar>
   </div>
 </template>
 
 <script setup>
 import LButton from './components/LButton.vue';
 import LHeading from './components/LHeading.vue';
+import LAvatar from './components/LAvatar.vue';
 </script>
 
 <style scoped>

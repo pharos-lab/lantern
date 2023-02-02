@@ -1,0 +1,43 @@
+.square-xs {
+  width: 20px;
+  height: 20px;
+}
+
+.square-sm {
+  width: 24px;
+  height: 24px;
+}
+
+.square-md {
+  width: 32px;
+  height: 32px;
+}
+
+.square-lg {
+  width: 44px;
+  height: 44px;
+}
+
+.square-xl {
+  width: 56px;
+  height: 56px;
+}
+
+.square-2xl {
+  width: 68px;
+  height: 68px;
+}
+
+.square-3xl {
+  width: 80px;
+  height: 80px;
+}
+
+.square-4xl {
+  width: 96px;
+  height: 96px;
+}
+.square-5xl {
+  width: 120px;
+  height: 120px;
+}

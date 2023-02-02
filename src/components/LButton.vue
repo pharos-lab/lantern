@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import '@/styles/colors.css';
 import '@/styles/hover.css';
 import '@/styles/rounded.css';
