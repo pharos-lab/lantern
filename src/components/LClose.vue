@@ -29,15 +29,21 @@ const props = defineProps({
 const barColor = ref();
 
 const color = computed(() => {
-  if (props.mode == 'normal') {
-    barColor.value = 'white';
-    return `${props.color}-hover`;
-  } else if (props.mode == 'outlined') {
-    barColor.value = `${props.color}`;
-    return `${props.color}-light-hover`;
-  } else {
-    barColor.value = props.color;
-    return `${props.color}-${props.mode}-hover`;
+  switch (props.mode) {
+    case 'normal':
+      barColor.value = 'white';
+      return `${props.color}-hover`;
+      break;
+    case 'outlined':
+      barColor.value = `${props.color}`;
+      return `${props.color}-light-hover`;
+      break;
+    case 'light':
+      barColor.value = props.color;
+      return `${props.color}-${props.mode}-hover`;
+      break;
+    default:
+      return 'slate';
   }
 });
 </script>

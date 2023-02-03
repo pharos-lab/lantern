@@ -16,7 +16,7 @@
     <LClose color="red" mode="normal"></LClose>
 
     <br />
-
+    <LDivider size="3xl"></LDivider>
     <LParagraph color="red" background
       >rfgh gh ghg h hedfe ekjej efer efg er
     </LParagraph>
@@ -29,6 +29,7 @@ import LHeading from './components/LHeading.vue';
 import LAvatar from './components/LAvatar.vue';
 import LClose from './components/LClose.vue';
 import LParagraph from './components/LParagraph.vue';
+import LDivider from './components/LDivider.vue';
 </script>
 
 <style scoped>
