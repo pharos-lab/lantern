@@ -1,72 +1,72 @@
-.slate:hover {
+.slate:hover:not(.l-heading) {
   background-color: #475569;
 }
 
-.slate-outlined:hover {
+.slate-outlined:hover:not(.l-heading) {
   background-color: #64748b;
   color: white;
 }
 
-.slate-light:hover {
+.slate-light:hover:not(.l-heading) {
   background-color: #cbd5e1;
 }
 
-.red:hover {
+.red:hover:not(.l-heading) {
   background-color: #dc2626;
 }
-.red-outlined:hover {
+.red-outlined:hover:not(.l-heading) {
   background-color: #ef4444;
   color: white;
 }
 
-.red-light:hover {
+.red-light:hover:not(.l-heading) {
   background-color: #fca5a5;
 }
 
-.orange:hover {
+.orange:hover:not(.l-heading) {
   background-color: #ea580c;
 }
-.orange-outlined:hover {
+.orange-outlined:hover:not(.l-heading) {
   background-color: #f97316;
   color: white;
 }
 
-.orange-light:hover {
+.orange-light:hover:not(.l-heading) {
   background-color: #fdba74;
 }
 
-.yellow:hover {
+.yellow:hover:not(.l-heading) {
   background-color: #ca8a04;
 }
-.yellow-outlined:hover {
+.yellow-outlined:hover:not(.l-heading) {
   background-color: #eab308;
   color: white;
 }
 
-.yellow-light:hover {
+.yellow-light:hover:not(.l-heading) {
   background-color: #fde047;
 }
 
-.green:hover {
+.green:hover:not(.l-heading) {
   background-color: #059669;
 }
-.green-outlined:hover {
+.green-outlined:hover:not(.l-heading) {
   background-color: #10b981;
   color: white;
 }
 
-.green-light:hover {
+.green-light:hover:not(.l-heading) {
   background-color: #6ee7b7;
 }
 
-.blue:hover {
+.blue:hover:not(.l-heading) {
   background-color: #0284c7;
 }
-.blue-outlined:hover {
+.blue-outlined:hover:not(.l-heading) {
   background-color: #0ea5e9;
   color: white;
 }
 
-.blue-light:hover {
+.blue-light:hover:not(.l-heading) {
   background-color: #7dd3fc;
 }

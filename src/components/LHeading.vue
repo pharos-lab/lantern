@@ -12,6 +12,7 @@
 
 <script setup>
 import { computed } from 'vue';
+import '@/styles/fonts.css';
 
 const props = defineProps({
   color: {
