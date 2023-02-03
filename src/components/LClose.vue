@@ -47,6 +47,7 @@ const color = computed(() => {
   border-radius: 6px;
   padding: 4px;
   cursor: pointer;
+  display: inline-block;
 }
 
 .l-close-bar {

@@ -1,5 +1,5 @@
 <template>
-  <div class="l-heading">
+  <div class="l-heading-wrapper">
     <component
       :is="tag"
       class="l-heading"

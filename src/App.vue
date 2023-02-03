@@ -1,7 +1,7 @@
 <template>
   <div class="test">
-    <LButton color="green" rounded="" mode="outlined">
-      <LClose color="green" mode="outlined"></LClose>
+    <LButton color="blue" rounded="" mode="outlined">
+      <LClose color="blue" mode="outlined"></LClose>
     </LButton>
     <br />
     <LHeading color="green" size="xl">Un test de titre</LHeading>
@@ -14,6 +14,12 @@
     <br />
 
     <LClose color="red" mode="normal"></LClose>
+
+    <br />
+
+    <LParagraph color="red" background
+      >rfgh gh ghg h hedfe ekjej efer efg er
+    </LParagraph>
   </div>
 </template>
 
@@ -22,6 +28,7 @@ import LButton from './components/LButton.vue';
 import LHeading from './components/LHeading.vue';
 import LAvatar from './components/LAvatar.vue';
 import LClose from './components/LClose.vue';
+import LParagraph from './components/LParagraph.vue';
 </script>
 
 <style scoped>
