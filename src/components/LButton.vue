@@ -33,12 +33,23 @@ const props = defineProps({
       return ['none', 'normal', 'medium', 'large', 'pills'].includes(value);
     },
   },
+  hover: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const colorClass = computed(() => {
-  return props.mode == 'normal'
-    ? `${props.color}`
-    : `${props.color}-${props.mode}`;
+  console.log(props.hover);
+  if (props.hover) {
+    return props.mode == 'normal'
+      ? `${props.color} ${props.color}-hover`
+      : `${props.color}-${props.mode} ${props.color}-${props.mode}-hover`;
+  } else {
+    return props.mode == 'normal'
+      ? `${props.color}`
+      : `${props.color}-${props.mode}`;
+  }
 });
 
 const roundedClass = computed(() => {

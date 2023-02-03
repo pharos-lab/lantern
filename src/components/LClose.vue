@@ -1,20 +1,13 @@
 <template>
-  <div class="l-close">
-    <div class="">
-      <div
-        :class="close"
-        class="bar1 w-5 h-1 my-1 rotate-45 rounded-md translate-y-1"
-      ></div>
-      <div
-        :class="close"
-        class="bar2 w-5 h-1 my-1 -rotate-45 -translate-y-1 rounded-md"
-      ></div>
-    </div>
+  <div class="l-close" :class="color">
+    <div class="l-close-bar bar1 white"></div>
+    <div class="l-close-bar bar2 white"></div>
   </div>
 </template>
 
 <script setup>
 import { computed } from 'vue';
+import '@/styles/colors.css';
 
 const props = defineProps({
   color: {
@@ -50,10 +43,17 @@ const color = computed(() => {
   cursor: pointer;
 }
 
-.l-close .bar-1,
-.l-close .bar-2 {
+.l-close-bar {
   width: 20px;
   height: 4px;
   margin: 4px 0;
+  border-radius: 4px;
+}
+.bar1 {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.bar2 {
+  transform: translateY(-4px) rotate(-45deg);
 }
 </style>
