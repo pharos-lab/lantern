@@ -6,7 +6,6 @@
 
 <script setup>
 import { computed } from 'vue';
-import '@/styles/square.css';
 
 const props = defineProps({
   alt: String,

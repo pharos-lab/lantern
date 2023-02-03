@@ -1,13 +1,12 @@
 <template>
   <div class="l-close" :class="color">
-    <div class="l-close-bar bar1 white"></div>
-    <div class="l-close-bar bar2 white"></div>
+    <div class="l-close-bar bar1" :class="barColor"></div>
+    <div class="l-close-bar bar2" :class="barColor"></div>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import '@/styles/colors.css';
+import { ref, computed } from 'vue';
 
 const props = defineProps({
   color: {
@@ -27,17 +26,24 @@ const props = defineProps({
   },
 });
 
+const barColor = ref();
+
 const color = computed(() => {
-  return props.mode == 'normal'
-    ? `${props.color}`
-    : `${props.color}-${props.mode}`;
+  if (props.mode == 'normal') {
+    barColor.value = 'white';
+    return `${props.color}-hover`;
+  } else if (props.mode == 'outlined') {
+    barColor.value = `${props.color}`;
+    return `${props.color}-light-hover`;
+  } else {
+    barColor.value = props.color;
+    return `${props.color}-${props.mode}-hover`;
+  }
 });
 </script>
 
 <style scoped>
 .l-close {
-  position: absolute;
-  right: 16px;
   border-radius: 6px;
   padding: 4px;
   cursor: pointer;

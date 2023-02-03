@@ -1,6 +1,8 @@
 <template>
   <div class="test">
-    <LButton color="slate" rounded="" mode="normal" hover>Boutton good</LButton>
+    <LButton color="green" rounded="" mode="outlined">
+      <LClose color="green" mode="outlined"></LClose>
+    </LButton>
     <br />
     <LHeading color="green" size="xl">Un test de titre</LHeading>
     <LAvatar

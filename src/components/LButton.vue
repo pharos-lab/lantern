@@ -6,9 +6,6 @@
 
 <script setup>
 import { computed } from 'vue';
-import '@/styles/colors.css';
-import '@/styles/hover.css';
-import '@/styles/rounded.css';
 
 const props = defineProps({
   color: {
@@ -40,7 +37,6 @@ const props = defineProps({
 });
 
 const colorClass = computed(() => {
-  console.log(props.hover);
   if (props.hover) {
     return props.mode == 'normal'
       ? `${props.color} ${props.color}-hover`
