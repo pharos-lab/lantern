@@ -5,11 +5,12 @@
       <!--<LClose color="blue" mode="outlined"></LClose>-->
     </LButton>
     <br />
-    <LHeading color="green" size="xl">Un test de titre</LHeading>
+    <LHeading color="green" size="xs">Un test de titre</LHeading>
     <LAvatar
       src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg"
       alt="texte alternatif"
       size="5xl"
+      class="bg-red-500"
     ></LAvatar>
 
     <br />
