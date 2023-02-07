@@ -5,7 +5,7 @@
       <LClose color="red" mode="light"></LClose>
     </LButton>
     <br />
-    <LHeading color="green" size="xs">Un test de titre</LHeading>
+    <LHeading color="green" size="lg" background>Un test de titre</LHeading>
     <LAvatar
       src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg"
       alt="texte alternatif"
