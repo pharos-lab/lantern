@@ -2,7 +2,7 @@
   <div class="test">
     <LButton color="red" rounded="md" mode="light" :hover="false">
       bonjour
-      <LClose color="red" mode="light"></LClose>
+      <LClose></LClose>
     </LButton>
     <br />
     <LHeading color="green" size="lg" background>Un test de titre</LHeading>

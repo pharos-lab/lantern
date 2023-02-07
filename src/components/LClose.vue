@@ -24,7 +24,6 @@ const props = defineProps({
   },
   mode: {
     type: String,
-    default: 'normal',
     validator(value) {
       // The value must match one of these strings
       return ['normal', 'light', 'outlined'].includes(value);
