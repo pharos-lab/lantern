@@ -1,15 +1,14 @@
 <template>
   <div class="test">
-    <LButton color="red" rounded="md" mode="light">
+    <LButton color="red" rounded="md" mode="light" :hover="false">
       bonjour
-      <!--<LClose color="blue" mode="outlined"></LClose>-->
+      <LClose color="red" mode="light"></LClose>
     </LButton>
     <br />
     <LHeading color="green" size="xs">Un test de titre</LHeading>
     <LAvatar
       src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg"
       alt="texte alternatif"
-      size="5xl"
       class="bg-red-500"
     ></LAvatar>
 
