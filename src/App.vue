@@ -17,7 +17,7 @@
     <LClose color="red" mode="normal"></LClose>
 
     <br />
-    <LDivider size="3xl"></LDivider>
+    <LDivider size=""></LDivider>
     <LParagraph color="red" background
       >rfgh gh ghg h hedfe ekjej efer efg er
     </LParagraph>

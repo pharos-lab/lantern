@@ -1,5 +1,5 @@
 <template>
-  <div :class="[size, props.color ?? 'slate']"></div>
+  <div :class="[size, color]"></div>
 </template>
 
 <script setup>
@@ -31,7 +31,7 @@ const size = computed(() => {
       return 'h-px';
       break;
     case 'sm':
-      return 'h-2px';
+      return 'h-0.5';
       break;
     case 'md':
       return 'h-1';
@@ -52,6 +52,10 @@ const size = computed(() => {
       return 'h-px';
       break;
   }
+});
+
+const color = computed(() => {
+  return props.color ? `l-${props.color}` : 'bg-slate-400';
 });
 </script>
 
