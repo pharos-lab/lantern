@@ -6,6 +6,7 @@
       class="p-4 font-semibold shadow-md relative"
     >
       <LClose
+        class="absolute right-4 top-4"
         v-if="props.dismissable"
         @click="open = false"
         :color="props.color"
@@ -67,7 +68,7 @@ const color = computed(() => {
     case 'light':
       return `l-${props.color}-${props.mode}`;
     case 'outlined':
-      return `l-${props.color}-${props.mode} !border-0 !border-l-8`;
+      return `l-${props.color}-${props.mode} !border !border-l-8`;
   }
 });
 
