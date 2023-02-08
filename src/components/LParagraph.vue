@@ -6,6 +6,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useSizeSwitch } from './composables/sizeSwitch.js';
 
 const props = defineProps({
   color: {
@@ -27,27 +28,44 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  size: {
+    type: String,
+    default: 'normal',
+    validator(value) {
+      return [
+        'xs',
+        'sm',
+        'normal',
+        'lg',
+        'xl',
+        '2xl',
+        '3xl',
+        '4xl',
+        '5xl',
+        '6xl',
+        '7xl',
+        '8xl',
+        '9xl',
+      ].includes(value);
+    },
+  },
 });
 
 const color = computed(() => {
-  return props.background ? `${props.color}` : `text-${props.color}`;
+  return props.background ? `l-${props.color}` : `l-text-${props.color}`;
 });
 
 const margin = computed(() => {
-  return props.noMargin ? '' : 'margin';
+  return props.noMargin ? '' : 'my-4';
 });
 
 const padding = computed(() => {
-  return props.noPadding ? '' : 'padding';
+  return props.noPadding ? '' : 'px-4 py-2';
+});
+
+const size = computed(() => {
+  return useSizeSwitch(props.size);
 });
 </script>
 
-<style scoped>
-.padding {
-  padding: 8px 12px;
-}
-
-.margin {
-  margin: 12px 0;
-}
-</style>
+<style scoped></style>

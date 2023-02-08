@@ -12,6 +12,7 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useSizeSwitch } from './composables/sizeSwitch.js';
 
 const props = defineProps({
   color: {
@@ -79,50 +80,7 @@ const margin = computed(() => {
   return props.noMargin ? '' : 'my-4';
 });
 const size = computed(() => {
-  switch (props.size) {
-    case 'xs':
-      return 'text-xs';
-      break;
-    case 'sm':
-      return 'text-sm';
-      break;
-    case 'normal':
-      return 'text-normal';
-      break;
-    case 'lg':
-      return 'text-lg';
-      break;
-    case 'xl':
-      return 'text-xl';
-      break;
-    case '2xl':
-      return 'text-2xl';
-      break;
-    case '3xl':
-      return 'text-3xl';
-      break;
-    case '4xl':
-      return 'text-4xl';
-      break;
-    case '5xl':
-      return 'text-5xl';
-      break;
-    case '6xl':
-      return 'text-6xl';
-      break;
-    case '7xl':
-      return 'text-7xl';
-      break;
-    case '8xl':
-      return 'text-8xl';
-      break;
-    case '9xl':
-      return 'text-9xl';
-      break;
-    default:
-      return 'text-normal';
-      break;
-  }
+  return useSizeSwitch(props.size);
 });
 </script>
 

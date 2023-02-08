@@ -5,7 +5,7 @@
       <LClose color="green" context="outlined"></LClose>
     </LButton>
     <br />
-    <LHeading color="green" size="lg" background>Un test de titre</LHeading>
+    <LHeading color="blue" size="4xl">Un test de titre</LHeading>
     <LAvatar
       src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg"
       alt="texte alternatif"
@@ -18,7 +18,7 @@
 
     <br />
     <LDivider size=""></LDivider>
-    <LParagraph color="red" background
+    <LParagraph color="red" size="lg"
       >rfgh gh ghg h hedfe ekjej efer efg er
     </LParagraph>
   </div>

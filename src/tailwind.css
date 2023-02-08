@@ -151,21 +151,21 @@
 }
 
 .l-text-red {
-  @apply text-red-600;
+  @apply text-red-500;
 }
 
 .l-text-orange {
-  @apply text-orange-600;
+  @apply text-orange-500;
 }
 
 .l-text-yellow {
-  @apply text-yellow-600;
+  @apply text-yellow-500;
 }
 
 .l-text-green {
-  @apply text-emerald-600;
+  @apply text-emerald-500;
 }
 
 .l-text-blue {
-  @apply text-blue-600;
+  @apply text-blue-500;
 }
