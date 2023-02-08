@@ -41,10 +41,9 @@ const props = defineProps({
 const hover = ref();
 
 const color = computed(() => {
-  if (props.context == 'none') {
-    return props.color ? `l-${props.color}` : 'l-slate';
-  }
   switch (props.context) {
+    case 'none':
+      return props.color ? `l-${props.color}` : 'l-slate';
     case 'fill':
       props.hover ? (hover.value = `l-${props.color}-hover`) : '';
       return `bg-white`;

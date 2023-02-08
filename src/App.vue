@@ -21,6 +21,8 @@
     <LParagraph color="red" size="lg"
       >rfgh gh ghg h hedfe ekjej efer efg er
     </LParagraph>
+
+    <LAlert color="red" mode="outlined"> Message d'alerte </LAlert>
   </div>
 </template>
 
@@ -31,6 +33,7 @@ import LAvatar from './components/LAvatar.vue';
 import LClose from './components/LClose.vue';
 import LParagraph from './components/LParagraph.vue';
 import LDivider from './components/LDivider.vue';
+import LAlert from './components/LAlert.vue';
 </script>
 
 <style scoped>
