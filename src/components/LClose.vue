@@ -1,12 +1,12 @@
 <template>
-  <div class="l-close inline-block p-1 rounded-md" :class="color">
+  <div class="l-close inline-block p-1 rounded-md" :class="hover">
     <div
       class="l-close-bar bar1 w-5 h-1 my-1 rotate-45 rounded-md translate-y-1"
-      :class="barColor"
+      :class="color"
     ></div>
     <div
       class="l-close-bar bar2 w-5 h-1 my-1 -rotate-45 -translate-y-1 rounded-md"
-      :class="barColor"
+      :class="color"
     ></div>
   </div>
 </template>
@@ -19,37 +19,46 @@ const props = defineProps({
     type: String,
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['slate', 'red', 'orange', 'yellow', 'blue', 'white'].includes(
+        value
+      );
     },
   },
-  mode: {
+  context: {
     type: String,
+    default: 'none',
     validator(value) {
       // The value must match one of these strings
-      return ['normal', 'light', 'outlined'].includes(value);
+      return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
+  },
+  hover: {
+    type: Boolean,
+    default: true,
   },
 });
 
-const barColor = ref();
+const hover = ref();
 
 const color = computed(() => {
-  switch (props.mode) {
-    case 'normal':
-      barColor.value = 'bg-white';
-      return `l-${props.color}-hover`;
+  if (props.context == 'none') {
+    return props.color ? `l-${props.color}` : 'l-slate';
+  }
+  switch (props.context) {
+    case 'fill':
+      props.hover ? (hover.value = `l-${props.color}-hover`) : '';
+      return `bg-white`;
       break;
     case 'outlined':
-      barColor.value = `l-${props.color}`;
-      return `l-${props.color}-light-hover`;
+      hover.value = `l-${props.color}-light-hover`;
+      return `l-${props.color}`;
       break;
     case 'light':
-      barColor.value = `l-${props.color}`;
-      return `l-${props.color}-${props.mode}-hover`;
+      hover.value = `l-${props.color}-${props.context}-hover`;
+      return `l-${props.color}`;
       break;
     default:
-      barColor.value = `l-slate`;
-      return '';
+      return 'l-slate';
   }
 });
 </script>

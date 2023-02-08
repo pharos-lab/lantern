@@ -1,8 +1,8 @@
 <template>
   <div class="test">
-    <LButton color="red" rounded="md" mode="light" :hover="false">
+    <LButton color="green" mode="outlined">
       bonjour
-      <LClose></LClose>
+      <LClose color="green" context="outlined"></LClose>
     </LButton>
     <br />
     <LHeading color="green" size="lg" background>Un test de titre</LHeading>
@@ -14,7 +14,7 @@
 
     <br />
 
-    <LClose color="red" mode="normal"></LClose>
+    <LClose color="red"></LClose>
 
     <br />
     <LDivider size=""></LDivider>

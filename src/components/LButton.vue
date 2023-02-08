@@ -13,6 +13,7 @@ import { computed } from 'vue';
 const props = defineProps({
   color: {
     type: String,
+    default: 'slate',
     validator(value) {
       // The value must match one of these strings
       return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
@@ -20,10 +21,10 @@ const props = defineProps({
   },
   mode: {
     type: String,
-    default: 'normal',
+    default: 'fill',
     validator(value) {
       // The value must match one of these strings
-      return ['normal', 'light', 'outlined'].includes(value);
+      return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
   rounded: {
@@ -42,12 +43,15 @@ const props = defineProps({
 });
 
 const colorClass = computed(() => {
+  if (props.mode == 'none') {
+    return props.color ? `l-text-${props.color}` : 'text-slate-500';
+  }
   if (props.hover) {
-    return props.mode == 'normal'
+    return props.mode == 'fill'
       ? `l-${props.color} l-${props.color}-hover`
       : `l-${props.color}-${props.mode} l-${props.color}-${props.mode}-hover`;
   } else {
-    return props.mode == 'normal'
+    return props.mode == 'fill'
       ? `l-${props.color}`
       : `l-${props.color}-${props.mode}`;
   }
