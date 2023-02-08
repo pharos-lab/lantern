@@ -23,6 +23,7 @@
 import { ref, computed } from 'vue';
 import LFadeTransition from './LFadeTransition.vue';
 import LClose from './LClose.vue';
+import { useRoundedSwitch } from './composables/roundedSwitch.js';
 
 const open = ref(true);
 
@@ -71,23 +72,7 @@ const color = computed(() => {
 });
 
 const rounded = computed(() => {
-  switch (props.rounded) {
-    case 'none':
-      return 'rounded-none';
-      break;
-    case 'normal':
-      return 'rounded';
-      break;
-    case 'medium':
-      return 'rounded-md';
-      break;
-    case 'large':
-      return 'rounded-lg';
-      break;
-    default:
-      return 'rounded';
-      break;
-  }
+  return useRoundedSwitch(props.rounded);
 });
 </script>
 

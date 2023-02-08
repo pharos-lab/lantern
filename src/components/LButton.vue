@@ -9,6 +9,7 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useRoundedSwitch } from './composables/roundedSwitch.js';
 
 const props = defineProps({
   color: {
@@ -59,23 +60,7 @@ const colorClass = computed(() => {
 });
 
 const roundedClass = computed(() => {
-  switch (props.rounded) {
-    case 'none':
-      return 'rounded-none';
-      break;
-    case 'sm':
-      return 'rounded-sm';
-      break;
-    case 'normal':
-      return 'rounded';
-      break;
-    case 'md':
-      return 'rounded-md';
-      break;
-    case 'lg':
-      return 'rounded-lg';
-      break;
-  }
+  return useRoundedSwitch(props.rounded);
 });
 </script>
 
