@@ -3,7 +3,7 @@
     <div
       v-show="open"
       :class="[color, rounded]"
-      class="p-4 font-semibold shadow-md relative"
+      class="l-alert p-4 font-semibold shadow-md relative"
     >
       <LClose
         class="absolute right-4 top-4"

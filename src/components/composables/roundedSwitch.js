@@ -9,6 +9,6 @@ export function useRoundedSwitch(rounded) {
     case 'lg':
       return 'rounded-lg';
     default:
-      return 'rounded';
+      return '';
   }
 }

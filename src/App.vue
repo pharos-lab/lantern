@@ -23,6 +23,13 @@
     </LParagraph>
 
     <LAlert color="red" mode="outlined"> Message d'alerte </LAlert>
+
+    <LDropdown label="hover/click me" color="red" rounded margin click>
+      <template #label>autre label</template>
+      <LDropdownItem>Un item</LDropdownItem>
+      <LDropdownItem>Un item 2</LDropdownItem>
+      <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
+    </LDropdown>
   </div>
 </template>
 
@@ -34,6 +41,8 @@ import LClose from './components/LClose.vue';
 import LParagraph from './components/LParagraph.vue';
 import LDivider from './components/LDivider.vue';
 import LAlert from './components/LAlert.vue';
+import LDropdown from './components/LDropdown.vue';
+import LDropdownItem from './components/LDropdownItem.vue';
 </script>
 
 <style scoped>
