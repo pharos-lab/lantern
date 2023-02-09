@@ -68,10 +68,8 @@ const showItems = ref(false);
 
 const labelClass = computed(() => {
   if (props.rounded && !props.margin && showItems.value) {
-    console.log('ok');
     return 'rounded-t';
   } else if (props.rounded) {
-    console.log('bad');
     return 'rounded';
   }
 });
@@ -87,8 +85,6 @@ const roundedClass = computed(() => {
     ? 'mt-2'
     : '';
 });
-
-const colorClass = computed(() => {});
 
 const placementClass = computed(() => {
   return props.right ? 'right-0' : '';

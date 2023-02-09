@@ -118,27 +118,27 @@
   @apply hover:bg-emerald-300 text-emerald-700;
 }
 
-.l-sky {
+.l-blue {
   @apply bg-sky-500 text-white;
 }
 
-.l-sky-hover {
+.l-blue-hover {
   @apply hover:bg-sky-600;
 }
 
-.l-sky-outlined {
+.l-blue-outlined {
   @apply text-sky-500 border-2 border-sky-500;
 }
 
-.l-sky-outlined-hover {
+.l-blue-outlined-hover {
   @apply hover:bg-sky-500 hover:text-white;
 }
 
-.l-sky-light {
+.l-blue-light {
   @apply bg-sky-200 text-sky-600;
 }
 
-.l-sky-light-hover {
+.l-blue-light-hover {
   @apply hover:bg-sky-300 text-sky-700;
 }
 
