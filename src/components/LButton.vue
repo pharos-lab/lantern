@@ -14,7 +14,6 @@ import { useRoundedSwitch } from './composables/roundedSwitch.js';
 const props = defineProps({
   color: {
     type: String,
-    default: 'slate',
     validator(value) {
       // The value must match one of these strings
       return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
@@ -48,6 +47,11 @@ const colorClass = computed(() => {
     case 'none':
       return props.color ? `l-text-${props.color}` : 'text-slate-500';
     case 'fill':
+      if (!props.color) {
+        return props.hover
+          ? 'l-slate-light l-slate-light-hover'
+          : 'l-slate-light';
+      }
       return props.hover
         ? `l-${props.color} l-${props.color}-hover`
         : `l-${props.color}`;

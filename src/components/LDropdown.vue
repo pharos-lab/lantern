@@ -1,20 +1,22 @@
 <template>
   <div class="l-dropdown relative inline-block">
-    <LButton
-      hover
-      class="l-dropdown-button ease-in-out transition-all duration-500"
-      :color="props.color"
-      :class="labelClass"
-      @mouseenter="!props.click ? (showItems = true) : null"
-      @mouseleave="!props.click ? (showItems = false) : null"
-      @click="props.click ? (showItems = !showItems) : null"
-    >
-      <slot name="label">{{ props.label ?? 'Add a label' }}</slot>
-    </LButton>
+    <slot name="label">
+      <LButton
+        hover
+        class="l-dropdown-button ease-in-out transition-all duration-500"
+        :color="props.color"
+        :class="labelClass"
+        @mouseenter="!props.click ? (showItems = true) : null"
+        @mouseleave="!props.click ? (showItems = false) : null"
+        @click="props.click ? (showItems = !showItems) : null"
+      >
+        {{ props.label ?? 'Add a label' }}
+      </LButton>
+    </slot>
     <LFadeTransition>
       <div
         v-show="showItems"
-        class="l-dropdown-items absolute whitespace-nowrap overflow-hidden"
+        class="l-dropdown-items absolute whitespace-nowrap overflow-hidden z-10"
         :class="[roundedClass, placementClass]"
         @mouseenter="showItems = true"
         @mouseleave="showItems = false"

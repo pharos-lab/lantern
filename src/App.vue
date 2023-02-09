@@ -1,9 +1,6 @@
 <template>
   <div class="test">
-    <LButton color="green" mode="outlined">
-      bonjour
-      <LClose color="green" context="outlined"></LClose>
-    </LButton>
+    <LButton> bonjour </LButton>
     <br />
     <LHeading color="blue" size="4xl">Un test de titre</LHeading>
     <LAvatar
@@ -25,13 +22,12 @@
     <LAlert color="red" mode="outlined"> Message d'alerte </LAlert>
 
     <LDropdown label="hover/click me" color="red" rounded margin>
-      <template #label>autre label</template>
       <LDropdownItem>Un item</LDropdownItem>
       <LDropdownItem>Un item 2</LDropdownItem>
       <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
     </LDropdown>
 
-    <LTabs color="blue" class="mt-6" card>
+    <LTabs color="green" class="mt-6" card backgroun pills>
       <LTabsItem title="one">
         <div class="ok">
           <p>premier tab</p>
@@ -41,6 +37,8 @@
       <LTabsItem title="two">second</LTabsItem>
       <LTabsItem title="three">third</LTabsItem>
     </LTabs>
+
+    <LModal label="open modal"> goooooood! </LModal>
   </div>
 </template>
 
@@ -56,6 +54,7 @@ import LDropdown from './components/LDropdown.vue';
 import LDropdownItem from './components/LDropdownItem.vue';
 import LTabs from './components/LTabs.vue';
 import LTabsItem from './components/LTabsItem.vue';
+import LModal from './components/LModal.vue';
 </script>
 
 <style scoped>
