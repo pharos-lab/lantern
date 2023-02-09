@@ -38,7 +38,16 @@
       <LTabsItem title="three">third</LTabsItem>
     </LTabs>
 
-    <LModal label="open modal"> goooooood! </LModal>
+    <LModal label="open modal">
+      <template #header>
+        <h1>titre du modal</h1>
+      </template>
+
+      <template #footer>
+        <h1>titre du modal</h1>
+      </template>
+      goooooood!
+    </LModal>
   </div>
 </template>
 

@@ -21,15 +21,24 @@
       "
       v-show="isOpen"
     >
-      <div class="modal-content w-2/3 opacity-100 bg-white p-4 relative">
+      <div class="modal-content w-2/3 opacity-100 bg-white relative">
         <LClose
           v-if="props.dismissable"
           @click="isOpen = false"
           color="slate"
           context="outlined"
-          class="right-2 absolute"
+          class="right-2 absolute top-2"
         ></LClose>
-        <slot></slot>
+
+        <div class="l-modal-header p-4">
+          <slot name="header"></slot>
+        </div>
+        <div class="l-modal-content p-4">
+          <slot></slot>
+        </div>
+        <div class="l-modal-footer p-4">
+          <slot name="footer"></slot>
+        </div>
       </div>
     </div>
   </teleport>
