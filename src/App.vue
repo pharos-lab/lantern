@@ -10,10 +10,6 @@
     ></LAvatar>
 
     <br />
-
-    <LClose color="red"></LClose>
-
-    <br />
     <LDivider size=""></LDivider>
     <LParagraph color="red" size="lg"
       >rfgh gh ghg h hedfe ekjej efer efg er
@@ -48,6 +44,14 @@
       </template>
       goooooood!
     </LModal>
+
+    <LAspect aspect="16/9">
+      <img
+        src="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg"
+        alt="encore un text alt"
+        class="bg-red-500"
+      />
+    </LAspect>
   </div>
 </template>
 
@@ -64,6 +68,7 @@ import LDropdownItem from './components/LDropdownItem.vue';
 import LTabs from './components/LTabs.vue';
 import LTabsItem from './components/LTabsItem.vue';
 import LModal from './components/LModal.vue';
+import LAspect from './components/LAspect.vue';
 </script>
 
 <style scoped>

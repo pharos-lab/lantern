@@ -20,6 +20,7 @@
         bg-slate-500/50
       "
       v-show="isOpen"
+      @click.self="isOpen = false"
     >
       <div class="modal-content w-2/3 opacity-100 bg-white relative">
         <LClose
