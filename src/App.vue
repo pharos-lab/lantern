@@ -56,7 +56,22 @@
       />
     </LAspect>
 
-    <LCard class="w-64 h-64" color="slate" mode="light"> texte a voir</LCard>
+    <LCard
+      position="left"
+      class=""
+      img="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg"
+      size="basis-1/2"
+    >
+      <template #header>titre card</template>
+      <template #footer>footer card</template>
+
+      <div class="content">
+        <p>
+          ok contenu Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Odit, accusantium.
+        </p>
+      </div>
+    </LCard>
   </div>
 </template>
 

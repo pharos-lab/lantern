@@ -1,24 +1,40 @@
 <template>
   <div
     class="l-card shadow-md"
-    :class="[color, props.noRounded ? '' : 'rounded-md']"
+    :class="[color, position, props.noRounded ? '' : 'rounded-md']"
   >
-    <div class="l-card-header">
-      <slot name="header"></slot>
-    </div>
+    <LAspect
+      :aspect="aspect"
+      class="l-card-image"
+      v-if="props.img"
+      :class="props.size"
+    >
+      <img
+        :src="props.img"
+        :alt="props.alt ?? 'card illustration'"
+        class="object-cover"
+      />
+    </LAspect>
 
-    <div class="l-card-content">
-      <slot></slot>
-    </div>
+    <div class="l-card-content flex-grow">
+      <div class="l-card-header">
+        <slot name="header"></slot>
+      </div>
 
-    <div class="l-card-footer">
-      <slot name="footer"></slot>
+      <div class="l-card-body">
+        <slot></slot>
+      </div>
+
+      <div class="l-card-footer">
+        <slot name="footer"></slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
+import LAspect from './LAspect.vue';
 
 const props = defineProps({
   color: {
@@ -36,6 +52,23 @@ const props = defineProps({
       return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
+  img: String,
+  position: {
+    type: String,
+    default: 'top',
+    validator(value) {
+      // The value must match one of these strings
+      return ['top', 'bottom', 'left', 'right'].includes(value);
+    },
+  },
+  size: {
+    type: String,
+    default: '1/2',
+    validator(value) {
+      // The value must match one of these strings
+      return ['w-1/2', 'w-1/3', 'w-1/4', 'w-1/5', 'w-1/6'].includes(value);
+    },
+  },
 });
 
 const color = computed(() => {
@@ -49,6 +82,30 @@ const color = computed(() => {
     case 'light':
     case 'outlined':
       return `l-${props.color}-${props.mode}`;
+  }
+});
+
+const position = computed(() => {
+  switch (props.position) {
+    case 'top':
+      return 'flex flex-col';
+    case 'bottom':
+      return 'flex flex-col-reverse';
+    case 'left':
+      return 'flex flex-row';
+    case 'right':
+      return 'flex flex-row-reverse';
+  }
+});
+
+const aspect = computed(() => {
+  switch (props.position) {
+    case 'top':
+    case 'bottom':
+      return '2/1';
+    case 'right':
+    case 'left':
+      return 'auto';
   }
 });
 </script>
