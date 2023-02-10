@@ -1,6 +1,7 @@
 <template>
   <div class="test">
-    <LButton> bonjour </LButton>
+    <!--
+   
     <br />
     <LHeading color="blue" size="4xl">Un test de titre</LHeading>
     <LAvatar
@@ -22,6 +23,8 @@
       <LDropdownItem>Un item 2</LDropdownItem>
       <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
     </LDropdown>
+    -->
+    <LButton mode="none"> bonjour </LButton>
 
     <LTabs color="green" class="mt-6" card backgroun pills>
       <LTabsItem title="one">
@@ -52,6 +55,8 @@
         class="bg-red-500"
       />
     </LAspect>
+
+    <LCard class="w-64 h-64" color="slate" mode="light"> texte a voir</LCard>
   </div>
 </template>
 
@@ -69,6 +74,7 @@ import LTabs from './components/LTabs.vue';
 import LTabsItem from './components/LTabsItem.vue';
 import LModal from './components/LModal.vue';
 import LAspect from './components/LAspect.vue';
+import LCard from './components/LCard.vue';
 </script>
 
 <style scoped>
