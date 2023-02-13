@@ -16,7 +16,7 @@
       />
     </LAspect>
 
-    <div class="l-card-content flex-grow">
+    <div class="l-card-content flex-grow" :class="'w-' + contentSize">
       <div class="l-card-header">
         <slot name="header"></slot>
       </div>
@@ -35,6 +35,11 @@
 <script setup>
 import { ref, computed } from 'vue';
 import LAspect from './LAspect.vue';
+
+const contentSize = computed(() => {
+  let res = props.size.match(/w-(\d)\/(\d)/);
+  return `${res[2] - res[1]}/${res[2]}`;
+});
 
 const props = defineProps({
   color: {

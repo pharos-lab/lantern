@@ -17,7 +17,6 @@ const props = defineProps({
 const tag = ref();
 
 onMounted(() => {
-  console.log(tag.value.children[0]);
   tag.value.style.aspectRatio = props.aspect;
 });
 </script>
