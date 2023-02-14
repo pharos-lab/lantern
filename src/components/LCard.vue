@@ -16,7 +16,7 @@
       />
     </LAspect>
 
-    <div class="l-card-content flex-grow" :class="'w-' + contentSize">
+    <div class="l-card-content flex-grow" :class="contentSize">
       <div class="l-card-header">
         <slot name="header"></slot>
       </div>
@@ -35,11 +35,6 @@
 <script setup>
 import { ref, computed } from 'vue';
 import LAspect from './LAspect.vue';
-
-const contentSize = computed(() => {
-  let res = props.size.match(/w-(\d)\/(\d)/);
-  return `${res[2] - res[1]}/${res[2]}`;
-});
 
 const props = defineProps({
   color: {
@@ -68,12 +63,24 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: '1/2',
     validator(value) {
       // The value must match one of these strings
       return ['w-1/2', 'w-1/3', 'w-1/4', 'w-1/5', 'w-1/6'].includes(value);
     },
   },
+  aspect: {
+    type: String,
+    validator(value) {
+      return value.match(/\d\/\d/);
+    },
+  },
+});
+
+const contentSize = computed(() => {
+  if (props.size) {
+    let res = props.size.match(/w-(\d)\/(\d)/);
+    return `w-${res[2] - res[1]}/${res[2]}`;
+  }
 });
 
 const color = computed(() => {
@@ -104,6 +111,9 @@ const position = computed(() => {
 });
 
 const aspect = computed(() => {
+  if (props.aspect) {
+    return props.aspect;
+  }
   switch (props.position) {
     case 'top':
     case 'bottom':
