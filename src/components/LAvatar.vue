@@ -1,6 +1,9 @@
 <template>
-  <div class="l-avatar" :class="[size]">
-    <img :src="props.src" :alt="props.alt" />
+  <div
+    class="l-avatar inline-block overflow-hidden rounded-full"
+    :class="[size]"
+  >
+    <img :src="props.src" :alt="props.alt" class="min-w-full" />
   </div>
 </template>
 
@@ -24,25 +27,45 @@ const props = defineProps({
         '3xl',
         '4xl',
         '5xl',
+        '6xl',
       ].includes(value);
     },
   },
 });
 
 const size = computed(() => {
-  return `square-${props.size}`;
+  switch (props.size) {
+    case 'xs':
+      return 'w-5 h-5';
+      break;
+    case 'sm':
+      return 'w-6 h-6';
+      break;
+    case 'md':
+      return 'w-8 h-8';
+      break;
+    case 'lg':
+      return 'w-12 h-12';
+      break;
+    case 'xl':
+      return 'w-16 h-16';
+      break;
+    case '2xl':
+      return 'w-20 h-20';
+      break;
+    case '3xl':
+      return 'w-28 h-28';
+      break;
+    case '4xl':
+      return 'w-40 h-40';
+      break;
+    case '5xl':
+      return 'w-48 h-48';
+      break;
+    default:
+      return 'w-10 h-10';
+  }
 });
 </script>
 
-<style scoped>
-.l-avatar {
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 9999999px;
-}
-
-.l-avatar img {
-  min-width: 100%;
-  min-height: 100%;
-}
-</style>
+<style scoped></style>

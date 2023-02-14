@@ -5,7 +5,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 
-defineProps({
+const props = defineProps({
   msg: String,
 });
 </script>

@@ -12,6 +12,7 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useSizeSwitch } from './composables/sizeSwitch.js';
 
 const props = defineProps({
   color: {
@@ -64,7 +65,7 @@ const props = defineProps({
 });
 
 const color = computed(() => {
-  return props.background ? `text-${props.color}` : props.color;
+  return props.background ? `l-${props.color}` : `l-text-${props.color}`;
 });
 
 const tag = computed(() => {
@@ -72,23 +73,15 @@ const tag = computed(() => {
 });
 
 const padding = computed(() => {
-  return props.noPadding ? '' : 'l-heading-padding';
+  return props.noPadding ? '' : 'py-2 px-4';
 });
 
 const margin = computed(() => {
-  return props.noMargin ? '' : 'l-heading-margin';
+  return props.noMargin ? '' : 'my-4';
 });
 const size = computed(() => {
-  return `text-${props.size}`;
+  return useSizeSwitch(props.size);
 });
 </script>
 
-<style scoped>
-.l-heading-margin {
-  margin: 12px 0;
-}
-
-.l-heading-padding {
-  padding: 8px 12px;
-}
-</style>
+<style scoped></style>
