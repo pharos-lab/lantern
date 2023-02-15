@@ -3,7 +3,7 @@
     class="l-avatar inline-block overflow-hidden rounded-full"
     :class="[size]"
   >
-    <img :src="props.src" :alt="props.alt" class="min-w-full" />
+    <img :src="props.src" :alt="props.alt" class="min-w-full l-avatar-image" />
   </div>
 </template>
 

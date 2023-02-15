@@ -23,7 +23,6 @@
       <LDropdownItem>Un item 2</LDropdownItem>
       <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
     </LDropdown>
-    -->
     <LButton mode="none"> bonjour </LButton>
 
     <LTabs color="green" class="mt-6" card backgroun pills>
@@ -54,10 +53,10 @@
         alt="encore un text alt"
         class="bg-red-500"
       />
-    </LAspect>
+    </LAspect> -->
 
     <LCard
-      class=""
+      class="my-4"
       img="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg"
       aspect="16/5"
     >
@@ -71,6 +70,33 @@
         </p>
       </div>
     </LCard>
+
+    <LInput label="prenom" placeholder="type some text"></LInput>
+
+    <input type="text" /> <br />
+    <input type="password" /> <br />
+    <input type="date" /> <br />
+    <input type="checkbox" /> <br />
+    <input type="radio" /> <br />
+    <input type="color" /> <br />
+    <input type="email" /> <br />
+    <input type="file" /> <br />
+    <input type="range" /> <br />
+    <input type="number" /> <br />
+    <input type="tel" /> <br />
+    <select id="cars" name="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+    <br />
+
+    <textarea name="message" rows="10" cols="30">
+The cat was playing in the garden.
+</textarea
+    >
+    <br />
   </div>
 </template>
 
@@ -89,6 +115,7 @@ import LTabsItem from './components/LTabsItem.vue';
 import LModal from './components/LModal.vue';
 import LAspect from './components/LAspect.vue';
 import LCard from './components/LCard.vue';
+import LInput from './components/LInput.vue';
 </script>
 
 <style scoped>

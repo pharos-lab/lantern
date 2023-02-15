@@ -1,13 +1,11 @@
 <template>
-  <div class="l-heading-wrapper">
-    <component
-      :is="tag"
-      class="l-heading"
-      :class="[size, color, margin, padding]"
-    >
-      <slot></slot>
-    </component>
-  </div>
+  <component
+    :is="tag"
+    class="l-heading"
+    :class="[size, color, margin, padding]"
+  >
+    <slot></slot>
+  </component>
 </template>
 
 <script setup>

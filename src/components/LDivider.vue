@@ -1,5 +1,5 @@
 <template>
-  <div :class="[size, color]"></div>
+  <div :class="[size, color]" class="l-divider"></div>
 </template>
 
 <script setup>

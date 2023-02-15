@@ -1,18 +1,18 @@
 <template>
-  <div class="tabs rounded overflow-hidden" :class="wrapperClass">
-    <ul class="flex px-4 border-b-2 tabs-label" :class="labelClass">
+  <div class="l-tabs rounded overflow-hidden" :class="wrapperClass">
+    <ul class="flex px-4 border-b-2 l-tabs-labels" :class="labelClass">
       <li
         v-for="title in tabTitles"
         :key="title"
         @click="selected = title"
-        class="px-4 py-2 font-semibold"
+        class="px-4 py-2 font-semibold l-tabs-label"
         :class="[selected == title ? activeClass : colorClass, roundedClass]"
       >
         {{ title }}
       </li>
     </ul>
 
-    <div class="tab-items p-4 relative" :class="contentColor">
+    <div class="l-tabs-items p-4 relative" :class="contentColor">
       <slot></slot>
     </div>
   </div>

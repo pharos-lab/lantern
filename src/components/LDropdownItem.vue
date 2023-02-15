@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown-item px-4 py-2" :class="colorClass">
+  <div class="l-dropdown-item px-4 py-2" :class="colorClass">
     <slot></slot>
   </div>
 </template>
