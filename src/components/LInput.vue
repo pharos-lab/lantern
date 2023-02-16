@@ -1,10 +1,15 @@
 <template>
-  <div class="l-input" :class="position">
+  <div class="l-input" :class="[position]">
     <label class="l-input-label" v-if="slots.label || props.label">
       <slot name="label">{{ props.label }}</slot>
     </label>
 
-    <input :type="props.type" class="l-input-content" v-bind="$attrs" />
+    <input
+      :type="props.type"
+      class="l-input-content flex-grow"
+      v-bind="$attrs"
+      :class="rounded"
+    />
   </div>
 </template>
 
@@ -31,18 +36,42 @@ const props = defineProps({
     type: String,
     default: 'top',
     validator(value) {
-      return ['top', 'bottom', 'left', 'right'].includes(value);
+      return ['top', 'left'].includes(value);
+    },
+  },
+  noRounded: {
+    type: Boolean,
+    default: false,
+  },
+  color: {
+    type: String,
+    validator(value) {
+      // The value must match one of these strings
+      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+    },
+  },
+  mode: {
+    type: String,
+    default: 'fill',
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
 });
 
 const position = computed(() => {
-  return usePositionSwitch(props.position);
+  switch (props.position) {
+    case 'top':
+      return 'flex flex-col gap-y-4';
+    case 'left':
+      return 'flex items-center gap-x-4';
+  }
+});
+
+const rounded = computed(() => {
+  return props.noRounded ? '' : 'rounded';
 });
 </script>
 
-<style scoped>
-.l-input-label:empty {
-  display: none;
-}
-</style>
+<style scoped></style>

@@ -59,6 +59,7 @@
       class="my-4"
       img="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg"
       aspect="16/5"
+      position="left"
     >
       <template #header>titre card</template>
       <template #footer>footer card</template>
@@ -71,8 +72,13 @@
       </div>
     </LCard>
 
-    <LInput label="prenom" placeholder="type some text"></LInput>
+    <LInput
+      label="prenom"
+      placeholder="type some text"
+      position="left"
+    ></LInput>
 
+    <!--
     <input type="text" /> <br />
     <input type="password" /> <br />
     <input type="date" /> <br />
@@ -96,7 +102,7 @@
 The cat was playing in the garden.
 </textarea
     >
-    <br />
+    <br />-->
   </div>
 </template>
 

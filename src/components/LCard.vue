@@ -35,6 +35,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import LAspect from './LAspect.vue';
+import { usePositionSwitch } from './composables/positionSwitch.js';
 
 const props = defineProps({
   color: {
@@ -98,6 +99,7 @@ const color = computed(() => {
 });
 
 const position = computed(() => {
+  return usePositionSwitch(props.position);
   switch (props.position) {
     case 'top':
       return 'flex flex-col';
