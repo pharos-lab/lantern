@@ -1,7 +1,7 @@
 <template>
   <button
     class="l-button py-2 px-4 font-semibold"
-    :class="[colorClass, roundedClass]"
+    :class="[colorClass, roundedClass, hoverClass]"
   >
     <slot>Click me</slot>
   </button>
@@ -10,6 +10,8 @@
 <script setup>
 import { computed } from 'vue';
 import { useRoundedSwitch } from './composables/roundedSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
+import { useHoverSwitch } from './composables/hoverSwitch.js';
 
 const props = defineProps({
   color: {
@@ -43,24 +45,11 @@ const props = defineProps({
 });
 
 const colorClass = computed(() => {
-  switch (props.mode) {
-    case 'none':
-      return props.color ? `l-text-${props.color}` : 'text-slate-500';
-    case 'fill':
-      if (!props.color) {
-        return props.hover
-          ? 'l-slate-light l-slate-light-hover'
-          : 'l-slate-light';
-      }
-      return props.hover
-        ? `l-${props.color} l-${props.color}-hover`
-        : `l-${props.color}`;
-    case 'outlined':
-    case 'light':
-      return props.hover
-        ? `l-${props.color}-${props.mode} l-${props.color}-${props.mode}-hover`
-        : `l-${props.color}-${props.mode}`;
-  }
+  return useColorSwitch(props.color, props.mode);
+});
+
+const hoverClass = computed(() => {
+  return useHoverSwitch(props.color, props.mode);
 });
 
 const roundedClass = computed(() => {

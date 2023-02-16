@@ -25,6 +25,7 @@ import { ref, computed } from 'vue';
 import LFadeTransition from './LFadeTransition.vue';
 import LClose from './LClose.vue';
 import { useRoundedSwitch } from './composables/roundedSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const open = ref(true);
 
@@ -60,6 +61,7 @@ const props = defineProps({
 });
 
 const color = computed(() => {
+  return useColorSwitch(props.color, props.mode);
   switch (props.mode) {
     case 'none':
       return props.color ? `l-text-${props.color}` : 'text-slate-600';

@@ -1,6 +1,7 @@
 <template>
   <div class="test">
-    <!--
+    <!--<LButton color="blue" mode="outlined"> bonjour </LButton>
+   
    
     <br />
     <LHeading color="blue" size="4xl">Un test de titre</LHeading>
@@ -16,14 +17,13 @@
       >rfgh gh ghg h hedfe ekjej efer efg er
     </LParagraph>
 
-    <LAlert color="red" mode="outlined"> Message d'alerte </LAlert>
 
     <LDropdown label="hover/click me" color="red" rounded margin>
       <LDropdownItem>Un item</LDropdownItem>
       <LDropdownItem>Un item 2</LDropdownItem>
       <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
     </LDropdown>
-    <LButton mode="none"> bonjour </LButton>
+    
 
     <LTabs color="green" class="mt-6" card backgroun pills>
       <LTabsItem title="one">
@@ -53,7 +53,10 @@
         alt="encore un text alt"
         class="bg-red-500"
       />
-    </LAspect> -->
+    </LAspect>
+    <LAlert color="red" mode="light"> Message d'alerte </LAlert>
+ -->
+    <LClose></LClose>
 
     <LCard
       class="my-4"
