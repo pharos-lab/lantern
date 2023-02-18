@@ -6,7 +6,7 @@
       class="l-alert p-4 font-semibold shadow-md relative"
     >
       <LClose
-        class="absolute right-4 top-4"
+        class="absolute right-4 top-4 w-5 h-5"
         v-if="props.dismissable"
         @click="open = false"
         :color="props.color"
@@ -62,16 +62,6 @@ const props = defineProps({
 
 const color = computed(() => {
   return useColorSwitch(props.color, props.mode);
-  switch (props.mode) {
-    case 'none':
-      return props.color ? `l-text-${props.color}` : 'text-slate-600';
-    case 'fill':
-      return `l-${props.color}`;
-    case 'light':
-      return `l-${props.color}-${props.mode}`;
-    case 'outlined':
-      return `l-${props.color}-${props.mode} !border !border-l-8`;
-  }
 });
 
 const rounded = computed(() => {

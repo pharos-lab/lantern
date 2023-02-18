@@ -56,7 +56,10 @@
     </LAspect>
     <LAlert color="red" mode="light"> Message d'alerte </LAlert>
  -->
-    <LClose></LClose>
+    <LAlert class="" color="red" mode="light"
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
+      non.</LAlert
+    >
 
     <LCard
       class="my-4"
