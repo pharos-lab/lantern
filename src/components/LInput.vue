@@ -6,9 +6,9 @@
 
     <input
       :type="props.type"
-      class="l-input-content flex-grow"
+      class="l-input-content flex-grow px-4 py-2 placeholder:italic"
       v-bind="$attrs"
-      :class="rounded"
+      :class="[rounded, color]"
     />
   </div>
 </template>
@@ -23,6 +23,7 @@ export default {
 <script setup>
 import { ref, computed, useSlots } from 'vue';
 import { usePositionSwitch } from './composables/positionSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const slots = useSlots();
 
@@ -71,6 +72,37 @@ const position = computed(() => {
 
 const rounded = computed(() => {
   return props.noRounded ? '' : 'rounded';
+});
+
+const color = computed(() => {
+  let color = '';
+  switch (props.color) {
+    case 'slate':
+      color =
+        'placeholder:text-slate-200 focus:outline-none focus:ring-1 focus:ring-slate-600 focus:border-slate-600 focus:border';
+      break;
+    case 'red':
+      color =
+        'placeholder:text-red-200 focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 focus:border';
+      break;
+    case 'orange':
+      color =
+        'placeholder:text-orange-200 focus:outline-none focus:ring-1 focus:ring-orange-600 focus:border-orange-600 focus:border';
+      break;
+    case 'yellow':
+      color =
+        'placeholder:text-yellow-200 focus:outline-none focus:ring-1 focus:ring-yellow-600 focus:border-yellow-600 focus:border';
+      break;
+    case 'green':
+      color =
+        'placeholder:text-emerald-200 focus:outline-none focus:ring-1 focus:ring-emerald-600 focus:border-emerald-600 focus:border';
+      break;
+    case 'blue':
+      color =
+        'placeholder:text-sky-200 focus:outline-none focus:ring-1 focus:ring-sky-600 focus:border-sky-600 focus:border';
+      break;
+  }
+  return useColorSwitch(props.color, props.mode) + ' ' + color;
 });
 </script>
 

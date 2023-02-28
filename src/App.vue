@@ -82,6 +82,7 @@
       label="prenom"
       placeholder="type some text"
       position="left"
+      color="green"
     ></LInput>
 
     <!--
