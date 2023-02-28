@@ -78,12 +78,12 @@
       </div>
     </LCard>
 
-    <LInput
+    <LFormInput
       label="prenom"
       placeholder="type some text"
       position="left"
       color="green"
-    ></LInput>
+    ></LFormInput>
 
     <!--
     <input type="text" /> <br />
@@ -128,7 +128,7 @@ import LTabsItem from './components/LTabsItem.vue';
 import LModal from './components/LModal.vue';
 import LAspect from './components/LAspect.vue';
 import LCard from './components/LCard.vue';
-import LInput from './components/LInput.vue';
+import LFormInput from './components/LFormInput.vue';
 </script>
 
 <style scoped>
