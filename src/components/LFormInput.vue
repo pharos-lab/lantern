@@ -10,7 +10,7 @@
       :type="props.type"
       class="l-input-content flex-grow px-4 py-2 placeholder:italic"
       v-bind="$attrs"
-      :class="[rounded, color]"
+      :class="[rounded, color, border]"
     />
   </div>
 </template>
@@ -27,6 +27,7 @@ import { ref, computed, useSlots } from 'vue';
 import { usePositionSwitch } from './composables/positionSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
+import { useBorderSwitch } from './composables/borderSwitch.js';
 
 const slots = useSlots();
 
@@ -62,6 +63,14 @@ const props = defineProps({
       return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
+  border: {
+    type: Boolean,
+    default: false,
+  },
+  focus: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const position = computed(() => {
@@ -78,39 +87,17 @@ const rounded = computed(() => {
 });
 
 const color = computed(() => {
-  let color = '';
-  /*
-  switch (props.color) {
-    case 'slate':
-      color =
-        'placeholder:text-slate-200 focus:outline-none focus:ring-1 focus:ring-slate-600 focus:border-slate-600 focus:border';
-      break;
-    case 'red':
-      color =
-        'placeholder:text-red-200 focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 focus:border';
-      break;
-    case 'orange':
-      color =
-        'placeholder:text-orange-200 focus:outline-none focus:ring-1 focus:ring-orange-600 focus:border-orange-600 focus:border';
-      break;
-    case 'yellow':
-      color =
-        'placeholder:text-yellow-200 focus:outline-none focus:ring-1 focus:ring-yellow-600 focus:border-yellow-600 focus:border';
-      break;
-    case 'green':
-      color =
-        'placeholder:text-emerald-200 focus:outline-none focus:ring-1 focus:ring-emerald-600 focus:border-emerald-600 focus:border';
-      break;
-    case 'blue':
-      color =
-        'placeholder:text-sky-200 focus:outline-none focus:ring-1 focus:ring-sky-600 focus:border-sky-600 focus:border';
-      break;
-  }*/
   return (
     useColorSwitch(props.color, props.mode) +
     ' ' +
-    useFocusSwitch(props.color, props.mode)
+    (props.focus
+      ? useFocusSwitch(props.color, props.mode)
+      : 'focus:outline-none')
   );
+});
+
+const border = computed(() => {
+  return props.border ? useBorderSwitch(props.color, props.mode) : '';
 });
 </script>
 

@@ -1,12 +1,12 @@
 <template>
   <div class="test">
-    <LButton color="red" mode="light" rounded="normal" :hover="true">
+    <LButton color="gray" mode="light" rounded="normal" :hover="true">
       bonjour
     </LButton>
-    <LButton color="red" mode="fill" rounded="normal" :hover="true">
+    <LButton color="gray" mode="fill" rounded="normal" :hover="true">
       bonjour
     </LButton>
-    <LButton color="red" mode="outlined" rounded="normal" :hover="true">
+    <LButton color="gray" mode="outlined" rounded="normal" :hover="true">
       bonjour
     </LButton>
     <LDropdown label="hover/click me" color="red" rounded margin>
@@ -19,8 +19,9 @@
       label="prenom"
       placeholder="type some text"
       position="left"
-      color="gray"
-      mode="light"
+      color="blue"
+      mode="fill"
+      border
     ></LFormInput>
 
     <LTabs color="blue" mode="none" class="mt-6" card background pills>

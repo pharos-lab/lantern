@@ -6,11 +6,11 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'focus:outline-none focus:ring focus:ring-slate-300';
+        return 'focus:outline-none focus:ring focus:ring-slate-300 focus:border-slate-300';
       }
 
       if (mode == 'light') {
-        return 'focus:outline-none focus:ring focus:ring-slate-300';
+        return 'focus:outline-none focus:ring focus:ring-slate-300 focus:border-slate-300';
       }
       break;
     case 'red':
@@ -19,11 +19,11 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'focus:outline-none focus:ring focus:ring-red-300';
+        return 'focus:outline-none focus:ring focus:ring-red-300 focus:border-red-300';
       }
 
       if (mode == 'light') {
-        return 'focus:outline-none focus:ring focus:ring-red-300';
+        return 'focus:outline-none focus:ring focus:ring-red-300 focus:border-red-300';
       }
       break;
     case 'orange':
@@ -32,11 +32,11 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'focus:outline-none focus:ring focus:ring-orange-300';
+        return 'focus:outline-none focus:ring focus:ring-orange-300 focus:border-orange-300';
       }
 
       if (mode == 'light') {
-        return 'focus:outline-none focus:ring focus:ring-orange-300';
+        return 'focus:outline-none focus:ring focus:ring-orange-300 focus:border-orange-300';
       }
       break;
     case 'yellow':
@@ -45,11 +45,11 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'focus:outline-none focus:ring focus:ring-yellow-300';
+        return 'focus:outline-none focus:ring focus:ring-yellow-300 focus:border-yellow-300';
       }
 
       if (mode == 'light') {
-        return 'focus:outline-none focus:ring focus:ring-yellow-300';
+        return 'focus:outline-none focus:ring focus:ring-yellow-300 focus:border-yellow-300';
       }
       break;
     case 'green':
@@ -58,11 +58,11 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'focus:outline-none focus:ring focus:ring-emerald-300';
+        return 'focus:outline-none focus:ring focus:ring-emerald-300 focus:border-emerald-300';
       }
 
       if (mode == 'light') {
-        return 'focus:outline-none focus:ring focus:ring-emerald-300';
+        return 'focus:outline-none focus:ring focus:ring-emerald-300 focus:border-emerald-300';
       }
       break;
     case 'blue':
@@ -71,11 +71,11 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'focus:outline-none focus:ring focus:ring-sky-300';
+        return 'focus:outline-none focus:ring focus:ring-sky-300 focus:border-sky-300';
       }
 
       if (mode == 'light') {
-        return 'focus:outline-none focus:ring focus:ring-sky-300';
+        return 'focus:outline-none focus:ring focus:ring-sky-300 focus:border-sky-300';
       }
       break;
   }
