@@ -12,6 +12,10 @@ const dropdownColor = inject('dropdownColor');
 const props = defineProps({
   color: {
     type: String,
+    validator(value) {
+      // The value must match one of these strings
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
+    },
   },
 });
 

@@ -20,7 +20,7 @@ const props = defineProps({
     type: String,
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue', 'white'].includes(
+      return ['gray', 'red', 'orange', 'yellow', 'blue', 'white'].includes(
         value
       );
     },
@@ -43,7 +43,7 @@ const hover = ref();
 
 const color = computed(() => {
   switch (props.color) {
-    case 'slate':
+    case 'gray':
       if (props.context == 'outlined' || props.context == 'none') {
         return 'fill-slate-500 hover:bg-slate-500 hover:fill-white';
       }

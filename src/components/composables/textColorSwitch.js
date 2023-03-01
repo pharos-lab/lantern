@@ -1,4 +1,4 @@
-export function useColorSwitch(color, mode) {
+export function useTextColorSwitch(color, mode) {
   switch (color) {
     case 'gray':
       if (mode == 'none') {

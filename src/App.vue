@@ -1,7 +1,9 @@
 <template>
   <div class="test">
-    <!--<LButton color="blue" mode="outlined"> bonjour </LButton>
-   
+    <LButton color="gray" mode="light" rounded="normal" :hover="true">
+      bonjour
+    </LButton>
+    <!--
    
     <br />
     <LHeading color="blue" size="4xl">Un test de titre</LHeading>
@@ -82,7 +84,8 @@
       label="prenom"
       placeholder="type some text"
       position="left"
-      color="green"
+      color="gray"
+      mode="light"
     ></LFormInput>
 
     <!--

@@ -1,6 +1,6 @@
 export function useHoverSwitch(color, mode) {
   switch (color) {
-    case 'slate':
+    case 'gray':
       if (mode == 'outlined') {
         return 'hover:bg-slate-500 hover:text-white';
       }

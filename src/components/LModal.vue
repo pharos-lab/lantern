@@ -26,7 +26,7 @@
         <LClose
           v-if="props.dismissable"
           @click="isOpen = false"
-          color="slate"
+          color="gray"
           context="outlined"
           class="right-2 absolute top-2"
         ></LClose>

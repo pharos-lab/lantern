@@ -1,8 +1,10 @@
 <template>
   <div class="l-input" :class="[position]">
-    <label class="l-input-label" v-if="slots.label || props.label">
-      <slot name="label">{{ props.label }}</slot>
-    </label>
+    <slot name="label">
+      <label class="l-input-label" v-if="slots.label || props.label">
+        {{ props.label }}
+      </label>
+    </slot>
 
     <input
       :type="props.type"
@@ -24,6 +26,7 @@ export default {
 import { ref, computed, useSlots } from 'vue';
 import { usePositionSwitch } from './composables/positionSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
+import { useFocusSwitch } from './composables/focusSwitch.js';
 
 const slots = useSlots();
 
@@ -48,7 +51,7 @@ const props = defineProps({
     type: String,
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
     },
   },
   mode: {
@@ -76,6 +79,7 @@ const rounded = computed(() => {
 
 const color = computed(() => {
   let color = '';
+  /*
   switch (props.color) {
     case 'slate':
       color =
@@ -101,8 +105,12 @@ const color = computed(() => {
       color =
         'placeholder:text-sky-200 focus:outline-none focus:ring-1 focus:ring-sky-600 focus:border-sky-600 focus:border';
       break;
-  }
-  return useColorSwitch(props.color, props.mode) + ' ' + color;
+  }*/
+  return (
+    useColorSwitch(props.color, props.mode) +
+    ' ' +
+    useFocusSwitch(props.color, props.mode)
+  );
 });
 </script>
 

@@ -33,10 +33,10 @@ const contentColor = ref();
 const props = defineProps({
   color: {
     type: String,
-    default: 'slate',
+    default: 'gray',
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
     },
   },
   background: {
@@ -69,7 +69,7 @@ const colorClass = computed(() => {
   contentColor.value = props.background ? `l-${props.color}-light` : '';
 
   switch (props.color) {
-    case 'slate':
+    case 'gray':
       labelClass.value = `${props.card ? 'bg-slate-50' : ''} border-slate-500`;
       return 'text-slate-700 hover:bg-slate-200';
 
