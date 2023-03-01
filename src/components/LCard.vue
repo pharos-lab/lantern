@@ -36,6 +36,7 @@
 import { ref, computed } from 'vue';
 import LAspect from './LAspect.vue';
 import { usePositionSwitch } from './composables/positionSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const props = defineProps({
   color: {
@@ -85,31 +86,11 @@ const contentSize = computed(() => {
 });
 
 const color = computed(() => {
-  switch (props.mode) {
-    case 'none':
-      return props.color
-        ? `l-text-${props.color} bg-slate-100 border border-slate-300`
-        : 'bg-slate-100 border border-slate-300';
-    case 'fill':
-      return props.color ? `l-${props.color}` : 'bg-slate-100';
-    case 'light':
-    case 'outlined':
-      return `l-${props.color}-${props.mode}`;
-  }
+  return useColorSwitch(props.color, props.mode);
 });
 
 const position = computed(() => {
   return usePositionSwitch(props.position);
-  switch (props.position) {
-    case 'top':
-      return 'flex flex-col';
-    case 'bottom':
-      return 'flex flex-col-reverse';
-    case 'left':
-      return 'flex flex-row';
-    case 'right':
-      return 'flex flex-row-reverse';
-  }
 });
 
 const aspect = computed(() => {

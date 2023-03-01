@@ -7,6 +7,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useSizeSwitch } from './composables/sizeSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const props = defineProps({
   color: {
@@ -14,6 +15,14 @@ const props = defineProps({
     validator(value) {
       // The value must match one of these strings
       return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
+    },
+  },
+  mode: {
+    type: String,
+    default: 'none',
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
   background: {
@@ -52,7 +61,7 @@ const props = defineProps({
 });
 
 const color = computed(() => {
-  return props.background ? `l-${props.color}` : `l-text-${props.color}`;
+  return useColorSwitch(props.color, props.mode);
 });
 
 const margin = computed(() => {

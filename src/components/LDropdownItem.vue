@@ -6,6 +6,8 @@
 
 <script setup>
 import { computed, inject } from 'vue';
+import { useColorSwitch } from './composables/colorSwitch.js';
+import { useHoverSwitch } from './composables/hoverSwitch.js';
 
 const dropdownColor = inject('dropdownColor');
 
@@ -20,6 +22,10 @@ const props = defineProps({
 });
 
 const colorClass = computed(() => {
-  return `l-${dropdownColor}-light l-${dropdownColor}-light-hover`;
+  return (
+    useColorSwitch(dropdownColor, 'light') +
+    ' ' +
+    useHoverSwitch(dropdownColor, 'light')
+  );
 });
 </script>

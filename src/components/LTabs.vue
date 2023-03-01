@@ -1,6 +1,6 @@
 <template>
   <div class="l-tabs rounded overflow-hidden" :class="wrapperClass">
-    <ul class="flex px-4 border-b-2 l-tabs-labels" :class="labelClass">
+    <ul class="flex px-4 l-tabs-labels" :class="[labelClass, border]">
       <li
         v-for="title in tabTitles"
         :key="title"
@@ -23,6 +23,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
 import { useSlots, computed, onMounted, ref, provide } from 'vue';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const tabTitles = ref([]);
 const selected = ref();
@@ -37,6 +38,14 @@ const props = defineProps({
     validator(value) {
       // The value must match one of these strings
       return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
+    },
+  },
+  mode: {
+    type: String,
+    default: 'none',
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
   background: {
@@ -65,8 +74,8 @@ onMounted(() => {
 });
 
 const colorClass = computed(() => {
-  activeClass.value = `l-${props.color}`;
-  contentColor.value = props.background ? `l-${props.color}-light` : '';
+  activeClass.value = useColorSwitch(props.color, 'fill');
+  contentColor.value = useColorSwitch(props.color, props.mode);
 
   switch (props.color) {
     case 'gray':
@@ -108,6 +117,9 @@ const roundedClass = computed(() => {
 
 const wrapperClass = computed(() => {
   return props.card ? 'border shadow-md' : '';
+});
+const border = computed(() => {
+  return props.mode == 'outlined' ? 'border-0' : 'border-b-2';
 });
 </script>
 

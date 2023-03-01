@@ -13,7 +13,7 @@ export function useColorSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return 'bg-slate-200 text-slate-600';
+        return 'bg-slate-100 text-slate-600';
       }
     case 'red':
       if (mode == 'none') {
@@ -28,7 +28,7 @@ export function useColorSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return 'bg-red-200 text-red-600';
+        return 'bg-red-100 text-red-600';
       }
     case 'orange':
       if (mode == 'none') {
@@ -43,7 +43,7 @@ export function useColorSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return 'bg-orange-200 text-orange-600';
+        return 'bg-orange-100 text-orange-600';
       }
     case 'yellow':
       if (mode == 'none') {
@@ -58,7 +58,7 @@ export function useColorSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return 'bg-yellow-200 text-yellow-600';
+        return 'bg-yellow-100 text-yellow-600';
       }
     case 'green':
       if (mode == 'none') {
@@ -73,7 +73,7 @@ export function useColorSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return 'bg-emerald-200 text-emerald-600';
+        return 'bg-emerald-100 text-emerald-600';
       }
     case 'blue':
       if (mode == 'none') {
@@ -88,7 +88,7 @@ export function useColorSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return 'bg-sky-200 text-sky-600';
+        return 'bg-sky-100 text-sky-600';
       }
   }
 }

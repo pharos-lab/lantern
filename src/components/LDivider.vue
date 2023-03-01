@@ -7,6 +7,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
 import { computed } from 'vue';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const props = defineProps({
   color: {
@@ -21,6 +22,14 @@ const props = defineProps({
     default: 'normal',
     validator(value) {
       return ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'].includes(value);
+    },
+  },
+  mode: {
+    type: String,
+    default: 'fill',
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
 });
@@ -55,7 +64,7 @@ const size = computed(() => {
 });
 
 const color = computed(() => {
-  return props.color ? `l-${props.color}` : 'bg-slate-400';
+  return props.color ? useColorSwitch(props.color, props.mode) : 'bg-slate-800';
 });
 </script>
 

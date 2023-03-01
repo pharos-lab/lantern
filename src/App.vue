@@ -1,33 +1,29 @@
 <template>
   <div class="test">
-    <LButton color="gray" mode="light" rounded="normal" :hover="true">
+    <LButton color="red" mode="light" rounded="normal" :hover="true">
       bonjour
     </LButton>
-    <!--
-   
-    <br />
-    <LHeading color="blue" size="4xl">Un test de titre</LHeading>
-    <LAvatar
-      src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg"
-      alt="texte alternatif"
-      class="bg-red-500"
-    ></LAvatar>
-
-    <br />
-    <LDivider size=""></LDivider>
-    <LParagraph color="red" size="lg"
-      >rfgh gh ghg h hedfe ekjej efer efg er
-    </LParagraph>
-
-
+    <LButton color="red" mode="fill" rounded="normal" :hover="true">
+      bonjour
+    </LButton>
+    <LButton color="red" mode="outlined" rounded="normal" :hover="true">
+      bonjour
+    </LButton>
     <LDropdown label="hover/click me" color="red" rounded margin>
       <LDropdownItem>Un item</LDropdownItem>
       <LDropdownItem>Un item 2</LDropdownItem>
       <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
     </LDropdown>
-    
 
-    <LTabs color="green" class="mt-6" card backgroun pills>
+    <LFormInput
+      label="prenom"
+      placeholder="type some text"
+      position="left"
+      color="gray"
+      mode="light"
+    ></LFormInput>
+
+    <LTabs color="blue" mode="none" class="mt-6" card background pills>
       <LTabsItem title="one">
         <div class="ok">
           <p>premier tab</p>
@@ -37,6 +33,29 @@
       <LTabsItem title="two">second</LTabsItem>
       <LTabsItem title="three">third</LTabsItem>
     </LTabs>
+    <LAlert class="" color="gray" mode="light"
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
+      non.</LAlert
+    >
+    <!--
+    <LHeading color="blue" size="4xl" mode="fill">Un test de titre</LHeading>
+    <LDivider size="xl" color="red" mode="outlined"></LDivider>
+   
+    <br />
+    <LAvatar
+      src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg"
+      alt="texte alternatif"
+      class="bg-red-500"
+    ></LAvatar>
+
+    <br />
+    <LParagraph color="red" size="lg"
+      >rfgh gh ghg h hedfe ekjej efer efg er
+    </LParagraph>
+
+
+    
+
 
     <LModal label="open modal">
       <template #header>
@@ -57,17 +76,13 @@
       />
     </LAspect>
     <LAlert color="red" mode="light"> Message d'alerte </LAlert>
- -->
-    <LAlert class="" color="red" mode="light"
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
-      non.</LAlert
-    >
-
     <LCard
       class="my-4"
       img="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg"
       aspect="16/5"
       position="left"
+      color="red"
+      mode="none"
     >
       <template #header>titre card</template>
       <template #footer>footer card</template>
@@ -79,14 +94,7 @@
         </p>
       </div>
     </LCard>
-
-    <LFormInput
-      label="prenom"
-      placeholder="type some text"
-      position="left"
-      color="gray"
-      mode="light"
-    ></LFormInput>
+ -->
 
     <!--
     <input type="text" /> <br />

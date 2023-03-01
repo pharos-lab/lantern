@@ -53,7 +53,7 @@ const color = computed(() => {
       }
 
       if (props.context == 'light') {
-        return 'hover:bg-slate-300 fill-slate-700';
+        return 'hover:bg-slate-300 fill-slate-600';
       }
     case 'red':
       if (props.context == 'outlined' || props.context == 'none') {
@@ -65,7 +65,7 @@ const color = computed(() => {
       }
 
       if (props.context == 'light') {
-        return 'hover:bg-red-300 fill-red-700';
+        return 'hover:bg-red-300 fill-red-600';
       }
     case 'orange':
       if (props.context == 'outlined' || props.context == 'none') {
@@ -77,7 +77,7 @@ const color = computed(() => {
       }
 
       if (props.context == 'light') {
-        return 'hover:bg-orange-300 fill-orange-700';
+        return 'hover:bg-orange-300 fill-orange-600';
       }
     case 'yellow':
       if (props.context == 'outlined' || props.context == 'none') {
@@ -89,7 +89,7 @@ const color = computed(() => {
       }
 
       if (props.context == 'light') {
-        return 'hover:bg-yellow-300 fill-yellow-700';
+        return 'hover:bg-yellow-300 fill-yellow-600';
       }
     case 'green':
       if (props.context == 'outlined' || props.context == 'none') {
@@ -101,7 +101,7 @@ const color = computed(() => {
       }
 
       if (props.context == 'light') {
-        return 'hover:bg-emerald-300 fill-emerald-700';
+        return 'hover:bg-emerald-300 fill-emerald-600';
       }
     case 'blue':
       if (props.context == 'outlined' || props.context == 'none') {
@@ -113,7 +113,7 @@ const color = computed(() => {
       }
 
       if (props.context == 'light') {
-        return 'hover:bg-sky-300 fill-sky-700';
+        return 'hover:bg-sky-300 fill-sky-600';
       }
   }
 });
