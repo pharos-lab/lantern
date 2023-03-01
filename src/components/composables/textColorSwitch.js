@@ -1,94 +1,64 @@
 export function useTextColorSwitch(color, mode) {
   switch (color) {
     case 'gray':
-      if (mode == 'none') {
+      if (mode == 'light') {
+        return 'text-slate-300';
+      }
+      if (mode == 'normal') {
         return 'text-slate-500';
       }
-      if (mode == 'outlined') {
-        return 'text-slate-500 border-2 border-slate-500';
-      }
-
-      if (mode == 'fill') {
-        return 'bg-slate-500 text-white';
-      }
-
-      if (mode == 'light') {
-        return 'bg-slate-200 text-slate-600';
+      if (mode == 'dark') {
+        return 'text-slate-700';
       }
     case 'red':
-      if (mode == 'none') {
+      if (mode == 'light') {
+        return 'text-red-300';
+      }
+      if (mode == 'normal') {
         return 'text-red-500';
       }
-      if (mode == 'outlined') {
-        return 'text-red-500 border-2 border-red-500';
-      }
-
-      if (mode == 'fill') {
-        return 'bg-red-500 text-white';
-      }
-
-      if (mode == 'light') {
-        return 'bg-red-200 text-red-600';
+      if (mode == 'dark') {
+        return 'text-red-700';
       }
     case 'orange':
-      if (mode == 'none') {
+      if (mode == 'light') {
+        return 'text-orange-300';
+      }
+      if (mode == 'normal') {
         return 'text-orange-500';
       }
-      if (mode == 'outlined') {
-        return 'text-orange-500 border-2 border-orange-500';
-      }
-
-      if (mode == 'fill') {
-        return 'bg-orange-500 text-white';
-      }
-
-      if (mode == 'light') {
-        return 'bg-orange-200 text-orange-600';
+      if (mode == 'dark') {
+        return 'text-orange-700';
       }
     case 'yellow':
-      if (mode == 'none') {
+      if (mode == 'light') {
+        return 'text-yellow-300';
+      }
+      if (mode == 'normal') {
         return 'text-yellow-500';
       }
-      if (mode == 'outlined') {
-        return 'text-yellow-500 border-2 border-yellow-500';
-      }
-
-      if (mode == 'fill') {
-        return 'bg-yellow-500 text-white';
-      }
-
-      if (mode == 'light') {
-        return 'bg-yellow-200 text-yellow-600';
+      if (mode == 'dark') {
+        return 'text-yellow-700';
       }
     case 'green':
-      if (mode == 'none') {
+      if (mode == 'light') {
+        return 'text-emerald-300';
+      }
+      if (mode == 'normal') {
         return 'text-emerald-500';
       }
-      if (mode == 'outlined') {
-        return 'text-emerald-500 border-2 border-emerald-500';
-      }
-
-      if (mode == 'fill') {
-        return 'bg-emerald-500 text-white';
-      }
-
-      if (mode == 'light') {
-        return 'bg-emerald-200 text-emerald-600';
+      if (mode == 'dark') {
+        return 'text-emerald-700';
       }
     case 'blue':
-      if (mode == 'none') {
+      if (mode == 'light') {
+        return 'text-sky-300';
+      }
+      if (mode == 'normal') {
         return 'text-sky-500';
       }
-      if (mode == 'outlined') {
-        return 'text-sky-500 border-2 border-sky-500';
-      }
-
-      if (mode == 'fill') {
-        return 'bg-sky-500 text-white';
-      }
-
-      if (mode == 'light') {
-        return 'bg-sky-200 text-sky-600';
+      if (mode == 'dark') {
+        return 'text-sky-700';
       }
   }
 }

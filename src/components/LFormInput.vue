@@ -1,7 +1,11 @@
 <template>
   <div class="l-input" :class="[position]">
     <slot name="label">
-      <label class="l-input-label" v-if="slots.label || props.label">
+      <label
+        class="l-input-label"
+        :class="labelColor"
+        v-if="slots.label || props.label"
+      >
         {{ props.label }}
       </label>
     </slot>
@@ -28,6 +32,7 @@ import { usePositionSwitch } from './composables/positionSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
 import { useBorderSwitch } from './composables/borderSwitch.js';
+import { useTextColorSwitch } from './composables/textColorSwitch.js';
 
 const slots = useSlots();
 
@@ -98,6 +103,10 @@ const color = computed(() => {
 
 const border = computed(() => {
   return props.border ? useBorderSwitch(props.color, props.mode) : '';
+});
+
+const labelColor = computed(() => {
+  return useTextColorSwitch(props.color, 'dark');
 });
 </script>
 
