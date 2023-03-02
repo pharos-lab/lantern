@@ -1,16 +1,25 @@
 <template>
   <div class="l-accordion-item">
     <div
-      class="l-accordion-item-label"
+      class="l-accordion-item-label cursor-pointer"
       v-if="slots.label"
       @click="show = !show"
     >
       <slot name="label"></slot>
     </div>
-    <div class="l-accordion-itel-label" v-else @click="show = !show">
+    <div
+      class="l-accordion-itel-label px-4 py-2 cursor-pointer"
+      v-else
+      @click="show = !show"
+      :class="color"
+    >
       {{ props.label }}
     </div>
-    <div class="l-accordion-item-content" v-if="show">
+    <div
+      class="l-accordion-item-content px-4 py-2"
+      v-if="show"
+      :class="contentColor"
+    >
       <slot></slot>
     </div>
   </div>
@@ -20,8 +29,8 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { computed, inject, useSlots, ref } from 'vue';
-import { useRoundedSwitch } from './composables/roundedSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
+import { useSubColorSwitch } from './composables/subColorSwitch.js';
 
 const accordionColor = inject('accordionColor');
 const accordionMode = inject('accordionMode');
@@ -49,6 +58,10 @@ const props = defineProps({
 
 const color = computed(() => {
   return useColorSwitch(accordionColor, accordionMode);
+});
+
+const contentColor = computed(() => {
+  return useSubColorSwitch(accordionColor, accordionMode);
 });
 </script>
 

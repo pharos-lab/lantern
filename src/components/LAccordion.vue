@@ -1,5 +1,5 @@
 <template>
-  <div class="l-accordion" :class="rounded">
+  <div class="l-accordion divide-y" :class="[rounded, divideColor]">
     <slot></slot>
   </div>
 </template>
@@ -10,6 +10,7 @@
 import { computed, provide } from 'vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useRoundedSwitch } from './composables/roundedSwitch.js';
+import { useDivideSwitch } from './composables/divideSwitch.js';
 
 provide('accordionColor', props.color);
 provide('accordionMode', props.mode);
@@ -41,6 +42,10 @@ const color = computed(() => {
 
 const rounded = computed(() => {
   return useRoundedSwitch('normal');
+});
+
+const divideColor = computed(() => {
+  return useDivideSwitch(props.color, props.mode);
 });
 </script>
 

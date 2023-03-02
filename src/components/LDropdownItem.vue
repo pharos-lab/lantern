@@ -6,8 +6,9 @@
 
 <script setup>
 import { computed, inject } from 'vue';
-import { useColorSwitch } from './composables/colorSwitch.js';
+import { useSubColorSwitch } from './composables/subColorSwitch.js';
 import { useHoverSwitch } from './composables/hoverSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const dropdownColor = inject('dropdownColor');
 

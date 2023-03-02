@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    <LAccordion>
+    <LAccordion color="blue" mode="fill">
       <LAccordionItem label="item 1">Contenu 1</LAccordionItem>
       <LAccordionItem label="item 2">contenu 2</LAccordionItem>
       <LAccordionItem label="item 3">contenu 3</LAccordionItem>
@@ -16,7 +16,7 @@
       bonjour
     </LButton>
 
-    <LDropdown label="hover/click me" color="red" rounded margin>
+    <LDropdown label="hover/click me" color="red" mode="light" rounded margin>
       <template #label> other label</template>
       <LDropdownItem>Un item</LDropdownItem>
       <LDropdownItem>Un item 2</LDropdownItem>
@@ -28,11 +28,11 @@
       placeholder="type some text"
       position="left"
       color="blue"
-      mode="fill"
+      mode="light"
       border
     ></LFormInput>
 
-    <LTabs color="blue" mode="none" class="mt-6" card background pills>
+    <LTabs color="blue" mode="light" class="mt-6" card background pills>
       <LTabsItem title="one">
         <div class="ok">
           <p>premier tab</p>
