@@ -1,5 +1,11 @@
 <template>
   <div class="test">
+    <LAccordion>
+      <LAccordionItem></LAccordionItem>
+      <LAccordionItem></LAccordionItem>
+      <LAccordionItem></LAccordionItem>
+    </LAccordion>
+    <br />
     <LButton color="gray" mode="light" rounded="normal" :hover="true">
       bonjour
     </LButton>
@@ -9,7 +15,9 @@
     <LButton color="gray" mode="outlined" rounded="normal" :hover="true">
       bonjour
     </LButton>
+
     <LDropdown label="hover/click me" color="red" rounded margin>
+      <template #label> other label</template>
       <LDropdownItem>Un item</LDropdownItem>
       <LDropdownItem>Un item 2</LDropdownItem>
       <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
@@ -141,6 +149,8 @@ import LModal from './components/LModal.vue';
 import LAspect from './components/LAspect.vue';
 import LCard from './components/LCard.vue';
 import LFormInput from './components/LFormInput.vue';
+import LAccordion from './components/LAccordion.vue';
+import LAccordionItem from './components/LAccordionItem.vue';
 </script>
 
 <style scoped>

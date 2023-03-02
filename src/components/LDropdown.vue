@@ -1,18 +1,27 @@
 <template>
   <div class="l-dropdown relative inline-block">
-    <slot name="label">
-      <LButton
-        hover
-        class="l-dropdown-button ease-in-out transition-all duration-500"
-        :color="props.color"
-        :class="labelClass"
-        @mouseenter="!props.click ? (showItems = true) : null"
-        @mouseleave="!props.click ? (showItems = false) : null"
-        @click="props.click ? (showItems = !showItems) : null"
-      >
-        {{ props.label ?? 'Add a label' }}
-      </LButton>
-    </slot>
+    <div
+      class="inline-block"
+      v-if="slots.label"
+      :class="colorClass"
+      @mouseenter="!props.click ? (showItems = true) : null"
+      @mouseleave="!props.click ? (showItems = false) : null"
+      @click="props.click ? (showItems = !showItems) : null"
+    >
+      <slot name="label"> </slot>
+    </div>
+    <LButton
+      v-else
+      hover
+      class="l-dropdown-button ease-in-out transition-all duration-500"
+      :color="props.color"
+      :class="labelClass"
+      @mouseenter="!props.click ? (showItems = true) : null"
+      @mouseleave="!props.click ? (showItems = false) : null"
+      @click="props.click ? (showItems = !showItems) : null"
+    >
+      {{ props.label ?? 'Add a label' }}
+    </LButton>
     <LFadeTransition>
       <div
         v-show="showItems"
@@ -31,11 +40,14 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
-import { ref, computed, provide } from 'vue';
+import { ref, computed, provide, useSlots } from 'vue';
 import LButton from './LButton.vue';
 import LFadeTransition from './LFadeTransition.vue';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 provide('dropdownColor', props.color);
+
+const slots = useSlots();
 
 const props = defineProps({
   color: {
@@ -90,6 +102,10 @@ const roundedClass = computed(() => {
 
 const placementClass = computed(() => {
   return props.right ? 'right-0' : '';
+});
+
+const colorClass = computed(() => {
+  return useColorSwitch(props.color, 'fill');
 });
 </script>
 
