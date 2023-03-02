@@ -1,9 +1,9 @@
 <template>
   <div class="test">
     <LAccordion>
-      <LAccordionItem></LAccordionItem>
-      <LAccordionItem></LAccordionItem>
-      <LAccordionItem></LAccordionItem>
+      <LAccordionItem label="item 1">Contenu 1</LAccordionItem>
+      <LAccordionItem label="item 2">contenu 2</LAccordionItem>
+      <LAccordionItem label="item 3">contenu 3</LAccordionItem>
     </LAccordion>
     <br />
     <LButton color="gray" mode="light" rounded="normal" :hover="true">
