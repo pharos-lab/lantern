@@ -10,12 +10,10 @@
       </label>
     </slot>
 
-    <input
-      :type="props.type"
-      class="l-input-content flex-grow px-4 py-2 placeholder:italic"
-      v-bind="$attrs"
-      :class="[roundedClass, colorClass, borderClass, focusClass]"
-    />
+    <LInput
+      class="flex-grow px-4 py-2 placeholder:italic"
+      v-bind="{ ...$attrs, ...props }"
+    ></LInput>
   </div>
 </template>
 
@@ -28,6 +26,7 @@ export default {
 
 <script setup>
 import { ref, computed, useSlots } from 'vue';
+import LInput from './LInput.vue';
 import { usePositionSwitch } from './composables/positionSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
@@ -38,10 +37,6 @@ const slots = useSlots();
 
 const props = defineProps({
   label: String,
-  type: {
-    type: String,
-    default: 'text',
-  },
   position: {
     type: String,
     default: 'top',

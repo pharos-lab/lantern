@@ -22,15 +22,21 @@
       <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
     </LDropdown>
 
-    <LFormInput
+    <LInputGroup
       label="prenom"
       placeholder="type some text"
       position="left"
       color="blue"
-      mode="outlined"
+      mode="fill"
       border
       focus
-    ></LFormInput>
+      v-model="message2"
+    ></LInputGroup>
+    <p>{{ message2 }}</p>
+
+    <LInput v-model="message" placeholder="text" color="red"></LInput>
+
+    <p>{{ message }}</p>
 
     <LTabs color="blue" mode="light" class="mt-6" card background pills>
       <LTabsItem title="one">
@@ -148,9 +154,14 @@ import LTabsItem from './components/LTabsItem.vue';
 import LModal from './components/LModal.vue';
 import LAspect from './components/LAspect.vue';
 import LCard from './components/LCard.vue';
-import LFormInput from './components/LFormInput.vue';
+import LInputGroup from './components/LInputGroup.vue';
+import LInput from './components/LInput.vue';
 import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
+import { ref } from 'vue';
+
+const message = ref();
+const message2 = ref();
 
 const vAutofocus = {
   mounted: (el) => el.focus(),
