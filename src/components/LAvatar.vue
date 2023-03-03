@@ -1,7 +1,7 @@
 <template>
   <div
     class="l-avatar inline-block overflow-hidden rounded-full"
-    :class="[size]"
+    :class="[sizeClass]"
   >
     <img :src="props.src" :alt="props.alt" class="min-w-full l-avatar-image" />
   </div>
@@ -33,7 +33,7 @@ const props = defineProps({
   },
 });
 
-const size = computed(() => {
+const sizeClass = computed(() => {
   switch (props.size) {
     case 'xs':
       return 'w-5 h-5';

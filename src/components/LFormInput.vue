@@ -1,5 +1,5 @@
 <template>
-  <div class="l-input" :class="[position]">
+  <div class="l-input" :class="[positionClass]">
     <slot name="label">
       <label
         class="l-input-label"
@@ -14,7 +14,7 @@
       :type="props.type"
       class="l-input-content flex-grow px-4 py-2 placeholder:italic"
       v-bind="$attrs"
-      :class="[rounded, color, border]"
+      :class="[roundedClass, colorClass, borderClass, focusClass]"
     />
   </div>
 </template>
@@ -76,9 +76,13 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  autofocus: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const position = computed(() => {
+const positionClass = computed(() => {
   switch (props.position) {
     case 'top':
       return 'flex flex-col gap-y-4';
@@ -87,21 +91,19 @@ const position = computed(() => {
   }
 });
 
-const rounded = computed(() => {
+const roundedClass = computed(() => {
   return props.noRounded ? '' : 'rounded';
 });
 
-const color = computed(() => {
-  return (
-    useColorSwitch(props.color, props.mode) +
-    ' ' +
-    (props.focus
-      ? useFocusSwitch(props.color, props.mode)
-      : 'focus:outline-none')
-  );
+const colorClass = computed(() => {
+  return useColorSwitch(props.color, props.mode);
 });
 
-const border = computed(() => {
+const focusClass = computed(() => {
+  return props.focus ? useFocusSwitch(props.color, props.mode) : '';
+});
+
+const borderClass = computed(() => {
   return props.border ? useBorderSwitch(props.color, props.mode) : '';
 });
 

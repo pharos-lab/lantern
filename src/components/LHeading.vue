@@ -2,7 +2,7 @@
   <component
     :is="tag"
     class="l-heading"
-    :class="[size, color, margin, padding]"
+    :class="[sizeClass, colorClass, marginClass, paddingClass]"
   >
     <slot></slot>
   </component>
@@ -10,7 +10,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useSizeSwitch } from './composables/sizeSwitch.js';
+import { useTextSizeSwitch } from './composables/textSizeSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
 
 const props = defineProps({
@@ -67,7 +67,7 @@ const props = defineProps({
   },
 });
 
-const color = computed(() => {
+const colorClass = computed(() => {
   return useColorSwitch(props.color, props.mode);
 });
 
@@ -75,14 +75,14 @@ const tag = computed(() => {
   return 'h' + props.level;
 });
 
-const padding = computed(() => {
+const paddingClass = computed(() => {
   return props.noPadding ? '' : 'py-2 px-4';
 });
 
-const margin = computed(() => {
+const marginClass = computed(() => {
   return props.noMargin ? '' : 'my-4';
 });
-const size = computed(() => {
+const sizeClass = computed(() => {
   return useSizeSwitch(props.size);
 });
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div
     class="l-card shadow-md"
-    :class="[color, position, props.noRounded ? '' : 'rounded-md']"
+    :class="[colorClass, positionClass, props.noRounded ? '' : 'rounded-md']"
   >
     <LAspect
       :aspect="aspect"
@@ -16,7 +16,7 @@
       />
     </LAspect>
 
-    <div class="l-card-content flex-grow" :class="contentSize">
+    <div class="l-card-content flex-grow" :class="contentSizeClass">
       <div class="l-card-header">
         <slot name="header"></slot>
       </div>
@@ -78,18 +78,18 @@ const props = defineProps({
   },
 });
 
-const contentSize = computed(() => {
+const contentSizeClass = computed(() => {
   if (props.size) {
     let res = props.size.match(/w-(\d)\/(\d)/);
     return `w-${res[2] - res[1]}/${res[2]}`;
   }
 });
 
-const color = computed(() => {
+const colorClass = computed(() => {
   return useColorSwitch(props.color, props.mode);
 });
 
-const position = computed(() => {
+const positionClass = computed(() => {
   return usePositionSwitch(props.position);
 });
 

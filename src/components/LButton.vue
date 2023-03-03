@@ -58,7 +58,7 @@ const roundedClass = computed(() => {
 });
 
 const focusClass = computed(() => {
-  return useFocusSwitch(props.color, props.mode);
+  return props.focus ? useFocusSwitch(props.color, props.mode) : '';
 });
 </script>
 

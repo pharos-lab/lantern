@@ -1,12 +1,15 @@
 <template>
-  <p class="l-paragraph" :class="[color, padding, margin, size]">
+  <p
+    class="l-paragraph"
+    :class="[colorClass, paddingClass, marginClass, sizeClass]"
+  >
     <slot></slot>
   </p>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
-import { useSizeSwitch } from './composables/sizeSwitch.js';
+import { useTextSizeSwitch } from './composables/textSizeSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
 
 const props = defineProps({
@@ -60,19 +63,19 @@ const props = defineProps({
   },
 });
 
-const color = computed(() => {
+const colorClass = computed(() => {
   return useColorSwitch(props.color, props.mode);
 });
 
-const margin = computed(() => {
+const marginClass = computed(() => {
   return props.noMargin ? '' : 'my-4';
 });
 
-const padding = computed(() => {
+const paddingClass = computed(() => {
   return props.noPadding ? '' : 'px-4 py-2';
 });
 
-const size = computed(() => {
+const sizeClass = computed(() => {
   return useSizeSwitch(props.size);
 });
 </script>

@@ -11,14 +11,14 @@
       class="l-accordion-itel-label px-4 py-2 cursor-pointer"
       v-else
       @click="show = !show"
-      :class="color"
+      :class="colorClass"
     >
       {{ props.label }}
     </div>
     <div
       class="l-accordion-item-content px-4 py-2"
       v-if="show"
-      :class="contentColor"
+      :class="contentColorClass"
     >
       <slot></slot>
     </div>
@@ -56,11 +56,11 @@ const props = defineProps({
   label: String,
 });
 
-const color = computed(() => {
+const colorClass = computed(() => {
   return useColorSwitch(accordionColor, accordionMode);
 });
 
-const contentColor = computed(() => {
+const contentColorClass = computed(() => {
   return useSubColorSwitch(accordionColor, accordionMode);
 });
 </script>

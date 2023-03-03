@@ -1,5 +1,5 @@
 <template>
-  <div :class="[size, color]" class="l-divider"></div>
+  <div :class="[sizeClass, colorClass]" class="l-divider"></div>
 </template>
 
 <script setup>
@@ -34,7 +34,7 @@ const props = defineProps({
   },
 });
 
-const size = computed(() => {
+const sizeClass = computed(() => {
   switch (props.size) {
     case 'xs':
       return 'h-px';
@@ -63,7 +63,7 @@ const size = computed(() => {
   }
 });
 
-const color = computed(() => {
+const colorClass = computed(() => {
   return props.color ? useColorSwitch(props.color, props.mode) : 'bg-slate-800';
 });
 </script>

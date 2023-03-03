@@ -16,8 +16,7 @@
       bonjour
     </LButton>
 
-    <LDropdown label="hover/click me" color="red" mode="light" rounded margin>
-      <template #label> other label</template>
+    <LDropdown label="hover/click me" color="green" mode="light" rounded margin>
       <LDropdownItem>Un item</LDropdownItem>
       <LDropdownItem>Un item 2</LDropdownItem>
       <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
@@ -28,8 +27,9 @@
       placeholder="type some text"
       position="left"
       color="blue"
-      mode="light"
+      mode="outlined"
       border
+      focus
     ></LFormInput>
 
     <LTabs color="blue" mode="light" class="mt-6" card background pills>
@@ -151,6 +151,10 @@ import LCard from './components/LCard.vue';
 import LFormInput from './components/LFormInput.vue';
 import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
+
+const vAutofocus = {
+  mounted: (el) => el.focus(),
+};
 </script>
 
 <style scoped>

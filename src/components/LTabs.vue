@@ -1,6 +1,6 @@
 <template>
   <div class="l-tabs rounded overflow-hidden" :class="wrapperClass">
-    <ul class="flex px-4 l-tabs-labels" :class="[labelClass, border]">
+    <ul class="flex px-4 l-tabs-labels" :class="[labelClass, borderClass]">
       <li
         v-for="title in tabTitles"
         :key="title"
@@ -12,7 +12,7 @@
       </li>
     </ul>
 
-    <div class="l-tabs-items p-4 relative" :class="contentColor">
+    <div class="l-tabs-items p-4 relative" :class="contentColorClass">
       <slot></slot>
     </div>
   </div>
@@ -29,7 +29,7 @@ const tabTitles = ref([]);
 const selected = ref();
 const activeClass = ref();
 const labelClass = ref();
-const contentColor = ref();
+const contentColorClass = ref();
 
 const props = defineProps({
   color: {
@@ -75,7 +75,7 @@ onMounted(() => {
 
 const colorClass = computed(() => {
   activeClass.value = useColorSwitch(props.color, 'fill');
-  contentColor.value = useColorSwitch(props.color, props.mode);
+  contentColorClass.value = useColorSwitch(props.color, props.mode);
 
   switch (props.color) {
     case 'gray':
@@ -118,7 +118,7 @@ const roundedClass = computed(() => {
 const wrapperClass = computed(() => {
   return props.card ? 'border shadow-md' : '';
 });
-const border = computed(() => {
+const borderClass = computed(() => {
   return props.mode == 'outlined' ? 'border-0' : 'border-b-2';
 });
 </script>

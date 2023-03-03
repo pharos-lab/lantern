@@ -1,5 +1,5 @@
 <template>
-  <div class="l-accordion divide-y" :class="[rounded, divideColor]">
+  <div class="l-accordion divide-y" :class="[roundedClass, divideColorClass]">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,6 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { computed, provide } from 'vue';
-import { useColorSwitch } from './composables/colorSwitch.js';
 import { useRoundedSwitch } from './composables/roundedSwitch.js';
 import { useDivideSwitch } from './composables/divideSwitch.js';
 
@@ -36,15 +35,11 @@ const props = defineProps({
   },
 });
 
-const color = computed(() => {
-  return useColorSwitch(props.color, props.mode);
-});
-
-const rounded = computed(() => {
+const roundedClass = computed(() => {
   return useRoundedSwitch('normal');
 });
 
-const divideColor = computed(() => {
+const divideColorClass = computed(() => {
   return useDivideSwitch(props.color, props.mode);
 });
 </script>

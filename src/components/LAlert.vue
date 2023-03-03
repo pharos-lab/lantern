@@ -2,11 +2,11 @@
   <LFadeTransition>
     <div
       v-show="open"
-      :class="[color, rounded]"
+      :class="[colorClass, roundedClass]"
       class="l-alert p-4 font-semibold shadow-md relative"
     >
       <LClose
-        class="absolute right-4 top-4 w-5 h-5"
+        class="float-right w-5 h-5"
         v-if="props.dismissable"
         @click="open = false"
         :color="props.color"
@@ -60,11 +60,11 @@ const props = defineProps({
   },
 });
 
-const color = computed(() => {
+const colorClass = computed(() => {
   return useColorSwitch(props.color, props.mode);
 });
 
-const rounded = computed(() => {
+const roundedClass = computed(() => {
   return useRoundedSwitch(props.rounded);
 });
 </script>

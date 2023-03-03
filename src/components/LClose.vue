@@ -1,7 +1,7 @@
 <template>
   <div
     class="l-close p-1 flex justify-center items-center rounded"
-    :class="color"
+    :class="colorClass"
   >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
       <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -41,7 +41,7 @@ const props = defineProps({
 
 const hover = ref();
 
-const color = computed(() => {
+const colorClass = computed(() => {
   switch (props.color) {
     case 'gray':
       if (props.context == 'outlined' || props.context == 'none') {
