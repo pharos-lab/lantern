@@ -12,6 +12,7 @@ export function useBorderSwitch(color, mode) {
       if (mode == 'light') {
         return 'border border-slate-300';
       }
+      break;
     case 'red':
       if (mode == 'outlined') {
         return 'border border-red-500';
@@ -24,6 +25,7 @@ export function useBorderSwitch(color, mode) {
       if (mode == 'light') {
         return 'border border-red-300';
       }
+      break;
     case 'orange':
       if (mode == 'outlined') {
         return 'border border-orange-500';
@@ -36,6 +38,7 @@ export function useBorderSwitch(color, mode) {
       if (mode == 'light') {
         return 'border border-orange-300';
       }
+      break;
     case 'yellow':
       if (mode == 'outlined') {
         return 'border border-yellow-500';
@@ -48,6 +51,7 @@ export function useBorderSwitch(color, mode) {
       if (mode == 'light') {
         return 'border border-yellow-300';
       }
+      break;
     case 'green':
       if (mode == 'outlined') {
         return 'border border-emerald-500';
@@ -60,6 +64,7 @@ export function useBorderSwitch(color, mode) {
       if (mode == 'light') {
         return 'border border-emerald-300';
       }
+      break;
     case 'blue':
       if (mode == 'outlined') {
         return 'border border-sky-500';
@@ -72,5 +77,6 @@ export function useBorderSwitch(color, mode) {
       if (mode == 'light') {
         return 'border border-sky-300';
       }
+      break;
   }
 }

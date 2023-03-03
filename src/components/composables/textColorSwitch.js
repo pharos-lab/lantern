@@ -10,6 +10,7 @@ export function useTextColorSwitch(color, mode) {
       if (mode == 'dark') {
         return 'text-slate-700';
       }
+      break;
     case 'red':
       if (mode == 'light') {
         return 'text-red-300';
@@ -20,6 +21,7 @@ export function useTextColorSwitch(color, mode) {
       if (mode == 'dark') {
         return 'text-red-700';
       }
+      break;
     case 'orange':
       if (mode == 'light') {
         return 'text-orange-300';
@@ -30,6 +32,7 @@ export function useTextColorSwitch(color, mode) {
       if (mode == 'dark') {
         return 'text-orange-700';
       }
+      break;
     case 'yellow':
       if (mode == 'light') {
         return 'text-yellow-300';
@@ -40,6 +43,7 @@ export function useTextColorSwitch(color, mode) {
       if (mode == 'dark') {
         return 'text-yellow-700';
       }
+      break;
     case 'green':
       if (mode == 'light') {
         return 'text-emerald-300';
@@ -50,6 +54,7 @@ export function useTextColorSwitch(color, mode) {
       if (mode == 'dark') {
         return 'text-emerald-700';
       }
+      break;
     case 'blue':
       if (mode == 'light') {
         return 'text-sky-300';
@@ -60,5 +65,6 @@ export function useTextColorSwitch(color, mode) {
       if (mode == 'dark') {
         return 'text-sky-700';
       }
+      break;
   }
 }

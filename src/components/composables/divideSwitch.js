@@ -15,6 +15,7 @@ export function useDivideSwitch(color, mode) {
       if (mode == 'light') {
         return 'divide-slate-200';
       }
+      break;
     case 'red':
       if (mode == 'none') {
         return 'divide-red-500';
@@ -30,6 +31,7 @@ export function useDivideSwitch(color, mode) {
       if (mode == 'light') {
         return 'divide-red-200';
       }
+      break;
     case 'orange':
       if (mode == 'none') {
         return 'divide-orange-500';
@@ -45,6 +47,7 @@ export function useDivideSwitch(color, mode) {
       if (mode == 'light') {
         return 'divide-orange-200';
       }
+      break;
     case 'yellow':
       if (mode == 'none') {
         return 'divide-yellow-500';
@@ -60,6 +63,7 @@ export function useDivideSwitch(color, mode) {
       if (mode == 'light') {
         return 'divide-yellow-200';
       }
+      break;
     case 'green':
       if (mode == 'none') {
         return 'divide-emerald-500';
@@ -75,6 +79,7 @@ export function useDivideSwitch(color, mode) {
       if (mode == 'light') {
         return 'divide-emerald-200';
       }
+      break;
     case 'blue':
       if (mode == 'none') {
         return 'divide-sky-500';
@@ -90,5 +95,6 @@ export function useDivideSwitch(color, mode) {
       if (mode == 'light') {
         return 'divide-sky-200';
       }
+      break;
   }
 }

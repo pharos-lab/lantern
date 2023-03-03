@@ -10,10 +10,7 @@
       </label>
     </slot>
 
-    <LInput
-      class="flex-grow px-4 py-2 placeholder:italic"
-      v-bind="{ ...$attrs, ...props }"
-    ></LInput>
+    <LInput class="flex-grow" v-bind="{ ...$attrs, ...props }"></LInput>
   </div>
 </template>
 

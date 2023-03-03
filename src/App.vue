@@ -26,8 +26,8 @@
       label="prenom"
       placeholder="type some text"
       position="left"
-      color="blue"
-      mode="fill"
+      color="gray"
+      mode="light"
       border
       focus
       v-model="message2"

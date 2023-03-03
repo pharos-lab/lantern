@@ -1,7 +1,13 @@
 <template>
   <input
     class="l-input flex-grow px-4 py-2 placeholder:italic"
-    :class="[roundedClass, colorClass, borderClass, focusClass]"
+    :class="[
+      roundedClass,
+      colorClass,
+      borderClass,
+      focusClass,
+      placeholderClass,
+    ]"
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
   />
@@ -16,6 +22,7 @@ import { ref, computed, useSlots } from 'vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
 import { useBorderSwitch } from './composables/borderSwitch.js';
+import { usePlaceholderSwitch } from './composables/placeholderSwitch.js';
 
 const slots = useSlots();
 
@@ -72,6 +79,10 @@ const focusClass = computed(() => {
 
 const borderClass = computed(() => {
   return props.border ? useBorderSwitch(props.color, props.mode) : '';
+});
+
+const placeholderClass = computed(() => {
+  return usePlaceholderSwitch(props.color, props.mode);
 });
 </script>
 

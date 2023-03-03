@@ -12,6 +12,7 @@ export function useHoverSwitch(color, mode) {
       if (mode == 'light') {
         return 'hover:bg-slate-200 text-slate-700';
       }
+      break;
     case 'red':
       if (mode == 'outlined') {
         return 'hover:bg-red-500 hover:text-white';
@@ -24,6 +25,7 @@ export function useHoverSwitch(color, mode) {
       if (mode == 'light') {
         return 'hover:bg-red-200 text-red-700';
       }
+      break;
     case 'orange':
       if (mode == 'outlined') {
         return 'hover:bg-orange-500 hover:text-white';
@@ -36,6 +38,7 @@ export function useHoverSwitch(color, mode) {
       if (mode == 'light') {
         return 'hover:bg-orange-200 text-orange-700';
       }
+      break;
     case 'yellow':
       if (mode == 'outlined') {
         return 'hover:bg-yellow-500 hover:text-white';
@@ -48,6 +51,7 @@ export function useHoverSwitch(color, mode) {
       if (mode == 'light') {
         return 'hover:bg-yellow-200 text-yellow-700';
       }
+      break;
     case 'green':
       if (mode == 'outlined') {
         return 'hover:bg-emerald-500 hover:text-white';
@@ -60,6 +64,7 @@ export function useHoverSwitch(color, mode) {
       if (mode == 'light') {
         return 'hover:bg-emerald-200 text-emerald-700';
       }
+      break;
     case 'blue':
       if (mode == 'outlined') {
         return 'hover:bg-sky-500 hover:text-white';
@@ -72,5 +77,6 @@ export function useHoverSwitch(color, mode) {
       if (mode == 'light') {
         return 'hover:bg-sky-200 text-sky-700';
       }
+      break;
   }
 }
