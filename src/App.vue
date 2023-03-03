@@ -34,7 +34,7 @@
     ></LInputGroup>
     <p>{{ message2 }}</p>
 
-    <LInput v-model="message" placeholder="text" color="red"></LInput>
+    <LInput v-model="message" placeholder="text" color="red" focus></LInput>
 
     <p>{{ message }}</p>
 
