@@ -5,22 +5,6 @@
       <LAccordionItem label="item 2">contenu 2</LAccordionItem>
       <LAccordionItem label="item 3">contenu 3</LAccordionItem>
     </LAccordion>
-    <br />
-    <LButton color="gray" mode="light" rounded="normal" :hover="true">
-      bonjour
-    </LButton>
-    <LButton color="gray" mode="fill" rounded="normal" :hover="true">
-      bonjour
-    </LButton>
-    <LButton color="gray" mode="outlined" rounded="normal" :hover="true">
-      bonjour
-    </LButton>
-
-    <LDropdown label="hover/click me" color="green" mode="light" rounded margin>
-      <LDropdownItem>Un item</LDropdownItem>
-      <LDropdownItem>Un item 2</LDropdownItem>
-      <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
-    </LDropdown>
 
     <LInputGroup
       label="prenom"
@@ -35,107 +19,11 @@
     <p>{{ message2 }}</p>
 
     <LInput v-model="message" placeholder="text" color="red" focus></LInput>
-
     <p>{{ message }}</p>
 
-    <LTabs color="blue" mode="light" class="mt-6" card background pills>
-      <LTabsItem title="one">
-        <div class="ok">
-          <p>premier tab</p>
-          <p>fonctionne</p>
-        </div>
-      </LTabsItem>
-      <LTabsItem title="two">second</LTabsItem>
-      <LTabsItem title="three">third</LTabsItem>
-    </LTabs>
-    <LAlert class="" color="gray" mode="light"
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
-      non.</LAlert
-    >
-    <!--
-    <LHeading color="blue" size="4xl" mode="fill">Un test de titre</LHeading>
-    <LDivider size="xl" color="red" mode="outlined"></LDivider>
-   
-    <br />
-    <LAvatar
-      src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg"
-      alt="texte alternatif"
-      class="bg-red-500"
-    ></LAvatar>
+    <LCheckbox v-model="checked" color="red" focus></LCheckbox>
 
-    <br />
-    <LParagraph color="red" size="lg"
-      >rfgh gh ghg h hedfe ekjej efer efg er
-    </LParagraph>
-
-
-    
-
-
-    <LModal label="open modal">
-      <template #header>
-        <h1>titre du modal</h1>
-      </template>
-
-      <template #footer>
-        <h1>titre du modal</h1>
-      </template>
-      goooooood!
-    </LModal>
-
-    <LAspect aspect="16/9">
-      <img
-        src="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg"
-        alt="encore un text alt"
-        class="bg-red-500"
-      />
-    </LAspect>
-    <LAlert color="red" mode="light"> Message d'alerte </LAlert>
-    <LCard
-      class="my-4"
-      img="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg"
-      aspect="16/5"
-      position="left"
-      color="red"
-      mode="none"
-    >
-      <template #header>titre card</template>
-      <template #footer>footer card</template>
-
-      <div class="content">
-        <p>
-          ok contenu Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Odit, accusantium.
-        </p>
-      </div>
-    </LCard>
- -->
-
-    <!--
-    <input type="text" /> <br />
-    <input type="password" /> <br />
-    <input type="date" /> <br />
-    <input type="checkbox" /> <br />
-    <input type="radio" /> <br />
-    <input type="color" /> <br />
-    <input type="email" /> <br />
-    <input type="file" /> <br />
-    <input type="range" /> <br />
-    <input type="number" /> <br />
-    <input type="tel" /> <br />
-    <select id="cars" name="cars">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="fiat">Fiat</option>
-      <option value="audi">Audi</option>
-    </select>
-    <br />
-
-    <textarea name="message" rows="10" cols="30">
-The cat was playing in the garden.
-</textarea
-    >
-    <br />-->
+    <p>{{ checked }}</p>
   </div>
 </template>
 
@@ -156,12 +44,14 @@ import LAspect from './components/LAspect.vue';
 import LCard from './components/LCard.vue';
 import LInputGroup from './components/LInputGroup.vue';
 import LInput from './components/LInput.vue';
+import LCheckbox from './components/LCheckbox.vue';
 import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
 import { ref } from 'vue';
 
 const message = ref();
 const message2 = ref();
+const checked = ref();
 
 const vAutofocus = {
   mounted: (el) => el.focus(),
