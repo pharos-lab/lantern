@@ -1,6 +1,6 @@
 <template>
   <input
-    class="l-checkbox px-4 py-2"
+    class="l-checkbox"
     :class="[
       roundedClass,
       colorClass,
@@ -51,13 +51,9 @@ const props = defineProps({
   },
   border: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   focus: {
-    type: Boolean,
-    default: false,
-  },
-  autofocus: {
     type: Boolean,
     default: false,
   },

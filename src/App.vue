@@ -49,7 +49,13 @@
     ></LInput>
     <p>{{ message }}</p>
 
-    <LCheckbox v-model="checked" color="orange" focus></LCheckbox>
+    <LCheckbox
+      class="w-8 h-8 border-2"
+      v-model="checked"
+      color="orange"
+      mode="light"
+      no-rounded
+    ></LCheckbox>
 
     <p>{{ checked }}</p>
   </div>

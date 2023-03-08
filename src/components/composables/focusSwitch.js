@@ -10,7 +10,7 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return `focus:outline-none focus:ring focus:ring-gray-300 focus:border-slate-400`;
+        return `focus:outline-none focus:ring focus:ring-gray-300`;
       }
       break;
     case 'red':
@@ -23,7 +23,7 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return `focus:outline-none focus:ring focus:ring-red-300  focus:border-red-400`;
+        return `focus:outline-none focus:ring focus:ring-red-300`;
       }
       break;
     case 'orange':
@@ -36,7 +36,7 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return `focus:outline-none focus:ring focus:ring-orange-300  focus:border-orange-400`;
+        return `focus:outline-none focus:ring focus:ring-orange-300`;
       }
       break;
     case 'yellow':
@@ -49,7 +49,7 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return `focus:outline-none focus:ring focus:ring-yellow-300  focus:border-yellow-400`;
+        return `focus:outline-none focus:ring focus:ring-yellow-300`;
       }
       break;
 
@@ -63,7 +63,7 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return `focus:outline-none focus:ring focus:ring-emerald-300  focus:border-emerald-400`;
+        return `focus:outline-none focus:ring focus:ring-emerald-300`;
       }
       break;
     case 'blue':
@@ -76,7 +76,7 @@ export function useFocusSwitch(color, mode) {
       }
 
       if (mode == 'light') {
-        return `focus:outline-none focus:ring focus:ring-sky-300  focus:border-sky-400`;
+        return `focus:outline-none focus:ring focus:ring-sky-300`;
       }
       break;
   }
