@@ -43,6 +43,7 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  focus: String,
 });
 
 const colorClass = computed(() => {
@@ -58,7 +59,11 @@ const roundedClass = computed(() => {
 });
 
 const focusClass = computed(() => {
-  return props.focus ? useFocusSwitch(props.color, props.mode) : '';
+  return props.focus
+    ? useFocusSwitch(props.focus, props.mode)
+    : props.focus == ''
+    ? useFocusSwitch(props.color, props.mode)
+    : 'focus:outline-none';
 });
 </script>
 

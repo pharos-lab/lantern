@@ -6,22 +6,50 @@
       <LAccordionItem label="item 3">contenu 3</LAccordionItem>
     </LAccordion>
 
-    <LInputGroup
-      label="prenom"
-      placeholder="type some text"
-      position="left"
-      color="gray"
-      mode="light"
+    <LButton class="my-4" color="orange" rounded="normal" focus
+      >click me
+    </LButton>
+    <LButton class="my-4" color="orange" rounded="normal" focus mode="light"
+      >click me
+    </LButton>
+    <LButton class="my-4" color="orange" rounded="normal" focus mode="outlined"
+      >click me
+    </LButton>
+
+    <br />
+
+    <LInput
+      class="my-2"
+      mode="fill"
+      v-model="message"
+      placeholder="text"
+      color="orange"
       border
       focus
-      v-model="message2"
-    ></LInputGroup>
-    <p>{{ message2 }}</p>
+    ></LInput>
 
-    <LInput v-model="message" placeholder="text" color="red" focus></LInput>
+    <LInput
+      class="my-2"
+      mode="light"
+      v-model="message"
+      placeholder="text"
+      color="orange"
+      focus
+      border
+    ></LInput>
+
+    <LInput
+      class="my-2"
+      mode="outlined"
+      v-model="message"
+      placeholder="text"
+      color="orange"
+      focus
+      border
+    ></LInput>
     <p>{{ message }}</p>
 
-    <LCheckbox v-model="checked" color="red" focus></LCheckbox>
+    <LCheckbox v-model="checked" color="orange" focus></LCheckbox>
 
     <p>{{ checked }}</p>
   </div>

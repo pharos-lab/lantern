@@ -54,12 +54,7 @@ const props = defineProps({
     default: false,
   },
   focus: {
-    type: Boolean,
-    default: false,
-  },
-  autofocus: {
-    type: Boolean,
-    default: false,
+    type: String,
   },
 });
 
@@ -73,7 +68,9 @@ const colorClass = computed(() => {
 
 const focusClass = computed(() => {
   return props.focus
-    ? useFocusSwitch(props.color, props.mode, props.border)
+    ? useFocusSwitch(props.focus, props.mode)
+    : props.focus == ''
+    ? useFocusSwitch(props.color, props.mode)
     : 'focus:outline-none';
 });
 
