@@ -50,10 +50,10 @@
     <p>{{ message }}</p>
 
     <LCheckbox
-      class="w-8 h-8 border-2"
+      class="w-8 h-8"
       v-model="checked"
-      color="orange"
-      mode="light"
+      color="gray"
+      mode="outlined"
       no-rounded
     ></LCheckbox>
 

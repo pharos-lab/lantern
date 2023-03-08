@@ -1,13 +1,7 @@
 <template>
   <input
-    class="l-checkbox"
-    :class="[
-      roundedClass,
-      colorClass,
-      borderClass,
-      focusClass,
-      placeholderClass,
-    ]"
+    class="l-checkbox appearance-none"
+    :class="[roundedClass, colorClass, borderClass, focusClass, checkedClass]"
     type="checkbox"
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
@@ -19,12 +13,11 @@
 </script>
 
 <script setup>
-import { ref, computed, useSlots } from 'vue';
+import { ref, computed } from 'vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
 import { useBorderSwitch } from './composables/borderSwitch.js';
-
-const slots = useSlots();
+import { useCheckedSwitch } from './composables/checkedSwitch.js';
 
 defineEmits(['update:modelValue']);
 
@@ -43,7 +36,7 @@ const props = defineProps({
   },
   mode: {
     type: String,
-    default: 'fill',
+    default: 'outlined',
     validator(value) {
       // The value must match one of these strings
       return ['none', 'fill', 'light', 'outlined'].includes(value);
@@ -76,6 +69,28 @@ const focusClass = computed(() => {
 const borderClass = computed(() => {
   return props.border ? useBorderSwitch(props.color, props.mode) : '';
 });
+
+const checkedClass = computed(() => {
+  return useCheckedSwitch(props.color, props.mode);
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+.l-checkbox {
+  display: grid;
+  place-content: center;
+}
+
+.l-checkbox::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 1000ms transform ease-in-out;
+  box-shadow: inset 1em 1em;
+}
+
+.l-checkbox:checked::before {
+  transform: scale(1);
+}
+</style>
