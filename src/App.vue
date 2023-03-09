@@ -52,9 +52,10 @@
     <LCheckbox
       class="w-8 h-8"
       v-model="checked"
-      color="gray"
-      mode="outlined"
+      color="blue"
+      mode="fill"
       no-rounded
+      border
     ></LCheckbox>
 
     <p>{{ checked }}</p>

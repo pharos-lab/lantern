@@ -44,11 +44,14 @@ const props = defineProps({
   },
   border: {
     type: Boolean,
-    default: true,
+    default: false,
   },
   focus: {
+    type: String,
+  },
+  hover: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 });
 
@@ -62,7 +65,9 @@ const colorClass = computed(() => {
 
 const focusClass = computed(() => {
   return props.focus
-    ? useFocusSwitch(props.color, props.mode, props.border)
+    ? useFocusSwitch(props.focus, props.mode)
+    : props.focus == ''
+    ? useFocusSwitch(props.color, props.mode)
     : 'focus:outline-none';
 });
 
@@ -71,26 +76,12 @@ const borderClass = computed(() => {
 });
 
 const checkedClass = computed(() => {
-  return useCheckedSwitch(props.color, props.mode);
+  return useCheckedSwitch(props.color, props.mode, true);
 });
 </script>
 
 <style scoped>
 .l-checkbox {
-  display: grid;
-  place-content: center;
-}
-
-.l-checkbox::before {
-  content: '';
-  width: 0.65em;
-  height: 0.65em;
-  transform: scale(0);
-  transition: 1000ms transform ease-in-out;
-  box-shadow: inset 1em 1em;
-}
-
-.l-checkbox:checked::before {
-  transform: scale(1);
+  transition: background-color 0.3s ease-in;
 }
 </style>
