@@ -5,6 +5,7 @@
       roundedClass,
       colorClass,
       borderColorClass,
+      borderSizeClass,
       focusClass,
       checkedClass,
     ]"
@@ -78,6 +79,10 @@ const focusClass = computed(() => {
 
 const borderColorClass = computed(() => {
   return props.border ? useBorderColorSwitch(props.color, props.mode) : '';
+});
+
+const borderSizeClass = computed(() => {
+  return useBorderSizeSwitch(props.border);
 });
 
 const checkedClass = computed(() => {
