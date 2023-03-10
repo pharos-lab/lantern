@@ -4,7 +4,7 @@
     :class="[
       roundedClass,
       colorClass,
-      borderClass,
+      borderColorClass,
       focusClass,
       placeholderClass,
     ]"
@@ -74,8 +74,8 @@ const focusClass = computed(() => {
     : 'focus:outline-none';
 });
 
-const borderClass = computed(() => {
-  return props.border ? useBorderSwitch(props.color, props.mode) : '';
+const borderColorClass = computed(() => {
+  return props.border ? useBorderColorSwitch(props.color, props.mode) : '';
 });
 
 const placeholderClass = computed(() => {

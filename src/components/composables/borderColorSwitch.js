@@ -1,4 +1,4 @@
-export function useBorderSwitch(color, mode) {
+export function useBorderColorSwitch(color, mode) {
   switch (color) {
     case 'gray':
       if (mode == 'outlined') {

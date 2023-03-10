@@ -1,7 +1,13 @@
 <template>
   <input
     class="l-checkbox appearance-none"
-    :class="[roundedClass, colorClass, borderClass, focusClass, checkedClass]"
+    :class="[
+      roundedClass,
+      colorClass,
+      borderColorClass,
+      focusClass,
+      checkedClass,
+    ]"
     type="checkbox"
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
@@ -16,7 +22,7 @@
 import { ref, computed } from 'vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
-import { useBorderSwitch } from './composables/borderSwitch.js';
+import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
 import { useCheckedSwitch } from './composables/checkedSwitch.js';
 
 defineEmits(['update:modelValue']);
@@ -71,8 +77,8 @@ const focusClass = computed(() => {
     : 'focus:outline-none';
 });
 
-const borderClass = computed(() => {
-  return props.border ? useBorderSwitch(props.color, props.mode) : '';
+const borderColorClass = computed(() => {
+  return props.border ? useBorderColorSwitch(props.color, props.mode) : '';
 });
 
 const checkedClass = computed(() => {

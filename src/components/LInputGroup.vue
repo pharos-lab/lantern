@@ -25,9 +25,6 @@ export default {
 import { ref, computed, useSlots } from 'vue';
 import LInput from './LInput.vue';
 import { usePositionSwitch } from './composables/positionSwitch.js';
-import { useColorSwitch } from './composables/colorSwitch.js';
-import { useFocusSwitch } from './composables/focusSwitch.js';
-import { useBorderSwitch } from './composables/borderSwitch.js';
 import { useTextColorSwitch } from './composables/textColorSwitch.js';
 
 const slots = useSlots();
@@ -81,22 +78,6 @@ const positionClass = computed(() => {
     case 'left':
       return 'flex items-center gap-x-4';
   }
-});
-
-const roundedClass = computed(() => {
-  return props.noRounded ? '' : 'rounded';
-});
-
-const colorClass = computed(() => {
-  return useColorSwitch(props.color, props.mode);
-});
-
-const focusClass = computed(() => {
-  return props.focus ? useFocusSwitch(props.color, props.mode) : '';
-});
-
-const borderClass = computed(() => {
-  return props.border ? useBorderSwitch(props.color, props.mode) : '';
 });
 
 const labelColor = computed(() => {
