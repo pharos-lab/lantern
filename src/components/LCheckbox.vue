@@ -24,6 +24,7 @@ import { ref, computed } from 'vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
 import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
+import { useBorderSizeSwitch } from './composables/borderSizeSwitch.js';
 import { useCheckedSwitch } from './composables/checkedSwitch.js';
 
 defineEmits(['update:modelValue']);
@@ -78,7 +79,9 @@ const focusClass = computed(() => {
 });
 
 const borderColorClass = computed(() => {
-  return props.border ? useBorderColorSwitch(props.color, props.mode) : '';
+  return props.border == undefined
+    ? ''
+    : useBorderColorSwitch(props.color, props.mode);
 });
 
 const borderSizeClass = computed(() => {

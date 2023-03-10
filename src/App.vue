@@ -24,7 +24,7 @@
       v-model="message"
       placeholder="text"
       color="orange"
-      border
+      border="border-8"
       focus
     ></LInput>
 

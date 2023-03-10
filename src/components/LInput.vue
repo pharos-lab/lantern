@@ -76,7 +76,6 @@ const focusClass = computed(() => {
 });
 
 const borderColorClass = computed(() => {
-  console.log(props.border);
   return props.border == undefined
     ? ''
     : useBorderColorSwitch(props.color, props.mode);
