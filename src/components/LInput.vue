@@ -5,6 +5,7 @@
       roundedClass,
       colorClass,
       borderColorClass,
+      borderSizeClass,
       focusClass,
       placeholderClass,
     ]"
@@ -21,7 +22,8 @@
 import { ref, computed, useSlots } from 'vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
-import { useBorderSwitch } from './composables/borderSwitch.js';
+import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
+import { useBorderSizeSwitch } from './composables/borderSizeSwitch.js';
 import { usePlaceholderSwitch } from './composables/placeholderSwitch.js';
 
 const slots = useSlots();
@@ -50,8 +52,7 @@ const props = defineProps({
     },
   },
   border: {
-    type: Boolean,
-    default: false,
+    type: String,
   },
   focus: {
     type: String,
@@ -75,7 +76,14 @@ const focusClass = computed(() => {
 });
 
 const borderColorClass = computed(() => {
-  return props.border ? useBorderColorSwitch(props.color, props.mode) : '';
+  console.log(props.border);
+  return props.border == undefined
+    ? ''
+    : useBorderColorSwitch(props.color, props.mode);
+});
+
+const borderSizeClass = computed(() => {
+  return useBorderSizeSwitch(props.border);
 });
 
 const placeholderClass = computed(() => {

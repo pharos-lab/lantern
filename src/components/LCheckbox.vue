@@ -49,8 +49,7 @@ const props = defineProps({
     },
   },
   border: {
-    type: Boolean,
-    default: false,
+    type: String,
   },
   focus: {
     type: String,
