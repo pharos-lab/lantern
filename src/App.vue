@@ -18,46 +18,21 @@
 
     <br />
 
-    <LInput
-      class="my-2"
-      mode="fill"
-      v-model="message"
-      placeholder="text"
-      color="orange"
-      border="border-8"
-      focus
-    ></LInput>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur
+      <LTooltip tooltip="it works !">adipisicing </LTooltip> elit. Velit, sed!
+    </p>
 
-    <LInput
-      class="my-2"
-      mode="light"
-      v-model="message"
-      placeholder="text"
-      color="orange"
-      focus
-      border
-    ></LInput>
-
-    <LInput
-      class="my-2"
-      mode="outlined"
-      v-model="message"
-      placeholder="text"
-      color="orange"
-      focus
-      border
-    ></LInput>
-    <p>{{ message }}</p>
-
-    <form action="">
-      <LCheckbox
-        class="w-8 h-8"
-        v-model="checked"
-        color="blue"
-        mode="fill"
-      ></LCheckbox>
-    </form>
-    <p>{{ checked }}</p>
+    <p class="my-4">
+      Lorem ipsum dolor sit, amet consectetur
+      <LTooltip>
+        <template #tooltip>
+          <div class="">it works too</div>
+        </template>
+        adipisicing
+      </LTooltip>
+      elit. Velit, sed!
+    </p>
   </div>
 </template>
 
@@ -81,6 +56,7 @@ import LInput from './components/LInput.vue';
 import LCheckbox from './components/LCheckbox.vue';
 import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
+import LTooltip from './components/LTooltip.vue';
 import { ref } from 'vue';
 
 const message = ref();
