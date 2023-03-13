@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-block" @click="isOpen = true">
+  <div class="inline-block l-modal-trigger" @click="isOpen = true">
     <slot name="label">
       <LButton>
         {{ props.label ?? 'Add a label' }}
@@ -10,7 +10,7 @@
   <teleport to="body">
     <div
       class="
-        modal
+        l-modal
         absolute
         inset-0
         flex
@@ -22,11 +22,11 @@
       v-show="isOpen"
       @click.self="isOpen = false"
     >
-      <div class="modal-content w-2/3 opacity-100 bg-white relative">
+      <div class="l-modal-content w-2/3 opacity-100 bg-white relative">
         <LClose
           v-if="props.dismissable"
           @click="isOpen = false"
-          color="slate"
+          color="gray"
           context="outlined"
           class="right-2 absolute top-2"
         ></LClose>
@@ -34,7 +34,7 @@
         <div class="l-modal-header p-4">
           <slot name="header"></slot>
         </div>
-        <div class="l-modal-content p-4">
+        <div class="l-modal-body p-4">
           <slot></slot>
         </div>
         <div class="l-modal-footer p-4">

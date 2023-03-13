@@ -1,76 +1,38 @@
 <template>
   <div class="test">
-    <!--
-   
-    <br />
-    <LHeading color="blue" size="4xl">Un test de titre</LHeading>
-    <LAvatar
-      src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg"
-      alt="texte alternatif"
-      class="bg-red-500"
-    ></LAvatar>
+    <LAccordion color="blue" mode="fill">
+      <LAccordionItem label="item 1">Contenu 1</LAccordionItem>
+      <LAccordionItem label="item 2">contenu 2</LAccordionItem>
+      <LAccordionItem label="item 3">contenu 3</LAccordionItem>
+    </LAccordion>
+
+    <LButton class="my-4" color="orange" rounded="normal" focus
+      >click me
+    </LButton>
+    <LButton class="my-4" color="orange" rounded="normal" focus mode="light"
+      >click me
+    </LButton>
+    <LButton class="my-4" color="orange" rounded="normal" focus mode="outlined"
+      >click me
+    </LButton>
 
     <br />
-    <LDivider size=""></LDivider>
-    <LParagraph color="red" size="lg"
-      >rfgh gh ghg h hedfe ekjej efer efg er
-    </LParagraph>
 
-    <LAlert color="red" mode="outlined"> Message d'alerte </LAlert>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur
+      <LTooltip tooltip="it works !">adipisicing </LTooltip> elit. Velit, sed!
+    </p>
 
-    <LDropdown label="hover/click me" color="red" rounded margin>
-      <LDropdownItem>Un item</LDropdownItem>
-      <LDropdownItem>Un item 2</LDropdownItem>
-      <LDropdownItem>Un item 3 fjhjkgh jghjg </LDropdownItem>
-    </LDropdown>
-    -->
-    <LButton mode="none"> bonjour </LButton>
-
-    <LTabs color="green" class="mt-6" card backgroun pills>
-      <LTabsItem title="one">
-        <div class="ok">
-          <p>premier tab</p>
-          <p>fonctionne</p>
-        </div>
-      </LTabsItem>
-      <LTabsItem title="two">second</LTabsItem>
-      <LTabsItem title="three">third</LTabsItem>
-    </LTabs>
-
-    <LModal label="open modal">
-      <template #header>
-        <h1>titre du modal</h1>
-      </template>
-
-      <template #footer>
-        <h1>titre du modal</h1>
-      </template>
-      goooooood!
-    </LModal>
-
-    <LAspect aspect="16/9">
-      <img
-        src="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg"
-        alt="encore un text alt"
-        class="bg-red-500"
-      />
-    </LAspect>
-
-    <LCard
-      class=""
-      img="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg"
-      aspect="16/5"
-    >
-      <template #header>titre card</template>
-      <template #footer>footer card</template>
-
-      <div class="content">
-        <p>
-          ok contenu Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Odit, accusantium.
-        </p>
-      </div>
-    </LCard>
+    <p class="my-4">
+      Lorem ipsum dolor sit, amet consectetur
+      <LTooltip color="red">
+        <template #tooltip>
+          <div class="">it works too</div>
+        </template>
+        adipisicing
+      </LTooltip>
+      elit. Velit, sed!
+    </p>
   </div>
 </template>
 
@@ -89,6 +51,21 @@ import LTabsItem from './components/LTabsItem.vue';
 import LModal from './components/LModal.vue';
 import LAspect from './components/LAspect.vue';
 import LCard from './components/LCard.vue';
+import LInputGroup from './components/LInputGroup.vue';
+import LInput from './components/LInput.vue';
+import LCheckbox from './components/LCheckbox.vue';
+import LAccordion from './components/LAccordion.vue';
+import LAccordionItem from './components/LAccordionItem.vue';
+import LTooltip from './components/LTooltip.vue';
+import { ref } from 'vue';
+
+const message = ref();
+const message2 = ref();
+const checked = ref();
+
+const vAutofocus = {
+  mounted: (el) => el.focus(),
+};
 </script>
 
 <style scoped>

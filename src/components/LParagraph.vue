@@ -1,19 +1,31 @@
 <template>
-  <p class="l-paragraph" :class="[color, padding, margin, size]">
+  <p
+    class="l-paragraph"
+    :class="[colorClass, paddingClass, marginClass, sizeClass]"
+  >
     <slot></slot>
   </p>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
-import { useSizeSwitch } from './composables/sizeSwitch.js';
+import { useTextSizeSwitch } from './composables/textSizeSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const props = defineProps({
   color: {
     type: String,
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
+    },
+  },
+  mode: {
+    type: String,
+    default: 'none',
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
   background: {
@@ -51,19 +63,19 @@ const props = defineProps({
   },
 });
 
-const color = computed(() => {
-  return props.background ? `l-${props.color}` : `l-text-${props.color}`;
+const colorClass = computed(() => {
+  return useColorSwitch(props.color, props.mode);
 });
 
-const margin = computed(() => {
+const marginClass = computed(() => {
   return props.noMargin ? '' : 'my-4';
 });
 
-const padding = computed(() => {
+const paddingClass = computed(() => {
   return props.noPadding ? '' : 'px-4 py-2';
 });
 
-const size = computed(() => {
+const sizeClass = computed(() => {
   return useSizeSwitch(props.size);
 });
 </script>

@@ -1,18 +1,18 @@
 <template>
-  <div class="tabs rounded overflow-hidden" :class="wrapperClass">
-    <ul class="flex px-4 border-b-2 tabs-label" :class="labelClass">
+  <div class="l-tabs rounded overflow-hidden" :class="wrapperClass">
+    <ul class="flex px-4 l-tabs-labels" :class="[labelClass, borderClass]">
       <li
         v-for="title in tabTitles"
         :key="title"
         @click="selected = title"
-        class="px-4 py-2 font-semibold"
+        class="px-4 py-2 font-semibold l-tabs-label"
         :class="[selected == title ? activeClass : colorClass, roundedClass]"
       >
         {{ title }}
       </li>
     </ul>
 
-    <div class="tab-items p-4 relative" :class="contentColor">
+    <div class="l-tabs-items p-4 relative" :class="contentColorClass">
       <slot></slot>
     </div>
   </div>
@@ -23,20 +23,29 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
 import { useSlots, computed, onMounted, ref, provide } from 'vue';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const tabTitles = ref([]);
 const selected = ref();
 const activeClass = ref();
 const labelClass = ref();
-const contentColor = ref();
+const contentColorClass = ref();
 
 const props = defineProps({
   color: {
     type: String,
-    default: 'slate',
+    default: 'gray',
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
+    },
+  },
+  mode: {
+    type: String,
+    default: 'none',
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
   background: {
@@ -65,11 +74,11 @@ onMounted(() => {
 });
 
 const colorClass = computed(() => {
-  activeClass.value = `l-${props.color}`;
-  contentColor.value = props.background ? `l-${props.color}-light` : '';
+  activeClass.value = useColorSwitch(props.color, 'fill');
+  contentColorClass.value = useColorSwitch(props.color, props.mode);
 
   switch (props.color) {
-    case 'slate':
+    case 'gray':
       labelClass.value = `${props.card ? 'bg-slate-50' : ''} border-slate-500`;
       return 'text-slate-700 hover:bg-slate-200';
 
@@ -108,6 +117,9 @@ const roundedClass = computed(() => {
 
 const wrapperClass = computed(() => {
   return props.card ? 'border shadow-md' : '';
+});
+const borderClass = computed(() => {
+  return props.mode == 'outlined' ? 'border-0' : 'border-b-2';
 });
 </script>
 

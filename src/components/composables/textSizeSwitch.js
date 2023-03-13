@@ -1,4 +1,4 @@
-export function useSizeSwitch(size) {
+export function useTextSizeSwitch(size) {
   switch (size) {
     case 'xs':
       return 'text-xs';

@@ -1,7 +1,7 @@
 <template>
   <button
     class="l-button py-2 px-4 font-semibold"
-    :class="[colorClass, roundedClass]"
+    :class="[colorClass, roundedClass, hoverClass, focusClass]"
   >
     <slot>Click me</slot>
   </button>
@@ -10,13 +10,16 @@
 <script setup>
 import { computed } from 'vue';
 import { useRoundedSwitch } from './composables/roundedSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
+import { useHoverSwitch } from './composables/hoverSwitch.js';
+import { useFocusSwitch } from './composables/focusSwitch.js';
 
 const props = defineProps({
   color: {
     type: String,
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
     },
   },
   mode: {
@@ -40,31 +43,27 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  focus: String,
 });
 
 const colorClass = computed(() => {
-  switch (props.mode) {
-    case 'none':
-      return props.color ? `l-text-${props.color}` : 'text-slate-500';
-    case 'fill':
-      if (!props.color) {
-        return props.hover
-          ? 'l-slate-light l-slate-light-hover'
-          : 'l-slate-light';
-      }
-      return props.hover
-        ? `l-${props.color} l-${props.color}-hover`
-        : `l-${props.color}`;
-    case 'outlined':
-    case 'light':
-      return props.hover
-        ? `l-${props.color}-${props.mode} l-${props.color}-${props.mode}-hover`
-        : `l-${props.color}-${props.mode}`;
-  }
+  return useColorSwitch(props.color, props.mode);
+});
+
+const hoverClass = computed(() => {
+  return props.hover ? useHoverSwitch(props.color, props.mode) : '';
 });
 
 const roundedClass = computed(() => {
   return useRoundedSwitch(props.rounded);
+});
+
+const focusClass = computed(() => {
+  return props.focus
+    ? useFocusSwitch(props.focus, props.mode)
+    : props.focus == ''
+    ? useFocusSwitch(props.color, props.mode)
+    : 'focus:outline-none';
 });
 </script>
 

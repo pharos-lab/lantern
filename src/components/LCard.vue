@@ -1,7 +1,7 @@
 <template>
   <div
     class="l-card shadow-md"
-    :class="[color, position, props.noRounded ? '' : 'rounded-md']"
+    :class="[colorClass, positionClass, props.noRounded ? '' : 'rounded-md']"
   >
     <LAspect
       :aspect="aspect"
@@ -16,7 +16,7 @@
       />
     </LAspect>
 
-    <div class="l-card-content flex-grow" :class="contentSize">
+    <div class="l-card-content flex-grow" :class="contentSizeClass">
       <div class="l-card-header">
         <slot name="header"></slot>
       </div>
@@ -35,13 +35,15 @@
 <script setup>
 import { ref, computed } from 'vue';
 import LAspect from './LAspect.vue';
+import { usePositionSwitch } from './composables/positionSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const props = defineProps({
   color: {
     type: String,
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
     },
   },
   mode: {
@@ -76,38 +78,19 @@ const props = defineProps({
   },
 });
 
-const contentSize = computed(() => {
+const contentSizeClass = computed(() => {
   if (props.size) {
     let res = props.size.match(/w-(\d)\/(\d)/);
     return `w-${res[2] - res[1]}/${res[2]}`;
   }
 });
 
-const color = computed(() => {
-  switch (props.mode) {
-    case 'none':
-      return props.color
-        ? `l-text-${props.color} bg-slate-100 border border-slate-300`
-        : 'bg-slate-100 border border-slate-300';
-    case 'fill':
-      return props.color ? `l-${props.color}` : 'bg-slate-100';
-    case 'light':
-    case 'outlined':
-      return `l-${props.color}-${props.mode}`;
-  }
+const colorClass = computed(() => {
+  return useColorSwitch(props.color, props.mode);
 });
 
-const position = computed(() => {
-  switch (props.position) {
-    case 'top':
-      return 'flex flex-col';
-    case 'bottom':
-      return 'flex flex-col-reverse';
-    case 'left':
-      return 'flex flex-row';
-    case 'right':
-      return 'flex flex-row-reverse';
-  }
+const positionClass = computed(() => {
+  return usePositionSwitch(props.position);
 });
 
 const aspect = computed(() => {

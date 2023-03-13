@@ -1,25 +1,32 @@
 <template>
-  <div class="l-heading-wrapper">
-    <component
-      :is="tag"
-      class="l-heading"
-      :class="[size, color, margin, padding]"
-    >
-      <slot></slot>
-    </component>
-  </div>
+  <component
+    :is="tag"
+    class="l-heading"
+    :class="[sizeClass, colorClass, marginClass, paddingClass]"
+  >
+    <slot></slot>
+  </component>
 </template>
 
 <script setup>
 import { computed } from 'vue';
-import { useSizeSwitch } from './composables/sizeSwitch.js';
+import { useTextSizeSwitch } from './composables/textSizeSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const props = defineProps({
   color: {
     type: String,
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
+    },
+  },
+  mode: {
+    type: String,
+    default: 'none',
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'fill', 'light', 'outlined'].includes(value);
     },
   },
   size: {
@@ -50,10 +57,6 @@ const props = defineProps({
       return ['1', '2', '3', '4', '5', '6'].includes(value);
     },
   },
-  background: {
-    type: Boolean,
-    default: false,
-  },
   noMargin: {
     type: Boolean,
     default: false,
@@ -64,22 +67,22 @@ const props = defineProps({
   },
 });
 
-const color = computed(() => {
-  return props.background ? `l-${props.color}` : `l-text-${props.color}`;
+const colorClass = computed(() => {
+  return useColorSwitch(props.color, props.mode);
 });
 
 const tag = computed(() => {
   return 'h' + props.level;
 });
 
-const padding = computed(() => {
+const paddingClass = computed(() => {
   return props.noPadding ? '' : 'py-2 px-4';
 });
 
-const margin = computed(() => {
+const marginClass = computed(() => {
   return props.noMargin ? '' : 'my-4';
 });
-const size = computed(() => {
+const sizeClass = computed(() => {
   return useSizeSwitch(props.size);
 });
 </script>

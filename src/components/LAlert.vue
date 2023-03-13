@@ -2,11 +2,11 @@
   <LFadeTransition>
     <div
       v-show="open"
-      :class="[color, rounded]"
+      :class="[colorClass, roundedClass]"
       class="l-alert p-4 font-semibold shadow-md relative"
     >
       <LClose
-        class="absolute right-4 top-4"
+        class="float-right w-5 h-5"
         v-if="props.dismissable"
         @click="open = false"
         :color="props.color"
@@ -25,6 +25,7 @@ import { ref, computed } from 'vue';
 import LFadeTransition from './LFadeTransition.vue';
 import LClose from './LClose.vue';
 import { useRoundedSwitch } from './composables/roundedSwitch.js';
+import { useColorSwitch } from './composables/colorSwitch.js';
 
 const open = ref(true);
 
@@ -33,7 +34,7 @@ const props = defineProps({
     type: String,
     validator(value) {
       // The value must match one of these strings
-      return ['slate', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
     },
   },
   mode: {
@@ -59,20 +60,11 @@ const props = defineProps({
   },
 });
 
-const color = computed(() => {
-  switch (props.mode) {
-    case 'none':
-      return props.color ? `l-text-${props.color}` : 'text-slate-600';
-    case 'fill':
-      return `l-${props.color}`;
-    case 'light':
-      return `l-${props.color}-${props.mode}`;
-    case 'outlined':
-      return `l-${props.color}-${props.mode} !border !border-l-8`;
-  }
+const colorClass = computed(() => {
+  return useColorSwitch(props.color, props.mode);
 });
 
-const rounded = computed(() => {
+const roundedClass = computed(() => {
   return useRoundedSwitch(props.rounded);
 });
 </script>
