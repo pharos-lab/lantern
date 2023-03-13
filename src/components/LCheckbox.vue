@@ -10,8 +10,7 @@
       checkedClass,
     ]"
     type="checkbox"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
+    v-model="value"
   />
 </template>
 
@@ -27,7 +26,16 @@ import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
 import { useBorderSizeSwitch } from './composables/borderSizeSwitch.js';
 import { useCheckedSwitch } from './composables/checkedSwitch.js';
 
-defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue']);
+
+const value = computed({
+  get() {
+    return props.modelValue;
+  },
+  set(value) {
+    emit('update:modelValue', value);
+  },
+});
 
 const props = defineProps({
   modelValue: String,
