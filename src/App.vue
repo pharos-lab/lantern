@@ -25,7 +25,7 @@
 
     <p class="my-4">
       Lorem ipsum dolor sit, amet consectetur
-      <LTooltip>
+      <LTooltip color="red">
         <template #tooltip>
           <div class="">it works too</div>
         </template>
