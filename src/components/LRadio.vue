@@ -10,6 +10,7 @@
       checkedClass,
     ]"
     type="radio"
+    v-model="value"
   />
 </template>
 

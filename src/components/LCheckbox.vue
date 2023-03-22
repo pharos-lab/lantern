@@ -76,7 +76,6 @@ const props = defineProps({
 });
 
 const roundedClass = computed(() => {
-  console.log(props.rounded);
   return useRoundedSwitch(props.rounded);
 });
 

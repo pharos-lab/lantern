@@ -38,11 +38,12 @@
 
     <label for="">
       click me
-      <LRadio color="red" name="test"></LRadio>
+      <LRadio color="red" name="test" v-model="radio" value="one"></LRadio>
     </label>
+    <p>{{ radio }}</p>
     <label for="">
       click me
-      <LRadio color="blue" name="test"></LRadio>
+      <LRadio color="blue" name="test" v-model="radio" value="two"></LRadio>
     </label>
   </div>
 </template>
@@ -74,6 +75,8 @@ import { ref } from 'vue';
 const message = ref();
 const message2 = ref();
 const checked = ref();
+
+const radio = ref();
 
 const vAutofocus = {
   mounted: (el) => el.focus(),
