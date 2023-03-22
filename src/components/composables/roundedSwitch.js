@@ -8,6 +8,10 @@ export function useRoundedSwitch(rounded) {
       return 'rounded-md';
     case 'lg':
       return 'rounded-lg';
+    case 'xl':
+      return 'rounded-xl';
+    case 'pill':
+      return 'rounded-full';
     default:
       return '';
   }

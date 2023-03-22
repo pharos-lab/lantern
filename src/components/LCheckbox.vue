@@ -1,6 +1,6 @@
 <template>
   <input
-    class="l-checkbox appearance-none"
+    class="l-checkbox appearance-none w-5 h-5"
     :class="[
       roundedClass,
       colorClass,
@@ -25,6 +25,7 @@ import { useFocusSwitch } from './composables/focusSwitch.js';
 import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
 import { useBorderSizeSwitch } from './composables/borderSizeSwitch.js';
 import { useCheckedSwitch } from './composables/checkedSwitch.js';
+import { useRoundedSwitch } from './composables/roundedSwitch.js';
 
 const emit = defineEmits(['update:modelValue']);
 
@@ -39,9 +40,13 @@ const value = computed({
 
 const props = defineProps({
   modelValue: String,
-  noRounded: {
-    type: Boolean,
-    default: false,
+  rounded: {
+    type: String,
+    default: 'normal',
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'sm', 'normal', 'md', 'lg', 'xl', 'pill'].includes(value);
+    },
   },
   color: {
     type: String,
@@ -71,7 +76,8 @@ const props = defineProps({
 });
 
 const roundedClass = computed(() => {
-  return props.noRounded ? '' : 'rounded';
+  console.log(props.rounded);
+  return useRoundedSwitch(props.rounded);
 });
 
 const colorClass = computed(() => {
@@ -97,7 +103,7 @@ const borderSizeClass = computed(() => {
 });
 
 const checkedClass = computed(() => {
-  return useCheckedSwitch(props.color, props.mode, true);
+  return useCheckedSwitch(props.color, props.mode, props.hover);
 });
 </script>
 

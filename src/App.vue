@@ -33,6 +33,17 @@
       </LTooltip>
       elit. Velit, sed!
     </p>
+
+    <LCheckbox color="red" focus></LCheckbox>
+
+    <label for="">
+      click me
+      <LRadio color="red" name="test"></LRadio>
+    </label>
+    <label for="">
+      click me
+      <LRadio color="blue" name="test"></LRadio>
+    </label>
   </div>
 </template>
 
@@ -57,6 +68,7 @@ import LCheckbox from './components/LCheckbox.vue';
 import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
 import LTooltip from './components/LTooltip.vue';
+import LRadio from './components/LRadio.vue';
 import { ref } from 'vue';
 
 const message = ref();

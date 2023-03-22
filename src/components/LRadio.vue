@@ -1,4 +1,17 @@
-<template></template>
+<template>
+  <input
+    class="l-radio appearance-none w-5 h-5"
+    :class="[
+      roundedClass,
+      colorClass,
+      borderColorClass,
+      borderSizeClass,
+      focusClass,
+      checkedClass,
+    ]"
+    type="radio"
+  />
+</template>
 
 <script>
 // use normal <script> to declare options
@@ -11,6 +24,7 @@ import { useFocusSwitch } from './composables/focusSwitch.js';
 import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
 import { useBorderSizeSwitch } from './composables/borderSizeSwitch.js';
 import { useCheckedSwitch } from './composables/checkedSwitch.js';
+import { useRoundedSwitch } from './composables/roundedSwitch.js';
 
 const emit = defineEmits(['update:modelValue']);
 
@@ -25,9 +39,13 @@ const value = computed({
 
 const props = defineProps({
   modelValue: String,
-  noRounded: {
-    type: Boolean,
-    default: false,
+  rounded: {
+    type: String,
+    default: 'pill',
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'sm', 'normal', 'md', 'lg', 'xl', 'pill'].includes(value);
+    },
   },
   color: {
     type: String,
@@ -57,7 +75,7 @@ const props = defineProps({
 });
 
 const roundedClass = computed(() => {
-  return props.noRounded ? '' : 'rounded';
+  return useRoundedSwitch(props.rounded);
 });
 
 const colorClass = computed(() => {
@@ -88,7 +106,7 @@ const checkedClass = computed(() => {
 </script>
 
 <style scoped>
-.l-checkbox {
+.l-radio {
   transition: background-color 0.3s ease-in;
 }
 </style>
