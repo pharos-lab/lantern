@@ -38,7 +38,14 @@
 
     <label for="">
       click me
-      <LRadio color="red" name="test" v-model="radio" value="one"></LRadio>
+      <LRadio
+        color="red"
+        name="test"
+        v-model="radio"
+        value="one"
+        class="!w-6 !h-6"
+        focus
+      ></LRadio>
     </label>
     <p>{{ radio }}</p>
     <label for="">

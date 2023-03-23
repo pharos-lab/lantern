@@ -1,6 +1,6 @@
 <template>
   <input
-    class="l-radio appearance-none w-5 h-5"
+    class="l-radio appearance-none h-4 w-4"
     :class="[
       roundedClass,
       colorClass,
