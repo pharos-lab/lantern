@@ -34,6 +34,11 @@
       elit. Velit, sed!
     </p>
 
+    <LAlert color="green" mode="light" rounded left-border
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque,
+      quis.</LAlert
+    >
+
     <LCheckbox color="red" focus></LCheckbox>
 
     <label for="">

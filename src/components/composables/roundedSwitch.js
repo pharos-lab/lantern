@@ -12,7 +12,7 @@ export function useRoundedSwitch(rounded) {
       return 'rounded-xl';
     case 'pill':
       return 'rounded-full';
-    default:
-      return '';
+    case '':
+      return 'rounded';
   }
 }
