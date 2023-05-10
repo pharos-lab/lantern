@@ -64,103 +64,47 @@ npm install @pharos-lab/lantern
 
 ## Usage
 
-First you have to import the newly installed package, then use it in your code
+To use **Lantern**, just import the plugin from the package and tell vue to use it!
 
 ```javascript
-import JsonConverter from '@pharos-lab/lantern' // as ES6 module or,
-let JsonConverter = require('@pharos-lab/lantern') // as node js module
 
-// Your code ...
-let result = JsonConverter.convertToElement(SomeJsonRepresentationOfElements)
+// main.js
 
+import { createApp } from 'vue';
+import { lantern } from '@pharos-lab/lantern'
+// import tailwind styles
+import '@pharos-lab/lantern/dist/styles.css'
+
+import App from './App.vue';
+
+const application = createApp(app);
+
+application.use(lantern);
+application.mount('#app');
 ```
 
-The Json data that you pass into the `convertToElement` method must some rules:
+> Note: Since **Lantern** is written with tailwind, don't forget to import the `styles.css` css file !
 
-1. It must have a root element
-2. There are 4 main attributes to represent a html element (see [Examples](#examples)):
-   1. `tag`: The name of the element (required except if **only** have `content` attribute)
-   2. `attributes`: An object of the element attributes. eg: { 'class': 'some class', ...} (optional)
-   3. `content`: The texte content of the element (optional but cannot be used with `children` attribute)
-   4. `children`: An array of children elements (optional)
+Now You can use all the features of **Lantern**!
 
 ### Examples
 
-For a simple element
-
 ```javascript
-{
-    'tag': 'p',
-    'attributes': {
-        'class': 'classe1 classe2 ...',
-        'title': 'Some title',
-        ...
-    },
-    'content': 'My p content'
-}
+<script setup>
+// your JavaScript code ...
+
+</script>
+
+<template>
+  // your code ...
+
+  <NameOfComponent>
+    // Slots if the component needed it
+  </NameOfComponent>
+</template>
 ```
 
-Using `JsonConverter.convertToElement` on this json representation will return a string that looks like this:
-
-```html
-<p class="classe1 classe2 ..." title="Some title" ...>My p content</p>
-```
-
-You can build nested elements by using the `children` attribute. It must be an array with all nested elements you want
-
-```javascript
-{
-    'tag': 'div',
-    'attributes': {...},
-    'children': [
-        {
-            'tag': 'element1'
-            ...
-        },
-        {
-            'tag': 'element2,
-            ...
-        }
-    ]
-}
-```
-
-Will return some string like this:
-
-```html
-<div atribute1="value1" ...>
-    <element1 ...>...</element1>
-    <element2 ...>...</element2>
-</div>
-```
-
-Sometimes you may wish having an element with text content surrounded by other elements like `span`, `strong` etc...
-
-In this case, you can use an object with only the `content` attribute in the `children` attribute like this:
-
-```javascript
-{
-    'tag': 'element',
-    'attributes': {...}, // if needed
-    'children': [
-        {
-            'content': 'The text content'
-        },
-        {
-            'tag': 'span,
-            'content': 'Some Span Content'
-        }
-    ]
-}
-```
-
-will return this:
-
-```html
-<element ...>
-    The text content<span>SomeSpan Content</span>
-</element>
-```
+The **Lantern** plugin made the registration of all components so you don't have to import them and can start using them directly.
 
 <!-- CONTRIBUTING -->
 
