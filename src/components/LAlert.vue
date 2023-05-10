@@ -2,7 +2,7 @@
   <LFadeTransition>
     <div
       v-show="open"
-      :class="[colorClass, roundedClass]"
+      :class="[colorClass, roundedClass, leftBorderClass]"
       class="l-alert p-4 font-semibold shadow-md relative"
     >
       <LClose
@@ -26,6 +26,7 @@ import LFadeTransition from './LFadeTransition.vue';
 import LClose from './LClose.vue';
 import { useRoundedSwitch } from './composables/roundedSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
+import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
 
 const open = ref(true);
 
@@ -58,6 +59,7 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  leftBorder: Boolean,
 });
 
 const colorClass = computed(() => {
@@ -66,6 +68,12 @@ const colorClass = computed(() => {
 
 const roundedClass = computed(() => {
   return useRoundedSwitch(props.rounded);
+});
+
+const leftBorderClass = computed(() => {
+  if (props.leftBorder) {
+    return useBorderColorSwitch(props.color, props.mode) + ' border-l-4';
+  }
 });
 </script>
 

@@ -8,7 +8,11 @@ export function useRoundedSwitch(rounded) {
       return 'rounded-md';
     case 'lg':
       return 'rounded-lg';
-    default:
-      return '';
+    case 'xl':
+      return 'rounded-xl';
+    case 'pill':
+      return 'rounded-full';
+    case '':
+      return 'rounded';
   }
 }

@@ -34,9 +34,7 @@ const props = defineProps({
     type: String,
     validator(value) {
       // The value must match one of these strings
-      return ['none', 'sm', 'normal', 'md', 'lg', 'xl', 'pills'].includes(
-        value
-      );
+      return ['none', 'sm', 'normal', 'md', 'lg', 'xl', 'pill'].includes(value);
     },
   },
   hover: {

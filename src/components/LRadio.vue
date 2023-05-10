@@ -1,6 +1,6 @@
 <template>
   <input
-    class="l-checkbox appearance-none w-5 h-5"
+    class="l-radio appearance-none h-4 w-4"
     :class="[
       roundedClass,
       colorClass,
@@ -9,7 +9,7 @@
       focusClass,
       checkedClass,
     ]"
-    type="checkbox"
+    type="radio"
     v-model="value"
   />
 </template>
@@ -42,7 +42,7 @@ const props = defineProps({
   modelValue: String,
   rounded: {
     type: String,
-    default: 'normal',
+    default: 'pill',
     validator(value) {
       // The value must match one of these strings
       return ['none', 'sm', 'normal', 'md', 'lg', 'xl', 'pill'].includes(value);
@@ -102,12 +102,12 @@ const borderSizeClass = computed(() => {
 });
 
 const checkedClass = computed(() => {
-  return useCheckedSwitch(props.color, props.mode, props.hover);
+  return useCheckedSwitch(props.color, props.mode, true);
 });
 </script>
 
 <style scoped>
-.l-checkbox {
+.l-radio {
   transition: background-color 0.3s ease-in;
 }
 </style>

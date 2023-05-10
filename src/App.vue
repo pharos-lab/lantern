@@ -33,6 +33,30 @@
       </LTooltip>
       elit. Velit, sed!
     </p>
+
+    <LAlert color="green" mode="light" rounded left-border
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque,
+      quis.</LAlert
+    >
+
+    <LCheckbox color="red" focus></LCheckbox>
+
+    <label for="">
+      click me
+      <LRadio
+        color="red"
+        name="test"
+        v-model="radio"
+        value="one"
+        class="!w-6 !h-6"
+        focus
+      ></LRadio>
+    </label>
+    <p>{{ radio }}</p>
+    <label for="">
+      click me
+      <LRadio color="blue" name="test" v-model="radio" value="two"></LRadio>
+    </label>
   </div>
 </template>
 
@@ -57,11 +81,14 @@ import LCheckbox from './components/LCheckbox.vue';
 import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
 import LTooltip from './components/LTooltip.vue';
+import LRadio from './components/LRadio.vue';
 import { ref } from 'vue';
 
 const message = ref();
 const message2 = ref();
 const checked = ref();
+
+const radio = ref();
 
 const vAutofocus = {
   mounted: (el) => el.focus(),
