@@ -1,20 +1,6 @@
 <template>
   <div class="test">
-    <div class="menu flex">
-      <div class="brand">My Title</div>
-      <div class="grow flex justify-center gap-2">
-        <LLink href="ok" color="blue" mode="outlined" rounded hover
-          >Link 1</LLink
-        >
-        <LLink href="ok" color="blue" mode="underlined" rounded hover
-          >Link 2</LLink
-        >
-        <LLink href="ok" color="blue" mode="outlined" rounded hover
-          >Link 3</LLink
-        >
-      </div>
-      <div class="profile">connection</div>
-    </div>
+    <LNavbar></LNavbar>
 
     <LButton class="my-4" color="orange" rounded="normal" focus
       >click me
@@ -75,6 +61,7 @@ import LAccordionItem from './components/LAccordionItem.vue';
 import LTooltip from './components/LTooltip.vue';
 import LRadio from './components/LRadio.vue';
 import LLink from './components/LLink.vue';
+import LNavbar from './components/headers/LNavbar.vue';
 import { ref } from 'vue';
 
 const message = ref();
