@@ -1,7 +1,7 @@
 export function useSubColorSwitch(color, mode) {
   switch (color) {
     case 'gray':
-      if (mode == 'none') {
+      if (mode == 'text') {
         return 'text-slate-300';
       }
       if (mode == 'outlined') {
@@ -17,7 +17,7 @@ export function useSubColorSwitch(color, mode) {
       }
       break;
     case 'red':
-      if (mode == 'none') {
+      if (mode == 'text') {
         return 'text-red-300';
       }
       if (mode == 'outlined') {
@@ -33,7 +33,7 @@ export function useSubColorSwitch(color, mode) {
       }
       break;
     case 'orange':
-      if (mode == 'none') {
+      if (mode == 'text') {
         return 'text-orange-300';
       }
       if (mode == 'outlined') {
@@ -49,7 +49,7 @@ export function useSubColorSwitch(color, mode) {
       }
       break;
     case 'yellow':
-      if (mode == 'none') {
+      if (mode == 'text') {
         return 'text-yellow-300';
       }
       if (mode == 'outlined') {
@@ -65,7 +65,7 @@ export function useSubColorSwitch(color, mode) {
       }
       break;
     case 'green':
-      if (mode == 'none') {
+      if (mode == 'text') {
         return 'text-emerald-300';
       }
       if (mode == 'outlined') {
@@ -81,7 +81,7 @@ export function useSubColorSwitch(color, mode) {
       }
       break;
     case 'blue':
-      if (mode == 'none') {
+      if (mode == 'text') {
         return 'text-sky-300';
       }
       if (mode == 'outlined') {

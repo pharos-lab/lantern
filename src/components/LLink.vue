@@ -29,9 +29,14 @@ const props = defineProps({
     default: 'none',
     validator(value) {
       // The value must match one of these strings
-      return ['none', 'fill', 'light', 'outlined', 'underlined'].includes(
-        value
-      );
+      return [
+        'none',
+        'fill',
+        'light',
+        'outlined',
+        'underlined',
+        'text',
+      ].includes(value);
     },
   },
   rounded: {
@@ -59,7 +64,8 @@ const spaceClass = computed(() => {
 
 const underlineClass = computed(() => {
   return props.mode == 'underlined'
-    ? 'underline ' + useUnderlineSwitch(props.color)
+    ? 'underline decoration-4 underline-offset-4' +
+        useUnderlineSwitch(props.color)
     : '';
 });
 

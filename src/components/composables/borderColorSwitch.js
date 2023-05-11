@@ -1,7 +1,7 @@
 export function useBorderColorSwitch(color, mode) {
   switch (color) {
     case 'gray':
-      if (mode == 'outlined' || mode == 'none') {
+      if (mode == 'outlined' || mode == 'text') {
         return 'border-slate-500';
       }
 
@@ -14,7 +14,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'red':
-      if (mode == 'outlined' || mode == 'none') {
+      if (mode == 'outlined' || mode == 'text') {
         return 'border-red-500';
       }
 
@@ -27,7 +27,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'orange':
-      if (mode == 'outlined' || mode == 'none') {
+      if (mode == 'outlined' || mode == 'text') {
         return 'border-orange-500';
       }
 
@@ -40,7 +40,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'yellow':
-      if (mode == 'outlined' || mode == 'none') {
+      if (mode == 'outlined' || mode == 'text') {
         return 'border-yellow-500';
       }
 
@@ -53,7 +53,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'green':
-      if (mode == 'outlined' || mode == 'none') {
+      if (mode == 'outlined' || mode == 'text') {
         return 'border-emerald-500';
       }
 
@@ -66,7 +66,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'blue':
-      if (mode == 'outlined' || mode == 'none') {
+      if (mode == 'outlined' || mode == 'text') {
         return 'border-sky-500';
       }
 

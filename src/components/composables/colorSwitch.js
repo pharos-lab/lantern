@@ -1,7 +1,7 @@
 export function useColorSwitch(color, mode) {
   switch (color) {
     case 'gray':
-      if (mode == 'none' || mode == 'underlined') {
+      if (mode == 'text' || mode == 'underlined') {
         return 'text-slate-600';
       }
       if (mode == 'outlined') {
@@ -17,7 +17,7 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'red':
-      if (mode == 'none') {
+      if (mode == 'text' || mode == 'underlined') {
         return 'text-red-600';
       }
       if (mode == 'outlined') {
@@ -33,7 +33,7 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'orange':
-      if (mode == 'none') {
+      if (mode == 'text' || mode == 'underlined') {
         return 'text-orange-600';
       }
       if (mode == 'outlined') {
@@ -49,7 +49,7 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'yellow':
-      if (mode == 'none') {
+      if (mode == 'text' || mode == 'underlined') {
         return 'text-yellow-600';
       }
       if (mode == 'outlined') {
@@ -65,7 +65,7 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'green':
-      if (mode == 'none') {
+      if (mode == 'text' || mode == 'underlined') {
         return 'text-emerald-600';
       }
       if (mode == 'outlined') {
@@ -81,7 +81,7 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'blue':
-      if (mode == 'none' || mode == 'underlined') {
+      if (mode == 'text' || mode == 'underlined') {
         return 'text-sky-600';
       }
       if (mode == 'outlined') {
