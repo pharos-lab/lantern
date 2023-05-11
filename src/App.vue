@@ -1,7 +1,6 @@
 <template>
+  <LNavbar :links="links"> </LNavbar>
   <div class="test">
-    <LNavbar></LNavbar>
-
     <LButton class="my-4" color="orange" rounded="normal" focus
       >click me
     </LButton>
@@ -72,6 +71,14 @@ const radio = ref();
 
 const vAutofocus = {
   mounted: (el) => el.focus(),
+};
+
+const links = {
+  color: 'red',
+  rounded: 'normal',
+  hover: true,
+  mode: 'none',
+  hrefs: ['ok', 'ljijh', 'jnghfg', 'hjh'],
 };
 </script>
 
