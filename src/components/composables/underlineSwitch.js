@@ -1,20 +1,7 @@
-export function useColorSwitch(color, mode) {
+export function useUnderlineSwitch(color, mode) {
   switch (color) {
     case 'gray':
-      if (mode == 'none' || mode == 'underlined') {
-        return 'text-slate-600';
-      }
-      if (mode == 'outlined') {
-        return 'text-slate-500 border-2 border-slate-500';
-      }
-
-      if (mode == 'fill') {
-        return 'bg-slate-500 text-white';
-      }
-
-      if (mode == 'light') {
-        return 'bg-slate-100 text-slate-600';
-      }
+      return 'decoration-slate-600 decoration-4';
       break;
     case 'red':
       if (mode == 'none') {
@@ -81,20 +68,7 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'blue':
-      if (mode == 'none' || mode == 'underlined') {
-        return 'text-sky-600';
-      }
-      if (mode == 'outlined') {
-        return 'text-sky-500 border-2 border-sky-500';
-      }
-
-      if (mode == 'fill') {
-        return 'bg-sky-500 text-white';
-      }
-
-      if (mode == 'light') {
-        return 'bg-sky-100 text-sky-600';
-      }
+      return 'decoration-4 underline-offset-4';
       break;
   }
 }

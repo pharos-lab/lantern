@@ -1,10 +1,20 @@
 <template>
   <div class="test">
-    <LAccordion color="blue" mode="fill">
-      <LAccordionItem label="item 1">Contenu 1</LAccordionItem>
-      <LAccordionItem label="item 2">contenu 2</LAccordionItem>
-      <LAccordionItem label="item 3">contenu 3</LAccordionItem>
-    </LAccordion>
+    <div class="menu flex">
+      <div class="brand">My Title</div>
+      <div class="grow flex justify-center gap-2">
+        <LLink href="ok" color="blue" mode="outlined" rounded hover
+          >Link 1</LLink
+        >
+        <LLink href="ok" color="blue" mode="underlined" rounded hover
+          >Link 2</LLink
+        >
+        <LLink href="ok" color="blue" mode="outlined" rounded hover
+          >Link 3</LLink
+        >
+      </div>
+      <div class="profile">connection</div>
+    </div>
 
     <LButton class="my-4" color="orange" rounded="normal" focus
       >click me
@@ -34,29 +44,11 @@
       elit. Velit, sed!
     </p>
 
-    <LAlert color="green" mode="light" rounded left-border
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque,
-      quis.</LAlert
-    >
-
-    <LCheckbox color="red" focus></LCheckbox>
-
-    <label for="">
-      click me
-      <LRadio
-        color="red"
-        name="test"
-        v-model="radio"
-        value="one"
-        class="!w-6 !h-6"
-        focus
-      ></LRadio>
-    </label>
-    <p>{{ radio }}</p>
-    <label for="">
-      click me
-      <LRadio color="blue" name="test" v-model="radio" value="two"></LRadio>
-    </label>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing
+      <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink> elit.
+      Possimus, tempora?
+    </p>
   </div>
 </template>
 
@@ -82,6 +74,7 @@ import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
 import LTooltip from './components/LTooltip.vue';
 import LRadio from './components/LRadio.vue';
+import LLink from './components/LLink.vue';
 import { ref } from 'vue';
 
 const message = ref();

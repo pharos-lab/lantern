@@ -66,7 +66,7 @@ const props = defineProps({
     type: String,
     default: 'none',
     validator(value) {
-      return ['left', 'right'].includes(value);
+      return ['left', 'right', 'none'].includes(value);
     },
   },
 });
