@@ -1,5 +1,5 @@
 <template>
-  <LNavbar :links="links"> </LNavbar>
+  <LNavbar v-bind="navbarLinks"> </LNavbar>
   <div class="test">
     <LButton class="my-4" color="orange" rounded="normal" focus
       >click me
@@ -73,12 +73,29 @@ const vAutofocus = {
   mounted: (el) => el.focus(),
 };
 
-const links = {
+const navbarLinks = {
   color: 'red',
-  rounded: 'normal',
+  mode: 'underlined',
   hover: true,
-  mode: 'none',
-  hrefs: ['ok', 'ljijh', 'jnghfg', 'hjh'],
+  rounded: 'normal',
+  links: [
+    {
+      label: 'link 1',
+      href: 'ifdgdfgf',
+    },
+    {
+      label: 'link 2',
+      href: 'ifdgdfgf',
+    },
+    {
+      label: 'link 3',
+      href: 'ifdgdfgf',
+    },
+    {
+      label: 'link 4',
+      href: 'ifdgdfgf',
+    },
+  ],
 };
 </script>
 

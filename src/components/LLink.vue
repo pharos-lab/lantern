@@ -13,7 +13,7 @@ import { ref, computed } from 'vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useHoverSwitch } from './composables/hoverSwitch.js';
 import { useRoundedSwitch } from './composables/roundedSwitch.js';
-import { useUnderlineSwitch } from './composables/underlineSwitch.js';
+import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
 
 const props = defineProps({
   href: String,
@@ -26,7 +26,7 @@ const props = defineProps({
   },
   mode: {
     type: String,
-    default: 'none',
+    default: 'text',
     validator(value) {
       // The value must match one of these strings
       return [
@@ -59,13 +59,14 @@ const spaceClass = computed(() => {
     ? 'px-2 py-1'
     : props.mode == 'outlined'
     ? 'px-3 py-1'
+    : props.hover && props.mode == 'underlined'
+    ? 'px-2 py-px'
     : '';
 });
 
 const underlineClass = computed(() => {
   return props.mode == 'underlined'
-    ? 'underline decoration-4 underline-offset-4' +
-        useUnderlineSwitch(props.color)
+    ? 'border-b-4 ' + useBorderColorSwitch(props.color, props.mode)
     : '';
 });
 
@@ -78,7 +79,7 @@ const hoverClass = computed(() => {
 });
 
 const roundedClass = computed(() => {
-  return useRoundedSwitch(props.rounded);
+  return useRoundedSwitch(props.rounded, props.mode);
 });
 </script>
 

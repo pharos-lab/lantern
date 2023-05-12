@@ -14,7 +14,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'red':
-      if (mode == 'outlined' || mode == 'text') {
+      if (mode == 'outlined' || mode == 'text' || mode == 'underlined') {
         return 'border-red-500';
       }
 

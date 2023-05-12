@@ -3,7 +3,7 @@ export function useUnderlineSwitch(color) {
     case 'gray':
       return 'decoration-slate-600';
     case 'red':
-      return 'decoration-red-600';
+      return 'decoration-red-500';
     case 'orange':
       return 'decoration-orange-600';
     case 'yellow':

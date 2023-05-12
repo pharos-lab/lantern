@@ -9,7 +9,7 @@ export function useHoverSwitch(color, mode) {
         return 'hover:bg-slate-600';
       }
 
-      if (mode == 'light' || mode == 'text') {
+      if (mode == 'light' || mode == 'text' || mode == 'underlined') {
         return 'hover:bg-slate-200 text-slate-700';
       }
       break;
@@ -22,8 +22,8 @@ export function useHoverSwitch(color, mode) {
         return 'hover:bg-red-600';
       }
 
-      if (mode == 'light' || mode == 'text') {
-        return 'hover:bg-red-200 text-red-700';
+      if (mode == 'light' || mode == 'text' || mode == 'underlined') {
+        return 'hover:bg-red-200 text-red-600';
       }
       break;
     case 'orange':

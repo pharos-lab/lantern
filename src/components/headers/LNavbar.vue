@@ -1,18 +1,18 @@
 <template>
-  <div class="l-navbar flex p-2" :class="[containerClass]">
+  <div class="l-navbar flex items-center p-2" :class="[containerClass]">
     <div class="l-brand">MY TITLE</div>
     <div class="l-links grow flex gap-4" :class="alignmentClass">
       <slot v-if="slots.default"></slot>
 
       <template v-else-if="props.links">
         <LLink
-          v-for="href in props.links.hrefs"
-          :href="href"
-          :color="links.color"
-          :mode="links.mode"
-          :rounded="links.rounded"
-          :hover="links.hover"
-          >Click me</LLink
+          v-for="link in props.links"
+          :href="link.href"
+          :color="props.color"
+          :mode="props.mode"
+          :rounded="props.rounded"
+          :hover="props.hover"
+          >{{ link.label }}</LLink
         >
       </template>
     </div>
@@ -27,6 +27,39 @@ import LLink from '@/components/LLink.vue';
 const slots = useSlots();
 
 const props = defineProps({
+  color: {
+    type: String,
+    validator(value) {
+      // The value must match one of these strings
+      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
+    },
+  },
+  mode: {
+    type: String,
+    default: 'text',
+    validator(value) {
+      // The value must match one of these strings
+      return [
+        'none',
+        'fill',
+        'light',
+        'outlined',
+        'text',
+        'underlined',
+      ].includes(value);
+    },
+  },
+  rounded: {
+    type: String,
+    validator(value) {
+      // The value must match one of these strings
+      return ['none', 'sm', 'normal', 'md', 'lg', 'xl', 'pill'].includes(value);
+    },
+  },
+  hover: {
+    type: Boolean,
+    default: false,
+  },
   container: {
     type: Boolean,
     default: false,
@@ -38,7 +71,7 @@ const props = defineProps({
       return ['left', 'center', 'right'].includes(value);
     },
   },
-  links: Object,
+  links: Array,
 });
 
 const containerClass = computed(() => {

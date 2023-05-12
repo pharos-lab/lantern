@@ -1,8 +1,11 @@
-export function useRoundedSwitch(rounded) {
+export function useRoundedSwitch(rounded, mode) {
   switch (rounded) {
     case 'none':
       return 'rounded-none';
     case 'normal':
+      if (mode == 'underlined') {
+        return 'rounded-t';
+      }
       return 'rounded';
     case 'md':
       return 'rounded-md';

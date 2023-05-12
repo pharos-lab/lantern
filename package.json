@@ -3,7 +3,9 @@
   "private": false,
   "version": "0.0.1",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/lantern.umd.cjs",
   "module": "./dist/lantern.js",
   "exports": {
