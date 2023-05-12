@@ -1,7 +1,12 @@
 <template>
-  <div class="l-navbar flex items-center p-2" :class="[containerClass]">
-    <div class="l-brand">MY TITLE</div>
-    <div class="l-links grow flex gap-4" :class="alignmentClass">
+  <div class="l-navbar flex items-center p-2 gap-4" :class="[containerClass]">
+    <div class="l-brand bg-red-500">
+      <slot name="brand">
+        <img :src="props.brand.src" :alt="props.brand.alt ?? 'ok'" />
+      </slot>
+    </div>
+
+    <div class="l-links flex grow gap-4" :class="alignmentClass">
       <slot v-if="slots.default"></slot>
 
       <template v-else-if="props.links">
@@ -16,7 +21,10 @@
         >
       </template>
     </div>
-    <div class="l-actions">Connexion</div>
+
+    <div class="l-actions">
+      <slot name="actions">Actions goes here</slot>
+    </div>
   </div>
 </template>
 
@@ -72,6 +80,7 @@ const props = defineProps({
     },
   },
   links: Array,
+  brand: Object,
 });
 
 const containerClass = computed(() => {

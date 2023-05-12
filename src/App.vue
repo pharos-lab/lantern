@@ -75,9 +75,14 @@ const vAutofocus = {
 
 const navbarLinks = {
   color: 'red',
-  mode: 'underlined',
+  mode: 'outlined',
   hover: true,
-  rounded: 'normal',
+  rounded: 'none',
+  brand: {
+    src: 'dfgfgffd',
+    alt: 'fghfghfghfg',
+  },
+  alignment: 'left',
   links: [
     {
       label: 'link 1',

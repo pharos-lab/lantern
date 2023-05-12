@@ -27,7 +27,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'orange':
-      if (mode == 'outlined' || mode == 'text') {
+      if (mode == 'outlined' || mode == 'text' || mode == 'underlined') {
         return 'border-orange-500';
       }
 
@@ -40,7 +40,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'yellow':
-      if (mode == 'outlined' || mode == 'text') {
+      if (mode == 'outlined' || mode == 'text' || mode == 'underlined') {
         return 'border-yellow-500';
       }
 
@@ -53,7 +53,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'green':
-      if (mode == 'outlined' || mode == 'text') {
+      if (mode == 'outlined' || mode == 'text' || mode == 'underlined') {
         return 'border-emerald-500';
       }
 
@@ -66,7 +66,7 @@ export function useBorderColorSwitch(color, mode) {
       }
       break;
     case 'blue':
-      if (mode == 'outlined' || mode == 'text') {
+      if (mode == 'outlined' || mode == 'text' || mode == 'underlined') {
         return 'border-sky-500';
       }
 

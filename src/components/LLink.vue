@@ -59,7 +59,7 @@ const spaceClass = computed(() => {
     ? 'px-2 py-1'
     : props.mode == 'outlined'
     ? 'px-3 py-1'
-    : props.hover && props.mode == 'underlined'
+    : props.mode == 'underlined'
     ? 'px-2 py-px'
     : '';
 });
