@@ -48,21 +48,30 @@
       </div>
     </div>
 
-    <div class="l-mobile-navigation-content" v-show="openMobileNavigation">
-      <div class="l-mobile-links" :class="alignmentClass">
-        <slot
-          ><LLink
-            v-for="link in props.links"
-            :href="link.href"
-            :color="props.color"
-            :mode="props.mode"
-            :rounded="props.rounded"
-            :hover="props.hover"
-            >{{ link.label }}</LLink
-          ></slot
-        >
+    <LFadeTransition appear>
+      <div
+        class="l-mobile-navigation-content divide-y p-4"
+        v-show="openMobileNavigation"
+      >
+        <div class="l-mobile-links flex flex-col pb-4" :class="alignmentClass">
+          <slot
+            ><LLink
+              v-for="link in props.links"
+              :href="link.href"
+              :color="props.color"
+              :mode="props.mode"
+              :rounded="props.rounded"
+              :hover="props.hover"
+              >{{ link.label }}</LLink
+            ></slot
+          >
+        </div>
+
+        <div class="l-mobile-actions pt-4">
+          <slot name="actions">Actions goes here</slot>
+        </div>
       </div>
-    </div>
+    </LFadeTransition>
   </div>
 </template>
 
@@ -70,6 +79,7 @@
 import { ref, computed, useSlots } from 'vue';
 import LLink from '@/components/LLink.vue';
 import LFadeTransition from '@/components/LFadeTransition.vue';
+import LDivider from '@/components/LDivider.vue';
 import { useColorSwitch } from '@/components/composables/colorSwitch.js';
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/solid';
 
@@ -130,6 +140,11 @@ const colorClass = computed(() => {
   if (props.mode != 'outlined') {
     return useColorSwitch(props.color, props.mode);
   }
+});
+
+const dividerClass = computed(() => {
+  console.log(props.mode);
+  return props.mode == 'fill' ? 'white' : props.color;
 });
 const containerClass = computed(() => {
   return props.container ? 'container mx-auto' : '';

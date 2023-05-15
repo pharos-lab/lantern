@@ -1,5 +1,5 @@
 <template>
-  <LNavbar v-bind="navbarLinks">
+  <LNavbar v-bind="navbar">
     <a href="">ok</a>
     <a href="">ok</a>
     <a href="">ok</a>
@@ -77,9 +77,9 @@ const vAutofocus = {
   mounted: (el) => el.focus(),
 };
 
-const navbarLinks = {
-  color: 'red',
-  mode: 'light',
+const navbar = {
+  color: 'green',
+  mode: 'fill',
   hover: true,
   rounded: 'none',
   container: true,

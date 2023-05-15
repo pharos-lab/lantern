@@ -96,5 +96,7 @@ export function useDivideSwitch(color, mode) {
         return 'divide-sky-200';
       }
       break;
+    case 'white':
+      return 'divide-white';
   }
 }
