@@ -1,10 +1,10 @@
 <template>
   <div class="l-navbar-wrapper" :class="[colorClass]">
     <div
-      class="l-navbar flex items-center justify-center p-2 gap-4"
-      :class="[containerClass]"
+      class="l-navbar flex items-center p-2 gap-4"
+      :class="[containerClass, brandPositionClass]"
     >
-      <div class="l-brand">
+      <div class="l-brand flex">
         <slot name="brand">
           <img :src="props.brand.src" :alt="props.brand.alt ?? 'ok'" />
         </slot>
@@ -12,7 +12,7 @@
 
       <div
         class="l-links grow gap-4 hidden md:flex items-center"
-        :class="alignmentClass"
+        :class="linkPositionClass"
       >
         <slot
           ><LLink
@@ -31,18 +31,21 @@
         <slot name="actions">Actions goes here</slot>
       </div>
 
-      <div class="l-mobile-navigation-trigger absolute right-0 md:hidden">
+      <div
+        class="l-mobile-navigation-trigger absolute md:hidden"
+        :class="mobileNavigationTriggerPosition"
+      >
         <LFadeTransition mode="out-in">
           <Bars3Icon
             v-if="!openMobileNavigation"
-            class="w-7 h-7 mr-4"
+            class="w-7 h-7"
             @click="openMobileNavigation = true"
           />
 
           <XMarkIcon
             v-else
             @click="openMobileNavigation = false"
-            class="w-7 h-7 mr-4"
+            class="w-7 h-7"
           />
         </LFadeTransition>
       </div>
@@ -53,7 +56,7 @@
         class="l-mobile-navigation-content divide-y p-4"
         v-show="openMobileNavigation"
       >
-        <div class="l-mobile-links flex flex-col pb-4" :class="alignmentClass">
+        <div class="l-mobile-links flex flex-col pb-4">
           <slot
             ><LLink
               v-for="link in props.links"
@@ -150,7 +153,7 @@ const containerClass = computed(() => {
   return props.container ? 'container mx-auto' : '';
 });
 
-const alignmentClass = computed(() => {
+const linkPositionClass = computed(() => {
   switch (props.alignment) {
     case 'left':
       return 'justify-start';
@@ -159,6 +162,21 @@ const alignmentClass = computed(() => {
     case 'right':
       return 'justify-end';
   }
+});
+
+const brandPositionClass = computed(() => {
+  switch (props.brand.position) {
+    case 'left':
+      return 'justify-start';
+    case 'center':
+      return 'justify-center';
+    case 'right':
+      return 'justify-end';
+  }
+});
+
+const mobileNavigationTriggerPosition = computed(() => {
+  return props.brand.position == 'right' ? 'left-0 ml-4' : 'right-0 mr-4';
 });
 </script>
 

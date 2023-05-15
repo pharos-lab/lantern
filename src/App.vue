@@ -82,12 +82,13 @@ const navbar = {
   mode: 'fill',
   hover: true,
   rounded: 'none',
-  container: true,
+  container: false,
   brand: {
     src: 'dfgfgffd',
     alt: 'fghfghfghfg',
+    position: 'right',
   },
-  alignment: 'right',
+  alignment: 'left',
   links: [
     {
       label: 'link 1',
