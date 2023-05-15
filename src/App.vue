@@ -78,11 +78,12 @@ const navbarLinks = {
   mode: 'light',
   hover: true,
   rounded: 'none',
+  container: true,
   brand: {
     src: 'dfgfgffd',
     alt: 'fghfghfghfg',
   },
-  alignment: 'left',
+  alignment: 'right',
   links: [
     {
       label: 'link 1',

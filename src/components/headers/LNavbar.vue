@@ -1,13 +1,19 @@
 <template>
   <div class="l-navbar-wrapper" :class="[colorClass]">
-    <div class="l-navbar flex items-center p-2 gap-4" :class="[containerClass]">
+    <div
+      class="l-navbar flex items-center justify-center p-2 gap-4"
+      :class="[containerClass]"
+    >
       <div class="l-brand">
         <slot name="brand">
           <img :src="props.brand.src" :alt="props.brand.alt ?? 'ok'" />
         </slot>
       </div>
 
-      <div class="l-links flex grow gap-4" :class="alignmentClass">
+      <div
+        class="l-links grow gap-4 hidden md:flex items-center"
+        :class="alignmentClass"
+      >
         <slot v-if="slots.default"></slot>
 
         <template v-else-if="props.links">
@@ -23,8 +29,12 @@
         </template>
       </div>
 
-      <div class="l-actions">
+      <div class="l-actions hidden md:flex items-center">
         <slot name="actions">Actions goes here</slot>
+      </div>
+
+      <div class="l-mobile-navigation-trigger">
+        <Bar3Icon />
       </div>
     </div>
   </div>
@@ -34,6 +44,7 @@
 import { ref, computed, useSlots } from 'vue';
 import LLink from '@/components/LLink.vue';
 import { useColorSwitch } from '@/components/composables/colorSwitch.js';
+import { Bar3Icon } from '@heroicons/vue/24/solid';
 
 const slots = useSlots();
 
