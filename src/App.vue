@@ -1,5 +1,9 @@
 <template>
-  <LNavbar v-bind="navbarLinks"> </LNavbar>
+  <LNavbar v-bind="navbarLinks">
+    <a href="">ok</a>
+    <a href="">ok</a>
+    <a href="">ok</a>
+  </LNavbar>
   <div class="test">
     <LButton class="my-4" color="orange" rounded="normal" focus
       >click me
