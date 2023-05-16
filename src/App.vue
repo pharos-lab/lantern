@@ -1,11 +1,7 @@
 <template>
-  <LNavbar v-bind="navbar">
-    <a href="">ok</a>
-    <a href="">ok</a>
-    <a href="">ok</a>
-  </LNavbar>
+  <LNavbar v-bind="navbar"> </LNavbar>
   <div class="test">
-    <LButton class="my-4" color="orange" rounded="normal" focus
+    <LButton class="my-4" color="orange" rounded="normal" focus href="okok"
       >click me
     </LButton>
     <LButton class="my-4" color="orange" rounded="normal" focus mode="light"
@@ -79,14 +75,13 @@ const vAutofocus = {
 
 const navbar = {
   color: 'green',
-  mode: 'fill',
+  mode: 'light',
   hover: true,
   rounded: 'none',
   container: false,
   brand: {
     src: 'dfgfgffd',
     alt: 'fghfghfghfg',
-    position: 'right',
   },
   alignment: 'left',
   links: [
