@@ -28,7 +28,9 @@
       </div>
 
       <div class="l-actions hidden md:flex items-center">
-        <slot name="actions">Actions goes here</slot>
+        <slot name="actions">
+          <LButton></LButton>
+        </slot>
       </div>
 
       <div

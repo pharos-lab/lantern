@@ -1,8 +1,8 @@
 <template>
-  <LNavbar v-bind="navbar"> </LNavbar>
+  <LNavbarLogin v-bind="navbar"> </LNavbarLogin>
   <div class="test">
     <LButton class="my-4" color="orange" rounded="normal" focus href="okok"
-      >click me
+      >ok
     </LButton>
     <LButton class="my-4" color="orange" rounded="normal" focus mode="light"
       >click me
@@ -61,6 +61,7 @@ import LTooltip from './components/LTooltip.vue';
 import LRadio from './components/LRadio.vue';
 import LLink from './components/LLink.vue';
 import LNavbar from './components/headers/LNavbar.vue';
+import LNavbarLogin from './components/headers/LNavbarLogin.vue';
 import { ref } from 'vue';
 
 const message = ref();
