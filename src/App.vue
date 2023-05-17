@@ -84,21 +84,22 @@ const navbar = {
   color: 'red',
   mode: 'light',
   hover: true,
-  rounded: 'normal',
+  rounded: 'pill',
   container: false,
-  pills: true,
+  pills: false,
   brand: {
     src: 'dfgfgffd',
     alt: 'fghfghfghfg',
+    position: 'right',
   },
   alignment: 'left',
   links: [
     {
-      label: 'link 1',
+      label: 'link 1 lorem',
       href: 'ifdgdfgf',
     },
     {
-      label: 'link 2',
+      label: 'link 2 dfdsfsd',
       href: 'ifdgdfgf',
     },
     {
@@ -106,7 +107,7 @@ const navbar = {
       href: 'ifdgdfgf',
     },
     {
-      label: 'link 4',
+      label: 'link 4 dfsdfdfdfgdf dfgdf dfdf',
       href: 'ifdgdfgf',
     },
   ],

@@ -11,19 +11,15 @@
       </div>
 
       <div
-        class="l-links grow gap-4 hidden md:flex items-center"
+        class="l-links grow gap-2 hidden md:flex items-center"
         :class="linkPositionClass"
       >
         <slot
           ><LLink
             v-for="link in props.links"
             :href="link.href"
-            :color="props.color"
-            :mode="props.mode"
-            :rounded="props.rounded"
-            :hover="props.hover"
+            v-bind="props"
             :context="props.mode"
-            :pills="props.pills"
             >{{ link.label }}</LLink
           ></slot
         >
@@ -61,23 +57,25 @@
         :class="[dividerClass]"
         v-show="openMobileNavigation"
       >
-        <div class="l-mobile-links flex flex-col items-start pb-4 gap-2">
+        <div
+          class="l-mobile-links flex flex-col pb-4 gap-2"
+          :class="mobileNavigationLinksPosition"
+        >
           <slot
             ><LLink
               v-for="link in props.links"
               :href="link.href"
-              :color="props.color"
-              :mode="props.mode"
-              :rounded="props.rounded"
-              :hover="props.hover"
+              v-bind="props"
               :context="props.mode"
-              :pills="props.pills"
               >{{ link.label }}</LLink
             ></slot
           >
         </div>
 
-        <div class="l-mobile-actions pt-4">
+        <div
+          class="l-mobile-actions pt-4 flex flex-col gap-2"
+          :class="mobileNavigationLinksPosition"
+        >
           <slot name="actions">Actions goes here</slot>
         </div>
       </div>
@@ -86,15 +84,13 @@
 </template>
 
 <script setup>
-import { ref, computed, useSlots } from 'vue';
+import { ref, computed } from 'vue';
 import LLink from '@/components/LLink.vue';
 import LFadeTransition from '@/components/LFadeTransition.vue';
 import LButton from '@/components/LButton.vue';
 import { useColorSwitch } from '@/components/composables/colorSwitch.js';
 import { useDivideSwitch } from '@/components/composables/divideSwitch.js';
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/solid';
-
-const slots = useSlots();
 
 const props = defineProps({
   color: {
@@ -190,6 +186,10 @@ const brandPositionClass = computed(() => {
 
 const mobileNavigationTriggerPosition = computed(() => {
   return props.brand.position == 'right' ? 'left-0 ml-4' : 'right-0 mr-4';
+});
+
+const mobileNavigationLinksPosition = computed(() => {
+  return props.brand.position == 'right' ? 'items-start' : 'items-end';
 });
 </script>
 
