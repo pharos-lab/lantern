@@ -87,6 +87,8 @@ const colorClass = computed(() => {
   if (props.pills) {
     if (['fill', 'light'].includes(props.context)) {
       return useSurColorSwitch(props.color, props.mode, props.hover);
+    } else if (['text', 'underlined'].includes(props.context)) {
+      return useColorSwitch(props.color, 'light');
     }
   }
 

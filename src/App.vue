@@ -82,7 +82,7 @@ const vAutofocus = {
 
 const navbar = {
   color: 'red',
-  mode: 'light',
+  mode: 'underlined',
   hover: true,
   rounded: 'pill',
   container: false,
