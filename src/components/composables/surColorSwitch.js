@@ -1,4 +1,4 @@
-export function useSubColorSwitch(color, mode) {
+export function useSurColorSwitch(color, mode) {
   switch (color) {
     case 'gray':
       if (mode == 'text') {
@@ -9,11 +9,11 @@ export function useSubColorSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'bg-slate-300 text-slate-600';
+        return 'bg-slate-600 text-white';
       }
 
       if (mode == 'light') {
-        return 'bg-slate-100 text-slate-600';
+        return 'bg-slate-50 text-slate-600';
       }
       break;
     case 'red':
@@ -25,7 +25,7 @@ export function useSubColorSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'bg-red-300 text-slate-600';
+        return 'bg-red-300 text-white';
       }
 
       if (mode == 'light') {
@@ -41,7 +41,7 @@ export function useSubColorSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'bg-orange-300 text-slate-600';
+        return 'bg-orange-300 text-white';
       }
 
       if (mode == 'light') {
@@ -57,7 +57,7 @@ export function useSubColorSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'bg-yellow-300 text-slate-600';
+        return 'bg-yellow-300 text-white';
       }
 
       if (mode == 'light') {
@@ -73,11 +73,11 @@ export function useSubColorSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'bg-emerald-300 text-slate-600';
+        return 'bg-emerald-600 text-white';
       }
 
       if (mode == 'light') {
-        return 'bg-emerald-50 text-emerald-600';
+        return 'bg-emerald-200 text-emerald-600';
       }
       break;
     case 'blue':
@@ -89,7 +89,7 @@ export function useSubColorSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'bg-sky-300 text-slate-600';
+        return 'bg-sky-300 text-white';
       }
 
       if (mode == 'light') {

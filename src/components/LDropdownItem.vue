@@ -1,5 +1,5 @@
 <template>
-  <div class="l-dropdown-item px-4 py-2" :class="colorClass">
+  <div class="l-dropdown-item px-4 py-2" :class="[colorClass, hoverClass]">
     <slot></slot>
   </div>
 </template>
@@ -11,6 +11,7 @@ import { useHoverSwitch } from './composables/hoverSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
 
 const dropdownColor = inject('dropdownColor');
+const dropdownMode = inject('dropdownMode');
 
 const props = defineProps({
   color: {
@@ -23,10 +24,13 @@ const props = defineProps({
 });
 
 const colorClass = computed(() => {
-  return (
-    useColorSwitch(dropdownColor, 'light') +
-    ' ' +
-    useHoverSwitch(dropdownColor, 'light')
-  );
+  if (['text', 'underlined'].includes(dropdownMode)) {
+    return useSubColorSwitch(dropdownColor, 'light');
+  }
+  return useSubColorSwitch(dropdownColor, dropdownMode);
+});
+
+const hoverClass = computed(() => {
+  return useHoverSwitch(dropdownColor, dropdownMode);
 });
 </script>

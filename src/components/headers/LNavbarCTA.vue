@@ -19,9 +19,11 @@
             v-for="link in props.links"
             :href="link.href"
             :color="props.color"
-            :mode="props.mode"
+            :mode="props.pills ? 'fill' : props.mode"
             :rounded="props.rounded"
             :hover="props.hover"
+            :context="props.mode"
+            :pills="props.pills"
             >{{ link.label }}</LLink
           ></slot
         >
@@ -59,7 +61,7 @@
         :class="[dividerClass]"
         v-show="openMobileNavigation"
       >
-        <div class="l-mobile-links flex flex-col pb-4">
+        <div class="l-mobile-links flex flex-col items-start pb-4 gap-2">
           <slot
             ><LLink
               v-for="link in props.links"
@@ -68,6 +70,8 @@
               :mode="props.mode"
               :rounded="props.rounded"
               :hover="props.hover"
+              :context="props.mode"
+              :pills="props.pills"
               >{{ link.label }}</LLink
             ></slot
           >
@@ -85,8 +89,9 @@
 import { ref, computed, useSlots } from 'vue';
 import LLink from '@/components/LLink.vue';
 import LFadeTransition from '@/components/LFadeTransition.vue';
+import LButton from '@/components/LButton.vue';
 import { useColorSwitch } from '@/components/composables/colorSwitch.js';
-import { useDividerSwitch } from '@/components/composables/dividerSwitch.js';
+import { useDivideSwitch } from '@/components/composables/divideSwitch.js';
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/solid';
 
 const slots = useSlots();
@@ -138,18 +143,23 @@ const props = defineProps({
   },
   links: Array,
   brand: Object,
+  pills: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const openMobileNavigation = ref(false);
 
 const colorClass = computed(() => {
-  if (props.mode != 'outlined') {
-    return useColorSwitch(props.color, props.mode);
+  if (props.mode == 'outlined') {
+    return useColorSwitch(props.color, 'text');
   }
+  return useColorSwitch(props.color, props.mode);
 });
 
 const dividerClass = computed(() => {
-  return useDividerSwitch(props.color, pros.mode);
+  return useDivideSwitch(props.color, props.mode);
 });
 
 const containerClass = computed(() => {

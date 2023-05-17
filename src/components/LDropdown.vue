@@ -15,6 +15,7 @@
       hover
       class="l-dropdown-button ease-in-out transition-all duration-500"
       :color="props.color"
+      :mode="props.mode"
       :class="labelClass"
       @mouseenter="!props.click ? (showItems = true) : null"
       @mouseleave="!props.click ? (showItems = false) : null"
@@ -46,6 +47,7 @@ import LFadeTransition from './LFadeTransition.vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
 
 provide('dropdownColor', props.color);
+provide('dropdownMode', props.mode);
 
 const slots = useSlots();
 
@@ -55,6 +57,21 @@ const props = defineProps({
     validator(value) {
       // The value must match one of these strings
       return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
+    },
+  },
+  mode: {
+    type: String,
+    default: 'fill',
+    validator(value) {
+      // The value must match one of these strings
+      return [
+        'none',
+        'fill',
+        'light',
+        'outlined',
+        'text',
+        'underlined',
+      ].includes(value);
     },
   },
   click: {
@@ -105,7 +122,7 @@ const placementClass = computed(() => {
 });
 
 const colorClass = computed(() => {
-  return useColorSwitch(props.color, 'fill');
+  return useColorSwitch(props.color, props.mode);
 });
 </script>
 

@@ -6,11 +6,11 @@ export function useHoverSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'hover:bg-slate-600';
+        return 'hover:bg-slate-600 hover:text-white';
       }
 
       if (mode == 'light' || mode == 'text' || mode == 'underlined') {
-        return 'hover:bg-slate-200 text-slate-700';
+        return 'hover:bg-slate-200 hover:text-slate-700';
       }
       break;
     case 'red':
@@ -23,7 +23,7 @@ export function useHoverSwitch(color, mode) {
       }
 
       if (mode == 'light' || mode == 'text' || mode == 'underlined') {
-        return 'hover:bg-red-200 text-red-600';
+        return 'hover:bg-red-200 hover:text-red-600';
       }
       break;
     case 'orange':
@@ -32,11 +32,11 @@ export function useHoverSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'hover:bg-orange-600';
+        return 'hover:bg-orange-600 hover:text-white';
       }
 
       if (mode == 'light' || mode == 'text') {
-        return 'hover:bg-orange-200 text-orange-700';
+        return 'hover:bg-orange-200 hover:text-orange-700';
       }
       break;
     case 'yellow':
@@ -45,11 +45,11 @@ export function useHoverSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'hover:bg-yellow-600';
+        return 'hover:bg-yellow-600 hover:text-white';
       }
 
       if (mode == 'light' || mode == 'text') {
-        return 'hover:bg-yellow-200 text-yellow-700';
+        return 'hover:bg-yellow-200 hover:text-yellow-700';
       }
       break;
     case 'green':
@@ -58,11 +58,11 @@ export function useHoverSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'hover:bg-emerald-600';
+        return 'hover:bg-emerald-600 hover:text-white';
       }
 
       if (mode == 'light' || mode == 'text') {
-        return 'hover:bg-emerald-200 text-emerald-700';
+        return 'hover:bg-emerald-200 hover:text-emerald-700';
       }
       break;
     case 'blue':
@@ -71,11 +71,11 @@ export function useHoverSwitch(color, mode) {
       }
 
       if (mode == 'fill') {
-        return 'hover:bg-sky-600';
+        return 'hover:bg-sky-600 hover:text-white';
       }
 
       if (mode == 'light' || mode == 'text') {
-        return 'hover:bg-sky-200 text-sky-700';
+        return 'hover:bg-sky-200 hover:text-sky-700';
       }
       break;
   }

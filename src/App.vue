@@ -1,6 +1,12 @@
 <template>
-  <LNavbarLogin v-bind="navbar"> </LNavbarLogin>
+  <LNavbarCTA v-bind="navbar"> </LNavbarCTA>
   <div class="test">
+    <LDropdown color="blue" mode="text" margin rounded>
+      <LDropdownItem>ok</LDropdownItem>
+      <LDropdownItem>ok</LDropdownItem>
+      <LDropdownItem>ok</LDropdownItem>
+    </LDropdown>
+
     <LButton class="my-4" color="orange" rounded="normal" focus href="okok"
       >ok
     </LButton>
@@ -61,7 +67,7 @@ import LTooltip from './components/LTooltip.vue';
 import LRadio from './components/LRadio.vue';
 import LLink from './components/LLink.vue';
 import LNavbar from './components/headers/LNavbar.vue';
-import LNavbarLogin from './components/headers/LNavbarLogin.vue';
+import LNavbarCTA from './components/headers/LNavbarCTA.vue';
 import { ref } from 'vue';
 
 const message = ref();
@@ -76,10 +82,11 @@ const vAutofocus = {
 
 const navbar = {
   color: 'green',
-  mode: 'light',
+  mode: 'underlined',
   hover: true,
-  rounded: 'none',
+  rounded: 'normal',
   container: false,
+  pills: false,
   brand: {
     src: 'dfgfgffd',
     alt: 'fghfghfghfg',
