@@ -78,7 +78,6 @@ const spaceClass = computed(() => {
 });
 
 const underlineClass = computed(() => {
-  console.log(props.context);
   return props.mode == 'underlined'
     ? 'border-b-4 ' + useBorderColorSwitch(props.color, props.mode)
     : '';
@@ -87,7 +86,7 @@ const underlineClass = computed(() => {
 const colorClass = computed(() => {
   if (props.pills) {
     if (['fill', 'light'].includes(props.context)) {
-      return useSurColorSwitch(props.color, props.mode);
+      return useSurColorSwitch(props.color, props.mode, props.hover);
     }
   }
 

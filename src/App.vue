@@ -81,12 +81,12 @@ const vAutofocus = {
 };
 
 const navbar = {
-  color: 'green',
-  mode: 'underlined',
+  color: 'red',
+  mode: 'light',
   hover: true,
   rounded: 'normal',
   container: false,
-  pills: false,
+  pills: true,
   brand: {
     src: 'dfgfgffd',
     alt: 'fghfghfghfg',

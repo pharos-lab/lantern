@@ -35,7 +35,7 @@ export function useHoverSwitch(color, mode) {
         return 'hover:bg-orange-600 hover:text-white';
       }
 
-      if (mode == 'light' || mode == 'text') {
+      if (mode == 'light' || mode == 'text' || mode == 'underlined') {
         return 'hover:bg-orange-200 hover:text-orange-700';
       }
       break;
@@ -48,7 +48,7 @@ export function useHoverSwitch(color, mode) {
         return 'hover:bg-yellow-600 hover:text-white';
       }
 
-      if (mode == 'light' || mode == 'text') {
+      if (mode == 'light' || mode == 'text' || mode == 'underlined') {
         return 'hover:bg-yellow-200 hover:text-yellow-700';
       }
       break;
@@ -61,7 +61,7 @@ export function useHoverSwitch(color, mode) {
         return 'hover:bg-emerald-600 hover:text-white';
       }
 
-      if (mode == 'light' || mode == 'text') {
+      if (mode == 'light' || mode == 'text' || mode == 'underlined') {
         return 'hover:bg-emerald-200 hover:text-emerald-700';
       }
       break;
@@ -74,7 +74,7 @@ export function useHoverSwitch(color, mode) {
         return 'hover:bg-sky-600 hover:text-white';
       }
 
-      if (mode == 'light' || mode == 'text') {
+      if (mode == 'light' || mode == 'text' || mode == 'underlined') {
         return 'hover:bg-sky-200 hover:text-sky-700';
       }
       break;

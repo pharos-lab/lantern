@@ -19,7 +19,7 @@
             v-for="link in props.links"
             :href="link.href"
             :color="props.color"
-            :mode="props.pills ? 'fill' : props.mode"
+            :mode="props.mode"
             :rounded="props.rounded"
             :hover="props.hover"
             :context="props.mode"
