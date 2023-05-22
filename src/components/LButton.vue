@@ -4,7 +4,6 @@
     :href="props.href ?? null"
     class="l-button py-2 px-4 font-semibold"
     :class="[colorClass, roundedClass, hoverClass, focusClass]"
-    contenteditable
     ><slot>Click me</slot></component
   >
 </template>

@@ -25,9 +25,14 @@
         >
       </div>
 
-      <div class="l-actions hidden md:flex items-center">
+      <div class="l-actions hidden md:flex items-center gap-2">
         <slot name="actions">
-          <LButton></LButton>
+          <LButton
+            v-for="(action, index) in props.actions"
+            :key="index"
+            v-bind="action"
+            >{{ action.label }}</LButton
+          >
         </slot>
       </div>
 
@@ -76,7 +81,14 @@
           class="l-mobile-actions pt-4 flex flex-col gap-2"
           :class="mobileNavigationLinksPosition"
         >
-          <slot name="actions">Actions goes here</slot>
+          <slot name="actions">
+            <LButton
+              v-for="(action, index) in props.actions"
+              :key="index"
+              v-bind="action"
+              >{{ action.label }}</LButton
+            >
+          </slot>
         </div>
       </div>
     </LFadeTransition>
@@ -143,6 +155,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  actions: Array,
 });
 
 const openMobileNavigation = ref(false);

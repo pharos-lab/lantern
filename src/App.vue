@@ -1,5 +1,12 @@
 <template>
-  <LNavbarCTA v-bind="navbar"> </LNavbarCTA>
+  <LNavbarCTA v-bind="navbar">
+    <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
+    <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
+    <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
+    <template #actions>
+      <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
+    </template>
+  </LNavbarCTA>
   <div class="test">
     <LDropdown color="blue" mode="text" margin rounded>
       <LDropdownItem>ok</LDropdownItem>
@@ -109,6 +116,22 @@ const navbar = {
     {
       label: 'link 4 dfsdfdfdfgdf dfgdf dfdf',
       href: 'ifdgdfgf',
+    },
+  ],
+  actions: [
+    {
+      label: 'login',
+      href: 'ok',
+      color: 'green',
+      mode: 'fill',
+      rounded: 'normal',
+    },
+    {
+      label: 'login',
+      href: 'ok',
+      color: 'red',
+      mode: 'fill',
+      rounded: 'normal',
     },
   ],
 };
