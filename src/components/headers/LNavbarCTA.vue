@@ -40,7 +40,7 @@
         class="l-mobile-navigation-trigger absolute md:hidden"
         :class="mobileNavigationTriggerPosition"
       >
-        <LFadeTransition mode="out-in">
+        <LFadeTransition mode="out-in" duration="300">
           <Bars3Icon
             v-if="!openMobileNavigation"
             class="w-7 h-7"
