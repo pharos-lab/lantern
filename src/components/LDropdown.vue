@@ -13,7 +13,15 @@
     <LButton
       v-else
       hover
-      class="l-dropdown-button ease-in-out transition-all duration-500"
+      class="
+        l-dropdown-button
+        ease-in-out
+        transition-all
+        duration-500
+        flex
+        gap-3
+        items-center
+      "
       :color="props.color"
       :mode="props.mode"
       :class="labelClass"
@@ -22,6 +30,7 @@
       @click="props.click ? (showItems = !showItems) : null"
     >
       {{ props.label ?? 'Add a label' }}
+      <ChevronDownIcon class="h-5 w-5" v-if="props.icon" />
     </LButton>
     <LFadeTransition>
       <div
@@ -45,6 +54,7 @@ import { ref, computed, provide, useSlots } from 'vue';
 import LButton from './LButton.vue';
 import LFadeTransition from './LFadeTransition.vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
+import { ChevronDownIcon } from '@heroicons/vue/24/outline';
 
 provide('dropdownColor', props.color);
 provide('dropdownMode', props.mode);
@@ -92,6 +102,10 @@ const props = defineProps({
   right: {
     type: Boolean,
     default: false,
+  },
+  icon: {
+    type: Boolean,
+    default: true,
   },
 });
 

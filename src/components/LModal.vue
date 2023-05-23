@@ -23,13 +23,12 @@
       @click.self="isOpen = false"
     >
       <div class="l-modal-content w-2/3 opacity-100 bg-white relative">
-        <LClose
+        <XMarkIcon
           v-if="props.dismissable"
           @click="isOpen = false"
-          color="gray"
-          context="outlined"
-          class="right-2 absolute top-2"
-        ></LClose>
+          class="right-2 absolute top-2 w-6 h-6 rounded"
+          :class="closeColorClass"
+        ></XMarkIcon>
 
         <div class="l-modal-header p-4">
           <slot name="header"></slot>
@@ -50,7 +49,8 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref, computed } from 'vue';
 import LButton from './LButton.vue';
-import LClose from './LClose.vue';
+import { useHoverSwitch } from './composables/hoverSwitch.js';
+import { XMarkIcon } from '@heroicons/vue/24/outline';
 
 const props = defineProps({
   label: {
@@ -63,6 +63,10 @@ const props = defineProps({
 });
 
 const isOpen = ref(false);
+
+const closeColorClass = computed(() => {
+  return useHoverSwitch('gray', 'light');
+});
 </script>
 
 <style scoped></style>

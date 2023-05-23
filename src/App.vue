@@ -1,14 +1,17 @@
 <template>
   <LNavbarCTA v-bind="navbar">
+    <!--
+
     <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
     <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
     <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
+  -->
     <template #actions>
       <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
     </template>
   </LNavbarCTA>
   <div class="test">
-    <LDropdown color="blue" mode="text" margin rounded>
+    <LDropdown color="blue" mode="fill" margin rounded :icon="false">
       <LDropdownItem>ok</LDropdownItem>
       <LDropdownItem>ok</LDropdownItem>
       <LDropdownItem>ok</LDropdownItem>
@@ -42,11 +45,9 @@
       elit. Velit, sed!
     </p>
 
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing
-      <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink> elit.
-      Possimus, tempora?
-    </p>
+    <LAlert color="red">it works!</LAlert>
+
+    <LModal label="open"></LModal>
   </div>
 </template>
 
@@ -54,7 +55,6 @@
 import LButton from './components/LButton.vue';
 import LHeading from './components/LHeading.vue';
 import LAvatar from './components/LAvatar.vue';
-import LClose from './components/LClose.vue';
 import LParagraph from './components/LParagraph.vue';
 import LDivider from './components/LDivider.vue';
 import LAlert from './components/LAlert.vue';
@@ -88,10 +88,9 @@ const vAutofocus = {
 };
 
 const navbar = {
-  color: 'red',
+  color: 'gray',
   mode: 'underlined',
   hover: true,
-  rounded: 'pill',
   container: false,
   pills: false,
   brand: {

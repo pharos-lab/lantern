@@ -5,13 +5,12 @@
       :class="[colorClass, roundedClass, leftBorderClass]"
       class="l-alert p-4 font-semibold shadow-md relative"
     >
-      <LClose
-        class="float-right w-5 h-5"
+      <XMarkIcon
+        class="float-right w-5 h-5 rounded cursor-pointer"
+        :class="closeColorClass"
         v-if="props.dismissable"
         @click="open = false"
-        :color="props.color"
-        :context="props.mode"
-      ></LClose>
+      ></XMarkIcon>
 
       <slot></slot>
     </div>
@@ -23,10 +22,11 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref, computed } from 'vue';
 import LFadeTransition from './LFadeTransition.vue';
-import LClose from './LClose.vue';
 import { useRoundedSwitch } from './composables/roundedSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
+import { useHoverSwitch } from './composables/hoverSwitch.js';
 import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
+import { XMarkIcon } from '@heroicons/vue/24/outline';
 
 const open = ref(true);
 
@@ -64,6 +64,9 @@ const props = defineProps({
 
 const colorClass = computed(() => {
   return useColorSwitch(props.color, props.mode);
+});
+const closeColorClass = computed(() => {
+  return useHoverSwitch(props.color, props.mode);
 });
 
 const roundedClass = computed(() => {
