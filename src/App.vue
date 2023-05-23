@@ -1,13 +1,21 @@
 <template>
+  <LNavbarCTA v-bind="navbar">
+    <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
+    <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
+    <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
+    <template #actions>
+      <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink>
+    </template>
+  </LNavbarCTA>
   <div class="test">
-    <LAccordion color="blue" mode="fill">
-      <LAccordionItem label="item 1">Contenu 1</LAccordionItem>
-      <LAccordionItem label="item 2">contenu 2</LAccordionItem>
-      <LAccordionItem label="item 3">contenu 3</LAccordionItem>
-    </LAccordion>
+    <LDropdown color="blue" mode="text" margin rounded>
+      <LDropdownItem>ok</LDropdownItem>
+      <LDropdownItem>ok</LDropdownItem>
+      <LDropdownItem>ok</LDropdownItem>
+    </LDropdown>
 
-    <LButton class="my-4" color="orange" rounded="normal" focus
-      >click me
+    <LButton class="my-4" color="orange" rounded="normal" focus href="okok"
+      >ok
     </LButton>
     <LButton class="my-4" color="orange" rounded="normal" focus mode="light"
       >click me
@@ -34,29 +42,11 @@
       elit. Velit, sed!
     </p>
 
-    <LAlert color="green" mode="light" rounded left-border
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque,
-      quis.</LAlert
-    >
-
-    <LCheckbox color="red" focus></LCheckbox>
-
-    <label for="">
-      click me
-      <LRadio
-        color="red"
-        name="test"
-        v-model="radio"
-        value="one"
-        class="!w-6 !h-6"
-        focus
-      ></LRadio>
-    </label>
-    <p>{{ radio }}</p>
-    <label for="">
-      click me
-      <LRadio color="blue" name="test" v-model="radio" value="two"></LRadio>
-    </label>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing
+      <LLink href="ok" color="blue" mode="fill" rounded>Click me</LLink> elit.
+      Possimus, tempora?
+    </p>
   </div>
 </template>
 
@@ -82,6 +72,9 @@ import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
 import LTooltip from './components/LTooltip.vue';
 import LRadio from './components/LRadio.vue';
+import LLink from './components/LLink.vue';
+import LNavbar from './components/headers/LNavbar.vue';
+import LNavbarCTA from './components/headers/LNavbarCTA.vue';
 import { ref } from 'vue';
 
 const message = ref();
@@ -92,6 +85,55 @@ const radio = ref();
 
 const vAutofocus = {
   mounted: (el) => el.focus(),
+};
+
+const navbar = {
+  color: 'red',
+  mode: 'underlined',
+  hover: true,
+  rounded: 'pill',
+  container: false,
+  pills: false,
+  brand: {
+    src: 'dfgfgffd',
+    alt: 'fghfghfghfg',
+    position: 'right',
+  },
+  alignment: 'left',
+  links: [
+    {
+      label: 'link 1 lorem',
+      href: 'ifdgdfgf',
+    },
+    {
+      label: 'link 2 dfdsfsd',
+      href: 'ifdgdfgf',
+    },
+    {
+      label: 'link 3',
+      href: 'ifdgdfgf',
+    },
+    {
+      label: 'link 4 dfsdfdfdfgdf dfgdf dfdf',
+      href: 'ifdgdfgf',
+    },
+  ],
+  actions: [
+    {
+      label: 'login',
+      href: 'ok',
+      color: 'green',
+      mode: 'fill',
+      rounded: 'normal',
+    },
+    {
+      label: 'login',
+      href: 'ok',
+      color: 'red',
+      mode: 'fill',
+      rounded: 'normal',
+    },
+  ],
 };
 </script>
 

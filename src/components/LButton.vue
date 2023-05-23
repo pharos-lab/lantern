@@ -1,10 +1,11 @@
 <template>
-  <button
+  <component
+    :is="tag"
+    :href="props.href ?? null"
     class="l-button py-2 px-4 font-semibold"
     :class="[colorClass, roundedClass, hoverClass, focusClass]"
+    ><slot>Click me</slot></component
   >
-    <slot>Click me</slot>
-  </button>
 </template>
 
 <script setup>
@@ -27,7 +28,7 @@ const props = defineProps({
     default: 'fill',
     validator(value) {
       // The value must match one of these strings
-      return ['none', 'fill', 'light', 'outlined'].includes(value);
+      return ['none', 'fill', 'light', 'outlined', 'text'].includes(value);
     },
   },
   rounded: {
@@ -42,6 +43,11 @@ const props = defineProps({
     default: true,
   },
   focus: String,
+  href: String,
+});
+
+const tag = computed(() => {
+  return props.href ? 'a' : 'button';
 });
 
 const colorClass = computed(() => {

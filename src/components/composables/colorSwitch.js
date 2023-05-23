@@ -1,8 +1,8 @@
 export function useColorSwitch(color, mode) {
   switch (color) {
     case 'gray':
-      if (mode == 'none') {
-        return 'text-slate-500';
+      if (mode == 'text' || mode == 'underlined') {
+        return 'text-slate-600';
       }
       if (mode == 'outlined') {
         return 'text-slate-500 border-2 border-slate-500';
@@ -17,8 +17,8 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'red':
-      if (mode == 'none') {
-        return 'text-red-500';
+      if (mode == 'text' || mode == 'underlined') {
+        return 'text-red-600';
       }
       if (mode == 'outlined') {
         return 'text-red-500 border-2 border-red-500';
@@ -33,8 +33,8 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'orange':
-      if (mode == 'none') {
-        return 'text-orange-500';
+      if (mode == 'text' || mode == 'underlined') {
+        return 'text-orange-600';
       }
       if (mode == 'outlined') {
         return 'text-orange-500 border-2 border-orange-500';
@@ -49,8 +49,8 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'yellow':
-      if (mode == 'none') {
-        return 'text-yellow-500';
+      if (mode == 'text' || mode == 'underlined') {
+        return 'text-yellow-600';
       }
       if (mode == 'outlined') {
         return 'text-yellow-500 border-2 border-yellow-500';
@@ -65,8 +65,8 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'green':
-      if (mode == 'none') {
-        return 'text-emerald-500';
+      if (mode == 'text' || mode == 'underlined') {
+        return 'text-emerald-600';
       }
       if (mode == 'outlined') {
         return 'text-emerald-500 border-2 border-emerald-500';
@@ -81,8 +81,8 @@ export function useColorSwitch(color, mode) {
       }
       break;
     case 'blue':
-      if (mode == 'none') {
-        return 'text-sky-500';
+      if (mode == 'text' || mode == 'underlined') {
+        return 'text-sky-600';
       }
       if (mode == 'outlined') {
         return 'text-sky-500 border-2 border-sky-500';

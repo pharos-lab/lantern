@@ -45,7 +45,7 @@ const props = defineProps({
     default: 'none',
     validator(value) {
       // The value must match one of these strings
-      return ['none', 'fill', 'light', 'outlined'].includes(value);
+      return ['none', 'fill', 'light', 'outlined', 'text'].includes(value);
     },
   },
   background: {
