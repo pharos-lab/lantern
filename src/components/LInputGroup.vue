@@ -58,8 +58,7 @@ const props = defineProps({
     },
   },
   border: {
-    type: Boolean,
-    default: false,
+    type: String,
   },
   focus: {
     type: Boolean,
@@ -72,7 +71,6 @@ const props = defineProps({
 });
 
 const positionClass = computed(() => {
-  console.log(props.focus);
   switch (props.position) {
     case 'top':
       return 'flex flex-col gap-y-4';

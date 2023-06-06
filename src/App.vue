@@ -1,7 +1,13 @@
 <template>
   <div class="test">
     <form action="">
-      <LInputGroup label="username" class="mb-2" color="gray" :focus="false">
+      <LInputGroup
+        label="username"
+        class="mb-2"
+        color="gray"
+        :focus="false"
+        border
+      >
       </LInputGroup>
       <LButton color="green" mode="light" rounded>Submit</LButton>
     </form>
