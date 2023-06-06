@@ -70,8 +70,6 @@ const colorClass = computed(() => {
 const focusClass = computed(() => {
   return props.focus
     ? useFocusSwitch(props.focus, props.mode)
-    : props.focus == ''
-    ? useFocusSwitch(props.color, props.mode)
     : 'focus:outline-none';
 });
 

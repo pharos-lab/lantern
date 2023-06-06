@@ -51,7 +51,7 @@ const props = defineProps({
   },
   mode: {
     type: String,
-    default: 'fill',
+    default: 'light',
     validator(value) {
       // The value must match one of these strings
       return ['none', 'fill', 'light', 'outlined', 'text'].includes(value);
@@ -72,6 +72,7 @@ const props = defineProps({
 });
 
 const positionClass = computed(() => {
+  console.log(props.focus);
   switch (props.position) {
     case 'top':
       return 'flex flex-col gap-y-4';
