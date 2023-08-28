@@ -14,6 +14,7 @@ import { useRoundedSwitch } from './composables/roundedSwitch.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useHoverSwitch } from './composables/hoverSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
+import { backgroundColor } from './composables/backgroundColor.js';
 
 const props = defineProps({
   color: {
@@ -51,7 +52,9 @@ const tag = computed(() => {
 });
 
 const colorClass = computed(() => {
-  return useColorSwitch(props.color, props.mode);
+  console.log(backgroundColor[props.color]);
+  return backgroundColor[props.color][props.mode];
+  //return useColorSwitch(props.color, props.mode);
 });
 
 const hoverClass = computed(() => {

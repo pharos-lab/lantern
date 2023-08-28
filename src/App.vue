@@ -11,10 +11,7 @@
       </LInputGroup>
       <div class="flex gap-2">
         <LButton color="red" mode="fill" rounded>Submit</LButton>
-        <LButton color="green" mode="light" rounded>Submit</LButton>
-        <LButton color="blue" mode="light" rounded>Submit</LButton>
-        <LButton color="green" mode="light" rounded>Submit</LButton>
-        <LButton color="green" mode="light" rounded>Submit</LButton>
+        <LButton color="gray" mode="light" rounded>Submit</LButton>
       </div>
     </form>
   </div>
