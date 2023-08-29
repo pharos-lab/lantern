@@ -1,19 +1,17 @@
 <template>
   <div class="test">
-    <form action="">
-      <LInputGroup
-        label="username"
-        class="mb-2"
-        color="gray"
-        :focus="false"
-        border
-      >
-      </LInputGroup>
-      <div class="flex gap-2">
-        <LButton color="red" mode="fill" rounded>Submit</LButton>
-        <LButton color="green" mode="light" rounded>Submit</LButton>
-      </div>
-    </form>
+    <LInputGroup
+      label="username"
+      class="mb-2"
+      color="gray"
+      :focus="false"
+      border
+    >
+    </LInputGroup>
+    <div class="flex gap-2">
+      <LButton color="red" mode="light" rounded focus>ok</LButton>
+      <LButton color="green" mode="light" rounded>Submit</LButton>
+    </div>
   </div>
 </template>
 
