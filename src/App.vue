@@ -4,6 +4,7 @@
       label="username"
       class="mb-2"
       color="gray"
+      mode="fill"
       :focus="false"
       border
     >
