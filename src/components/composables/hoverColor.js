@@ -1,0 +1,44 @@
+export const hoverColor = {
+  gray: {
+    fill: 'hover:bg-slate-600 hover:text-white',
+    light: 'hover:bg-slate-200 hover:text-slate-700',
+    outlined: 'hover:bg-slate-500 hover:text-white',
+    text: 'hover:bg-slate-200 hover:text-slate-700',
+    none: '',
+  },
+  red: {
+    fill: 'hover:bg-red-600 hover:text-white',
+    light: 'hover:bg-red-200 hover:text-red-700',
+    outlined: 'hover:bg-red-500 hover:text-white',
+    text: 'hover:bg-red-200 hover:text-red-700',
+    none: '',
+  },
+  orange: {
+    fill: 'hover:bg-orange-600 hover:text-white',
+    light: 'hover:bg-orange-200 hover:text-orange-700',
+    outlined: 'hover:bg-orange-500 hover:text-white',
+    text: 'hover:bg-orange-200 hover:text-orange-700',
+    none: '',
+  },
+  yellow: {
+    fill: 'hover:bg-yellow-600 hover:text-white',
+    light: 'hover:bg-yellow-200 hover:text-yellow-700',
+    outlined: 'hover:bg-yellow-500 hover:text-white',
+    text: 'hover:bg-yellow-200 hover:text-yellow-700',
+    none: '',
+  },
+  green: {
+    fill: 'hover:bg-emerald-600 hover:text-white',
+    light: 'hover:bg-emerald-200 hover:text-emerald-700',
+    outlined: 'hover:bg-emerald-500 hover:text-white',
+    text: 'hover:bg-emerald-200 hover:text-emerald-700',
+    none: '',
+  },
+  blue: {
+    fill: 'hover:bg-sky-600 hover:text-white',
+    light: 'hover:bg-sky-200 hover:text-sky-700',
+    outlined: 'hover:bg-sky-500 hover:text-white',
+    text: 'hover:bg-sky-200 hover:text-sky-700',
+    none: '',
+  },
+};
