@@ -14,6 +14,13 @@
       <LButton color="green" mode="light" rounded>Submit</LButton>
     </div>
   </div>
+
+  <LAccordion color="red" mode="outlined">
+    <LAccordionItem label="open">ok</LAccordionItem>
+    <LAccordionItem label="open">ok</LAccordionItem>
+    <LAccordionItem label="open">ok</LAccordionItem>
+    <LAccordionItem label="open">ok</LAccordionItem>
+  </LAccordion>
 </template>
 
 <script setup>
@@ -21,6 +28,8 @@ import { ref } from 'vue';
 
 import LButton from './components/LButton.vue';
 import LInputGroup from './components/LInputGroup.vue';
+import LAccordion from './components/LAccordion.vue';
+import LAccordionItem from './components/LAccordionItem.vue';
 
 const message = ref();
 const message2 = ref();
