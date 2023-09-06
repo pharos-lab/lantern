@@ -1,7 +1,7 @@
 <template>
   <div class="test">
     <div class="flex gap-4">
-      <LButton color="gray" mode="fill">click</LButton>
+      <LButton color="gray" mode="fill">click me</LButton>
       <LButton color="red" mode="fill">click</LButton>
       <LButton color="orange" mode="fill">click</LButton>
       <LButton color="yellow" mode="fill">click</LButton>
@@ -19,7 +19,12 @@
     </div>
 
     <div class="flex gap-4 py-4">
-      <LButton color="gray" mode="text">click</LButton>
+      <LButton
+        color="gray"
+        mode="text"
+        class="underline underline-offset-8 decoration-2 decoration-slate-500"
+        >click on me</LButton
+      >
       <LButton color="red" mode="text">click</LButton>
       <LButton color="orange" mode="text">click</LButton>
       <LButton color="yellow" mode="text">click</LButton>
@@ -37,7 +42,7 @@
     </div>
 
     <div class="flex gap-4 py-4">
-      <LButton color="gray" mode="underlined">click</LButton>
+      <LButton color="gray" mode="underlined">click on me</LButton>
       <LButton color="red" mode="underlined">click</LButton>
       <LButton color="orange" mode="underlined">click</LButton>
       <LButton color="yellow" mode="underlined">click</LButton>

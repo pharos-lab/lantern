@@ -2,7 +2,7 @@
   <component
     :is="tag"
     :href="props.href ?? null"
-    class="l-button py-2 px-4 font-semibold"
+    class="l-button py-2 px-3 font-semibold"
     :class="[colorClass, roundedClass, hoverClass, focusClass]"
     ><slot>Click me</slot></component
   >
