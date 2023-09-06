@@ -10,7 +10,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useRoundedSwitch } from './composables/roundedSwitch.js';
+import { rounded } from './composables/rounded.js';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useHoverSwitch } from './composables/hoverSwitch.js';
 import { useFocusSwitch } from './composables/focusSwitch.js';
@@ -42,9 +42,12 @@ const props = defineProps({
   },
   rounded: {
     type: String,
+    default: 'none',
     validator(value) {
       // The value must match one of these strings
-      return ['none', 'sm', 'normal', 'md', 'lg', 'xl', 'pill'].includes(value);
+      return ['none', 'sm', 'normal', 'md', 'lg', 'xl', 'pill', ''].includes(
+        value
+      );
     },
   },
   hover: {
@@ -69,7 +72,7 @@ const hoverClass = computed(() => {
 });
 
 const roundedClass = computed(() => {
-  return useRoundedSwitch(props.rounded);
+  return props.rounded == '' ? 'rounded' : rounded[props.rounded];
 });
 
 const focusClass = computed(() => {

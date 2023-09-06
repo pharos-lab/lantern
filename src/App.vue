@@ -1,7 +1,7 @@
 <template>
   <div class="test">
     <div class="flex gap-4">
-      <LButton color="gray" mode="fill">click me</LButton>
+      <LButton color="gray" mode="fill" rounded>click me</LButton>
       <LButton color="red" mode="fill">click</LButton>
       <LButton color="orange" mode="fill">click</LButton>
       <LButton color="yellow" mode="fill">click</LButton>
