@@ -19,6 +19,7 @@ import { backgroundColor } from './composables/backgroundColor.js';
 const props = defineProps({
   color: {
     type: String,
+    default: 'slate',
     validator(value) {
       // The value must match one of these strings
       return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
@@ -29,7 +30,14 @@ const props = defineProps({
     default: 'fill',
     validator(value) {
       // The value must match one of these strings
-      return ['none', 'fill', 'light', 'outlined', 'text'].includes(value);
+      return [
+        'none',
+        'fill',
+        'light',
+        'outlined',
+        'text',
+        'underlined',
+      ].includes(value);
     },
   },
   rounded: {
@@ -52,7 +60,6 @@ const tag = computed(() => {
 });
 
 const colorClass = computed(() => {
-  console.log(backgroundColor[props.color]);
   return backgroundColor[props.color][props.mode];
   //return useColorSwitch(props.color, props.mode);
 });

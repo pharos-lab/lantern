@@ -4,6 +4,7 @@ export const backgroundColor = {
     light: 'bg-slate-100 text-slate-600',
     outlined: 'text-slate-500 border-2 border-slate-500',
     text: 'text-slate-600',
+    underlined: 'text-slate-600 border-b-2 border-slate-500',
     none: '',
   },
   red: {
@@ -11,6 +12,7 @@ export const backgroundColor = {
     light: 'bg-red-100 text-red-600',
     outlined: 'text-red-500 border-2 border-red-500',
     text: 'text-red-600',
+    underlined: 'text-red-600 border-b-2 border-red-500',
     none: '',
   },
   orange: {
@@ -18,6 +20,7 @@ export const backgroundColor = {
     light: 'bg-orange-100 text-orange-600',
     outlined: 'text-orange-500 border-2 border-orange-500',
     text: 'text-orange-600',
+    underlined: 'text-orange-600 border-b-2 border-orange-500',
     none: '',
   },
   yellow: {
@@ -25,6 +28,7 @@ export const backgroundColor = {
     light: 'bg-yellow-100 text-yellow-600',
     outlined: 'text-yellow-500 border-2 border-yellow-500',
     text: 'text-yellow-600',
+    underlined: 'text-yellow-600 border-b-2 border-yellow-500',
     none: '',
   },
   green: {
@@ -32,6 +36,7 @@ export const backgroundColor = {
     light: 'bg-emerald-100 text-emerald-600',
     outlined: 'text-emerald-500 border-2 border-emerald-500',
     text: 'text-emerald-600',
+    underlined: 'text-emerald-600 border-b-2 border-emerald-500',
     none: '',
   },
   blue: {
@@ -39,6 +44,7 @@ export const backgroundColor = {
     light: 'bg-sky-100 text-sky-600',
     outlined: 'text-sky-500 border-2 border-sky-500',
     text: 'text-sky-600',
+    underlined: 'text-sky-600 border-b-2 border-sky-500',
     none: '',
   },
 };

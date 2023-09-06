@@ -1,41 +1,56 @@
 <template>
   <div class="test">
-    <LInputGroup
-      label="username"
-      class="mb-2"
-      color="gray"
-      mode="fill"
-      :focus="false"
-      border
-    >
-    </LInputGroup>
-    <div class="flex gap-2">
-      <LButton color="red" mode="light" rounded focus>ok</LButton>
-      <LButton color="green" mode="light" rounded>Submit</LButton>
+    <div class="flex gap-4">
+      <LButton color="gray" mode="fill">click</LButton>
+      <LButton color="red" mode="fill">click</LButton>
+      <LButton color="orange" mode="fill">click</LButton>
+      <LButton color="yellow" mode="fill">click</LButton>
+      <LButton color="green" mode="fill">click</LButton>
+      <LButton color="blue" mode="fill">click</LButton>
+    </div>
+
+    <div class="flex gap-4 py-4">
+      <LButton color="gray" mode="light">click</LButton>
+      <LButton color="red" mode="light">click</LButton>
+      <LButton color="orange" mode="light">click</LButton>
+      <LButton color="yellow" mode="light">click</LButton>
+      <LButton color="green" mode="light">click</LButton>
+      <LButton color="blue" mode="light">click</LButton>
+    </div>
+
+    <div class="flex gap-4 py-4">
+      <LButton color="gray" mode="text">click</LButton>
+      <LButton color="red" mode="text">click</LButton>
+      <LButton color="orange" mode="text">click</LButton>
+      <LButton color="yellow" mode="text">click</LButton>
+      <LButton color="green" mode="text">click</LButton>
+      <LButton color="blue" mode="text">click</LButton>
+    </div>
+
+    <div class="flex gap-4 py-4">
+      <LButton color="gray" mode="outlined">click</LButton>
+      <LButton color="red" mode="outlined">click</LButton>
+      <LButton color="orange" mode="outlined">click</LButton>
+      <LButton color="yellow" mode="outlined">click</LButton>
+      <LButton color="green" mode="outlined">click</LButton>
+      <LButton color="blue" mode="outlined">click</LButton>
+    </div>
+
+    <div class="flex gap-4 py-4">
+      <LButton color="gray" mode="underlined">click</LButton>
+      <LButton color="red" mode="underlined">click</LButton>
+      <LButton color="orange" mode="underlined">click</LButton>
+      <LButton color="yellow" mode="underlined">click</LButton>
+      <LButton color="green" mode="underlined">click</LButton>
+      <LButton color="blue" mode="underlined">click</LButton>
     </div>
   </div>
-
-  <LAccordion color="red" mode="outlined">
-    <LAccordionItem label="open">ok</LAccordionItem>
-    <LAccordionItem label="open">ok</LAccordionItem>
-    <LAccordionItem label="open">ok</LAccordionItem>
-    <LAccordionItem label="open">ok</LAccordionItem>
-  </LAccordion>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
 import LButton from './components/LButton.vue';
-import LInputGroup from './components/LInputGroup.vue';
-import LAccordion from './components/LAccordion.vue';
-import LAccordionItem from './components/LAccordionItem.vue';
-
-const message = ref();
-const message2 = ref();
-const checked = ref();
-
-const radio = ref();
 
 const vAutofocus = {
   mounted: (el) => el.focus(),
