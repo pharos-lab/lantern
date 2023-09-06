@@ -1,32 +1,32 @@
 export const subBackgroundColor = {
   gray: {
-    fill: 'bg-slate-500 text-white',
+    fill: 'bg-slate-300 text-white',
     light: 'bg-slate-100 text-slate-600',
     none: '',
   },
   red: {
-    fill: 'bg-red-500 text-white',
-    light: 'bg-red-100 text-red-600',
+    fill: 'bg-red-300 text-white',
+    light: 'bg-red-50 text-red-600',
     none: '',
   },
   orange: {
-    fill: 'bg-orange-500 text-white',
-    light: 'bg-orange-100 text-orange-600',
+    fill: 'bg-orange-300 text-white',
+    light: 'bg-orange-50 text-orange-600',
     none: '',
   },
   yellow: {
-    fill: 'bg-yellow-500 text-white',
-    light: 'bg-yellow-100 text-yellow-600',
+    fill: 'bg-yellow-300 text-white',
+    light: 'bg-yellow-50 text-yellow-600',
     none: '',
   },
   green: {
-    fill: 'bg-emerald-500 text-white',
-    light: 'bg-emerald-100 text-emerald-600',
+    fill: 'bg-emerald-300 text-white',
+    light: 'bg-emerald-50 text-emerald-600',
     none: '',
   },
   blue: {
-    fill: 'bg-sky-500 text-white',
-    light: 'bg-sky-100 text-sky-600',
+    fill: 'bg-sky-300 text-white',
+    light: 'bg-sky-50 text-sky-600',
     none: '',
   },
 };
