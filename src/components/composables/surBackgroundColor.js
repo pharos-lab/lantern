@@ -1,4 +1,4 @@
-export const subBackgroundColor = {
+export const surBackgroundColor = {
   gray: {
     fill: 'bg-slate-600 text-white',
     light: 'bg-slate-200 text-slate-600',
