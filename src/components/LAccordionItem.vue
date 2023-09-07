@@ -1,5 +1,5 @@
 <template>
-  <div class="l-accordion-item">
+  <div class="l-accordion-item divide-y" :class="[divideColorClass]">
     <div
       class="l-accordion-item-label cursor-pointer"
       v-if="slots.label"
@@ -31,6 +31,7 @@
 import { computed, inject, useSlots, ref } from 'vue';
 import { useColorSwitch } from './composables/colorSwitch.js';
 import { useSubColorSwitch } from './composables/subColorSwitch.js';
+import { divideColor } from './composables/divideColor.js';
 
 const accordionColor = inject('accordionColor');
 const accordionMode = inject('accordionMode');
@@ -62,6 +63,10 @@ const colorClass = computed(() => {
 
 const contentColorClass = computed(() => {
   return useSubColorSwitch(accordionColor, accordionMode);
+});
+
+const divideColorClass = computed(() => {
+  return divideColor[accordionColor][accordionMode];
 });
 </script>
 

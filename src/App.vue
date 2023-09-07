@@ -19,12 +19,7 @@
     </div>
 
     <div class="flex gap-4 py-4">
-      <LButton
-        color="gray"
-        mode="text"
-        class="underline underline-offset-8 decoration-2 decoration-slate-500"
-        >click on me</LButton
-      >
+      <LButton color="gray" mode="text">click on me</LButton>
       <LButton color="red" mode="text">click</LButton>
       <LButton color="orange" mode="text">click</LButton>
       <LButton color="yellow" mode="text">click</LButton>
@@ -49,6 +44,15 @@
       <LButton color="green" mode="underlined">click</LButton>
       <LButton color="blue" mode="underlined">click</LButton>
     </div>
+
+    <LAccordion color="red" mode="fill" rounded>
+      <LAccordionItem label="open" class="text-red-600"
+        >accordion content</LAccordionItem
+      >
+      <LAccordionItem label="open">accordion content</LAccordionItem>
+      <LAccordionItem label="open">accordion content</LAccordionItem>
+      <LAccordionItem label="open">accordion content</LAccordionItem>
+    </LAccordion>
   </div>
 </template>
 
@@ -56,6 +60,8 @@
 import { ref } from 'vue';
 
 import LButton from './components/LButton.vue';
+import LAccordion from './components/LAccordion.vue';
+import LAccordionItem from './components/LAccordionItem.vue';
 
 const vAutofocus = {
   mounted: (el) => el.focus(),
