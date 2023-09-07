@@ -1,12 +1,12 @@
 <template>
   <div class="test">
     <div class="flex gap-4">
-      <LButton color="gray" mode="fill" rounded>click me</LButton>
-      <LButton color="red" mode="fill">click</LButton>
-      <LButton color="orange" mode="fill">click</LButton>
-      <LButton color="yellow" mode="fill">click</LButton>
-      <LButton color="green" mode="fill">click</LButton>
-      <LButton color="blue" mode="fill">click</LButton>
+      <LButton color="gray" mode="fill" rounded focus>click me</LButton>
+      <LButton color="red" mode="fill" focus>click</LButton>
+      <LButton color="orange" mode="fill" focus>click</LButton>
+      <LButton color="yellow" mode="fill" focus>click</LButton>
+      <LButton color="green" mode="fill" focus>click</LButton>
+      <LButton color="blue" mode="fill" focus>click</LButton>
     </div>
 
     <div class="flex gap-4 py-4">
@@ -33,12 +33,12 @@
     </div>
 
     <div class="flex gap-4 py-4">
-      <LButton color="gray" mode="outlined">click</LButton>
-      <LButton color="red" mode="outlined">click</LButton>
-      <LButton color="orange" mode="outlined">click</LButton>
-      <LButton color="yellow" mode="outlined">click</LButton>
-      <LButton color="green" mode="outlined">click</LButton>
-      <LButton color="blue" mode="outlined">click</LButton>
+      <LButton color="gray" mode="outlined" focus>click</LButton>
+      <LButton color="red" mode="outlined" focus>click</LButton>
+      <LButton color="orange" mode="outlined" focus>click</LButton>
+      <LButton color="yellow" mode="outlined" focus>click</LButton>
+      <LButton color="green" mode="outlined" focus>click</LButton>
+      <LButton color="blue" mode="outlined" focus>click</LButton>
     </div>
 
     <div class="flex gap-4 py-4">

@@ -11,9 +11,8 @@
 <script setup>
 import { computed } from 'vue';
 import { rounded } from './composables/rounded.js';
-import { useColorSwitch } from './composables/colorSwitch.js';
-import { useHoverSwitch } from './composables/hoverSwitch.js';
-import { useFocusSwitch } from './composables/focusSwitch.js';
+import { hoverColor } from './composables/hoverColor.js';
+import { focusColor } from './composables/focusColor.js';
 import { backgroundColor } from './composables/backgroundColor.js';
 
 const props = defineProps({
@@ -22,7 +21,9 @@ const props = defineProps({
     default: 'slate',
     validator(value) {
       // The value must match one of these strings
-      return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
+      return ['gray', 'red', 'orange', 'yellow', 'green', 'blue'].includes(
+        value
+      );
     },
   },
   mode: {
@@ -54,7 +55,7 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
-  focus: String,
+  focus: Boolean,
   href: String,
 });
 
@@ -68,7 +69,7 @@ const colorClass = computed(() => {
 });
 
 const hoverClass = computed(() => {
-  return props.hover ? useHoverSwitch(props.color, props.mode) : '';
+  return props.hover ? hoverColor[props.color][props.mode] : '';
 });
 
 const roundedClass = computed(() => {
@@ -76,11 +77,7 @@ const roundedClass = computed(() => {
 });
 
 const focusClass = computed(() => {
-  return props.focus
-    ? useFocusSwitch(props.focus, props.mode)
-    : props.focus == ''
-    ? useFocusSwitch(props.color, props.mode)
-    : 'focus:outline-none';
+  return props.focus ? focusColor[props.color] : 'focus:outline-none';
 });
 </script>
 
