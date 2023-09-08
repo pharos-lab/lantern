@@ -53,7 +53,7 @@
 import { ref, computed, provide, useSlots } from 'vue';
 import LButton from './LButton.vue';
 import LFadeTransition from './LFadeTransition.vue';
-import { useColorSwitch } from './composables/colorSwitch.js';
+import { backgroundColor } from './composables/backgroundColor.js';
 import { ChevronDownIcon } from '@heroicons/vue/24/outline';
 
 provide('dropdownColor', props.color);
@@ -64,6 +64,7 @@ const slots = useSlots();
 const props = defineProps({
   color: {
     type: String,
+    default: 'gray',
     validator(value) {
       // The value must match one of these strings
       return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
@@ -136,7 +137,8 @@ const placementClass = computed(() => {
 });
 
 const colorClass = computed(() => {
-  return useColorSwitch(props.color, props.mode);
+  console.log(props.color);
+  return backgroundColor[props.color][props.mode];
 });
 </script>
 

@@ -1,11 +1,11 @@
 export const subBackgroundColor = {
   gray: {
-    fill: 'bg-slate-300 text-white',
+    fill: 'bg-slate-300',
     light: 'bg-slate-100 text-slate-600',
     none: '',
   },
   red: {
-    fill: 'bg-red-300 text-white',
+    fill: 'bg-red-300',
     light: 'bg-red-50 text-red-600',
     none: '',
   },
@@ -25,7 +25,7 @@ export const subBackgroundColor = {
     none: '',
   },
   blue: {
-    fill: 'bg-sky-300 text-white',
+    fill: 'bg-sky-300',
     light: 'bg-sky-50 text-sky-600',
     none: '',
   },

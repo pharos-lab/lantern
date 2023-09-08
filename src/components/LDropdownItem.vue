@@ -31,6 +31,6 @@ const colorClass = computed(() => {
 });
 
 const hoverClass = computed(() => {
-  return useHoverSwitch(dropdownColor, dropdownMode);
+  return useHoverSwitch(dropdownColor, 'light');
 });
 </script>

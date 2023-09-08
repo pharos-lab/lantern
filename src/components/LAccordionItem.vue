@@ -8,7 +8,7 @@
       <slot name="label"></slot>
     </div>
     <div
-      class="l-accordion-itel-label px-4 py-2 cursor-pointer"
+      class="l-accordion-item-label px-4 py-2 cursor-pointer"
       v-else
       @click="show = !show"
       :class="colorClass"
@@ -29,8 +29,8 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { computed, inject, useSlots, ref } from 'vue';
-import { useColorSwitch } from './composables/colorSwitch.js';
-import { useSubColorSwitch } from './composables/subColorSwitch.js';
+import { backgroundColor } from './composables/backgroundColor.js';
+import { subBackgroundColor } from './composables/subBackgroundColor.js';
 import { divideColor } from './composables/divideColor.js';
 
 const accordionColor = inject('accordionColor');
@@ -58,11 +58,11 @@ const props = defineProps({
 });
 
 const colorClass = computed(() => {
-  return useColorSwitch(accordionColor, accordionMode);
+  return backgroundColor[accordionColor][accordionMode];
 });
 
 const contentColorClass = computed(() => {
-  return useSubColorSwitch(accordionColor, accordionMode);
+  return subBackgroundColor[accordionColor][accordionMode];
 });
 
 const divideColorClass = computed(() => {

@@ -46,13 +46,15 @@
     </div>
 
     <LAccordion color="red" mode="fill" rounded>
-      <LAccordionItem label="open" class="text-red-600"
-        >accordion content</LAccordionItem
-      >
+      <LAccordionItem label="open">accordion content</LAccordionItem>
       <LAccordionItem label="open">accordion content</LAccordionItem>
       <LAccordionItem label="open">accordion content</LAccordionItem>
       <LAccordionItem label="open">accordion content</LAccordionItem>
     </LAccordion>
+
+    <LDropdown label="open me" color="red">
+      <LDropdownItem> content 1</LDropdownItem>
+    </LDropdown>
   </div>
 </template>
 
@@ -62,6 +64,8 @@ import { ref } from 'vue';
 import LButton from './components/LButton.vue';
 import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
+import LDropdown from './components/LDropdown.vue';
+import LDropdownItem from './components/LDropdownItem.vue';
 
 const vAutofocus = {
   mounted: (el) => el.focus(),

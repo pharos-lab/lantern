@@ -18,7 +18,7 @@ import { backgroundColor } from './composables/backgroundColor.js';
 const props = defineProps({
   color: {
     type: String,
-    default: 'slate',
+    default: 'gray',
     validator(value) {
       // The value must match one of these strings
       return ['gray', 'red', 'orange', 'yellow', 'green', 'blue'].includes(
@@ -65,7 +65,6 @@ const tag = computed(() => {
 
 const colorClass = computed(() => {
   return backgroundColor[props.color][props.mode];
-  //return useColorSwitch(props.color, props.mode);
 });
 
 const hoverClass = computed(() => {

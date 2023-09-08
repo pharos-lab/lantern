@@ -12,7 +12,6 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { computed, provide } from 'vue';
 import { rounded } from './composables/rounded.js';
-import { useDivideSwitch } from './composables/divideSwitch.js';
 import { divideColor } from './composables/divideColor.js';
 
 provide('accordionColor', props.color);
