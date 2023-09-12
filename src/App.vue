@@ -55,6 +55,8 @@
     <LDropdown label="open me" color="red">
       <LDropdownItem> content 1</LDropdownItem>
     </LDropdown>
+
+    <LAlert color="red" mode="light" class="my-4" rounded left-border>alert content</LAlert>
   </div>
 </template>
 
@@ -66,6 +68,7 @@ import LAccordion from './components/LAccordion.vue';
 import LAccordionItem from './components/LAccordionItem.vue';
 import LDropdown from './components/LDropdown.vue';
 import LDropdownItem from './components/LDropdownItem.vue';
+import LAlert from './components/LAlert.vue';
 
 const vAutofocus = {
   mounted: (el) => el.focus(),

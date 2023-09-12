@@ -1,4 +1,4 @@
-export const backgroundColor = {
+export const borderColor = {
   gray: {
     fill: 'border-slate-600',
     light: 'border-slate-300',

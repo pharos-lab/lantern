@@ -6,4 +6,5 @@ export const rounded = {
   lg: 'rounded-lg',
   xl: 'rounded-xl',
   pill: 'rounded-full',
+  '': 'rounded',
 };

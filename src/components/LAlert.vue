@@ -6,7 +6,7 @@
       class="l-alert p-4 font-semibold shadow-md relative"
     >
       <XMarkIcon
-        class="float-right w-5 h-5 rounded cursor-pointer"
+        class="float-right w-5 h-5 rounded cursor-pointer mt-1 stroke-2"
         :class="closeColorClass"
         v-if="props.dismissable"
         @click="open = false"
@@ -22,10 +22,10 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref, computed } from 'vue';
 import LFadeTransition from './LFadeTransition.vue';
-import { useRoundedSwitch } from './composables/roundedSwitch.js';
-import { useColorSwitch } from './composables/colorSwitch.js';
-import { useHoverSwitch } from './composables/hoverSwitch.js';
-import { useBorderColorSwitch } from './composables/borderColorSwitch.js';
+import { rounded } from './composables/rounded.js';
+import { backgroundColor } from './composables/backgroundColor.js';
+import { hoverColor } from './composables/hoverColor.js';
+import { borderColor } from './composables/borderColor.js';
 import { XMarkIcon } from '@heroicons/vue/24/outline';
 
 const open = ref(true);
@@ -63,19 +63,19 @@ const props = defineProps({
 });
 
 const colorClass = computed(() => {
-  return useColorSwitch(props.color, props.mode);
+  return backgroundColor[props.color][props.mode];
 });
 const closeColorClass = computed(() => {
-  return useHoverSwitch(props.color, props.mode);
+  return hoverColor[props.color][props.mode];
 });
 
 const roundedClass = computed(() => {
-  return useRoundedSwitch(props.rounded);
+  return rounded[props.rounded];
 });
 
 const leftBorderClass = computed(() => {
   if (props.leftBorder) {
-    return useBorderColorSwitch(props.color, props.mode) + ' border-l-4';
+    return borderColor[props.color]['fill'] + ' border-l-8';
   }
 });
 </script>
