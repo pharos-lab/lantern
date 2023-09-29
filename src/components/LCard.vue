@@ -35,12 +35,13 @@
 <script setup>
 import { ref, computed } from 'vue';
 import LAspect from './LAspect.vue';
-import { usePositionSwitch } from './composables/positionSwitch.js';
-import { useColorSwitch } from './composables/colorSwitch.js';
+import { position } from './composables/position.js';
+import { backgroundColor } from './composables/backgroundColor.js';
 
 const props = defineProps({
   color: {
     type: String,
+    default: 'gray',
     validator(value) {
       // The value must match one of these strings
       return ['gray', 'red', 'orange', 'yellow', 'blue'].includes(value);
@@ -86,24 +87,25 @@ const contentSizeClass = computed(() => {
 });
 
 const colorClass = computed(() => {
-  return useColorSwitch(props.color, props.mode);
+  return backgroundColor[props.color][props.mode];
 });
 
 const positionClass = computed(() => {
-  return usePositionSwitch(props.position);
+  return position[props.position];
 });
 
 const aspect = computed(() => {
   if (props.aspect) {
     return props.aspect;
-  }
-  switch (props.position) {
-    case 'top':
-    case 'bottom':
-      return '2/1';
-    case 'right':
-    case 'left':
-      return 'auto';
+  } else {
+    switch (props.position) {
+      case 'top':
+      case 'bottom':
+        return '2/1';
+      case 'right':
+      case 'left':
+        return 'auto';
+    }
   }
 });
 </script>

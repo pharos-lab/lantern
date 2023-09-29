@@ -48,15 +48,21 @@
     <LAccordion color="red" mode="fill" rounded>
       <LAccordionItem label="open">accordion content</LAccordionItem>
       <LAccordionItem label="open">accordion content</LAccordionItem>
-      <LAccordionItem label="open">accordion content</LAccordionItem>
-      <LAccordionItem label="open">accordion content</LAccordionItem>
     </LAccordion>
 
     <LDropdown label="open me" color="red">
       <LDropdownItem> content 1</LDropdownItem>
     </LDropdown>
 
-    <LAlert color="red" mode="light" class="my-4" rounded left-border>alert content</LAlert>
+    <LAlert color="red" mode="text" class="my-4" rounded left-border
+      >alert content</LAlert
+    >
+
+    <LCard img="ok" aspect="8/2">
+      <div class="">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, animi!
+      </div>
+    </LCard>
   </div>
 </template>
 
@@ -69,6 +75,7 @@ import LAccordionItem from './components/LAccordionItem.vue';
 import LDropdown from './components/LDropdown.vue';
 import LDropdownItem from './components/LDropdownItem.vue';
 import LAlert from './components/LAlert.vue';
+import LCard from './components/LCard.vue';
 
 const vAutofocus = {
   mounted: (el) => el.focus(),
