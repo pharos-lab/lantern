@@ -3,9 +3,7 @@
   "private": false,
   "version": "0.0.1",
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "./dist/lantern.umd.cjs",
   "module": "./dist/lantern.js",
   "exports": {
@@ -25,7 +23,7 @@
     "@pharos-lab/blink": "^0.1.2",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
-    "vue": "^3.2.45"
+    "vue": "^3.4"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
