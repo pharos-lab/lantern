@@ -102,7 +102,7 @@ export const theme = {
     padding: {
         base: 'p-4',
         alert: 'p-5',
-        card: 'p-4'
+        card: 'p-8'
     },
     size: {
         modal: {
