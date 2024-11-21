@@ -11,8 +11,8 @@
             </Actions>
         </Alert>
 
-        <Modal teleport="#app" v-if="openModal" @close="openModal = false" size="extra-large">
-            <ModalTitle>Lorem ipsum dolor, sit amet consectetur adipisicing.</ModalTitle>
+        <Modal teleport="#app" v-if="openModal" @close="openModal = false" >
+            <ModalTitle>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi ea dolores modi vel, nihil pariatur!</ModalTitle>
             <ModalDescription>Lorem ipsum dolor,.</ModalDescription>
             <Actions>
                 <Button variant="light">Cancel</Button>

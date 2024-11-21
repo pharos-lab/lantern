@@ -1,7 +1,7 @@
 <template>
     <Teleport :to="props.teleport">
         <div class="l-modal-overlay fixed inset-0 flex justify-center items-start pt-56 bg-slate-400/50 z-50" @click.self="closeModal">
-            <div class="l-modal p-8 rounded shadow" :class="classes">
+            <div class="l-modal rounded shadow" :class="classes">
                 <slot></slot>
             </div>
         </div>
@@ -30,7 +30,6 @@ const props = defineProps({
     },
     size: {
         type: String,
-        default: 'large',
         validator: value => ['small', 'medium', 'large', 'extra-large'].includes(value),
     },    
 })
