@@ -11,7 +11,7 @@
             </Actions>
         </Alert>
 
-        <Modal teleport="#app" v-if="openModal" @close="openModal = false" >
+        <Modal teleport="#app" v-if="openModal" @close="openModal = false" position="bottom-left" size="small">
             <ModalTitle>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi ea dolores modi vel, nihil pariatur!</ModalTitle>
             <ModalDescription>Lorem ipsum dolor,.</ModalDescription>
             <Actions>
