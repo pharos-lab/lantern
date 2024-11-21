@@ -1,11 +1,16 @@
 <template>
     <div class="l-accordion">
-        <slot></slot>
+        <template v-for="(child, index) in childComponents" :key="index">
+            <component
+                :is="child"
+                :index="index"
+            />
+        </template>
     </div>
 </template>
 
 <script setup>
-import { provide, reactive } from 'vue';
+import { provide, reactive, useSlots, computed } from 'vue';
 
 const props = defineProps({
     color: { type: String, default: 'primary' },
@@ -13,6 +18,8 @@ const props = defineProps({
     multiple: { type: Boolean, default: false },
     defaultIndex: { type: [Number, Array], default: () => [] },
 });
+
+const slots = useSlots()
 
 const expandedIndex = reactive(
     Array.isArray(props.defaultIndex)
@@ -39,4 +46,8 @@ provide('accordion', {
     color: props.color,
     variant: props.variant,
 });
+
+const childComponents = computed(() =>
+    Array.isArray(slots.default()) ? slots.default() : [slots.default()]
+);
 </script>

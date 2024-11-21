@@ -37,16 +37,16 @@
         </div>
 
         <Accordion color="primary" variant="light" multiple>
-            <AccordionItem label="header1" :index="0">
+            <AccordionItem label="header1">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias molestias hic nemo doloribus et consequuntur.
             </AccordionItem>
 
-            <AccordionItem :index="1">
+            <AccordionItem>
                 <AccordionItemLabel>header 2</AccordionItemLabel>
                 <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
             </AccordionItem>
 
-            <AccordionItem :index="2">
+            <AccordionItem>
                 <AccordionItemLabel>header 3</AccordionItemLabel>
                 <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
             </AccordionItem>
