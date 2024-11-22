@@ -1,5 +1,5 @@
 <template>
-    <div class="l-accordion">
+    <div class="l-accordion shadow bg-slate-100">
         <template v-for="(child, index) in childComponents" :key="index">
             <component
                 :is="child"
