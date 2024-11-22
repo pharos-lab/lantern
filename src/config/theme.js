@@ -153,6 +153,38 @@ export const theme = {
                 },
             }
         },
+        divide: {
+            primary: {
+                light:'divide-sky-200',
+                dark:'divide-sky-800',
+                base:'divide-sky-600',
+            },
+            secondary: {
+                light:'divide-slate-200',
+                dark:'divide-slate-800',
+                base:'divide-slate-600',
+            },
+            warning: {
+                light:'divide-yellow-200',
+                dark:'divide-yellow-800',
+                base:'divide-yellow-600',
+            },
+            success: {
+                light:'divide-emerald-200',
+                dark:'divide-emerald-800',
+                base:'divide-emerald-600',
+            },
+            info: {
+                light:'divide-cyan-200',
+                dark:'divide-cyan-800',
+                base:'divide-cyan-600',
+            },
+            danger: {
+                light:'divide-red-200',
+                dark:'divide-red-800',
+                base:'divide-red-600',
+            },
+        }
         
     },
     borderRadius: {

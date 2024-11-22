@@ -10,7 +10,6 @@ export function useTheme() {
   const theme = reactive(merge(defaultTheme, userTheme))
 
   const generateClass = (props, component, property) => {
-    console.log(props, component, property)
     switch (property) {
       case 'background':
         if (props.variant === 'outline' || props.variant === 'text') {
@@ -34,6 +33,8 @@ export function useTheme() {
         return props.shadow ? theme.shadow[component] : null;
       case 'padding':
         return theme.padding[component];
+      case 'divide':
+        return props.divide ? theme.colors.divide[props.color][props.variant] : null;
       case 'size':
         return props.size ? theme.size[component]?.[props.size] : null;
       default:
@@ -43,7 +44,7 @@ export function useTheme() {
 
   const getClasses = (props, component, options = {}) => {
     const { exclude = [], debug = false } = options;
-    const allClassTypes = ['background', 'subBackground', 'hover', 'borderRadius', 'shadow', 'padding', 'size'];
+    const allClassTypes = ['background', 'subBackground', 'hover', 'borderRadius', 'shadow', 'padding', 'size', 'divide'];
     const include = allClassTypes.filter(type => !exclude.includes(type));
   
     const classes = include.map(type => generateClass(props, component, type)).filter(Boolean);
@@ -54,7 +55,6 @@ export function useTheme() {
   };
 
   const getClass = (props, component, property) => {
-    console.log(`Classes for ${component}:`, generateClass(props, component, property));
     return generateClass(props, component, property);
   };
 

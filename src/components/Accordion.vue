@@ -1,5 +1,5 @@
 <template>
-    <div class="l-accordion" :class="classes">
+    <div class="l-accordion divide-y" :class="classes">
         <template v-for="(child, index) in childComponents" :key="index">
             <component
                 :is="child"
@@ -26,6 +26,7 @@ const props = defineProps({
     },
     multiple: { type: Boolean, default: false },
     defaultIndex: { type: [Number, Array], default: () => [] },
+    divide: {type: Boolean, default: true}
 });
 
 const slots = useSlots()
