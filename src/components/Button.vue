@@ -49,8 +49,6 @@ const props = defineProps({
 })
 
 const getClasses = inject('getClasses')
-const getClass = inject('getClass')
-const getClassesObject = inject('getClassesObject')
 
 const classes = computed(() => {
     let position

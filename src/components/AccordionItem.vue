@@ -19,8 +19,9 @@
         <!-- Collapsible Content -->
         <transition name="accordion-item">
             <div 
-                class="accordion-content overflow-hidden transition-all duration-300 bg-red-300"
+                class="accordion-content overflow-hidden transition-all duration-300 p-4"
                 v-show="isExpanded"
+                :class="getClass(accordionProps, 'accordion', 'subBackground')"
             >
                 <component
                     :is="$slots.default()[1]"
@@ -40,7 +41,9 @@ const props = defineProps({
     index: Number
 });
 
-const { expandedIndex, toggleItem } = inject('accordion');
+const { expandedIndex, toggleItem, accordionProps } = inject('accordion');
+
+const getClass = inject('getClass')
 
 const isExpanded = computed(() => expandedIndex.includes(props.index));
 const toggle = () => toggleItem(props.index);
@@ -49,13 +52,14 @@ const toggle = () => toggleItem(props.index);
 <style scoped>
 .accordion-item-enter-active,
 .accordion-item-leave-active {
-  transition: max-height .3s ease-in-out, opacity .3s ease-in-out;
+  transition: max-height .3s ease-in-out, opacity .3s ease-in-out, transform .3s ease-in-out;
 }
 
 .accordion-item-enter-from,
 .accordion-item-leave-to {
   opacity: 0;
   max-height: 0;
+  transform: translateY(-5px)
 }
 
 .accordion-item-enter-to,

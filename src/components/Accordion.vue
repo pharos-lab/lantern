@@ -1,5 +1,5 @@
 <template>
-    <div class="l-accordion shadow bg-slate-100">
+    <div class="l-accordion" :class="classes">
         <template v-for="(child, index) in childComponents" :key="index">
             <component
                 :is="child"
@@ -10,11 +10,20 @@
 </template>
 
 <script setup>
-import { provide, reactive, useSlots, computed } from 'vue';
+import { provide, reactive, useSlots, computed, inject } from 'vue';
 
 const props = defineProps({
-    color: { type: String, default: 'primary' },
-    variant: { type: String, default: 'light' },
+    color: {
+        type: String,
+        default: 'secondary'
+    },
+    variant: {
+        type: String,
+        default: 'base',
+        validator(value) {
+            return ['light', 'dark', 'base', 'outline', 'text'].includes(value)
+        }
+    },
     multiple: { type: Boolean, default: false },
     defaultIndex: { type: [Number, Array], default: () => [] },
 });
@@ -43,11 +52,16 @@ const toggleItem = (index) => {
 provide('accordion', {
     expandedIndex,
     toggleItem,
-    color: props.color,
-    variant: props.variant,
+    accordionProps: props
 });
 
 const childComponents = computed(() =>
     Array.isArray(slots.default()) ? slots.default() : [slots.default()]
 );
+
+const getClasses = inject('getClasses')
+
+const classes = computed(() => {
+    return getClasses(props, 'accordion', {exclude: ["subBackground"], debug: true})
+})
 </script>

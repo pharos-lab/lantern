@@ -36,7 +36,7 @@
 
         </div>
 
-        <Accordion color="primary" variant="light" multiple>
+        <Accordion color="danger" variant="light" multiple>
             <AccordionItem label="header1">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias molestias hic nemo doloribus et consequuntur.
             </AccordionItem>
@@ -69,6 +69,7 @@ import Card from './components/Card.vue';
 import Accordion from '@/components/Accordion.vue'
 import AccordionItem from '@/components/AccordionItem.vue'
 import AccordionItemLabel from '@/components/AccordionItemLabel.vue'
+import AccordionItemContent from '@/components/AccordionItemContent.vue'
 
 import imgUrl from '@/assets/vue.svg'
 
