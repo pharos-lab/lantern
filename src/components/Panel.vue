@@ -1,5 +1,5 @@
 <template>
-    <div class="l-panel bg-blue-500" >
+    <div class="l-panel bg-blue-50 rounded" >
       <slot></slot>
     </div>
   </template>
