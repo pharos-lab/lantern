@@ -30,7 +30,7 @@ export function useTheme() {
       case 'borderRadius':
         return theme.borderRadius[props.rounded];
       case 'shadow':
-        return props.shadow ? theme.shadow[component] : null;
+        return props.shadow ? theme.shadow[component] || theme.shadow['base']: null;
       case 'padding':
         return theme.padding[component];
       case 'divide':

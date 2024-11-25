@@ -1,6 +1,6 @@
 <template>
     <div class="p-4 flex flex-col gap-12">
-        <Button variant="base" color="primary" rounded="base" @click="openModal = true" icon="PencilSquareIcon" iconPosition="bottom" size="large">Open Modal</Button>
+        <!--<Button variant="base" color="primary" rounded="base" @click="openModal = true" icon="PencilSquareIcon" iconPosition="bottom" size="large">Open Modal</Button>
 
         <Alert color="success" variant="outline" icon="InformationCircleIcon" closable="" >
             <AlertTitle>Lorem, ipsum.</AlertTitle>
@@ -34,7 +34,7 @@
                 <CardFooter>footer</CardFooter>
             </Card>
 
-        </div>
+        </div> -->
 
         <Accordion color="danger" variant="light" multiple>
             <AccordionItem label="header1">
