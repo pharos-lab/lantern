@@ -52,6 +52,18 @@
             </AccordionItem>
         </Accordion>
 
+        <Panel color="primary" variant="light">
+            <PanelHeader>
+                <h3>My Panel Header</h3>
+            </PanelHeader>
+            <PanelContent>
+                <p>This is the content of the panel.</p>
+            </PanelContent>
+        </Panel>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
+
+
         
     </div>
 </template>
@@ -70,6 +82,9 @@ import Accordion from '@/components/Accordion.vue'
 import AccordionItem from '@/components/AccordionItem.vue'
 import AccordionItemLabel from '@/components/AccordionItemLabel.vue'
 import AccordionItemContent from '@/components/AccordionItemContent.vue'
+import Panel from '@/components/Panel.vue';
+import PanelHeader from '@/components/PanelHeader.vue';
+import PanelContent from '@/components/PanelContent.vue';
 
 import imgUrl from '@/assets/vue.svg'
 

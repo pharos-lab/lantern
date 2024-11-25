@@ -19,7 +19,7 @@
         <!-- Collapsible Content -->
         <transition name="accordion-item">
             <div 
-                class="accordion-content overflow-hidden transition-all duration-300 p-4"
+                class="l-accordion-content overflow-hidden transition-all duration-300 p-4"
                 v-show="isExpanded"
                 :class="getClass(accordionProps, 'accordion', 'subBackground')"
             >
@@ -52,7 +52,7 @@ const toggle = () => toggleItem(props.index);
 <style scoped>
 .accordion-item-enter-active,
 .accordion-item-leave-active {
-  transition: max-height .3s ease-in-out, opacity .3s ease-in-out, transform .3s ease-in-out;
+  transition: max-height .4s ease-in-out, opacity .4s ease-in-out, transform .4s ease-in-out;
 }
 
 .accordion-item-enter-from,
@@ -65,6 +65,7 @@ const toggle = () => toggleItem(props.index);
 .accordion-item-enter-to,
 .accordion-item-leave-from {
   max-height: 100%;
+  height: 100%;
 }
 
 
