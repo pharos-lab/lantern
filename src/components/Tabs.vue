@@ -1,14 +1,26 @@
 <template>
-    <div class="l-tabs">
+    <div class="l-tabs" :class="classes">
       <slot></slot>
     </div>
 </template>
   
 <script setup>
-import { provide, ref, useSlots } from 'vue';
+import { provide, ref, useSlots, inject, computed } from 'vue';
 
 const props = defineProps({
-    active: String
+    active: String,
+    color: {
+        type: String,
+        default: 'secondary'
+    },
+    variant: {
+        type: String,
+        default: 'base',
+        validator(value) {
+            return ['light', 'dark', 'base', 'outline'].includes(value)
+        }
+    },
+    pills: { type: Boolean, default: false}
 })
 
 // get the name of the first tab
@@ -20,7 +32,13 @@ const setActiveTab = (name) => {
     activeTab.value = name;
 };
 
-provide('tabs', { activeTab, setActiveTab });
+provide('tabs', { activeTab, setActiveTab, propsTab: props });
+
+const getClasses = inject('getClasses')
+
+const classes = computed(() => {
+    return getClasses(props, 'tabs', {exclude: ['subBackground']})
+})
 
 </script>
   

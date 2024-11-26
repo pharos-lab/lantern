@@ -1,5 +1,11 @@
 <template>
-    <div class="l-tabs-header flex gap-4" role="tablist">
+    <div class="l-tabs-header flex" role="tablist" :class="{'p-2 gap-4': propsTab.pills}">
       <slot></slot>
     </div>
 </template>
+
+<script setup>
+import { inject, computed } from 'vue';
+
+const { propsTab } = inject('tabs');
+</script>
