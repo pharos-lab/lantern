@@ -185,7 +185,6 @@ export const theme = {
                 base:'divide-red-600',
             },
         }
-        
     },
     borderRadius: {
         none: 'rounded-none',

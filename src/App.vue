@@ -36,7 +36,7 @@
 
         </div> -->
 
-        <Accordion color="danger" variant="light" multiple>
+        <Accordion color="danger" variant="light">
             <AccordionItem label="header1">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias molestias hic nemo doloribus et consequuntur.
             </AccordionItem>
@@ -63,7 +63,26 @@
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
 
+        <Tabs active="two">
+            <TabsHeader>
+                <Tab name="one">tab 1</Tab>
+                <Tab name="two">tab 2</Tab>
+                <Tab name="three">tab 3</Tab>
+            </TabsHeader>
+            <TabsContent>
+                <TabItem name="one">
+                    tab 1 content
+                </TabItem> 
+                
+                <TabItem name="two">
+                   tap 2 content
+                </TabItem> 
 
+                <TabItem name="three">
+                   tab 3 content
+                </TabItem> 
+            </TabsContent>
+        </Tabs>
         
     </div>
 </template>
@@ -85,6 +104,11 @@ import AccordionItemContent from '@/components/AccordionItemContent.vue'
 import Panel from '@/components/Panel.vue';
 import PanelHeader from '@/components/PanelHeader.vue';
 import PanelContent from '@/components/PanelContent.vue';
+import Tabs from './components/Tabs.vue';
+import Tab from './components/Tab.vue';
+import TabsHeader from './components/TabsHeader.vue';
+import TabsContent from './components/TabsContent.vue';
+import TabItem from './components/TabItem.vue';
 
 import imgUrl from '@/assets/vue.svg'
 
