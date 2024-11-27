@@ -153,6 +153,79 @@ export const theme = {
                 },
             }
         },
+        SurBackground: {
+            primary: {
+                light:'bg-sky-200 text-sky-700',
+                dark:'bg-sky-800 text-white',
+                base:'bg-sky-600 text-white',
+            },
+            secondary: {
+                light:'bg-slate-200 text-slate-700',
+                dark:'bg-slate-800 text-white',
+                base:'bg-slate-600 text-white',
+            },
+            warning: {
+                light:'bg-yellow-200 text-yellow-700',
+                dark:'bg-yellow-800 text-white',
+                base:'bg-yellow-600 text-white',
+            },
+            success: {
+                light:'bg-emerald-200 text-emerald-700',
+                dark:'bg-emerald-800 text-white',
+                base:'bg-emerald-600 text-white',
+            },
+            info: {
+                light:'bg-cyan-200 text-cyan-800',
+                dark:'bg-cyan-800 text-white',
+                base:'bg-cyan-400 text-cyan-800',
+            },
+            danger: {
+                light:'bg-red-200 text-red-800',
+                dark:'bg-red-800 text-white',
+                base:'bg-red-600 text-white',
+            },
+            white: {
+                base:'bg-white text-slate-700',
+            },
+            hover: {
+                primary: {
+                    light:'hover:bg-sky-300 text-sky-700',
+                    dark:'hover:bg-sky-700 text-white',
+                    base:'hover:bg-sky-700 text-white',
+                    outline: 'hover:bg-sky-500 hover:text-white'
+                },
+                secondary: {
+                    light:'hover:bg-slate-300 text-slate-700',
+                    dark:'hover:bg-slate-700 text-white',
+                    base:'hover:bg-slate-700 text-white',
+                    outline: 'hover:bg-slate-500 hover:text-white'
+                },
+                warning: {
+                    light:'hover:bg-yellow-300 text-yellow-700',
+                    dark:'hover:bg-yellow-700 text-white',
+                    base:'hover:bg-yellow-700 text-white',
+                    outline: 'hover:bg-yellow-500 hover:text-white'
+                },
+                success: {
+                    light:'hover:bg-emerald-300 text-emerald-700',
+                    dark:'hover:bg-emerald-700 text-white',
+                    base:'hover:bg-emerald-700 text-white',
+                    outline: 'hover:bg-emerald-500 hover:text-white'
+                },
+                info: {
+                    light:'hover:bg-cyan-300 text-cyan-800',
+                    dark:'hover:bg-cyan-700 text-white',
+                    base:'hover:bg-cyan-500 text-cyan-800',
+                    outline: 'hover:bg-cyan-500 hover:text-white'
+                },
+                danger: {
+                    light:'hover:bg-red-300 text-red-800',
+                    dark:'hover:bg-red-700 text-white',
+                    base:'hover:bg-red-700 text-white',
+                    outline: 'hover:bg-red-500 hover:text-white'
+                },
+            }
+        },
         divide: {
             primary: {
                 light:'divide-sky-200',

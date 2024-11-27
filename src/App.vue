@@ -1,8 +1,8 @@
 <template>
-    <div class="p-4 flex flex-col gap-12">
-        <!--<Button variant="base" color="primary" rounded="base" @click="openModal = true" icon="PencilSquareIcon" iconPosition="bottom" size="large">Open Modal</Button>
+    <div class="p-4 space-y-8">
+        <Button variant="base" color="primary" rounded="base" @click="openModal = true" icon="PencilSquareIcon" iconPosition="bottom" size="large" unstyled>Open Modal</Button>
 
-        <Alert color="success" variant="outline" icon="InformationCircleIcon" closable="" >
+        <!--<Alert color="success" variant="outline" icon="InformationCircleIcon" closable="" >
             <AlertTitle>Lorem, ipsum.</AlertTitle>
             <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
             <Actions>
@@ -52,7 +52,7 @@
             </AccordionItem>
         </Accordion>
 
-        <Panel color="primary" variant="light">
+        <Panel color="primary" variant="light" unstyled>
             <PanelHeader>
                 <h3>My Panel Header</h3>
             </PanelHeader>
@@ -63,7 +63,7 @@
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
 
-        <Tabs active="two" color="danger" variant="base">
+        <Tabs>
             <TabsHeader>
                 <Tab name="one">tab 1</Tab>
                 <Tab name="two">tab 2</Tab>

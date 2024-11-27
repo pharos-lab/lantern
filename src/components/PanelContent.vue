@@ -1,7 +1,6 @@
 <template>
   <transition
     name="panel-slide"
-    appear
   >
     <div v-show="isExpanded" class="l-panel-content p-4 overflow-hidden">
       <slot></slot>

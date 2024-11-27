@@ -46,11 +46,14 @@ const props = defineProps({
         default: 'medium',
         validator: value => ['small', 'medium', 'large'].includes(value),
     },    
+    unstyled: { type: Boolean, default: false }
 })
 
 const getClasses = inject('getClasses')
 
 const classes = computed(() => {
+    if (props.unstyled) return 
+    
     let position
 
     if (props.icon) {

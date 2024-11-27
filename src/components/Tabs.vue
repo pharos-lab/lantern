@@ -15,9 +15,9 @@ const props = defineProps({
     },
     variant: {
         type: String,
-        default: 'base',
+        default: 'light',
         validator(value) {
-            return ['light', 'dark', 'base', 'outline'].includes(value)
+            return ['light', 'dark', 'base', 'outline', 'text'].includes(value)
         }
     },
     pills: { type: Boolean, default: false}

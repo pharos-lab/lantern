@@ -13,7 +13,8 @@
     rounded: { type: String, default: 'base'},
     shadow: { type: Boolean, default: true },
     expanded: { type: Boolean, default: true },
-    toggleable: { type: Boolean, default: false}
+    toggleable: { type: Boolean, default: false},
+    unstyled: { type: Boolean, default: false }
   });
   
   const emit = defineEmits(['update:expanded']);
@@ -27,6 +28,8 @@
   const getClasses = inject('getClasses')
 
   const classes = computed(() => {
+    if (props.unstyled) return 
+    
     return getClasses(props, 'panel')
 })
 
