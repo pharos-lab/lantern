@@ -21,7 +21,7 @@
             <div 
                 class="l-accordion-content overflow-hidden p-4"
                 v-show="isExpanded"
-                :class="getClass(accordionProps, 'accordion', 'subBackground')"
+                :class="subBackgroundClass"
             >
                 <component
                     :is="$slots.default()[1]"
@@ -47,6 +47,12 @@ const getClass = inject('getClass')
 
 const isExpanded = computed(() => expandedIndex.includes(props.index));
 const toggle = () => toggleItem(props.index);
+
+const subBackgroundClass= computed(() => {
+    if (accordionProps.unstyled) return 
+
+    return getClass(accordionProps, 'accordion', 'subBackground')
+})
 </script>
 
 <style scoped>

@@ -36,7 +36,7 @@
 
         </div> -->
 
-        <Accordion color="danger" variant="light">
+        <Accordion color="danger" variant="light" unstyled>
             <AccordionItem label="header1">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias molestias hic nemo doloribus et consequuntur.
             </AccordionItem>
@@ -63,7 +63,7 @@
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
 
-        <Tabs>
+        <Tabs unstyled>
             <TabsHeader>
                 <Tab name="one">tab 1</Tab>
                 <Tab name="two">tab 2</Tab>
