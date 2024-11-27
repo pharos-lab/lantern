@@ -20,7 +20,8 @@ const props = defineProps({
             return ['light', 'dark', 'base', 'outline', 'text'].includes(value)
         }
     },
-    pills: { type: Boolean, default: false}
+    pills: { type: Boolean, default: false},
+    unstyled: { type: Boolean, default: false }
 })
 
 // get the name of the first tab
@@ -37,6 +38,8 @@ provide('tabs', { activeTab, setActiveTab, propsTab: props });
 const getClasses = inject('getClasses')
 
 const classes = computed(() => {
+    if (props.unstyled) return 
+    
     return getClasses(props, 'tabs', {exclude: ['subBackground']})
 })
 

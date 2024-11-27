@@ -43,11 +43,14 @@ const props = defineProps({
         ].includes(value);
       },
     },
+    unstyled: { type: Boolean, default: false }
 })
 
 const getClasses = inject('getClasses')
 
 const classes = computed(() => {
+  if (props.unstyled) return 
+  
     return getClasses(props, 'modal')
 })
 

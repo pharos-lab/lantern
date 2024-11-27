@@ -26,7 +26,8 @@ const props = defineProps({
     },
     multiple: { type: Boolean, default: false },
     defaultIndex: { type: [Number, Array], default: () => [] },
-    divide: {type: Boolean, default: true}
+    divide: {type: Boolean, default: true},
+    unstyled: { type: Boolean, default: false }
 });
 
 const slots = useSlots()
@@ -63,6 +64,8 @@ const childComponents = computed(() =>
 const getClasses = inject('getClasses')
 
 const classes = computed(() => {
+    if (props.unstyled) return 
+    
     return getClasses(props, 'accordion', {exclude: ["subBackground"], debug: true})
 })
 </script>

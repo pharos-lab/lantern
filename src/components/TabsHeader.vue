@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { inject, computed } from 'vue';
+import { inject } from 'vue';
 
 const { propsTab } = inject('tabs');
 </script>

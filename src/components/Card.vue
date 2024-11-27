@@ -50,13 +50,16 @@ const props = defineProps({
     imgSize: {
         type: String,
         default: 'w-1/4',
-    }
+    },
+    unstyled: { type: Boolean, default: false }
 })
 
 const getClasses = inject('getClasses')
 const getClass = inject('getClass')
 
 const classes = computed(() => {
+    if (props.unstyled) return 
+
     if(props.img) {
         let imgPosition = ' '
         switch(props.imgPosition) {

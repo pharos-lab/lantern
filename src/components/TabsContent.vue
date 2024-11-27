@@ -11,6 +11,8 @@ const getClass = inject('getClass')
 const { propsTab } = inject('tabs')
 
 const SubBackgroundClass = computed(() => {
-    return getClass(propsTab, 'tabs', 'subBackground')
+  if (propsTab.unstyled) return 
+
+  return getClass(propsTab, 'tabs', 'subBackground')
 })
 </script>

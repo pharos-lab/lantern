@@ -50,11 +50,14 @@ const props = defineProps({
         type: Boolean,
         default: true
     },
+    unstyled: { type: Boolean, default: false }
 })
 
 const getClasses = inject('getClasses')
 
 const classes = computed(() => {
+    if (props.unstyled) return
+    
     return getClasses(props, 'alert')
 })
 
