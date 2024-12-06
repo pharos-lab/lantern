@@ -15,14 +15,14 @@ export function useTheme() {
         if (props.variant === 'outline' || props.variant === 'text') {
           let bgClass = theme.colors.text[props.color];
           if (props.variant === 'outline') {
-            bgClass += ' border border-current ' + (theme.borders[component] || theme.borders.base);
+            bgClass += ' border border-current ' + (theme.components[component].border);
           }
           return bgClass;
         }
         return theme.colors.background[props.color][props.variant];
       case 'subBackground':
         if (props.variant === 'outline' || props.variant === 'text') {
-          return theme.colors.text[props.color];;
+          return theme.colors.text[props.color];
         }
         return theme.colors.subBackground[props.color][props.variant];
       case 'hover':
@@ -30,13 +30,13 @@ export function useTheme() {
       case 'borderRadius':
         return theme.borderRadius[props.rounded];
       case 'shadow':
-        return props.shadow ? theme.shadow[component] || theme.shadow['base']: null;
+        return props.shadow ? theme.components[component].shadow : null;
       case 'padding':
-        return theme.padding[component];
+        return theme.components[component].padding;
       case 'divide':
         return props.divide ? theme.colors.divide[props.color][props.variant] : null;
       case 'size':
-        return props.size ? theme.size[component]?.[props.size] : null;
+        return props.size ? theme.components[component].size?.[props.size] : null;
       default:
         return null;
     }

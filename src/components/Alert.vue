@@ -58,7 +58,7 @@ const getClasses = inject('getClasses')
 const classes = computed(() => {
     if (props.unstyled) return
     
-    return getClasses(props, 'alert')
+    return getClasses(props, 'alert', { exclude: ["subBackground"]})
 })
 
 const isOpen = ref(true)

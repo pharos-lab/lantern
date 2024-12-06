@@ -266,34 +266,34 @@ export const theme = {
         md: 'rounded-md',
         pill: 'rounded-full'
     },
-    shadow: {
-        base: 'shadow',
-        alert: 'shadow',
-        button: 'shadow',
-        card: 'shadow'
-    },
-    borders: {
-        base: 'border-2',
-        alert: 'border-2'
-    },
-    padding: {
-        base: 'p-4',
-        alert: 'p-5',
-        card: 'p-8',
-        modal: 'p-8'
-    },
-    size: {
-        modal: {
-            small: 'max-w-md',
-            medium: 'max-w-xl',
-            large: 'max-w-3xl',
-            'extra-large': 'max-w-6xl'
-        },
+    components: {
         button: {
-            small: 'px-2 py-1',
-            medium: 'px-3 py-2',
-            large: 'px-4 py-3'
-        }
-    }
-    
+            shadow: 'shadow',
+            size: {
+                small: 'px-2 py-1',
+                medium: 'px-3 py-2',
+                large: 'px-4 py-3'
+            }
+        },
+        alert: {
+            shadow: 'shadow',
+            border: 'border-2',
+            padding: 'p-8'
+        },
+        card: {
+            shadow: 'shadow',
+            padding: 'p-8'
+        },
+        modal: {
+            padding: 'p-8',
+            size: {
+                small: 'max-w-md',
+                medium: 'max-w-xl',
+                large: 'max-w-3xl',
+                'extra-large': 'max-w-6xl'
+            }
+        },
+        accordion: {
+        }   
+    },
 }

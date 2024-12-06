@@ -1,8 +1,18 @@
 <template>
     <div class="p-4 space-y-8">
-        <Button variant="base" color="primary" rounded="base" @click="openModal = true" icon="PencilSquareIcon" iconPosition="bottom" size="large" unstyled>Open Modal</Button>
-
-        <!--<Alert color="success" variant="outline" icon="InformationCircleIcon" closable="" >
+        <Button variant="base" 
+            color="primary" 
+            rounded="base" 
+            @click="openModal = true" 
+            icon="PencilSquareIcon" 
+            iconPosition="right" 
+            size="large"
+            shadow
+            >
+            Open Modal
+        </Button>
+<!--
+        <Alert color="success" variant="outline" icon="InformationCircleIcon" closable="">
             <AlertTitle>Lorem, ipsum.</AlertTitle>
             <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
             <Actions>
@@ -11,7 +21,7 @@
             </Actions>
         </Alert>
 
-        <Modal teleport="#app" v-if="openModal" @close="openModal = false" position="bottom-left" size="small">
+        <Modal teleport="#app" v-if="openModal" @close="openModal = false" position="bottom-left" size="small" color="danger" variant="light">
             <ModalTitle>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi ea dolores modi vel, nihil pariatur!</ModalTitle>
             <ModalDescription>Lorem ipsum dolor,.</ModalDescription>
             <Actions>
@@ -22,7 +32,7 @@
 
         <div class="flex gap-4">
 
-            <Card imgPosition="left"  img-size="w-1/4" class="grow">
+            <Card imgPosition="left" img-size="w-1/4" class="grow">
                 <CardHeader>title</CardHeader>
                 <CardContent>contetn</CardContent>
                 <CardFooter>footer</CardFooter>
@@ -36,7 +46,7 @@
 
         </div> -->
 
-        <Accordion color="danger" variant="light" unstyled>
+        <Accordion color="danger" variant="light">
             <AccordionItem label="header1">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias molestias hic nemo doloribus et consequuntur.
             </AccordionItem>

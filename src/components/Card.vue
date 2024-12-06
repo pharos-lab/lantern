@@ -79,16 +79,12 @@ const classes = computed(() => {
         }
         return getClasses(props, 'button', {exclude: ['padding'], }) + ' ' + imgPosition
     }
-    return getClasses(props, 'card', {exclude: ['padding'], })
+    return getClasses(props, 'card', {exclude: ['padding', 'subBackground'], })
 })
 
 const imgDimensionClass = computed(() =>{
     
-    if (props.imgPosition ==  'left') {
-        return props.imgSize
-    }
-
-    if (props.imgPosition ==  'right') {
+    if (props.imgPosition ==  'left' || props.imgPosition ==  'right') {
         return props.imgSize
     }
 })

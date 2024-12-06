@@ -70,7 +70,6 @@ const classes = computed(() => {
                 break
         }
     }
-
-    return getClasses(props, 'button') + ' ' + position
+    return getClasses(props, 'button', { exclude: ["subBackground"]}) + ' ' + position
 })
 </script>
