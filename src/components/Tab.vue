@@ -1,5 +1,5 @@
 <template> 
-    <div class="l-tab px-3 py-2" @click="activateTab" :class="[{'rounded border': propsTab.pills}, hoverClass]">
+    <div class="l-tab px-3 py-2" @click="activateTab" :class="[{'rounded border': propsTab.pills, 'border-b-2 border-current': isActive}, hoverClass]">
         <slot></slot>
     </div>
 </template>

@@ -40,7 +40,7 @@ const getClasses = inject('getClasses')
 const classes = computed(() => {
     if (props.unstyled) return 
     
-    return getClasses(props, 'tabs', {exclude: ['subBackground']})
+    return getClasses(props, 'tabs', {exclude: ['subBackground', 'padding']})
 })
 
 </script>

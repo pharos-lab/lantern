@@ -294,6 +294,12 @@ export const theme = {
             }
         },
         accordion: {
-        }   
+        },
+        panel: {
+            shadow: 'shadow'
+        },
+        tabs: {
+            padding: 'p-4'
+        }
     },
 }

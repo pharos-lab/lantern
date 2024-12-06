@@ -62,7 +62,7 @@
             </AccordionItem>
         </Accordion>
 
-        <Panel color="primary" variant="light" unstyled>
+        <Panel color="primary" variant="light">
             <PanelHeader>
                 <h3>My Panel Header</h3>
             </PanelHeader>
@@ -73,7 +73,7 @@
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
 
-        <Tabs unstyled>
+        <Tabs >
             <TabsHeader>
                 <Tab name="one">tab 1</Tab>
                 <Tab name="two">tab 2</Tab>
