@@ -273,7 +273,8 @@ export const theme = {
                 small: 'px-2 py-1',
                 medium: 'px-3 py-2',
                 large: 'px-4 py-3'
-            }
+            },
+            border: 'border-2'
         },
         alert: {
             shadow: 'shadow',

@@ -1,6 +1,6 @@
 <template>
     <div class="p-4 space-y-8">
-        <Button variant="base" 
+        <Button variant="outline" 
             color="primary" 
             rounded="base" 
             @click="openModal = true" 
@@ -8,7 +8,6 @@
             iconPosition="right" 
             size="large"
             shadow
-            to="ok.com"
             >
             Open Modal
         </Button>

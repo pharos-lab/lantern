@@ -34,19 +34,19 @@
 </template>
 
 <script setup>
-import { inject, computed } from 'vue';
+import { inject, computed, ref } from 'vue';
 
 const props = defineProps({
     label: { type: String, default: '' },
-    index: Number
 });
 
-const { expandedIndex, toggleItem, accordionProps } = inject('accordion');
+const { accordionProps } = inject('accordion');
+
+const isExpanded = ref(false)
 
 const getClass = inject('getClass')
 
-const isExpanded = computed(() => expandedIndex.includes(props.index));
-const toggle = () => toggleItem(props.index);
+const toggle = () => isExpanded.value = !isExpanded.value;
 
 const subBackgroundClass= computed(() => {
     if (accordionProps.unstyled) return 
@@ -58,7 +58,7 @@ const subBackgroundClass= computed(() => {
 <style scoped>
 .accordion-item-enter-active,
 .accordion-item-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 .accordion-item-enter-from,
