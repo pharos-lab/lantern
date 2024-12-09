@@ -8,6 +8,7 @@
             iconPosition="right" 
             size="large"
             shadow
+            to="ok.com"
             >
             Open Modal
         </Button>

@@ -1,9 +1,21 @@
 <template>
-<button class="l-button font-semibold transition-all duration-200 ease-in-out" 
-    :class="classes" >
-    <component :is="Heroicons[props.icon]" v-if="props.icon" class="size-6"></component>
-    <slot></slot>
-</button>
+    <a :href="props.href" class="l-button font-semibold transition-all duration-200 ease-in-out" 
+        :class="classes" v-if="props.href">
+        <component :is="Heroicons[props.icon]" v-if="props.icon" class="size-6"></component>
+        <slot></slot>
+    </a>
+
+    <RouterLink v-else-if="props.to" class="l-button font-semibold transition-all duration-200 ease-in-out" 
+        :class="classes">
+        <component :is="Heroicons[props.icon]" v-if="props.icon" class="size-6"></component>
+        <slot></slot>
+    </RouterLink>
+
+    <button class="l-button font-semibold transition-all duration-200 ease-in-out" 
+        :class="classes" v-else>
+        <component :is="Heroicons[props.icon]" v-if="props.icon" class="size-6"></component>
+        <slot></slot>
+    </button>
 </template>
 
 <script setup>
@@ -46,6 +58,8 @@ const props = defineProps({
         default: 'medium',
         validator: value => ['small', 'medium', 'large'].includes(value),
     },    
+    href: String,
+    to: [String, Object],
     unstyled: { type: Boolean, default: false }
 })
 
@@ -57,7 +71,7 @@ const classes = computed(() => {
     let position
 
     if (props.icon) {
-        position = "flex items-center gap-2 "
+        position = "inline-flex items-center gap-2 "
         switch(props.iconPosition) {
             case 'right':
                 position += 'flex-row-reverse'
