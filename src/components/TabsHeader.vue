@@ -3,7 +3,3 @@
       <slot></slot>
     </div>
 </template>
-
-<script setup>
-import { inject } from 'vue';
-</script>

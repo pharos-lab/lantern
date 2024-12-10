@@ -1,5 +1,19 @@
 <template>
     <div class="p-4 space-y-8">
+        <Stepper>
+            <StepList>
+                <StepLabel :index="0">Step 1</StepLabel>
+                <StepLabel :index="1">Step 2</StepLabel>
+                <StepLabel :index="2">Step 3</StepLabel>
+            </StepList>
+            <Steps>
+                <Step :index="0">Content for Step 1</Step>
+                <Step :index="1">Content for Step 2</Step>
+                <Step :index="2">Content for Step 3</Step>
+            </Steps>
+        </Stepper>
+
+
         <Button variant="outline" 
             color="primary" 
             rounded="base" 
@@ -115,6 +129,11 @@ import Tab from './components/Tab.vue';
 import TabsHeader from './components/TabsHeader.vue';
 import TabsContent from './components/TabsContent.vue';
 import TabItem from './components/TabItem.vue';
+import Stepper from './components/Stepper.vue'
+import Step from './components/Step.vue'
+import Steps from './components/Steps.vue'
+import StepList from './components/StepList.vue'
+import StepLabel from './components/StepLabel.vue'
 
 import imgUrl from '@/assets/vue.svg'
 
