@@ -25,6 +25,7 @@ const props = defineProps({
 
 // get the name of the first tab
 const defaultActiveName = useSlots().default?.()[0]?.children?.default?.()[0]?.props?.index
+const stepsCount = ref(useSlots().default().length)
 
 const activeStep = ref(props.active || defaultActiveName);
 
@@ -32,7 +33,7 @@ const setActiveStep = (index) => {
     activeStep.value = index;
 };
 
-provide('stepper', { activeStep, setActiveStep, propsStep: props });
+provide('stepper', { activeStep, setActiveStep, propsStep: props, stepsCount });
 
 
 const getClasses = inject('getClasses')

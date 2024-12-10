@@ -301,6 +301,9 @@ export const theme = {
         },
         tabs: {
             padding: 'p-4'
+        },
+        stepper: {
+            padding: 'p-4'
         }
     },
 }
