@@ -10,7 +10,7 @@
 <script setup>
 import { inject, computed } from 'vue';
 
-const { activeStep, setActiveStep, propsStep } = inject('stepper');
+const { activeStep, setActiveStep } = inject('stepper');
 
 const props = defineProps({
     index: { type: Number, required: true },
