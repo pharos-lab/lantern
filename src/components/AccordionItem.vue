@@ -58,7 +58,7 @@ const subBackgroundClass= computed(() => {
 <style scoped>
 .accordion-item-enter-active,
 .accordion-item-leave-active {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 .accordion-item-enter-from,

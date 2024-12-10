@@ -15,7 +15,7 @@ export function useTheme() {
         if (props.variant === 'outline' || props.variant === 'text') {
           let bgClass = theme.colors.text[props.color];
           if (props.variant === 'outline') {
-            bgClass += ' border border-current hover:border-transparent ' + (theme.components[component].border);
+            bgClass += (props.hover ? ' hover:border-transparent ' : '') + ' border border-current ' + (theme.components[component].border);
           }
           return bgClass;
         }

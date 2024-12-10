@@ -11,7 +11,7 @@
             >
             Open Modal
         </Button>
-<!--
+
         <Alert color="success" variant="outline" icon="InformationCircleIcon" closable="">
             <AlertTitle>Lorem, ipsum.</AlertTitle>
             <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
@@ -44,7 +44,7 @@
                 <CardFooter>footer</CardFooter>
             </Card>
 
-        </div> -->
+        </div> 
 
         <Accordion color="danger" variant="light">
             <AccordionItem label="header1">
@@ -73,7 +73,7 @@
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
 
-        <Tabs >
+        <Tabs unstyled>
             <TabsHeader>
                 <Tab name="one">tab 1</Tab>
                 <Tab name="two">tab 2</Tab>

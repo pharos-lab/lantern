@@ -18,7 +18,7 @@ const { isExpanded } = inject('panel');
 /* Tailwind-friendly transitions */
 .panel-slide-enter-active,
 .panel-slide-leave-active {
-  transition: all 0.3s ease;
+  transition: all .5s ease;
 }
 
 .panel-slide-enter-from,
