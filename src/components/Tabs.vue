@@ -20,7 +20,6 @@ const props = defineProps({
             return ['light', 'dark', 'base', 'outline', 'text'].includes(value)
         }
     },
-    pills: { type: Boolean, default: false},
     unstyled: { type: Boolean, default: false }
 })
 

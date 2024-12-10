@@ -33,15 +33,11 @@
         <div class="flex gap-4">
 
             <Card imgPosition="left" img-size="w-1/4" class="grow">
-                <CardHeader>title</CardHeader>
-                <CardContent>contetn</CardContent>
-                <CardFooter>footer</CardFooter>
+                
             </Card>
 
             <Card imgPosition="right" :img="imgUrl" class="grow">
-                <CardHeader>title</CardHeader>
-                <CardContent>contetn</CardContent>
-                <CardFooter>footer</CardFooter>
+                
             </Card>
 
         </div> 
@@ -73,7 +69,7 @@
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
 
-        <Tabs unstyled>
+        <Tabs active="two">
             <TabsHeader>
                 <Tab name="one">tab 1</Tab>
                 <Tab name="two">tab 2</Tab>
