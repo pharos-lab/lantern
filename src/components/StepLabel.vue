@@ -3,7 +3,7 @@
         <div class="rounded-full p-2 border-2 size-7 flex justify-center items-center">{{ props.index +1 }}</div>
         <slot></slot>
 
-        <div class="lbar grow border-2" :class="{'border-b-2 border-current': activeStep > props.index}"></div>
+        <div class="lbar grow border-2" :class="{'border-b-2 border-current': isCompleted}"></div>
     </div>
 </template>
   
@@ -17,6 +17,7 @@ const props = defineProps({
 });
 
 const isActive = computed(() => activeStep.value === props.index);
+const isCompleted = computed(() => activeStep.value > props.index);
 
 const activateStep = () => {
     setActiveStep(props.index);

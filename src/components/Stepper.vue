@@ -30,11 +30,9 @@ const props = defineProps({
     unstyled: { type: Boolean, default: false }
 })
 
-// get the name of the first tab
-const defaultActiveName = useSlots().default?.()[0]?.children?.default?.()[0]?.props?.index
 const stepsCount = ref(useSlots().default().length)
 
-const activeStep = ref(props.active || defaultActiveName);
+const activeStep = ref(props.active || 0);
 
 const setActiveStep = (index) => {
     activeStep.value = index;
