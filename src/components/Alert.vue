@@ -1,8 +1,8 @@
 <template>
     <Transition name="fade">
-        <div class="l-alert relative shadow" :class="classes" v-show="isOpen">
+        <div class="l-alert relative" :class="classes" v-show="isOpen">
             <component :is="Heroicons['XCircleIcon']" 
-            class="size-6 absolute right-2 top-2 cursor-pointer" 
+            class="size-7 absolute right-2 top-2 cursor-pointer" 
             v-if="props.dismissable"
             @click="isOpen = false"
             ></component>
@@ -37,7 +37,7 @@ const props = defineProps({
     },
     variant: {
         type: String,
-        default: 'base',
+        default: 'light',
         validator(value) {
             return ['light', 'dark', 'base', 'outline'].includes(value)
         }
@@ -49,6 +49,10 @@ const props = defineProps({
     dismissable: {
         type: Boolean,
         default: true
+    },
+    rounded: {
+        type: String,
+        default: 'base'
     },
     unstyled: { type: Boolean, default: false }
 })
