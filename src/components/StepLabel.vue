@@ -22,7 +22,5 @@ const isCompleted = computed(() => activeStep.value > props.index);
 const activateStep = () => {
     setActiveStep(props.index);
 }
-
-const getClass = inject('getClass')
 </script>
   

@@ -51,7 +51,7 @@ const getClasses = inject('getClasses')
 const classes = computed(() => {
   if (props.unstyled) return 
   
-    return getClasses(props, 'modal', { exclude: ["subBackground"]})
+    return getClasses(props, 'modal')
 })
 
 const emit = defineEmits(['close'])

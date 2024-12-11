@@ -34,6 +34,6 @@ const getClasses = inject('getClasses')
 const classes = computed(() => {
     if (props.unstyled) return 
     
-    return getClasses(props, 'accordion', {exclude: ["subBackground"], debug: false})
+    return getClasses(props, 'accordion')
 })
 </script>

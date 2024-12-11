@@ -30,7 +30,7 @@
   const classes = computed(() => {
     if (props.unstyled) return 
     
-    return getClasses(props, 'panel', { exclude: ["subBackground"]})
+    return getClasses(props, 'panel')
 })
 
   

@@ -26,7 +26,7 @@ export function useTheme() {
         }
         return theme.colors.subBackground[props.color][props.variant];
       case 'hover':
-        return props.hover ? theme.colors.background.hover[props.color][props.variant] : null;
+        return props.hover ? theme.hover[props.color][props.variant] : null;
       case 'borderRadius':
         return theme.borderRadius[props.rounded];
       case 'shadow':
@@ -43,7 +43,7 @@ export function useTheme() {
   };
 
   const getClasses = (props, component, options = {}) => {
-    const { exclude = [], debug = false } = options;
+    const { exclude = ['subBackground'], debug = false } = options;
     const allClassTypes = ['background', 'subBackground', 'hover', 'borderRadius', 'shadow', 'padding', 'size', 'divide'];
     const include = allClassTypes.filter(type => !exclude.includes(type));
   
@@ -60,7 +60,7 @@ export function useTheme() {
 
   const getClassesObject = (props, component, options = {}) => {
     const { exclude = [], debug = false } = options;
-    const allClassTypes = ['background', 'hover', 'borderRadius', 'shadow', 'padding', 'size'];
+    const allClassTypes = ['background', 'subBackground', 'hover', 'borderRadius', 'shadow', 'padding', 'size'];
     const include = allClassTypes.filter(type => !exclude.includes(type));
   
     const classes = {};

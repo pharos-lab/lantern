@@ -39,6 +39,6 @@ const getClasses = inject('getClasses')
 const classes = computed(() => {
     if (props.unstyled) return 
 
-    return getClasses(props, 'card', {exclude: ['subBackground'], })
+    return getClasses(props, 'card')
 })
 </script>
