@@ -22,7 +22,7 @@ const props = defineProps({
     },
     variant: {
         type: String,
-        default: 'text',
+        default: 'base',
         validator(value) {
             return ['light', 'dark', 'base', 'outline', 'text'].includes(value)
         }
