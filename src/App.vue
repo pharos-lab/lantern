@@ -3,19 +3,7 @@
 
         <Button>ok</Button>
 
-       
-
-
-        <Button variant="light" 
-            color="red" 
-            rounded="medium"
-            size="small"
-            shadow
-        >
-            Open Modal
-        </Button>
-
-        <Alert color="success" variant="outline" icon="InformationCircleIcon" closable="">
+        <Alert color="orange" variant="outline" shadow>
             <AlertTitle>Lorem, ipsum.</AlertTitle>
             <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
             <Actions>
@@ -24,6 +12,21 @@
             </Actions>
         </Alert>
 
+        <Accordion color="danger" variant="light">
+            <AccordionItem label="header1">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias molestias hic nemo doloribus et consequuntur.
+            </AccordionItem>
+
+            <AccordionItem>
+                <AccordionItemLabel>header 2</AccordionItemLabel>
+                <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
+            </AccordionItem>
+
+            <AccordionItem>
+                <AccordionItemLabel>header 3</AccordionItemLabel>
+                <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
+            </AccordionItem>
+        </Accordion>
         <!--
         <Stepper>
             <StepList>
@@ -58,21 +61,7 @@
 
         </div> 
 
-        <Accordion color="danger" variant="light">
-            <AccordionItem label="header1">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias molestias hic nemo doloribus et consequuntur.
-            </AccordionItem>
-
-            <AccordionItem>
-                <AccordionItemLabel>header 2</AccordionItemLabel>
-                <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
-            </AccordionItem>
-
-            <AccordionItem>
-                <AccordionItemLabel>header 3</AccordionItemLabel>
-                <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
-            </AccordionItem>
-        </Accordion>
+        
 
         <Panel color="primary" variant="light">
             <PanelHeader>
@@ -121,10 +110,8 @@ import Actions from '@/components/Actions.vue';
 // import ModalTitle from '@/components/ModalTitle.vue'
 // import ModalDescription from '@/components/ModalDescription.vue'
 // import Card from './components/Card.vue';
-// import Accordion from '@/components/Accordion.vue'
-// import AccordionItem from '@/components/AccordionItem.vue'
-// import AccordionItemLabel from '@/components/AccordionItemLabel.vue'
-// import AccordionItemContent from '@/components/AccordionItemContent.vue'
+import Accordion from '@/components/Accordion.vue'
+import AccordionItem from '@/components/AccordionItem.vue'
 // import Panel from '@/components/Panel.vue';
 // import PanelHeader from '@/components/PanelHeader.vue';
 // import PanelContent from '@/components/PanelContent.vue';

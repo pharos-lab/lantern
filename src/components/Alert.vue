@@ -1,8 +1,13 @@
 <template>
     <Transition>
         <div class="l-alert" :class="[themeClasses, pharos.theme.padding]" v-show="isOpen">
+            <X 
+                class="float-right cursor-pointer rounded"
+                :class="[pharos.theme.colors[props.color].hover[props.variant]]"
+                v-if="props.dismissible" 
+                @click="isOpen = false"
+            ></X>
             <slot></slot>
-            <X class="float-right cursor-pointer" v-if="props.dismissible" @click="isOpen = false"></X>
         </div>
     </Transition>
 </template>
