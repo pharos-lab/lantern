@@ -1,5 +1,7 @@
 <template>
-    <slot></slot>
+    <div class="l-accordion-content">
+        <slot></slot>
+    </div>
 </template>
 
 <script setup>

@@ -12,20 +12,9 @@
             </Actions>
         </Alert>
 
-        <Accordion color="danger" variant="light">
-            <AccordionItem label="header1">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias molestias hic nemo doloribus et consequuntur.
-            </AccordionItem>
-
-            <AccordionItem>
-                <AccordionItemLabel>header 2</AccordionItemLabel>
-                <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
-            </AccordionItem>
-
-            <AccordionItem>
-                <AccordionItemLabel>header 3</AccordionItemLabel>
-                <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
-            </AccordionItem>
+        <Accordion color="red" variant="light" open>
+            <AccordionLabel>label</AccordionLabel>
+            <AccordionContent>content</AccordionContent>
         </Accordion>
         <!--
         <Stepper>
@@ -111,7 +100,8 @@ import Actions from '@/components/Actions.vue';
 // import ModalDescription from '@/components/ModalDescription.vue'
 // import Card from './components/Card.vue';
 import Accordion from '@/components/Accordion.vue'
-import AccordionItem from '@/components/AccordionItem.vue'
+import AccordionLabel from '@/components/AccordionLabel.vue'
+import AccordionContent from '@/components/AccordionContent.vue'
 // import Panel from '@/components/Panel.vue';
 // import PanelHeader from '@/components/PanelHeader.vue';
 // import PanelContent from '@/components/PanelContent.vue';

@@ -1,5 +1,7 @@
 <template>
-    <slot></slot>
+    <summary class="list-none l-accordion-label">
+        <slot></slot>
+    </summary>
 </template>
 
 <script setup>
