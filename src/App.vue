@@ -12,10 +12,22 @@
             </Actions>
         </Alert>
 
-        <Accordion color="red" variant="light" open>
-            <AccordionLabel>label</AccordionLabel>
+        <Accordion color="red" variant="light" open >
+            <AccordionLabel :icon="false">label</AccordionLabel>
             <AccordionContent>content</AccordionContent>
         </Accordion>
+
+        <Panel color="primary" variant="light">
+            <PanelHeader>
+                <h3>My Panel Header</h3>
+            </PanelHeader>
+            <PanelContent>
+                <p>This is the content of the panel.</p>
+            </PanelContent>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
+        </Panel>
+
         <!--
         <Stepper>
             <StepList>
@@ -52,16 +64,7 @@
 
         
 
-        <Panel color="primary" variant="light">
-            <PanelHeader>
-                <h3>My Panel Header</h3>
-            </PanelHeader>
-            <PanelContent>
-                <p>This is the content of the panel.</p>
-            </PanelContent>
-        </Panel>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
+        
 
         <Tabs active="two">
             <TabsHeader>
@@ -102,9 +105,9 @@ import Actions from '@/components/Actions.vue';
 import Accordion from '@/components/Accordion.vue'
 import AccordionLabel from '@/components/AccordionLabel.vue'
 import AccordionContent from '@/components/AccordionContent.vue'
-// import Panel from '@/components/Panel.vue';
-// import PanelHeader from '@/components/PanelHeader.vue';
-// import PanelContent from '@/components/PanelContent.vue';
+import Panel from '@/components/Panel.vue';
+import PanelHeader from '@/components/PanelHeader.vue';
+import PanelContent from '@/components/PanelContent.vue';
 // import Tabs from './components/Tabs.vue';
 // import Tab from './components/Tab.vue';
 // import TabsHeader from './components/TabsHeader.vue';

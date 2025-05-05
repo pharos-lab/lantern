@@ -1,11 +1,11 @@
 <template>
-    <details class="l-accordion" :open="props.open" :class="[themeClasses]">
+    <details class="l-accordion" :open="props.open" :class="[themeClasses]" @toggle="isOpen = !isOpen">
         <slot></slot>
     </details>
 </template>
 
 <script setup>
-import { inject, computed } from 'vue'
+import { inject, computed, ref, provide } from 'vue'
 
 const props = defineProps({
     color: {
@@ -27,18 +27,22 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
+    
 })
+
+const isOpen = ref(props.open)
+
+provide('isOpen', isOpen)
 
 const pharos = inject('pharos')
 
 const themeClasses = computed(() => {
     return pharos.getThemeClasses(props, 'accordion')
 })
-
-console.log(themeClasses.value)
 </script>
 
 <style scoped>
+
 details {
 
   @media (prefers-reduced-motion: no-preference) {

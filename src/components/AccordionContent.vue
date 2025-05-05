@@ -1,10 +1,13 @@
 <template>
-    <div class="l-accordion-content">
+    <div class="l-accordion-content" :class="pharos.theme.padding">
         <slot></slot>
+
+       
     </div>
 </template>
 
 <script setup>
+
 import { inject, computed } from 'vue'
 
 const props = defineProps({
