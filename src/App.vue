@@ -2,31 +2,16 @@
     <div class="p-4 space-y-8">
 
         <Button>ok</Button>
-        <!--
 
-        <Stepper>
-            <StepList>
-                <StepLabel :index="0">Step 1</StepLabel>
-                <StepLabel :index="1">Step 2</StepLabel>
-                <StepLabel :index="2">Step 3</StepLabel>
-            </StepList>
-            <Steps>
-                <Step :index="0">Content for Step 1</Step>
-                <Step :index="1">Content for Step 2</Step>
-                <Step :index="2">Content for Step 3</Step>
-            </Steps>
-        </Stepper>
+       
 
 
-        <Button variant="outline" 
-            color="primary" 
-            rounded="base" 
-            @click="openModal = true" 
-            icon="PencilSquareIcon" 
-            iconPosition="right" 
-            size="large"
+        <Button variant="light" 
+            color="red" 
+            rounded="medium"
+            size="small"
             shadow
-            >
+        >
             Open Modal
         </Button>
 
@@ -39,6 +24,19 @@
             </Actions>
         </Alert>
 
+        <!--
+        <Stepper>
+            <StepList>
+                <StepLabel :index="0">Step 1</StepLabel>
+                <StepLabel :index="1">Step 2</StepLabel>
+                <StepLabel :index="2">Step 3</StepLabel>
+            </StepList>
+            <Steps>
+                <Step :index="0">Content for Step 1</Step>
+                <Step :index="1">Content for Step 2</Step>
+                <Step :index="2">Content for Step 3</Step>
+            </Steps>
+        </Stepper>
         <Modal teleport="#app" v-if="openModal" @close="openModal = false" position="bottom-left" size="small" color="danger" variant="light">
             <ModalTitle>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi ea dolores modi vel, nihil pariatur!</ModalTitle>
             <ModalDescription>Lorem ipsum dolor,.</ModalDescription>
@@ -108,7 +106,7 @@
             </TabsContent>
         </Tabs>
 
-        -->
+    -->
         
     </div>
 </template>
@@ -119,27 +117,27 @@ import Alert from '@/components/Alert.vue';
 import AlertTitle from '@/components/AlertTitle.vue';
 import AlertDescription from '@/components/AlertDescription.vue';
 import Actions from '@/components/Actions.vue';
-import Modal from '@/components/Modal.vue'
-import ModalTitle from '@/components/ModalTitle.vue'
-import ModalDescription from '@/components/ModalDescription.vue'
-import Card from './components/Card.vue';
-import Accordion from '@/components/Accordion.vue'
-import AccordionItem from '@/components/AccordionItem.vue'
-import AccordionItemLabel from '@/components/AccordionItemLabel.vue'
-import AccordionItemContent from '@/components/AccordionItemContent.vue'
-import Panel from '@/components/Panel.vue';
-import PanelHeader from '@/components/PanelHeader.vue';
-import PanelContent from '@/components/PanelContent.vue';
-import Tabs from './components/Tabs.vue';
-import Tab from './components/Tab.vue';
-import TabsHeader from './components/TabsHeader.vue';
-import TabsContent from './components/TabsContent.vue';
-import TabItem from './components/TabItem.vue';
-import Stepper from './components/Stepper.vue'
-import Step from './components/Step.vue'
-import Steps from './components/Steps.vue'
-import StepList from './components/StepList.vue'
-import StepLabel from './components/StepLabel.vue'
+// import Modal from '@/components/Modal.vue'
+// import ModalTitle from '@/components/ModalTitle.vue'
+// import ModalDescription from '@/components/ModalDescription.vue'
+// import Card from './components/Card.vue';
+// import Accordion from '@/components/Accordion.vue'
+// import AccordionItem from '@/components/AccordionItem.vue'
+// import AccordionItemLabel from '@/components/AccordionItemLabel.vue'
+// import AccordionItemContent from '@/components/AccordionItemContent.vue'
+// import Panel from '@/components/Panel.vue';
+// import PanelHeader from '@/components/PanelHeader.vue';
+// import PanelContent from '@/components/PanelContent.vue';
+// import Tabs from './components/Tabs.vue';
+// import Tab from './components/Tab.vue';
+// import TabsHeader from './components/TabsHeader.vue';
+// import TabsContent from './components/TabsContent.vue';
+// import TabItem from './components/TabItem.vue';
+// import Stepper from './components/Stepper.vue'
+// import Step from './components/Step.vue'
+// import Steps from './components/Steps.vue'
+// import StepList from './components/StepList.vue'
+// import StepLabel from './components/StepLabel.vue'
 
 import imgUrl from '@/assets/vue.svg'
 
