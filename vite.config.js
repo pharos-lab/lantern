@@ -1,10 +1,13 @@
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 
-// https://vitejs.dev/config/
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), tailwindcss(),],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
@@ -12,8 +15,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'src/library.js'),
+      entry: resolve(__dirname, './src/library.js'),
       name: 'Lantern',
       // the proper extensions will be added
       fileName: 'lantern',

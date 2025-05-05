@@ -1,5 +1,9 @@
 <template>
     <div class="p-4 space-y-8">
+
+        <Button>ok</Button>
+        <!--
+
         <Stepper>
             <StepList>
                 <StepLabel :index="0">Step 1</StepLabel>
@@ -103,6 +107,8 @@
                 </TabItem> 
             </TabsContent>
         </Tabs>
+
+        -->
         
     </div>
 </template>

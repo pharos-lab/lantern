@@ -1,23 +1,16 @@
-import * as components from './components';
-import { useTheme } from '@/composables/useTheme.js'
-
-const { theme, getClasses, getClass, getClassesObject } = useTheme()
-const config = useTheme()
+import * as components from '@/components';
+import { useTheme } from './composables/useTheme';
 
 const lantern = {
-  install(Vue, options = {}) {
-    // components
-    for (const componentName in components) {
-      const component = components[componentName];
-      Vue.component(component.name, component);
-    }
+    install(app, options = {}) {
+      // components
+      for (const componentName in components) {
+        const component = components[componentName];
+        app.component(component.name, component);
+      }
 
-    Vue.provide('theme', theme)
-    Vue.provide('getClasses', getClasses)
-    Vue.provide('getClass', getClass)
-    Vue.provide('getClassesObject', getClassesObject)
-    Vue.provide('config', config)
-  },
+      app.provide('pharos', useTheme(options.theme))
+    }
 };
 
 export { lantern };
