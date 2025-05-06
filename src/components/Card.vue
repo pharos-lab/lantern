@@ -1,5 +1,5 @@
 <template>
-    <div class="l-card overflow-hidden" :class="classes">
+    <div class="l-card overflow-hidden" :class="[themeClasses, pharos.theme.padding]">
         <slot></slot>   
     </div>
 </template>
@@ -10,7 +10,7 @@ import { inject, computed, } from 'vue'
 const props = defineProps({
     color: {
         type: String,
-        default: 'secondary'
+        default: 'default'
     },
     variant: {
         type: String,
@@ -34,11 +34,9 @@ const props = defineProps({
     unstyled: { type: Boolean, default: false }
 })
 
-const getClasses = inject('getClasses')
+const pharos = inject('pharos')
 
-const classes = computed(() => {
-    if (props.unstyled) return 
-
-    return getClasses(props, 'card', {exclude: ['subBackground'], })
+const themeClasses = computed(() => {
+    return pharos.getThemeClasses(props, 'button')
 })
 </script>

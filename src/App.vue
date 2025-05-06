@@ -19,6 +19,17 @@
 
         <Badge color="red" variant="outline" size="small">36</Badge>
         
+        <div class="flex gap-4">
+
+            <Card >
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, porro.
+            </Card>
+
+            <Card >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, velit?
+            </Card>
+
+        </div> 
         <!--
                 <Panel color="primary" variant="light">
                     <PanelHeader>
@@ -51,17 +62,7 @@
             </Actions>
         </Modal>
 
-        <div class="flex gap-4">
-
-            <Card imgPosition="left" img-size="w-1/4" class="grow">
-                
-            </Card>
-
-            <Card imgPosition="right" :img="imgUrl" class="grow">
-                
-            </Card>
-
-        </div> 
+        
 
         
 
@@ -99,11 +100,11 @@ import Alert from '@/components/Alert.vue';
 import AlertTitle from '@/components/AlertTitle.vue';
 import AlertDescription from '@/components/AlertDescription.vue';
 import Badge from '@/components/Badge.vue'
-import Actions from '@/components/Actions.vue';
+//import Actions from '@/components/Actions.vue';
 // import Modal from '@/components/Modal.vue'
 // import ModalTitle from '@/components/ModalTitle.vue'
 // import ModalDescription from '@/components/ModalDescription.vue'
-// import Card from './components/Card.vue';
+import Card from './components/Card.vue';
 import Accordion from '@/components/Accordion.vue'
 import AccordionLabel from '@/components/AccordionLabel.vue'
 import AccordionContent from '@/components/AccordionContent.vue'
