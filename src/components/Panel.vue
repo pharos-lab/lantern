@@ -34,6 +34,10 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
+    icons: {
+        type: Array,
+        default: ['Minus', 'Close']
+    }
 })
 
 const pharos = inject('pharos')
@@ -51,6 +55,7 @@ const toggle = () => {
 provide('panel', {
     isOpen: isOpen, 
     toggle,
+    icons: props.icons
 })
 </script>
   
