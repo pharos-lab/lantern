@@ -22,7 +22,7 @@ export const colors = {
     orange: {
         base: 'bg-orange-500 text-white', 
         outline: 'border-2 border-orange-500 text-orange-500',
-        light: 'bg-orange-100 text-orange-700',
+        light: 'bg-orange-50 text-orange-700',
         hover: {
             base: 'hover:bg-orange-400',
             outline: 'hover:bg-orange-500 hover:text-white',

@@ -1,15 +1,22 @@
 <template>
     <div class="p-4 space-y-8">
 
+        <div class="l-accordion">
+            <div class="l-accordion-label" @click="isOpen = !isOpen">
+                trigger
+            </div>
+            <transition name="accordion">
+            <div v-show="isOpen" class="l-accordion-content border">
+                content
+            </div>
+            </transition>
+        </div>
+
         <Button>ok</Button>
 
-        <Alert color="orange" variant="outline" shadow>
+        <Alert color="orange" variant="light" shadow>
             <AlertTitle>Lorem, ipsum.</AlertTitle>
             <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
-            <Actions>
-                <Button color="secondary" variant="light">Cancel</Button>
-                <Button color="danger" @click="console.log('ok')">Confirm</Button>
-            </Actions>
         </Alert>
 
         <Accordion color="red" variant="light" open >
@@ -17,7 +24,7 @@
             <AccordionContent>content</AccordionContent>
         </Accordion>
 
-        <Badge color="red" variant="outline" size="small">36</Badge>
+        <Badge color="red" variant="light" size="small">36</Badge>
         
         <div class="flex gap-4">
 
@@ -30,17 +37,16 @@
             </Card>
 
         </div> 
+
+        <Panel >
+            <PanelLabel>
+                Mon Titre
+            </PanelLabel>
+            <PanelContent>
+                Contenu de l'accordéon avec transition fluide
+            </PanelContent>
+        </Panel>
         <!--
-                <Panel color="primary" variant="light">
-                    <PanelHeader>
-                        <h3>My Panel Header</h3>
-                    </PanelHeader>
-                    <PanelContent>
-                        <p>This is the content of the panel.</p>
-                    </PanelContent>
-        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
-                </Panel>
         <Stepper>
             <StepList>
                 <StepLabel :index="0">Step 1</StepLabel>
@@ -109,7 +115,7 @@ import Accordion from '@/components/Accordion.vue'
 import AccordionLabel from '@/components/AccordionLabel.vue'
 import AccordionContent from '@/components/AccordionContent.vue'
 import Panel from '@/components/Panel.vue';
-import PanelHeader from '@/components/PanelHeader.vue';
+import PanelLabel from '@/components/PanelLabel.vue';
 import PanelContent from '@/components/PanelContent.vue';
 // import Tabs from './components/Tabs.vue';
 // import Tab from './components/Tab.vue';
@@ -126,11 +132,21 @@ import imgUrl from '@/assets/vue.svg'
 
 import { ref } from 'vue'
 
-const openModal = ref(false)
+const isOpen = ref(false)
 </script>
 
 
 
 <style scoped>
-
+.accordion-enter-active, .accordion-leave-active {
+  transition: max-height 1s ease, opacity 0.3s ease;
+}
+.accordion-enter-from, .accordion-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+.accordion-enter-to, .accordion-leave-from {
+  max-height: 999px; /* ou hauteur dyn calculée */
+  opacity: 1;
+}
 </style>

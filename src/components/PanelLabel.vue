@@ -1,16 +1,11 @@
 <template>
-   
-    <div
-        ref="inner"
-        class="l-panel-content overflow-hidden transition-[height] duration-1000 ease-in-out"
-        :style="{ height: heightStyle }"
-      >
-        <slot></slot>
+    <div class="l-panel-label cursor-pointer"  @click="panel.toggle">
+        <slot>trigger</slot>
     </div>
 </template>
 
 <script setup>
-import { inject, computed, provide, ref } from 'vue'
+import { inject, computed, ref } from 'vue'
 
 const props = defineProps({
     color: {
@@ -29,20 +24,9 @@ const props = defineProps({
         default: false
     },
 })
-const inner = ref(null)
+
 const pharos = inject('pharos')
 const panel = inject('panel')
-
-const heightStyle = computed(() => {
-    if (panel.isOpen.value) {
-        console.log(panel.isOpen.value)
-        const fullHeight = inner.value.scrollHeight
-        return fullHeight + 'px'
-        
-    } else {
-        return '0px'
-    }
-})
 
 const themeClasses = computed(() => {
     return pharos.getThemeClasses(props, 'button')

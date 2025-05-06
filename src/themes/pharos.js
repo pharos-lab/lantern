@@ -8,7 +8,7 @@ export const pharos = {
         large: 'rounded-lg',
         full: 'rounded-full'
     },
-    shadow: 'shadow',
+    shadow: 'shadow-md',
     sizes: {
         button: {
             base: 'px-3 py-2',
@@ -21,5 +21,5 @@ export const pharos = {
             large: 'px-4 py-2 text-lg font-semibold'
         }
     },
-    padding: 'p-4'
+    padding: 'p-4',
 }
