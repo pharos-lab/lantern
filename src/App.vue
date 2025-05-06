@@ -2,8 +2,33 @@
     <div class="p-4 space-y-8">
 
         <Button>ok</Button>
-        <!--
 
+        <Alert color="orange" variant="outline" shadow>
+            <AlertTitle>Lorem, ipsum.</AlertTitle>
+            <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
+            <Actions>
+                <Button color="secondary" variant="light">Cancel</Button>
+                <Button color="danger" @click="console.log('ok')">Confirm</Button>
+            </Actions>
+        </Alert>
+
+        <Accordion color="red" variant="light" open >
+            <AccordionLabel :icon="false">label</AccordionLabel>
+            <AccordionContent>content</AccordionContent>
+        </Accordion>
+
+        <Panel color="primary" variant="light">
+            <PanelHeader>
+                <h3>My Panel Header</h3>
+            </PanelHeader>
+            <PanelContent>
+                <p>This is the content of the panel.</p>
+            </PanelContent>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
+        </Panel>
+
+        <!--
         <Stepper>
             <StepList>
                 <StepLabel :index="0">Step 1</StepLabel>
@@ -16,29 +41,6 @@
                 <Step :index="2">Content for Step 3</Step>
             </Steps>
         </Stepper>
-
-
-        <Button variant="outline" 
-            color="primary" 
-            rounded="base" 
-            @click="openModal = true" 
-            icon="PencilSquareIcon" 
-            iconPosition="right" 
-            size="large"
-            shadow
-            >
-            Open Modal
-        </Button>
-
-        <Alert color="success" variant="outline" icon="InformationCircleIcon" closable="">
-            <AlertTitle>Lorem, ipsum.</AlertTitle>
-            <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
-            <Actions>
-                <Button color="secondary" variant="light">Cancel</Button>
-                <Button color="danger" @click="console.log('ok')">Confirm</Button>
-            </Actions>
-        </Alert>
-
         <Modal teleport="#app" v-if="openModal" @close="openModal = false" position="bottom-left" size="small" color="danger" variant="light">
             <ModalTitle>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi ea dolores modi vel, nihil pariatur!</ModalTitle>
             <ModalDescription>Lorem ipsum dolor,.</ModalDescription>
@@ -60,32 +62,9 @@
 
         </div> 
 
-        <Accordion color="danger" variant="light">
-            <AccordionItem label="header1">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias molestias hic nemo doloribus et consequuntur.
-            </AccordionItem>
+        
 
-            <AccordionItem>
-                <AccordionItemLabel>header 2</AccordionItemLabel>
-                <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
-            </AccordionItem>
-
-            <AccordionItem>
-                <AccordionItemLabel>header 3</AccordionItemLabel>
-                <AccordionItemContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia, et reiciendis laudantium dolorum odit.</AccordionItemContent>
-            </AccordionItem>
-        </Accordion>
-
-        <Panel color="primary" variant="light">
-            <PanelHeader>
-                <h3>My Panel Header</h3>
-            </PanelHeader>
-            <PanelContent>
-                <p>This is the content of the panel.</p>
-            </PanelContent>
-        </Panel>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
+        
 
         <Tabs active="two">
             <TabsHeader>
@@ -108,7 +87,7 @@
             </TabsContent>
         </Tabs>
 
-        -->
+    -->
         
     </div>
 </template>
@@ -119,27 +98,26 @@ import Alert from '@/components/Alert.vue';
 import AlertTitle from '@/components/AlertTitle.vue';
 import AlertDescription from '@/components/AlertDescription.vue';
 import Actions from '@/components/Actions.vue';
-import Modal from '@/components/Modal.vue'
-import ModalTitle from '@/components/ModalTitle.vue'
-import ModalDescription from '@/components/ModalDescription.vue'
-import Card from './components/Card.vue';
+// import Modal from '@/components/Modal.vue'
+// import ModalTitle from '@/components/ModalTitle.vue'
+// import ModalDescription from '@/components/ModalDescription.vue'
+// import Card from './components/Card.vue';
 import Accordion from '@/components/Accordion.vue'
-import AccordionItem from '@/components/AccordionItem.vue'
-import AccordionItemLabel from '@/components/AccordionItemLabel.vue'
-import AccordionItemContent from '@/components/AccordionItemContent.vue'
+import AccordionLabel from '@/components/AccordionLabel.vue'
+import AccordionContent from '@/components/AccordionContent.vue'
 import Panel from '@/components/Panel.vue';
 import PanelHeader from '@/components/PanelHeader.vue';
 import PanelContent from '@/components/PanelContent.vue';
-import Tabs from './components/Tabs.vue';
-import Tab from './components/Tab.vue';
-import TabsHeader from './components/TabsHeader.vue';
-import TabsContent from './components/TabsContent.vue';
-import TabItem from './components/TabItem.vue';
-import Stepper from './components/Stepper.vue'
-import Step from './components/Step.vue'
-import Steps from './components/Steps.vue'
-import StepList from './components/StepList.vue'
-import StepLabel from './components/StepLabel.vue'
+// import Tabs from './components/Tabs.vue';
+// import Tab from './components/Tab.vue';
+// import TabsHeader from './components/TabsHeader.vue';
+// import TabsContent from './components/TabsContent.vue';
+// import TabItem from './components/TabItem.vue';
+// import Stepper from './components/Stepper.vue'
+// import Step from './components/Step.vue'
+// import Steps from './components/Steps.vue'
+// import StepList from './components/StepList.vue'
+// import StepLabel from './components/StepLabel.vue'
 
 import imgUrl from '@/assets/vue.svg'
 

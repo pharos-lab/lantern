@@ -1,75 +1,71 @@
 <template>
-    <Transition name="fade">
-        <div class="l-alert relative shadow" :class="classes" v-show="isOpen">
-            <component :is="Heroicons['XCircleIcon']" 
-            class="size-6 absolute right-2 top-2 cursor-pointer" 
-            v-if="props.dismissable"
-            @click="isOpen = false"
-            ></component>
-            
-            <div class="l-alert-content flex gap-4">
-                <component :is="Heroicons[props.icon]" class="size-8 shrink-0"></component>
-                <div class="l-alert-text grow">    
-                    <h4 class="font-semibold text-lg mb-4" v-if="props.title">
-                        {{ props.title }}
-                    </h4>
-                    
-                    <p class="leading-snug" v-if="props.description">{{  props.description }}</p>
-                    <slot></slot>
-                </div>
-            </div>
+    <Transition>
+        <div class="l-alert" :class="[themeClasses, pharos.theme.padding]" v-show="isOpen">
+            <X 
+                class="float-right cursor-pointer rounded"
+                :class="[pharos.theme.colors[props.color].hover[props.variant]]"
+                v-if="props.dismissible" 
+                @click="isOpen = false"
+            ></X>
+            <slot></slot>
         </div>
     </Transition>
 </template>
 
-
 <script setup>
-import * as Heroicons  from '@heroicons/vue/24/outline'
-import { inject, ref, computed } from 'vue'
+import { inject, computed, ref } from 'vue'
+import { X } from 'lucide-vue-next'
+
 
 const props = defineProps({
-    title: String,
-    description: String,
-    icon: String,
     color: {
         type: String,
-        default: 'secondary'
+        default: 'default'
     },
     variant: {
         type: String,
         default: 'base',
         validator(value) {
-            return ['light', 'dark', 'base', 'outline'].includes(value)
+            return ['base', 'outline', 'light', 'text'].includes(value)
         }
+    },
+    rounded: {
+        type: String,
+        default: 'medium',
+        validator(value) {
+            return ['medium', 'none', 'large', 'full'].includes(value)
+        }
+    },
+    dismissible: {
+        type: Boolean,
+        default: true
     },
     shadow: {
         type: Boolean,
-        default: true
+        default: false
     },
-    dismissable: {
+    unstyle: {
         type: Boolean,
-        default: true
+        default: false
     },
-    unstyled: { type: Boolean, default: false }
 })
-
-const getClasses = inject('getClasses')
-
-const classes = computed(() => {
-    if (props.unstyled) return
-    
-    return getClasses(props, 'alert', { exclude: ["subBackground"]})
-})
+const pharos = inject('pharos')
 
 const isOpen = ref(true)
 
+const themeClasses = computed(() => {
+    return pharos.getThemeClasses(props, 'alert')
+})
 </script>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
 }
-.fade-enter, .fade-leave-to {
+
+.v-enter-from,
+.v-leave-to {
   opacity: 0;
 }
 </style>

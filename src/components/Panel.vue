@@ -2,43 +2,41 @@
     <div class="l-panel" :class="classes">
       <slot></slot>
     </div>
-  </template>
+</template>
   
-  <script setup>
-  import { ref, provide, computed, inject } from 'vue';
-  
-  const props = defineProps({
-    color: { type: String, default: 'primary' },
-    variant: { type: String, default: 'light' },
-    rounded: { type: String, default: 'base'},
-    shadow: { type: Boolean, default: true },
-    expanded: { type: Boolean, default: true },
-    toggleable: { type: Boolean, default: false},
-    unstyled: { type: Boolean, default: false }
-  });
-  
-  const emit = defineEmits(['update:expanded']);
-  
-  const isExpanded = ref(props.expanded)
-  
-  const toggle = () => {
-    isExpanded.value = !isExpanded.value;
-  };
+<script setup>
+import { ref, provide, computed, inject } from 'vue';
 
-  const getClasses = inject('getClasses')
+const props = defineProps({
+  color: { type: String, default: 'primary' },
+  variant: { type: String, default: 'light' },
+  rounded: { type: String, default: 'base'},
+  shadow: { type: Boolean, default: true },
+  expanded: { type: Boolean, default: true },
+  toggleable: { type: Boolean, default: false},
+  unstyled: { type: Boolean, default: false }
+});
 
-  const classes = computed(() => {
-    if (props.unstyled) return 
-    
-    return getClasses(props, 'panel', { exclude: ["subBackground"]})
+const emit = defineEmits(['update:expanded']);
+
+const isExpanded = ref(props.expanded)
+
+const toggle = () => {
+  isExpanded.value = !isExpanded.value;
+};
+
+const pharos = inject('pharos')
+
+const themeClasses = computed(() => {
+    return pharos.getThemeClasses(props, 'accordion')
 })
 
   
-  provide('panel', {
-    color: props.color,
-    variant: props.variant,
-    isExpanded,
-    toggle,
-  });
-  </script>
+provide('panel', {
+  color: props.color,
+  variant: props.variant,
+  isExpanded,
+  toggle,
+});
+</script>
   

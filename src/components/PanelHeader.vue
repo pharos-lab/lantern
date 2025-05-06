@@ -5,7 +5,7 @@
         <slot></slot>
         <transition name="quickFade" mode="out-in">
           <component
-            :is="isExpanded ? MinusIcon : PlusIcon"
+            :is="isExpanded ? Minus : Plus"
             class="size-8 stroke-2 rounded-full p-1 cursor-pointer"
             @click="toggle"
           ></component>
@@ -15,7 +15,7 @@
   
 <script setup>
 import { inject } from 'vue';
-import { MinusIcon, PlusIcon } from '@heroicons/vue/24/solid'
+import { Plus, Minus } from 'lucide-vue-next';
 
 const { toggle, isExpanded } = inject('panel');
 </script>

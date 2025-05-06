@@ -1,39 +1,64 @@
 <template>
-    <div class="l-accordion divide-y" :class="classes">
+    <details class="l-accordion" :open="props.open" :class="[themeClasses]" @toggle="isOpen = !isOpen">
         <slot></slot>
-    </div>
+    </details>
 </template>
 
 <script setup>
-import { provide, computed, inject } from 'vue';
+import { inject, computed, ref, provide } from 'vue'
 
 const props = defineProps({
     color: {
         type: String,
-        default: 'secondary'
+        default: 'default'
     },
     variant: {
         type: String,
         default: 'base',
         validator(value) {
-            return ['light', 'dark', 'base', 'outline', 'text'].includes(value)
+            return ['base', 'outline', 'light', 'text'].includes(value)
         }
     },
-    divide: {type: Boolean, default: true},
-    unstyled: { type: Boolean, default: false }
-});
-
-
-// Provide state and toggle function to child components
-provide('accordion', {
-    accordionProps: props
-});
-
-const getClasses = inject('getClasses')
-
-const classes = computed(() => {
-    if (props.unstyled) return 
+    open: {
+        type: Boolean,
+        default: false
+    },
+    unstyle: {
+        type: Boolean,
+        default: false
+    },
     
-    return getClasses(props, 'accordion', {exclude: ["subBackground"], debug: false})
+})
+
+const isOpen = ref(props.open)
+
+provide('isOpen', isOpen)
+
+const pharos = inject('pharos')
+
+const themeClasses = computed(() => {
+    return pharos.getThemeClasses(props, 'accordion')
 })
 </script>
+
+<style scoped>
+
+details {
+
+  @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
+  }
+
+  &::details-content {
+    opacity: 0;
+    block-size: 0;
+    overflow-y: clip;
+    transition: content-visibility .5s allow-discrete, opacity .5s, block-size .5s;
+  }
+
+  &[open]::details-content {
+    opacity: 1;
+    block-size: auto;
+  }
+}
+</style>
