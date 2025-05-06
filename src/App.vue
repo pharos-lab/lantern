@@ -13,22 +13,23 @@
         </Alert>
 
         <Accordion color="red" variant="light" open >
-            <AccordionLabel :icon="false">label</AccordionLabel>
+            <AccordionLabel :icon="true">label</AccordionLabel>
             <AccordionContent>content</AccordionContent>
         </Accordion>
 
-        <Panel color="primary" variant="light">
-            <PanelHeader>
-                <h3>My Panel Header</h3>
-            </PanelHeader>
-            <PanelContent>
-                <p>This is the content of the panel.</p>
-            </PanelContent>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
-        </Panel>
-
+        <Badge color="red" variant="outline" size="small">36</Badge>
+        
         <!--
+                <Panel color="primary" variant="light">
+                    <PanelHeader>
+                        <h3>My Panel Header</h3>
+                    </PanelHeader>
+                    <PanelContent>
+                        <p>This is the content of the panel.</p>
+                    </PanelContent>
+        
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, neque.</p>
+                </Panel>
         <Stepper>
             <StepList>
                 <StepLabel :index="0">Step 1</StepLabel>
@@ -97,6 +98,7 @@ import Button from '@/components/Button.vue'
 import Alert from '@/components/Alert.vue';
 import AlertTitle from '@/components/AlertTitle.vue';
 import AlertDescription from '@/components/AlertDescription.vue';
+import Badge from '@/components/Badge.vue'
 import Actions from '@/components/Actions.vue';
 // import Modal from '@/components/Modal.vue'
 // import ModalTitle from '@/components/ModalTitle.vue'
