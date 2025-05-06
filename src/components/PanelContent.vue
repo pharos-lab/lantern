@@ -3,10 +3,12 @@
     <div
         ref="inner"
         class="l-panel-content overflow-hidden transition-all duration-500 ease-in-out"
-        :class="[themeClasses, panel.isOpen.value ? 'p-4': '']"
+        :class="[themeClasses]"
         :style="{ height: heightStyle }"
       >
-        <slot></slot>
+      <div class="p-4">
+          <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -19,7 +21,7 @@ const pharos = inject('pharos')
 const panel = inject('panel')
 
 const heightStyle = computed(() => {
-    return panel.isOpen.value ? inner.value.scrollHeight + parseInt(pharos.theme.padding.slice(-1) * 8) + 'px'  : '0px'
+    return panel.isOpen.value ? inner.value.scrollHeight + 'px'  : '0px'
 })
 
 
