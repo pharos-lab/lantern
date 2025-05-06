@@ -1,17 +1,6 @@
 <template>
     <div class="p-4 space-y-8">
 
-        <div class="l-accordion">
-            <div class="l-accordion-label" @click="isOpen = !isOpen">
-                trigger
-            </div>
-            <transition name="accordion">
-            <div v-show="isOpen" class="l-accordion-content border">
-                content
-            </div>
-            </transition>
-        </div>
-
         <Button>ok</Button>
 
         <Alert color="orange" variant="light" shadow>
@@ -38,7 +27,7 @@
 
         </div> 
 
-        <Panel >
+        <Panel color="red">
             <PanelLabel>
                 Mon Titre
             </PanelLabel>
@@ -131,22 +120,9 @@ import PanelContent from '@/components/PanelContent.vue';
 import imgUrl from '@/assets/vue.svg'
 
 import { ref } from 'vue'
-
-const isOpen = ref(false)
 </script>
 
 
 
 <style scoped>
-.accordion-enter-active, .accordion-leave-active {
-  transition: max-height 1s ease, opacity 0.3s ease;
-}
-.accordion-enter-from, .accordion-leave-to {
-  max-height: 0;
-  opacity: 0;
-}
-.accordion-enter-to, .accordion-leave-from {
-  max-height: 999px; /* ou hauteur dyn calculée */
-  opacity: 1;
-}
 </style>

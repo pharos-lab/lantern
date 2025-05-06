@@ -2,7 +2,8 @@
    
     <div
         ref="inner"
-        class="l-panel-content overflow-hidden transition-[height] duration-1000 ease-in-out"
+        class="l-panel-content overflow-hidden transition-all duration-500 ease-in-out"
+        :class="[themeClasses, panel.isOpen.value ? 'p-4': '']"
         :style="{ height: heightStyle }"
       >
         <slot></slot>
@@ -12,40 +13,18 @@
 <script setup>
 import { inject, computed, provide, ref } from 'vue'
 
-const props = defineProps({
-    color: {
-        type: String,
-        default: 'default'
-    },
-    variant: {
-        type: String,
-        default: 'base',
-        validator(value) {
-            return ['base', 'outline', 'light', 'text'].includes(value)
-        }
-    },
-    unstyle: {
-        type: Boolean,
-        default: false
-    },
-})
+
 const inner = ref(null)
 const pharos = inject('pharos')
 const panel = inject('panel')
 
 const heightStyle = computed(() => {
-    if (panel.isOpen.value) {
-        console.log(panel.isOpen.value)
-        const fullHeight = inner.value.scrollHeight
-        return fullHeight + 'px'
-        
-    } else {
-        return '0px'
-    }
+    return panel.isOpen.value ? inner.value.scrollHeight + parseInt(pharos.theme.padding.slice(-1) * 8) + 'px'  : '0px'
 })
 
+
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'button')
+    return pharos.getThemeClasses(panel.props, 'panel')
 })
 </script>
 
