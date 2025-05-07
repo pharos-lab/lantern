@@ -28,13 +28,22 @@
         </div> 
 
         <Panel color="red" >
-            <PanelLabel :icons="false">
+            <PanelLabel>
                 Mon Titre
             </PanelLabel>
             <PanelContent>
                 Contenu de l'accordéon avec transition fluide
             </PanelContent>
         </Panel>
+
+        <Dropdown>
+            <DropdownTrigger>
+                <Button>Click me</Button>
+            </DropdownTrigger>
+            <DropdownContent>
+                <Card>my content</Card>
+            </DropdownContent>
+        </Dropdown>
         <!--
         <Stepper>
             <StepList>
@@ -95,7 +104,9 @@ import Alert from '@/components/Alert.vue';
 import AlertTitle from '@/components/AlertTitle.vue';
 import AlertDescription from '@/components/AlertDescription.vue';
 import Badge from '@/components/Badge.vue'
-//import Actions from '@/components/Actions.vue';
+import Dropdown from './components/Dropdown.vue'; 
+import DropdownContent from './components/DropdownContent.vue'; 
+import DropdownTrigger from './components/DropdownTrigger.vue'; 
 // import Modal from '@/components/Modal.vue'
 // import ModalTitle from '@/components/ModalTitle.vue'
 // import ModalDescription from '@/components/ModalDescription.vue'

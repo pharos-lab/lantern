@@ -53,7 +53,7 @@ const toggle = () => {
 }
 
 provide('panel', {
-    isOpen: isOpen, 
+    isOpen,
     toggle,
     icons: props.icons
 })

@@ -8,7 +8,6 @@
 </template>
 
 <script setup>
-import string from 'lodash-es/string';
 import { inject, reactive, computed } from 'vue'
 
 const props = defineProps({
