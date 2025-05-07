@@ -8,11 +8,12 @@
 </template>
 
 <script setup>
+import string from 'lodash-es/string';
 import { inject, reactive, computed } from 'vue'
 
 const props = defineProps({
     icons: {
-        type: Array,
+        type: [Array, Boolean],
         default: ['Minus', 'Plus']
     }
 })
@@ -29,6 +30,8 @@ const icon = computed(() => {
 })
 
 import('lucide-vue-next').then((icons) => {
+    if (typeof props.icons === 'boolean') return
+
     toggleIcons.open = icons[props.icons[0]];
     toggleIcons.close = icons[props.icons[1]];
 })

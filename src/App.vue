@@ -27,8 +27,8 @@
 
         </div> 
 
-        <Panel color="red">
-            <PanelLabel>
+        <Panel color="red" >
+            <PanelLabel :icons="false">
                 Mon Titre
             </PanelLabel>
             <PanelContent>
