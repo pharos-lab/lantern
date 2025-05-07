@@ -8,6 +8,18 @@
 import { inject, ref, provide, computed } from 'vue'
 
 const props = defineProps({
+    placement: {
+        type: String,
+        default: 'bottom',
+        validator: (value) =>
+        [
+            'top', 'bottom', 'left', 'right',
+            'top-start', 'top-end',
+            'bottom-start', 'bottom-end',
+            'left-start', 'left-end',
+            'right-start', 'right-end'
+        ].includes(value)
+    },
     unstyle: {
         type: Boolean,
         default: false
@@ -19,7 +31,7 @@ const isOpen = ref(false)
 const toggle = () => isOpen.value = !isOpen.value
 const close = () => isOpen.value = false
 
-provide('dropdown', { isOpen, toggle, close })
+provide('dropdown', { isOpen, toggle, close, placement: props.placement })
 
 const pharos = inject('pharos')
 

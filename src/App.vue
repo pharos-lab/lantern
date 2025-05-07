@@ -36,14 +36,17 @@
             </PanelContent>
         </Panel>
 
-        <Dropdown>
-            <DropdownTrigger>
-                <Button>Click me</Button>
-            </DropdownTrigger>
-            <DropdownContent>
-                <Card>my content</Card>
-            </DropdownContent>
-        </Dropdown>
+        <div class="flex justify-center">
+
+            <Dropdown placement="top-end">
+                <DropdownTrigger>
+                    <Button>click me</Button>
+                </DropdownTrigger>
+                <DropdownContent>
+                    <Card>Lorem ipsum dolor sit amet consectetur adipisicing</Card>
+                </DropdownContent>
+            </Dropdown>
+        </div>
         <!--
         <Stepper>
             <StepList>
