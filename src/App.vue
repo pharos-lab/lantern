@@ -38,9 +38,9 @@
 
         <div class="flex justify-center">
 
-            <Dropdown placement="top-end">
+            <Dropdown placement="top" trigger="hover">
                 <DropdownTrigger>
-                    <Button>click me</Button>
+                    <Button>click me Lorem ipsum dolor sit am.</Button>
                 </DropdownTrigger>
                 <DropdownContent>
                     <Card>Lorem ipsum dolor sit amet consectetur adipisicing</Card>

@@ -8,6 +8,13 @@
 import { inject, ref, provide, computed } from 'vue'
 
 const props = defineProps({
+    trigger: {
+        type: String,
+        default: 'hover',
+        validator(value) {
+            return ['click', 'hover'].includes(value)
+        }
+    },
     placement: {
         type: String,
         default: 'bottom',
@@ -30,8 +37,9 @@ const isOpen = ref(false)
 
 const toggle = () => isOpen.value = !isOpen.value
 const close = () => isOpen.value = false
+const open = () => isOpen.value = true
 
-provide('dropdown', { isOpen, toggle, close, placement: props.placement })
+provide('dropdown', { isOpen, toggle, close, open, placement: props.placement, trigger: props.trigger })
 
 const pharos = inject('pharos')
 
