@@ -38,7 +38,7 @@
 
         <div class="flex justify-center">
 
-            <Dropdown placement="top">
+            <Dropdown placement="top" delay="1000">
                 <DropdownTrigger>
                     <Button>click me Lorem ipsum dolor sit am.</Button>
                 </DropdownTrigger>

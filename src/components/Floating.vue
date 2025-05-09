@@ -27,6 +27,10 @@ const props = defineProps({
             'right-start', 'right-end'
         ].includes(value)
     },
+    delay: {
+        type: Number,
+        default: 0 
+    },    
     unstyle: {
         type: Boolean,
         default: false

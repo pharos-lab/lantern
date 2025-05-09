@@ -4,6 +4,7 @@
             v-show="dropdown.isOpen.value"
             class="absolute z-50 l-dropdown-content min-w-max"
             :class="placementClasses"
+            :style="{ transitionDelay: dropdown.props.delay + 'ms' }"
         >
             <slot></slot>
         </div>
