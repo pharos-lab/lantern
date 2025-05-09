@@ -7,16 +7,17 @@
 <script setup>
 import { inject, computed } from 'vue'
 
-const floating = inject('floating')
+const dropdown = inject('dropdown')
+const pharos = inject('pharos')
 
 // Dynamically assign event listeners based on trigger type
 const listeners = computed(() => {
-  if (floating.props.trigger === 'click') {
-    return { click: floating.toggle }
-  } else if (floating.props.trigger === 'hover') {
+  if (dropdown.props.trigger === 'click') {
+    return { click: dropdown.toggle }
+  } else if (dropdown.props.trigger === 'hover') {
     return {
-      mouseenter: floating.open,
-      mouseleave: floating.close
+      mouseenter: dropdown.open,
+      mouseleave: dropdown.close
     }
   }
   return {}

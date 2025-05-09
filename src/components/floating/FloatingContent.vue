@@ -1,13 +1,10 @@
 <template>
     <Transition :name="transitionName">
         <div 
-            v-show="floating.isOpen.value"
+            v-show="dropdown.isOpen.value"
             class="absolute z-50 l-dropdown-content min-w-max"
             :class="placementClasses"
-            :style="{ 
-              transitionDelay: floating.props.delay + 'ms',
-              transitionDuration: floating.props.duration + 'ms'
-            }"
+            :style="{ transitionDelay: dropdown.props.delay + 'ms' }"
         >
             <slot></slot>
         </div>
@@ -19,10 +16,15 @@ import { inject, computed } from 'vue'
 
 import { getPlacementClass, getTransitionName } from '@/components/floating/utils.js'
 
-const floating = inject('floating')
+const dropdown = inject('dropdown')
+const pharos = inject('pharos')
 
-const placementClasses = computed(() => getPlacementClass(floating.props.placement))
-const transitionName = computed(() => getTransitionName(floating.props.placement))
+const themeClasses = computed(() => {
+    return pharos.getThemeClasses(props, 'dropdown')
+})
+
+const placementClasses = computed(() => getPlacementClass(dropdown.props.placement))
+const transitionName = computed(() => getTransitionName(dropdown.props.placement))
 
 
 </script>

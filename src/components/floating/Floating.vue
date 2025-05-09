@@ -31,10 +31,6 @@ const props = defineProps({
         type: Number,
         default: 0 
     },    
-    duration: {
-        type: Number,
-        default: 300
-    },
     unstyle: {
         type: Boolean,
         default: false
@@ -47,12 +43,12 @@ const toggle = () => isOpen.value = !isOpen.value
 const close = () => isOpen.value = false
 const open = () => isOpen.value = true
 
-provide('floating', { isOpen, toggle, close, open, props })
+provide('dropdown', { isOpen, toggle, close, open, props })
 
 const pharos = inject('pharos')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'floating')
+    return pharos.getThemeClasses(props, 'dropdown')
 })
 </script>
 
