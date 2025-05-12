@@ -1,11 +1,11 @@
 <template>
-    <div class="l-accordion" :class="[themeClasses]">
+    <div class="l-accordion overflow-hidden" :class="[themeClasses]">
         <slot></slot>
     </div>
 </template>
 
 <script setup>
-import { inject, computed } from 'vue'
+import { inject, computed, provide } from 'vue'
 
 const props = defineProps({
     color: {
@@ -19,6 +19,17 @@ const props = defineProps({
             return ['base', 'outline', 'light', 'text'].includes(value)
         }
     },
+    rounded: {
+        type: String,
+        default: 'medium',
+        validator(value) {
+            return ['medium', 'none', 'large', 'full'].includes(value)
+        }
+    },
+    shadow: {
+        type: Boolean,
+        default: false
+    },
     unstyle: {
         type: Boolean,
         default: false
@@ -26,6 +37,7 @@ const props = defineProps({
 })
 
 const pharos = inject('pharos')
+provide('accordion', { props })
 
 const themeClasses = computed(() => {
     return pharos.getThemeClasses(props, 'button')

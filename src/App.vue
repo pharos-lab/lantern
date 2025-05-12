@@ -8,7 +8,7 @@
             <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
         </Alert>
 
-        <Accordion color="red" variant="light">
+        <Accordion color="red" variant="light" shadow>
             <AccordionItem>
                 <AccordionItemLabel :icon="true">label</AccordionItemLabel>
                 <AccordionItemContent>content</AccordionItemContent>
