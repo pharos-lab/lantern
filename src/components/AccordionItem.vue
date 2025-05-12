@@ -1,5 +1,5 @@
 <template>
-    <div class="l-collapsible overflow-hidden" :class="[themeClasses]">
+    <div class="l-accordion-item overflow-hidden" :class="[themeClasses]">
         <slot></slot> 
     </div>
 </template>
@@ -26,10 +26,6 @@ const props = defineProps({
             return ['medium', 'none', 'large', 'full'].includes(value)
         }
     },
-    shadow: {
-        type: Boolean,
-        default: true
-    },
     unstyle: {
         type: Boolean,
         default: false
@@ -47,7 +43,7 @@ const props = defineProps({
 const pharos = inject('pharos')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'collapsible')
+    return pharos.getThemeClasses(props, 'panel')
 })
 
 const isOpen = ref(props.open)
@@ -56,7 +52,7 @@ const toggle = () => {
     isOpen.value = !isOpen.value
 }
 
-provide('collapsible', {
+provide('accordionItem', {
     isOpen,
     toggle,
     icons: props.icons

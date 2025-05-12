@@ -1,5 +1,5 @@
 <template>
-    <div class="l-collapsible-label cursor-pointer flex items-center justify-between"  @click="collapsible.toggle" :class="[pharos.theme.padding]">
+    <div class="l-accordion-item-label cursor-pointer flex items-center justify-between"  @click="accordionItem.toggle" :class="[pharos.theme.padding]">
         <slot>trigger</slot>
         <Transition mode="out-in">
             <component :is="icon"></component>
@@ -17,7 +17,7 @@ const props = defineProps({
     }
 })
 const pharos = inject('pharos')
-const collapsible = inject('collapsible')
+const accordionItem = inject('accordionItem')
 
 const toggleIcons = reactive({
     open: null,
@@ -25,7 +25,7 @@ const toggleIcons = reactive({
 })
 
 const icon = computed(() => {
-    return collapsible.isOpen.value ? toggleIcons.open : toggleIcons.close
+    return accordionItem.isOpen.value ? toggleIcons.open : toggleIcons.close
 })
 
 import('lucide-vue-next').then((icons) => {

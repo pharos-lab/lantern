@@ -8,9 +8,21 @@
             <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
         </Alert>
 
-        <Accordion color="red" variant="light" open >
-            <AccordionLabel :icon="true">label</AccordionLabel>
-            <AccordionContent>content</AccordionContent>
+        <Accordion color="red" variant="light">
+            <AccordionItem>
+                <AccordionItemLabel :icon="true">label</AccordionItemLabel>
+                <AccordionItemContent>content</AccordionItemContent>
+            </AccordionItem>
+
+            <AccordionItem open>
+                <AccordionItemLabel :icon="true">label</AccordionItemLabel>
+                <AccordionItemContent>content</AccordionItemContent>
+            </AccordionItem>
+
+            <AccordionItem>
+                <AccordionItemLabel :icon="true">label</AccordionItemLabel>
+                <AccordionItemContent>content</AccordionItemContent>
+            </AccordionItem>
         </Accordion>
 
         <Badge color="red" variant="light" size="small">36</Badge>
@@ -27,7 +39,16 @@
 
         </div> 
 
-        <Collapsible color="red" >
+        <Collapsible color="red" open>
+            <CollapsibleLabel>
+                Mon Titre
+            </CollapsibleLabel>
+            <CollapsibleContent>
+                Contenu de l'accordéon avec transition fluide
+            </CollapsibleContent>
+        </Collapsible>
+
+        <Collapsible color="red" open>
             <CollapsibleLabel>
                 Mon Titre
             </CollapsibleLabel>

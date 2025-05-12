@@ -2,8 +2,9 @@ import Alert from './Alert.vue'
 import AlertTitle from './AlertTitle.vue'
 import AlertDescription from './AlertDescription.vue'
 import Accordion from './Accordion.vue'
-import AccordionLabel from './AccordionLabel.vue'
-import AccordionContent from './AccordionContent.vue'
+import AccordionItem from './AccordionItem.vue'
+import AccordionItemLabel from './AccordionItemLabel.vue'
+import AccordionItemContent from './AccordionItemContent.vue'
 import AspectRatio from './AspectRatio.vue'
 import Avatar from './Avatar.vue'
 import Badge from './Badge.vue'
@@ -24,8 +25,9 @@ export {
     AlertTitle,
     AlertDescription,
     Accordion, 
-    AccordionContent, 
-    AccordionLabel,
+    AccordionItem,
+    AccordionItemContent,
+    AccordionItemLabel,
     AspectRatio,
     Avatar,
     Badge,
