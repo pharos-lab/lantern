@@ -38,6 +38,10 @@ const props = defineProps({
         type: Array,
         default: ['Minus', 'Close']
     },
+    icon: {
+        type: Boolean,
+        default: true
+    },
     open: {
         type: Boolean,
         default: false
@@ -59,7 +63,8 @@ const toggle = () => {
 provide('collapsible', {
     isOpen,
     toggle,
-    icons: props.icons
+    icons: props.icons,
+    icon: props.icon
 })
 </script>
   

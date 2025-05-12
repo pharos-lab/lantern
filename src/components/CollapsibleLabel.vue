@@ -2,7 +2,7 @@
     <div class="l-collapsible-label cursor-pointer flex items-center justify-between"  @click="collapsible.toggle" :class="[pharos.theme.padding]">
         <slot>trigger</slot>
         <Transition mode="out-in">
-            <component :is="icon"></component>
+            <component :is="icon" v-if="collapsible.icon"></component>
         </Transition>
     </div>
 </template>

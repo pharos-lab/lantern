@@ -30,6 +30,14 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
+    icons: {
+        type: Array,
+        default: ['Minus', 'Close']
+    },
+    icon: {
+        type: Boolean,
+        default: true
+    },
     unstyle: {
         type: Boolean,
         default: false

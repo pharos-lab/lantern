@@ -8,19 +8,19 @@
             <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
         </Alert>
 
-        <Accordion color="red" variant="light" shadow>
+        <Accordion color="red" variant="light" shadow :icons="['ChevronDown', 'ChevronUp']" :icon="false">
             <AccordionItem>
-                <AccordionItemLabel :icon="true">label</AccordionItemLabel>
+                <AccordionItemLabel>label</AccordionItemLabel>
                 <AccordionItemContent>content</AccordionItemContent>
             </AccordionItem>
 
             <AccordionItem open>
-                <AccordionItemLabel :icon="true">label</AccordionItemLabel>
+                <AccordionItemLabel>label</AccordionItemLabel>
                 <AccordionItemContent>content</AccordionItemContent>
             </AccordionItem>
 
             <AccordionItem>
-                <AccordionItemLabel :icon="true">label</AccordionItemLabel>
+                <AccordionItemLabel>label</AccordionItemLabel>
                 <AccordionItemContent>content</AccordionItemContent>
             </AccordionItem>
         </Accordion>
@@ -39,7 +39,7 @@
 
         </div> 
 
-        <Collapsible color="red" open>
+        <Collapsible color="red" open :icon="false">
             <CollapsibleLabel>
                 Mon Titre
             </CollapsibleLabel>

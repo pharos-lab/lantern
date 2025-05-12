@@ -1,5 +1,5 @@
 <template>
-    <Collapsible v-bind="{...props, rounded: 'none'}">
+    <Collapsible v-bind="{...accordion.props, rounded: 'none', shadow: false}">
         <slot></slot>
     </Collapsible>
 </template>
@@ -9,7 +9,5 @@ import { inject } from 'vue'
 import Collapsible from './Collapsible.vue';
 
 const accordion = inject('accordion')
-const {shadow, rounded, ...props } = accordion.props
-console.log(props)
 </script>
   
