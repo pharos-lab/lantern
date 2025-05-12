@@ -16,6 +16,10 @@ import DropdownContent from './DropdownContent.vue'
 import Collapsible from './Collapsible.vue'
 import CollapsibleLabel from './CollapsibleLabel.vue'
 import CollapsibleContent from './CollapsibleContent.vue'
+import Dialog from './Dialog.vue'
+import DialogTrigger from './DialogTrigger.vue'
+import DialogContent from './DialogContent.vue'
+import DialogClose from './DialogClose.vue'
 
 
 
@@ -38,5 +42,9 @@ export {
     DropdownContent,
     Collapsible,
     CollapsibleContent,
-    CollapsibleLabel
+    CollapsibleLabel,
+    Dialog,
+    DialogContent,
+    DialogTrigger,
+    DialogClose
 }

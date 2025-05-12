@@ -3,6 +3,20 @@
 
         <Button>ok</Button>
 
+        <Dialog>
+            <DialogTrigger>
+                <Button>Ouvrir</Button>
+            </DialogTrigger>
+
+            <DialogContent>
+                <p>Voici le contenu du dialogue</p>
+                <DialogClose>
+                    <Button @click="close">Fermer</Button>
+                </DialogClose>
+            </DialogContent>
+        </Dialog>
+
+
         <Alert color="orange" variant="light" shadow>
             <AlertTitle>Lorem, ipsum.</AlertTitle>
             <AlertDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</AlertDescription>
