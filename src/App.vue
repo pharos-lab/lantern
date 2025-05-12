@@ -27,18 +27,18 @@
 
         </div> 
 
-        <Panel color="red" >
-            <PanelLabel>
+        <Collapsible color="red" >
+            <CollapsibleLabel>
                 Mon Titre
-            </PanelLabel>
-            <PanelContent>
+            </CollapsibleLabel>
+            <CollapsibleContent>
                 Contenu de l'accordéon avec transition fluide
-            </PanelContent>
-        </Panel>
+            </CollapsibleContent>
+        </Collapsible>
 
         <div class="flex justify-center">
 
-            <Dropdown placement="right" duration="100">
+            <Dropdown placement="right" :duration="100">
                 <DropdownTrigger>
                     <Button>click me Lorem ipsum dolor sit am.</Button>
                 </DropdownTrigger>
@@ -102,35 +102,6 @@
 </template>
 
 <script setup>
-import Button from '@/components/Button.vue'
-import Alert from '@/components/Alert.vue';
-import AlertTitle from '@/components/AlertTitle.vue';
-import AlertDescription from '@/components/AlertDescription.vue';
-import Badge from '@/components/Badge.vue'
-import Dropdown from './components/Dropdown.vue'; 
-import DropdownContent from './components/DropdownContent.vue'; 
-import DropdownTrigger from './components/DropdownTrigger.vue'; 
-// import Modal from '@/components/Modal.vue'
-// import ModalTitle from '@/components/ModalTitle.vue'
-// import ModalDescription from '@/components/ModalDescription.vue'
-import Card from './components/Card.vue';
-import Accordion from '@/components/Accordion.vue'
-import AccordionLabel from '@/components/AccordionLabel.vue'
-import AccordionContent from '@/components/AccordionContent.vue'
-import Panel from '@/components/Panel.vue';
-import PanelLabel from '@/components/PanelLabel.vue';
-import PanelContent from '@/components/PanelContent.vue';
-// import Tabs from './components/Tabs.vue';
-// import Tab from './components/Tab.vue';
-// import TabsHeader from './components/TabsHeader.vue';
-// import TabsContent from './components/TabsContent.vue';
-// import TabItem from './components/TabItem.vue';
-// import Stepper from './components/Stepper.vue'
-// import Step from './components/Step.vue'
-// import Steps from './components/Steps.vue'
-// import StepList from './components/StepList.vue'
-// import StepLabel from './components/StepLabel.vue'
-
 import imgUrl from '@/assets/vue.svg'
 
 import { ref } from 'vue'

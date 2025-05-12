@@ -6,7 +6,7 @@ const lantern = {
       // components
       for (const componentName in components) {
         const component = components[componentName];
-        app.component(component.name, component);
+        app.component(componentName, component);
       }
 
       app.provide('pharos', useTheme(options.theme))
