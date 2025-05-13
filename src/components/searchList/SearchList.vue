@@ -1,6 +1,6 @@
 <template>
-    <div class="l-accordion overflow-hidden" :class="[themeClasses]">
-        <slot></slot>
+    <div class="l-search-list inline-block">
+        <slot></slot>      
     </div>
 </template>
 
@@ -19,24 +19,8 @@ const props = defineProps({
             return ['base', 'outline', 'light', 'text'].includes(value)
         }
     },
-    rounded: {
+    placeholder: {
         type: String,
-        default: 'medium',
-        validator(value) {
-            return ['medium', 'none', 'large', 'full'].includes(value)
-        }
-    },
-    shadow: {
-        type: Boolean,
-        default: false
-    },
-    icons: {
-        type: Array,
-        default: ['Minus', 'Close']
-    },
-    icon: {
-        type: Boolean,
-        default: true
     },
     unstyle: {
         type: Boolean,
@@ -44,11 +28,20 @@ const props = defineProps({
     },
 })
 
+const model = defineModel({default: {
+    value: '',
+    label: '',
+    input: ''
+}})
+
+provide('searchList', {
+    model,
+    props,
+})
 const pharos = inject('pharos')
-provide('accordion', { props })
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'accordion')
+    return pharos.getThemeClasses(props, 'button')
 })
 </script>
 

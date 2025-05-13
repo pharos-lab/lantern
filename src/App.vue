@@ -3,6 +3,19 @@
 
         <Button>ok</Button>
 
+        <SearchList v-model="searchlist">
+            <SearchListInput placeholder="search..."></SearchListInput>
+            <SearchListItems>
+                <SearchListItem value="item-1">item 1</SearchListItem>
+                <SearchListItem value="item-2">item 2</SearchListItem>
+                <SearchListItem value="item-3">item 3</SearchListItem>
+            </SearchListItems>
+        </SearchList>
+
+        {{ searchlist }}
+
+        <br>
+
         <Dialog>
             <DialogTrigger>
                 <Button>Ouvrir</Button>
@@ -15,20 +28,6 @@
                 </DialogClose>
             </DialogContent>
         </Dialog>
-
-        <Dialog>
-            <DialogTrigger>
-                <Button>Ouvrir 2 </Button>
-            </DialogTrigger>
-
-            <DialogContent>
-                <p>Voici le contenu du dialogue 2</p>
-                <DialogClose>
-                    <Button>Fermer</Button>
-                </DialogClose>
-            </DialogContent>
-        </Dialog>
-
 
         <Alert color="orange" variant="light" shadow>
             <AlertTitle>Lorem, ipsum.</AlertTitle>
@@ -152,6 +151,12 @@
 import imgUrl from '@/assets/vue.svg'
 
 import { ref } from 'vue'
+
+const searchlist = ref({
+    value: '',
+    label: '',
+    input: ''
+})
 </script>
 
 

@@ -1,6 +1,5 @@
 export function useTheme(theme) {
   function getThemeClasses(props, component) {
-      console.log(props);
       const classes = []
 
       if (props.unstyle) {
