@@ -1,6 +1,12 @@
 <template>
     <Transition>
-        <div v-if="dialog.isOpen.value" class="l-dialog-overlay fixed inset-0 bg-black/50 z-50 flex items-center justify-center m-0">
+        <div 
+          v-if="dialog.isOpen.value" 
+          class="l-dialog-overlay fixed inset-0 bg-black/50 z-50 flex items-center justify-center m-0"
+          @click.self="dialog.close"
+          @keyup.esc="close"
+          tabindex="0"
+        >
             <div class="l-dialog-content bg-white rounded" :class="pharos.theme.padding">
                 <slot></slot>
             </div>

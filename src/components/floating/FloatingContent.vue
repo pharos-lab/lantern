@@ -39,7 +39,7 @@ const transitionName = computed(() => getTransitionName(dropdown.props.placement
 .fade-slide-down-enter-from, 
 .fade-slide-down-leave-to {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(10px);
 }
 
 
@@ -47,19 +47,19 @@ const transitionName = computed(() => getTransitionName(dropdown.props.placement
 .fade-slide-up-enter-from, 
 .fade-slide-up-leave-to {
   opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(-10px);
 }
 
 .fade-slide-right-enter-from, 
 .fade-slide-right-leave-to {
   opacity: 0;
-  transform: translateX(20px);
+  transform: translateX(10px);
 }
 
 .fade-slide-left-enter-from, 
 .fade-slide-left-leave-to {
   opacity: 0;
-  transform: translateX(-20px);
+  transform: translateX(-10px);
 }
 
 

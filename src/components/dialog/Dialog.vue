@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { ref, provide } from 'vue'
+import { ref, provide, onMounted, onUnmounted } from 'vue'
 
 const isOpen = ref(false)
 
@@ -14,6 +14,21 @@ const open = () => {
 const close = () => {
     isOpen.value = false
 }
+
+// Gérer la touche Escape
+const handleKeyDown = (e) => {
+  if (e.key === 'Escape') {
+    close()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeyDown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeyDown)
+})
 
 provide('dialog', { open, close, isOpen })
 </script>

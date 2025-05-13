@@ -11,7 +11,20 @@
             <DialogContent>
                 <p>Voici le contenu du dialogue</p>
                 <DialogClose>
-                    <Button @click="close">Fermer</Button>
+                    <Button>Fermer</Button>
+                </DialogClose>
+            </DialogContent>
+        </Dialog>
+
+        <Dialog>
+            <DialogTrigger>
+                <Button>Ouvrir 2 </Button>
+            </DialogTrigger>
+
+            <DialogContent>
+                <p>Voici le contenu du dialogue 2</p>
+                <DialogClose>
+                    <Button>Fermer</Button>
                 </DialogClose>
             </DialogContent>
         </Dialog>

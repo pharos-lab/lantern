@@ -1,5 +1,5 @@
 <template>
-    <div class="l-dialog-close" @click="dialog.close">
+    <div class="l-dialog-close inline-block" @click="dialog.close">
         <slot></slot>
     </div>
 </template>
