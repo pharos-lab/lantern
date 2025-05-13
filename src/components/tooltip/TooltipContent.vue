@@ -7,4 +7,3 @@
 <script setup>
 import { FloatingContent } from '@/components/floating'
 </script>
-  
