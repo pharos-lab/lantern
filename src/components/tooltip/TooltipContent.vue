@@ -5,6 +5,6 @@
 </template>
 
 <script setup>
-import FloatingContent from '@/components/FloatingContent.vue'
+import { FloatingContent } from '@/components/floating'
 </script>
   

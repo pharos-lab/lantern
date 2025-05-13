@@ -17,11 +17,6 @@ import { inject, computed } from 'vue'
 import { getPlacementClass, getTransitionName } from '@/components/floating/utils.js'
 
 const dropdown = inject('dropdown')
-const pharos = inject('pharos')
-
-const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'dropdown')
-})
 
 const placementClasses = computed(() => getPlacementClass(dropdown.props.placement))
 const transitionName = computed(() => getTransitionName(dropdown.props.placement))

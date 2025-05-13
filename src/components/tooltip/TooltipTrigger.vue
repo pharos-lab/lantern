@@ -5,6 +5,6 @@
 </template>
 
 <script setup>
-import FloatingTrigger from '@/components/FloatingTrigger.vue'
+import { FloatingTrigger } from '@/components/floating'
 </script>
   

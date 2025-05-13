@@ -72,8 +72,7 @@
         </Collapsible>
 
         <div class="flex justify-center">
-
-            <Dropdown placement="right" :duration="100">
+            <Dropdown placement="top" :duration="1000">
                 <DropdownTrigger>
                     <Button>click me Lorem ipsum dolor sit am.</Button>
                 </DropdownTrigger>

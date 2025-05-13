@@ -6,7 +6,7 @@
   
 <script setup>
 import { inject } from 'vue'
-import Collapsible from './Collapsible.vue';
+import { Collapsible }  from '@/components/collapsible';
 
 const accordion = inject('accordion')
 </script>

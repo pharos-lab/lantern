@@ -6,7 +6,7 @@
 
 <script setup>
 import { inject } from 'vue';
-import CollapsibleLabel from './CollapsibleLabel.vue';
+import { CollapsibleLabel } from '@/components/collapsible';
 
 const accordion = inject('accordion')
 </script>

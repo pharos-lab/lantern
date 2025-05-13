@@ -1,50 +1,34 @@
-import Alert from './Alert.vue'
-import AlertTitle from './AlertTitle.vue'
-import AlertDescription from './AlertDescription.vue'
-import Accordion from './Accordion.vue'
-import AccordionItem from './AccordionItem.vue'
-import AccordionItemLabel from './AccordionItemLabel.vue'
-import AccordionItemContent from './AccordionItemContent.vue'
+import { Button } from './button'
+import { Accordion, AccordionItem, AccordionItemContent, AccordionItemLabel } from './accordion'
+import { Alert, AlertDescription, AlertTitle } from './alert'
+import { Collapsible, CollapsibleContent, CollapsibleLabel } from './collapsible'
+import { Dropdown, DropdownContent, DropdownTrigger } from './dropdown'
+import { Tooltip, TooltipTrigger, TooltipContent } from './tooltip'
 import AspectRatio from './AspectRatio.vue'
 import Avatar from './Avatar.vue'
 import Badge from './Badge.vue'
-import Button from './Button.vue'
 import Card from './Card.vue'
-import Dropdown from './Dropdown.vue'
-import DropdownTrigger from './DropdownTrigger.vue'
-import DropdownContent from './DropdownContent.vue'
-import Collapsible from './Collapsible.vue'
-import CollapsibleLabel from './CollapsibleLabel.vue'
-import CollapsibleContent from './CollapsibleContent.vue'
+
 import Dialog from './Dialog.vue'
 import DialogTrigger from './DialogTrigger.vue'
 import DialogContent from './DialogContent.vue'
 import DialogClose from './DialogClose.vue'
 
 
-
 // etc...
 export { 
-    Alert, 
-    AlertTitle,
-    AlertDescription,
-    Accordion, 
-    AccordionItem,
-    AccordionItemContent,
-    AccordionItemLabel,
+    Alert, AlertTitle, AlertDescription,
+    Accordion, AccordionItem, AccordionItemContent, AccordionItemLabel,
+    Dropdown, DropdownTrigger, DropdownContent,
+    Collapsible, CollapsibleContent, CollapsibleLabel,
+    Tooltip, TooltipContent, TooltipTrigger,
     AspectRatio,
     Avatar,
     Badge,
     Button, 
     Card,
-    Dropdown, 
-    DropdownTrigger,
-    DropdownContent,
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleLabel,
     Dialog,
     DialogContent,
     DialogTrigger,
-    DialogClose
+    DialogClose,
 }
