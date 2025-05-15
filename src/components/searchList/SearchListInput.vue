@@ -1,5 +1,5 @@
 <template>
-    <input type="text" class="l-search-list-input border" v-model="searchList.model.input" :placeholder="searchList.props.placeholder">
+    <input type="text" class="l-search-list-input border border-slate-500 px-3 py-1 rounded" v-model="searchList.model.value" :placeholder="searchList.props.placeholder">
 </template>
 
 <script setup>

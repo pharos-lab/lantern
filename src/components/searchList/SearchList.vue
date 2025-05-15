@@ -1,5 +1,5 @@
 <template>
-    <div class="l-search-list inline-block">
+    <div class="l-search-list inline-block space-y-2">
         <slot></slot>      
     </div>
 </template>
@@ -28,15 +28,11 @@ const props = defineProps({
     },
 })
 
-const model = defineModel({default: {
-    value: '',
-    label: '',
-    input: ''
-}})
+const model = defineModel()
 
 provide('searchList', {
     model,
-    props,
+    props
 })
 const pharos = inject('pharos')
 

@@ -5,13 +5,16 @@
 
         <SearchList v-model="searchlist">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems>
-                <SearchListItem value="item-1">item 1</SearchListItem>
-                <SearchListItem value="item-2">item 2</SearchListItem>
-                <SearchListItem value="item-3">item 3</SearchListItem>
+            <SearchListItems class="space-y-2 rounded border p-2">
+                <SearchListItem v-for="item in items" :item="item">
+                    <span class="bg-red-200 block px-2 py-1 rounded">
+                        {{ item.label}}
+                    </span>
+                </SearchListItem>
+                <EmptyList>No element here</EmptyList>
             </SearchListItems>
         </SearchList>
-
+        
         {{ searchlist }}
 
         <br>
@@ -152,11 +155,14 @@ import imgUrl from '@/assets/vue.svg'
 
 import { ref } from 'vue'
 
-const searchlist = ref({
-    value: '',
-    label: '',
-    input: ''
-})
+const searchlist = ref()
+
+const items = [
+    { value: 'test', label: 'test label 1' },
+    { value: 'test2', label: 'test label 2' },
+    { value: 'test3', label: 'test label 3' },
+    { value: 'test4', label: 'test label 4' },
+]
 </script>
 
 

@@ -1,5 +1,8 @@
 <template>
-    <li @click="handle">
+    <li 
+        v-if="searchList.model.value == undefined || props.item.label.toLowerCase().includes(searchList.model.value)"
+        class="l-search-list-item"
+    >
         <slot></slot>
     </li>
 </template>
@@ -8,13 +11,15 @@
 import { inject } from 'vue'
 
 const props = defineProps({
-    value: String
+    item: Object
 })
+
 const searchList = inject('searchList')
 
-const handle = () => {
-    console.log(searchList.model);
-    searchList.model.value.value = props.value
-}
-
 </script>
+
+<style scoped>
+.l-search-list-item:has(+ .l-search-list-empty) {
+  margin-bottom: 0;
+}
+</style>
