@@ -1,5 +1,5 @@
 <template>
-    <FloatingContent>
+    <FloatingContent class="l-combobox-items">
         <SearchList>
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="space-y-2 rounded border p-2">

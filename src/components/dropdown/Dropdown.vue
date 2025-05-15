@@ -1,5 +1,5 @@
 <template>
-    <Floating trigger="click">
+    <Floating trigger="click" class="l-dropdown">
       <slot></slot>
     </Floating>
 </template>

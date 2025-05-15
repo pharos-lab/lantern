@@ -1,7 +1,7 @@
 <template>
     <li 
         v-if="searchList?.model?.value == undefined || props.item.label.toLowerCase().includes(searchList.model.value)"
-        class="l-search-list-item"
+        class="l-search-list-item cursor-pointer"
     >
         <slot></slot>
     </li>

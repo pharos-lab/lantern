@@ -2,7 +2,7 @@
     <Transition :name="transitionName">
         <div 
             v-show="dropdown.isOpen.value"
-            class="absolute z-50 l-dropdown-content min-w-max"
+            class="absolute z-50 l-floating-content min-w-max"
             :class="placementClasses"
             :style="{ transitionDelay: dropdown.props.delay + 'ms' }"
         >

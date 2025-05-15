@@ -1,38 +1,44 @@
 <template>
-    <Floating>
-        <slot></slot>
+    <Floating class="l-combobox">
+            <slot></slot>
     </Floating>
 </template>
 
 <script setup>
-import { inject, computed, ref } from 'vue'
+import { inject, computed, ref, provide } from 'vue'
 import { Floating } from '@/components/floating'
 
-const searchList = ref()
+const model = defineModel()
+const combobox = ref()
 
-const props = defineProps({
-    color: {
-        type: String,
-        default: 'default'
-    },
-    variant: {
-        type: String,
-        default: 'base',
-        validator(value) {
-            return ['base', 'outline', 'light', 'text'].includes(value)
-        }
-    },
-    unstyle: {
-        type: Boolean,
-        default: false
-    },
+provide('combobox', {
+    combobox,
+    model
 })
 
-const pharos = inject('pharos')
+// const props = defineProps({
+//     color: {
+//         type: String,
+//         default: 'default'
+//     },
+//     variant: {
+//         type: String,
+//         default: 'base',
+//         validator(value) {
+//             return ['base', 'outline', 'light', 'text'].includes(value)
+//         }
+//     },
+//     unstyle: {
+//         type: Boolean,
+//         default: false
+//     },
+// })
 
-const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'button')
-})
+// const pharos = inject('pharos')
+
+// const themeClasses = computed(() => {
+//     return pharos.getThemeClasses(props, 'button')
+// })
 </script>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-    <div class="l-dropdown relative inline-block" :class="themeClasses">
+    <div class="l-floating relative inline-block" :class="themeClasses">
         <slot></slot>
     </div>
 </template>

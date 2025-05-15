@@ -1,5 +1,5 @@
 <template>
-    <div class="l-dropdown-trigger" v-on="listeners">
+    <div class="l-floating-trigger" v-on="listeners">
         <slot></slot>
     </div>
 </template>

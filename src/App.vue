@@ -33,7 +33,9 @@
 
         <Combobox placement="bottom-start" v-model="combobox">
             <ComboboxTrigger>
-                Search item
+                <div class="test">
+                    {{ combobox.label || 'placeholder' }}
+                </div>
             </ComboboxTrigger>
             <ComboboxItems>
                 <ComboboxItem v-for="item in items" :item="item">
@@ -43,10 +45,6 @@
                 </ComboboxItem>
             </ComboboxItems>
         </ComboBox>
-
-        <p>combobox: 
-            {{  combobox }}
-        </p>
 
         <br>
 
@@ -188,7 +186,7 @@ import { ref } from 'vue'
 
 const searchlist = ref()
 const searchlist2 = ref()
-const combobox = ref()
+const combobox = ref({value:'', label: ''})
 
 const items = [
     { value: 'test', label: 'test label 1' },
