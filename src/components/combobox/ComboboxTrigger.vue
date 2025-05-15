@@ -1,5 +1,5 @@
 <template>
-    <FloatingTrigger trigger="click" class="l-combobox-trigger">
+    <FloatingTrigger trigger="click" class="l-combobox-trigger cursor-pointer">
         <slot></slot>
     </FloatingTrigger>
 </template>

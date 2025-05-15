@@ -1,18 +1,25 @@
 <template>
     <Floating class="l-combobox">
-            <slot></slot>
+        <FloatingTrigger v-if="props.placeholder">
+            <Button>
+                {{ model.label || props.placeholder || 'Open me!' }}
+            </Button>
+        </FloatingTrigger>
+        <slot></slot>
     </Floating>
 </template>
 
 <script setup>
-import { inject, computed, ref, provide } from 'vue'
-import { Floating } from '@/components/floating'
+import { ref, provide } from 'vue'
+import { Floating, FloatingTrigger } from '@/components/floating'
 
 const model = defineModel()
-const combobox = ref()
+
+const props = defineProps({
+    placeholder: String
+})
 
 provide('combobox', {
-    combobox,
     model
 })
 
