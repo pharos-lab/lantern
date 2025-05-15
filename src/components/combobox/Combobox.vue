@@ -3,6 +3,7 @@
         <FloatingTrigger v-if="props.placeholder">
             <Button>
                 {{ model.label || props.placeholder || 'Open me!' }}
+                <ChevronsUpDown class="size-5"></ChevronsUpDown>
             </Button>
         </FloatingTrigger>
         <slot></slot>
@@ -12,6 +13,7 @@
 <script setup>
 import { ref, provide } from 'vue'
 import { Floating, FloatingTrigger } from '@/components/floating'
+import { ChevronsUpDown } from 'lucide-vue-next';
 
 const model = defineModel()
 

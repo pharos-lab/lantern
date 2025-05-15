@@ -32,7 +32,6 @@
         <br> 
 
         <Combobox placement="bottom-start" v-model="combobox" placeholder="click me">
-            
             <ComboboxItems>
                 <ComboboxItem v-for="item in items" :item="item">
                     <span class="bg-red-200 block px-2 py-1 rounded">
