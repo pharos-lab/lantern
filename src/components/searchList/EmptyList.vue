@@ -9,7 +9,7 @@
 </script>
 
 <style scoped>
-.l-search-list-empty:not(:first-child) {
+.l-search-list-empty:not(:only-child) {
     display: none;
 }
 </style>

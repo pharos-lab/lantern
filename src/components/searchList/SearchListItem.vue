@@ -1,6 +1,6 @@
 <template>
     <li 
-        v-if="searchList.model.value == undefined || props.item.label.toLowerCase().includes(searchList.model.value)"
+        v-if="searchList?.model?.value == undefined || props.item.label.toLowerCase().includes(searchList.model.value)"
         class="l-search-list-item"
     >
         <slot></slot>

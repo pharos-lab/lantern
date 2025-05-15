@@ -6,6 +6,7 @@ import { Dropdown, DropdownContent, DropdownTrigger } from './dropdown'
 import { Tooltip, TooltipTrigger, TooltipContent } from './tooltip'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from './dialog'
 import { SearchList, SearchListInput, SearchListItems, SearchListItem, EmptyList } from './searchList'
+import { Combobox, ComboboxItem, ComboboxItems, ComboboxTrigger } from './combobox'
 import AspectRatio from './AspectRatio.vue'
 import Avatar from './Avatar.vue'
 import Badge from './Badge.vue'
@@ -20,6 +21,7 @@ export {
     Collapsible, CollapsibleContent, CollapsibleLabel,
     Tooltip, TooltipContent, TooltipTrigger,
     SearchList, SearchListInput, SearchListItem, SearchListItems, EmptyList,
+    Combobox, ComboboxItem, ComboboxItems, ComboboxTrigger,
     AspectRatio,
     Avatar,
     Badge,

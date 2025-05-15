@@ -6,16 +6,47 @@
         <SearchList v-model="searchlist">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="space-y-2 rounded border p-2">
+                <EmptyList>No element here</EmptyList>
                 <SearchListItem v-for="item in items" :item="item">
                     <span class="bg-red-200 block px-2 py-1 rounded">
                         {{ item.label}}
                     </span>
                 </SearchListItem>
-                <EmptyList>No element here</EmptyList>
             </SearchListItems>
         </SearchList>
         
         {{ searchlist }}
+
+        <SearchList v-model="searchlist2">
+            <SearchListInput placeholder="search..."></SearchListInput>
+            <SearchListItems class="space-y-2 rounded border p-2">
+                <EmptyList>No element here</EmptyList>
+                <SearchListItem v-for="item in items" :item="item">
+                    <span class="bg-red-200 block px-2 py-1 rounded">
+                        {{ item.label}}
+                    </span>
+                </SearchListItem>
+            </SearchListItems>
+        </SearchList>
+
+        <br> 
+
+        <Combobox placement="bottom-start" v-model="combobox">
+            <ComboboxTrigger>
+                Search item
+            </ComboboxTrigger>
+            <ComboboxItems>
+                <ComboboxItem v-for="item in items" :item="item">
+                    <span class="bg-red-200 block px-2 py-1 rounded">
+                        {{ item.label}}
+                    </span>
+                </ComboboxItem>
+            </ComboboxItems>
+        </ComboBox>
+
+        <p>combobox: 
+            {{  combobox }}
+        </p>
 
         <br>
 
@@ -156,6 +187,8 @@ import imgUrl from '@/assets/vue.svg'
 import { ref } from 'vue'
 
 const searchlist = ref()
+const searchlist2 = ref()
+const combobox = ref()
 
 const items = [
     { value: 'test', label: 'test label 1' },
