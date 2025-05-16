@@ -1,7 +1,7 @@
 <template>
     <Floating class="l-combobox">
-        <FloatingTrigger v-if="props.placeholder" :color="props.color">
-            <Button>
+        <FloatingTrigger v-if="props.placeholder">
+            <Button :color="props.color">
                 {{ model.label || props.placeholder || 'Open me!' }}
                 <ChevronsUpDown class="size-5"></ChevronsUpDown>
             </Button>
@@ -16,11 +16,6 @@ import { Floating, FloatingTrigger } from '@/components/floating'
 import { ChevronsUpDown } from 'lucide-vue-next';
 
 const model = defineModel()
-
-
-provide('combobox', {
-    model
-})
 
 const props = defineProps({
     placeholder: String,
@@ -39,6 +34,10 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
+})
+
+provide('combobox', {
+    model, props
 })
 
 const pharos = inject('pharos')

@@ -3,7 +3,7 @@
 
         <Button>ok</Button>
 
-        <SearchList v-model="searchlist">
+        <SearchList v-model="searchlist" color="red">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="">
                 <EmptyList>No element here</EmptyList>

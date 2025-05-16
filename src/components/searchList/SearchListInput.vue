@@ -1,7 +1,7 @@
 <template>
     <input 
         type="text" 
-        class="l-search-list-input px-3 py-1 rounded" 
+        class="l-search-list-input px-3 py-1 rounded font-semibold" 
         v-model="searchList.model.value"
         :class="themeClasses"
     >
@@ -12,25 +12,7 @@ import { inject, computed } from 'vue'
 const searchList = inject('searchList')
 const pharos = inject('pharos')
 
-const props = defineProps({
-    color: {
-        type: String,
-        default: 'default'
-    },
-    variant: {
-        type: String,
-        default: 'outline',
-        validator(value) {
-            return ['base', 'outline', 'light', 'text'].includes(value)
-        }
-    },
-    unstyle: {
-        type: Boolean,
-        default: false
-    },
-})
-
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses(searchList.props, 'searchList')
+    return pharos.getThemeClasses({...searchList.props, variant: 'light'}, 'searchList')
 })
 </script>
