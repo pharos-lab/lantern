@@ -43,12 +43,12 @@ const toggle = () => isOpen.value = !isOpen.value
 const close = () => isOpen.value = false
 const open = () => isOpen.value = true
 
-provide('dropdown', { isOpen, toggle, close, open, props })
+provide('floating', { isOpen, toggle, close, open, props })
 
 const pharos = inject('pharos')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'dropdown')
+    return pharos.getThemeClasses(props, 'floating')
 })
 </script>
 

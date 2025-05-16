@@ -1,10 +1,10 @@
 <template>
     <Transition :name="transitionName">
         <div 
-            v-show="dropdown.isOpen.value"
+            v-show="floating.isOpen.value"
             class="absolute z-50 l-floating-content min-w-max"
             :class="placementClasses"
-            :style="{ transitionDelay: dropdown.props.delay + 'ms' }"
+            :style="{ transitionDelay: floating.props.delay + 'ms' }"
         >
             <slot></slot>
         </div>
@@ -16,10 +16,10 @@ import { inject, computed } from 'vue'
 
 import { getPlacementClass, getTransitionName } from '@/components/floating/utils.js'
 
-const dropdown = inject('dropdown')
+const floating = inject('floating')
 
-const placementClasses = computed(() => getPlacementClass(dropdown.props.placement))
-const transitionName = computed(() => getTransitionName(dropdown.props.placement))
+const placementClasses = computed(() => getPlacementClass(floating.props.placement))
+const transitionName = computed(() => getTransitionName(floating.props.placement))
 
 
 </script>

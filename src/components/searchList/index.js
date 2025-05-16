@@ -3,6 +3,7 @@ import SearchListInput from './SearchListInput.vue'
 import SearchListItems from './SearchListItems.vue'
 import SearchListItem from './SearchListItem.vue'
 import SearchListItemLabel from './SearchListItemLabel.vue'
+import SearchListTransition from './SearchListTransition.vue'
 import EmptyList from './EmptyList.vue'
 
-export { SearchList, SearchListInput, SearchListItem, SearchListItems, EmptyList, SearchListItemLabel }
+export { SearchList, SearchListInput, SearchListItem, SearchListItems, EmptyList, SearchListItemLabel, SearchListTransition }

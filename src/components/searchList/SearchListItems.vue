@@ -1,6 +1,6 @@
 <template>
    <ul class="l-search-list-items overflow-hidden">
-        <slot></slot>
+      <slot></slot>
     </ul>
 </template>
 
@@ -13,4 +13,9 @@
 .l-search-list-items > .l-search-list-item:has(+ .search-list-empty) {
   margin-bottom: 0;
 }
+
+
+
+
+
 </style>

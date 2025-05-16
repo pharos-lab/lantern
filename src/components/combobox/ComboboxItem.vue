@@ -1,5 +1,5 @@
 <template>
-    <SearchListItem :item="props.item" @click="combobox.model.value = item" class="l-combobox-item">
+    <SearchListItem :item="props.item" @click="handle(item)" class="l-combobox-item">
         <slot></slot>
     </SearchListItem>
 </template>
@@ -13,6 +13,13 @@ const props = defineProps({
 })
 
 const combobox = inject('combobox')
+const floating = inject('floating')
+
+const handle = (item) => {
+    combobox.model.value = item
+    console.log(floating);
+
+}
 </script>
 
 <style scoped>

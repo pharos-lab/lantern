@@ -7,12 +7,11 @@
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="space-y-2 p-2 border border-slate-200 rounded">
                 <EmptyList>No element here</EmptyList>
-                <SearchListItem v-for="item in items" :item="item">
-                    <SearchListItemLabel>
-                        {{ item.label}}
-                    </SearchListItemLabel>
-                    
-                </SearchListItem>
+                    <SearchListItem v-for="item in items" :item="item" :key="item.value">
+                        <SearchListItemLabel>
+                            {{ item.label }}
+                        </SearchListItemLabel>
+                    </SearchListItem>
             </SearchListItems>
         </SearchList>
         
@@ -24,10 +23,9 @@
             <SearchListItems class="space-y-2">
                 <EmptyList>No element here</EmptyList>
                 <SearchListItem v-for="item in items" :item="item">
-                    
-                        {{ item.label}} 
-                        {{ item.value }}
-                    
+                    <p class="px-5 py-2 rounded">
+                        {{ item.label}}
+                    </p>
                 </SearchListItem>
             </SearchListItems>
         </SearchList>
