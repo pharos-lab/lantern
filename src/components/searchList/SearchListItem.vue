@@ -2,6 +2,7 @@
     <li 
         v-if="searchList?.model?.value == undefined || props.item.label.toLowerCase().includes(searchList.model.value)"
         class="l-search-list-item cursor-pointer overflow-hidden"
+        :class="[typeof slots[0].type == 'symbol' ? themeClasses : null]"
     >
         <component :is="slot" v-for="slot in slots" :class="themeClasses"></component>
     </li>
@@ -15,6 +16,7 @@ const props = defineProps({
 })
 
 const slots = useSlots().default()
+console.log(typeof slots[0].type == 'symbol')
 
 const searchList = inject('searchList')
 const pharos = inject('pharos')

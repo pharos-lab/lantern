@@ -24,9 +24,10 @@
             <SearchListItems class="space-y-2">
                 <EmptyList>No element here</EmptyList>
                 <SearchListItem v-for="item in items" :item="item">
-                    <p class="px-5 py-2 rounded">
-                        {{ item.label}}
-                    </p>
+                    
+                        {{ item.label}} 
+                        {{ item.value }}
+                    
                 </SearchListItem>
             </SearchListItems>
         </SearchList>
