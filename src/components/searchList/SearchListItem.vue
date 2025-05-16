@@ -18,8 +18,7 @@ const props = defineProps({
 const searchList = inject('searchList')
 const pharos = inject('pharos')
 const themeClasses = computed(() => {
-    console.log(searchList.props);
-    return pharos.getThemeClasses(searchList.props, 'searchList')
+    return pharos.getThemeClasses({...searchList.props, hover: true}, 'searchList')
 })
 </script>
 

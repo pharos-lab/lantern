@@ -5,11 +5,12 @@
 
         <SearchList v-model="searchlist" color="red">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="">
+            <SearchListItems class="space-y-2 p-2 border border-slate-200 rounded">
                 <EmptyList>No element here</EmptyList>
-                <SearchListItem v-for="item in items" :item="item">
-                    
+                <SearchListItem v-for="item in items" :item="item" class="rounded">
+                    <SearchListItemLabel>
                         {{ item.label}}
+                    </SearchListItemLabel>
                     
                 </SearchListItem>
             </SearchListItems>
@@ -18,7 +19,7 @@
         {{ searchlist }}
         <br>
 
-        <SearchList v-model="searchlist2">
+        <SearchList v-model="searchlist2" color="orange">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="">
                 <EmptyList>No element here</EmptyList>

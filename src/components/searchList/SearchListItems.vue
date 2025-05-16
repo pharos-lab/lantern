@@ -1,5 +1,5 @@
 <template>
-   <ul class="l-search-list-items">
+   <ul class="l-search-list-items overflow-hidden">
         <slot></slot>
     </ul>
 </template>
