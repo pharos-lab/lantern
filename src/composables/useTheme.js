@@ -35,6 +35,10 @@ export function useTheme(theme) {
           classes.push(theme.radius[radius])
       }
 
+      if (props.focus) {
+        classes.push(theme.colors[props.color]?.focus)
+      }
+
       return classes
   }
 

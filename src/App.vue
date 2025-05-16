@@ -30,7 +30,7 @@
 
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" placeholder="click me" color="orange">
+        <Combobox placement="bottom-start" v-model="combobox" placeholder="click me" color="red">
             <ComboboxItems>
                 <ComboboxItem v-for="item in items" :item="item">
                     
