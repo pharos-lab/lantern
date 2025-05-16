@@ -5,39 +5,39 @@
 
         <SearchList v-model="searchlist">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="space-y-2 rounded border p-2">
+            <SearchListItems class="">
                 <EmptyList>No element here</EmptyList>
                 <SearchListItem v-for="item in items" :item="item">
-                    <span class="bg-red-200 block px-2 py-1 rounded">
+                    
                         {{ item.label}}
-                    </span>
+                    
                 </SearchListItem>
             </SearchListItems>
         </SearchList>
         
         {{ searchlist }}
+        <br>
 
         <SearchList v-model="searchlist2">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="space-y-2 rounded border p-2">
+            <SearchListItems class="">
                 <EmptyList>No element here</EmptyList>
                 <SearchListItem v-for="item in items" :item="item">
-                    <span class="bg-red-200 block px-2 py-1 rounded">
                         {{ item.label}}
-                    </span>
                 </SearchListItem>
             </SearchListItems>
         </SearchList>
 
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" placeholder="click me">
+        <Combobox placement="bottom-start" v-model="combobox" placeholder="click me" color="orange">
             <ComboboxItems>
                 <ComboboxItem v-for="item in items" :item="item">
-                    <span class="bg-red-200 block px-2 py-1 rounded">
+                    
                         {{ item.label}}
-                    </span>
+                    
                 </ComboboxItem>
+                <EmptyList>no items</EmptyList>
             </ComboboxItems>
         </ComboBox>
 
