@@ -17,8 +17,7 @@ const floating = inject('floating')
 
 const handle = (item) => {
     combobox.model.value = item
-    console.log(floating);
-
+    floating.close()
 }
 </script>
 

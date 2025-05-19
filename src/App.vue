@@ -3,36 +3,22 @@
 
         <Button>ok</Button>
 
-        <SearchList v-model="searchlist" color="red">
-            <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="space-y-2 p-2 border border-slate-200 rounded">
-                <EmptyList>No element here</EmptyList>
-                    <SearchListItem v-for="item in items" :item="item" :key="item.value">
-                        <SearchListItemLabel>
-                            {{ item.label }}
-                        </SearchListItemLabel>
-                    </SearchListItem>
-            </SearchListItems>
-        </SearchList>
-        
-        {{ searchlist }}
-        <br>
 
-        <SearchList v-model="searchlist2" color="orange">
+        <SearchList v-model="searchlist2" color="orange" :items="items">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="space-y-2">
-                <EmptyList>No element here</EmptyList>
-                <SearchListItem v-for="item in items" :item="item">
-                    <p class="px-5 py-2 rounded">
-                        {{ item.label}}
+            <SearchListItems class="space-y-2" v-slot="slotProps">
+                <SearchListItem>
+                    <p>
+                        {{ slotProps.item.label }}
                     </p>
                 </SearchListItem>
+                <EmptyList>list is empty</EmptyList>
             </SearchListItems>
         </SearchList>
 
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" placeholder="click me" color="red">
+        <!-- <Combobox placement="bottom-start" v-model="combobox" placeholder="click me" color="red">
             <ComboboxItems>
                 <ComboboxItem v-for="item in items" :item="item">
                     
@@ -41,7 +27,7 @@
                 </ComboboxItem>
                 <EmptyList>no items</EmptyList>
             </ComboboxItems>
-        </ComboBox>
+        </ComboBox> -->
 
         <br>
 
@@ -178,6 +164,7 @@
 
 <script setup>
 import imgUrl from '@/assets/vue.svg'
+import Parent from '@/components/Parent.vue'
 
 import { ref } from 'vue'
 

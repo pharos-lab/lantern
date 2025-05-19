@@ -1,27 +1,18 @@
 <template>
-    <transition>
-
-        <li 
-        v-if="searchList?.model?.value == undefined || props.item.label.toLowerCase().includes(searchList.model.value)"
-        class="l-search-list-item cursor-pointer overflow-hidden"
-        :class="[typeof slots[0].type == 'symbol' ? themeClasses : null]"
+    <li 
+        class="l-search-list-item cursor-pointer overflow-hidden px-3 py-1 rounded"
+        :class="themeClasses"
         >
-        <component :is="slot" v-for="slot in slots" :class="themeClasses"></component>
+        <slot></slot>
     </li>
-</transition>
 </template>
 
 <script setup>
-import { inject, computed, useSlots } from 'vue'
-
-const props = defineProps({
-    item: Object
-})
-
-const slots = useSlots().default()
+import { inject, computed } from 'vue'
 
 const searchList = inject('searchList')
 const pharos = inject('pharos')
+
 const themeClasses = computed(() => {
     return pharos.getThemeClasses({...searchList.props, hover: true}, 'searchList')
 })

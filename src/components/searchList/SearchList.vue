@@ -19,6 +19,7 @@ const props = defineProps({
             return ['base', 'outline', 'light', 'text'].includes(value)
         }
     },
+    items: Array,
     placeholder: {
         type: String,
     },
@@ -32,12 +33,7 @@ const model = defineModel()
 
 provide('searchList', {
     model,
-    props
-})
-const pharos = inject('pharos')
-
-const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'button')
+    props,
 })
 </script>
 

@@ -30,6 +30,7 @@ const props = defineProps({
             return ['base', 'outline', 'light', 'text'].includes(value)
         }
     },
+    items: Array,
     unstyle: {
         type: Boolean,
         default: false
