@@ -1,15 +1,14 @@
 <template>
-    <li class="l-search-list-empty">
+    <div class="l-search-list-empty" v-show="!searchList.filteredItems.value.length">
         <slot></slot>
-    </li>
+    </div>
 </template>
 
 <script setup>
-defineOptions({ name: 'EmptyList' })
+import { inject } from 'vue'
+
+const searchList = inject('searchList')
 </script>
 
 <style scoped>
-.l-search-list-empty:not(:only-child) {
-    display: none;
-}
 </style>

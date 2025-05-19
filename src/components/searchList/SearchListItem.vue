@@ -17,9 +17,3 @@ const themeClasses = computed(() => {
     return pharos.getThemeClasses({...searchList.props, hover: true}, 'searchList')
 })
 </script>
-
-<style scoped>
-.l-search-list-item:has(+ .l-search-list-empty) {
-  margin-bottom: 0;
-}
-</style>

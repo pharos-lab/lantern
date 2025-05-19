@@ -1,23 +1,14 @@
 <template>
-   <ul class="l-search-list-items overflow-hidden border">
+   <ul class="l-search-list-items overflow-hidden" v-show="searchList.filteredItems.value.length">
       <slot 
-        v-for="item in filteredItems" 
+        v-for="item in searchList.filteredItems.value" 
         :item="item"
         :key="item"
       ></slot>
-
-      <component :is="searchList.empty" v-show="searchList.empty && filteredItems"></component>
     </ul>
 </template>
 
 <script setup>
-import { inject, computed } from 'vue'
+import { inject } from 'vue'
 const searchList = inject('searchList')
-
-const filteredItems = computed(() => {
-  const query = searchList.model.value?.toLowerCase() || ''
-  const filtered = searchList.props.items.filter(item => item.label.toLowerCase().includes(query))
-  return filtered
-})
-
 </script>

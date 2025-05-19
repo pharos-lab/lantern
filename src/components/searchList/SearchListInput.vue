@@ -9,6 +9,7 @@
 
 <script setup>
 import { inject, computed } from 'vue'
+
 const searchList = inject('searchList')
 const pharos = inject('pharos')
 

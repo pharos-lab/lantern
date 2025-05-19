@@ -1,15 +1,11 @@
 <template>
     <div class="l-search-list inline-block space-y-2">
-        <slot></slot>      
+        <slot></slot>    
     </div>
 </template>
 
 <script setup>
-import { useSlots, provide } from 'vue'
-
-const empty = useSlots().default().find(item => {
-    return item.type.name?.includes('EmptyList')
-})
+import { provide, computed } from 'vue'
 
 const props = defineProps({
     color: {
@@ -35,10 +31,16 @@ const props = defineProps({
 
 const model = defineModel()
 
+const filteredItems = computed(() => {
+  const query = model.value?.toLowerCase() || ''
+  const filtered = props.items.filter(item => item.label.toLowerCase().includes(query))
+  return filtered
+})
+
 provide('searchList', {
     model,
     props,
-    empty
+    filteredItems
 })
 </script>
 
