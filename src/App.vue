@@ -6,14 +6,14 @@
 
         <SearchList v-model="searchlist2" color="orange" :items="items">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="space-y-2" v-slot="slotProps">
+            <SearchListItems class="space-y-2 p-2" v-slot="slotProps">
                 <SearchListItem>
                     <p>
                         {{ slotProps.item.label }}
                     </p>
                 </SearchListItem>
-                <EmptyList>list is empty</EmptyList>
             </SearchListItems>
+            <EmptyList>list is empty</EmptyList>
         </SearchList>
 
         <br> 

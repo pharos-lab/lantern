@@ -5,7 +5,11 @@
 </template>
 
 <script setup>
-import { inject, computed, provide } from 'vue'
+import { useSlots, provide } from 'vue'
+
+const empty = useSlots().default().find(item => {
+    return item.type.name?.includes('EmptyList')
+})
 
 const props = defineProps({
     color: {
@@ -34,6 +38,7 @@ const model = defineModel()
 provide('searchList', {
     model,
     props,
+    empty
 })
 </script>
 

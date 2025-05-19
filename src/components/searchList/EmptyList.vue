@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-
+defineOptions({ name: 'EmptyList' })
 </script>
 
 <style scoped>
