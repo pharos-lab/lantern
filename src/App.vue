@@ -4,7 +4,7 @@
         <Button>ok</Button>
 
 
-        <SearchList v-model="searchlist2" color="orange" :items="items">
+        <!-- <SearchList v-model="searchlist2" color="orange" :items="items">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="space-y-2 p-2 border" v-slot="slotProps">
                 <SearchListItem>
@@ -14,20 +14,23 @@
                 </SearchListItem>
             </SearchListItems>
             <EmptyList class="p-2 border">list is empty</EmptyList>
-        </SearchList>
+        </SearchList> -->
 
         <br> 
 
-        <!-- <Combobox placement="bottom-start" v-model="combobox" placeholder="click me" color="red">
-            <ComboboxItems>
-                <ComboboxItem v-for="item in items" :item="item">
-                    
-                        {{ item.label}}
-                    
-                </ComboboxItem>
+        <Combobox placement="bottom-start" v-model="combobox" color="red" :items="items">
+            <ComboboxTrigger>
+                Yoooooo
+            </ComboboxTrigger>
+            <ComboboxContent>
+                <ComboboxItems v-slot="slotProps">
+                    <ComboboxItem>
+                        {{ slotProps.item.label }}
+                    </ComboboxItem>
+                </ComboboxItems>
                 <EmptyList>no items</EmptyList>
-            </ComboboxItems>
-        </ComboBox> -->
+            </ComboboxContent>
+        </ComboBox>
 
         <br>
 
