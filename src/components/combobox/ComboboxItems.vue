@@ -1,5 +1,5 @@
 <template>
-    <SearchListItems class="space-y-2" v-slot="slotProps">
+    <SearchListItems class="" v-slot="slotProps">
         <slot v-bind="slotProps"></slot>
     </SearchListItems>
 </template>

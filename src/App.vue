@@ -19,10 +19,10 @@
         <br> 
 
         <Combobox placement="bottom-start" v-model="combobox" color="red" :items="items" displayValue="label" open>
-            <ComboboxTrigger>
+            <ComboboxTrigger class="px-3 py-2 rounded">
                 Yoooooo
             </ComboboxTrigger>
-            <ComboboxContent>
+            <ComboboxContent class="">
                 <ComboboxItems v-slot="item">
                     <ComboboxItem :item="item">
                         {{ item.label }}
@@ -31,7 +31,7 @@
                 <EmptyList>no items</EmptyList>
             </ComboboxContent>
         </ComboBox>
-
+        
         <p>result</p>
         {{ combobox }}
 

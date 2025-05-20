@@ -1,6 +1,6 @@
 <template>
     <li 
-        class="l-search-list-item cursor-pointer overflow-hidden px-3 py-1 rounded"
+        class="l-search-list-item cursor-pointer overflow-hidden"
         :class="themeClasses"
         >
         <slot></slot>

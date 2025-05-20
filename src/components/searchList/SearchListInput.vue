@@ -1,7 +1,7 @@
 <template>
     <input 
         type="text" 
-        class="l-search-list-input px-3 py-1 rounded font-semibold" 
+        class="l-search-list-input px-3 py-1 font-semibold" 
         v-model="searchList.model.value"
         :class="themeClasses"
         ref="input"

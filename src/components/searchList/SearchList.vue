@@ -1,5 +1,5 @@
 <template>
-    <div class="l-search-list inline-block space-y-2">
+    <div class="l-search-list inline-block">
         <slot></slot>    
     </div>
 </template>
