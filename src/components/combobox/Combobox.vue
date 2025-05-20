@@ -2,7 +2,7 @@
     <Floating class="l-combobox">
         <FloatingTrigger v-if="props.placeholder">
             <Button :color="props.color">
-                {{ model.label || props.placeholder || 'Open me!' }}
+                {{ model[props.displayValue] || props.placeholder || 'Open me!' }}
                 <ChevronsUpDown class="size-5"></ChevronsUpDown>
             </Button>
         </FloatingTrigger>
@@ -18,6 +18,10 @@ import { ChevronsUpDown } from 'lucide-vue-next';
 const model = defineModel()
 
 const props = defineProps({
+    displayValue: {
+        type: String,
+        default: 'label'
+    },
     placeholder: String,
     color: {
         type: String,

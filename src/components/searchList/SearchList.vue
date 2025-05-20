@@ -20,6 +20,10 @@ const props = defineProps({
         }
     },
     items: Array,
+    toSearch: {
+        type: String,
+        default: 'label'
+    },
     placeholder: {
         type: String,
     },
@@ -33,7 +37,7 @@ const model = defineModel()
 
 const filteredItems = computed(() => {
   const query = model.value?.toLowerCase() || ''
-  const filtered = props.items.filter(item => item.label.toLowerCase().includes(query))
+  const filtered = props.items.filter(item => item[props.toSearch].toLowerCase().includes(query))
   return filtered
 })
 

@@ -4,7 +4,7 @@
         <Button>ok</Button>
 
 
-        <SearchList v-model="searchlist2" color="orange" :items="items">
+        <SearchList v-model="searchlist2" color="orange" :items="items" toSearch="label">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="space-y-2 p-2 border" v-slot="item">
                 <SearchListItem>
@@ -18,7 +18,7 @@
 
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" color="red" :items="items">
+        <Combobox placement="bottom-start" v-model="combobox" color="red" :items="items" displayValue="label">
             <ComboboxTrigger>
                 Yoooooo
             </ComboboxTrigger>
