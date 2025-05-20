@@ -1,5 +1,5 @@
 <template>
-    <FloatingTrigger trigger="click" class="l-combobox-trigger cursor-pointer w-full">
+    <FloatingTrigger trigger="click" class="l-combobox-trigger cursor-pointer w-full" :class="themeClasses">
         <div v-show="combobox.model.value[combobox.props.displayValue]">
             {{ combobox.model.value[combobox.props.displayValue] }}
         </div>
@@ -10,11 +10,13 @@
 </template>
 
 <script setup>
-import { inject } from 'vue'
+import { inject, computed } from 'vue'
 import { FloatingTrigger } from '@/components/floating'
 
 const combobox = inject('combobox')
-console.log(combobox.model.value[combobox.props.displayValue]);
+const pharos = inject('pharos')
 
-
+const themeClasses = computed(() => {
+    return pharos.getThemeClasses(combobox.props, 'combobox')
+})
 </script>

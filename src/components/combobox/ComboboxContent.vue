@@ -1,16 +1,29 @@
 <template>
     <FloatingContent class="l-combobox-items">
         <SearchList class="bg-white shadow p-1 border border-slate-200 rounded" :color="combobox.props.color" :items="combobox.props.items">
-            <SearchListInput placeholder="search..."></SearchListInput>
+            <SearchListInput placeholder="search..." ref="input"></SearchListInput>
             <slot></slot>
         </SearchList>
     </FloatingContent>
 </template>
 
 <script setup>
+import { inject, nextTick, useTemplateRef, watch } from 'vue'
 import { FloatingContent } from '@/components/floating'
 import { SearchList, SearchListInput } from '@/components/searchList'
-import { inject } from 'vue'
 
 const combobox = inject('combobox')
+const floating = inject('floating')
+
+const input = useTemplateRef('input')
+
+watch(floating.isOpen, async(state) => {
+    if (state == true) {
+        console.log('open');
+        console.log(input.value?.input);
+        await nextTick()
+        input.value?.input?.focus()
+    }
+    // input.value?.input?.focus()
+})
 </script>

@@ -18,7 +18,7 @@
 
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" color="red" :items="items" displayValue="label">
+        <Combobox placement="bottom-start" v-model="combobox" color="red" :items="items" displayValue="label" open>
             <ComboboxTrigger>
                 Yoooooo
             </ComboboxTrigger>

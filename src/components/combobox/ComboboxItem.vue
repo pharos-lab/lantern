@@ -15,7 +15,6 @@ const combobox = inject('combobox')
 const floating = inject('floating')
 
 const handle = (item) => {
-    console.log(props.item);
     combobox.model.value = item
     floating.close()
 }
