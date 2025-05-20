@@ -4,9 +4,9 @@
         <Button>ok</Button>
 
 
-        <SearchList v-model="searchlist2" color="orange" :items="items" toSearch="label">
+        <SearchList v-model="searchlist" color="orange" :items="items" toSearch="label">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="space-y-2 p-2 border" v-slot="item">
+            <SearchListItems class="" v-slot="item">
                 <SearchListItem>
                     <p>
                         {{ item.label }}
@@ -16,9 +16,19 @@
             <EmptyList class="p-2 border">list is empty</EmptyList>
         </SearchList>
 
+        <SearchList v-model="searchlist2" color="orange" :items="items" toSearch="label">
+            <SearchListInput placeholder="search..."></SearchListInput>
+            <SearchListItems class="space-y-2" v-slot="item">
+                <SearchListItem class="rounded">
+                        {{ item.label }}
+                </SearchListItem>
+            </SearchListItems>
+            <EmptyList class="p-2 border">list is empty</EmptyList>
+        </SearchList>
+
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" color="red" :items="items" displayValue="label" open>
+        <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="label" open>
             <ComboboxTrigger class="px-3 py-2 rounded">
                 Yoooooo
             </ComboboxTrigger>
@@ -31,7 +41,7 @@
                 <EmptyList>no items</EmptyList>
             </ComboboxContent>
         </ComboBox>
-        
+
         <p>result</p>
         {{ combobox }}
 
@@ -177,10 +187,11 @@ import { ref } from 'vue'
 const searchlist = ref()
 const searchlist2 = ref()
 const combobox = ref({value:'', label: ''})
+const combobox2 = ref({value:'', label: ''})
 
 const items = [
     { value: 'test', label: 'test label 1' },
-    { value: 'test2', label: 'test label 2' },
+    { value: 'test2', label: 'test label 21' },
     { value: 'test3', label: 'test label 3' },
     { value: 'test4', label: 'test label 4' },
 ]

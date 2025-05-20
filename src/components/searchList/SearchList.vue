@@ -37,7 +37,7 @@ const model = defineModel()
 
 const filteredItems = computed(() => {
   const query = model.value?.toLowerCase() || ''
-  const filtered = props.items.filter(item => item[props.toSearch].toLowerCase().includes(query))
+  const filtered = props.items.filter(item => item[props.toSearch].toLowerCase().includes(query.toLowerCase()))
   return filtered
 })
 

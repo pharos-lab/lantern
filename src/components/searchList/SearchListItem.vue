@@ -1,10 +1,7 @@
 <template>
-    <li 
-        class="l-search-list-item cursor-pointer overflow-hidden"
-        :class="themeClasses"
-        >
+    <div :class="themeClasses">
         <slot></slot>
-    </li>
+    </div>
 </template>
 
 <script setup>
