@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { provide, inject, computed } from 'vue'
+import { provide } from 'vue'
 import { Floating, FloatingTrigger } from '@/components/floating'
 import { ChevronsUpDown } from 'lucide-vue-next';
 
@@ -39,12 +39,6 @@ const props = defineProps({
 
 provide('combobox', {
     model, props
-})
-
-const pharos = inject('pharos')
-
-const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'button')
 })
 </script>
 

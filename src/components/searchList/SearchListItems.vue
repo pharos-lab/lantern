@@ -2,7 +2,7 @@
    <ul class="l-search-list-items overflow-hidden" v-show="searchList.filteredItems.value.length">
       <slot 
         v-for="item in searchList.filteredItems.value" 
-        :item="item"
+        v-bind="item"
         :key="item"
       ></slot>
     </ul>

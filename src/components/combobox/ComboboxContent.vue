@@ -9,7 +9,7 @@
 
 <script setup>
 import { FloatingContent } from '@/components/floating'
-import { SearchList, SearchListInput, SearchListItems } from '@/components/searchList'
+import { SearchList, SearchListInput } from '@/components/searchList'
 import { inject } from 'vue'
 
 const combobox = inject('combobox')

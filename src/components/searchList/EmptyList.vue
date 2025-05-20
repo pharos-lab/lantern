@@ -8,8 +8,6 @@
 import { inject } from 'vue'
 
 const searchList = inject('searchList')
-
-console.log(searchList);
 </script>
 
 <style scoped>

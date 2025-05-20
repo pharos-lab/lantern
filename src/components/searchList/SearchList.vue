@@ -37,8 +37,6 @@ const filteredItems = computed(() => {
   return filtered
 })
 
-console.log(filteredItems.value);
-
 provide('searchList', {
     model,
     props,

@@ -4,17 +4,17 @@
         <Button>ok</Button>
 
 
-        <!-- <SearchList v-model="searchlist2" color="orange" :items="items">
+        <SearchList v-model="searchlist2" color="orange" :items="items">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="space-y-2 p-2 border" v-slot="slotProps">
+            <SearchListItems class="space-y-2 p-2 border" v-slot="item">
                 <SearchListItem>
                     <p>
-                        {{ slotProps.item.label }}
+                        {{ item.label }}
                     </p>
                 </SearchListItem>
             </SearchListItems>
             <EmptyList class="p-2 border">list is empty</EmptyList>
-        </SearchList> -->
+        </SearchList>
 
         <br> 
 
@@ -23,14 +23,17 @@
                 Yoooooo
             </ComboboxTrigger>
             <ComboboxContent>
-                <ComboboxItems v-slot="slotProps">
-                    <ComboboxItem>
-                        {{ slotProps.item.label }}
+                <ComboboxItems v-slot="item">
+                    <ComboboxItem :item="item">
+                        {{ item.label }}
                     </ComboboxItem>
                 </ComboboxItems>
                 <EmptyList>no items</EmptyList>
             </ComboboxContent>
         </ComboBox>
+
+        <p>result</p>
+        {{ combobox }}
 
         <br>
 

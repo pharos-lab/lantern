@@ -1,12 +1,9 @@
 <template>
     <SearchListItems class="space-y-2" v-slot="slotProps">
-        <slot :item="slotProps.item"></slot>
+        <slot v-bind="slotProps"></slot>
     </SearchListItems>
 </template>
 
 <script setup>
-import { SearchList, SearchListInput, SearchListItems } from '@/components/searchList'
-import { inject } from 'vue'
-
-const combobox = inject('combobox')
+import { SearchListItems } from '@/components/searchList'
 </script>
