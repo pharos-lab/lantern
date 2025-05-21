@@ -1,6 +1,6 @@
 <template>
     <FloatingContent class="l-combobox-items">
-        <SearchList class="" :color="combobox.props.color" :items="combobox.props.items">
+        <SearchList class="" :color="combobox.props.color" :items="combobox.props.items" :toSearch="combobox.props.displayValue">
             <SearchListInput placeholder="search..." ref="input"></SearchListInput>
             <slot></slot>
         </SearchList>

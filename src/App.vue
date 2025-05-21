@@ -13,7 +13,7 @@
                     </p>
                 </SearchListItem>
             </SearchListItems>
-            <EmptyList class="p-2 border">list is empty</EmptyList>
+            <EmptyList class="">list is empty</EmptyList>
         </SearchList>
 
         <SearchList v-model="searchlist2" color="orange" :items="items" toSearch="label">
@@ -28,7 +28,7 @@
 
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="label" open>
+        <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value">
             <ComboboxTrigger class="px-3 py-2 rounded">
                 Yoooooo
             </ComboboxTrigger>
@@ -190,7 +190,7 @@ const combobox = ref({value:'', label: ''})
 const combobox2 = ref({value:'', label: ''})
 
 const items = [
-    { value: 'test', label: 'test label 1' },
+    { value: 'test1', label: 'test label 1' },
     { value: 'test2', label: 'test label 21' },
     { value: 'test3', label: 'test label 3' },
     { value: 'test4', label: 'test label 4' },

@@ -1,12 +1,12 @@
 export const colors = {
     default: {
-        base: 'bg-slate-200 text-slate-700', 
+        base: 'bg-slate-100 text-slate-700', 
         outline: 'border-2 border-slate-500 text-slate-700',
-        light: 'bg-slate-100 text-slate-700',
+        light: 'bg-slate-50 text-slate-700',
         hover: {
-            base: 'hover:bg-slate-300',
+            base: 'hover:bg-slate-200',
             outline: 'hover:bg-slate-50',
-            light: 'hover:bg-slate-200'
+            light: 'hover:bg-slate-100'
         },
         focus: 'focus:inset-ring focus:ring-slate-500 focus:outline-none'
     },

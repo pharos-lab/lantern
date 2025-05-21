@@ -1,5 +1,9 @@
 <template>
-    <TransitionGroup name="list" tag="ul" class="l-search-list-items overflow-hidden" v-show="searchList.filteredItems.value.length">
+  <ul 
+    class="l-search-list-items overflow-hidden" 
+    v-show="searchList.filteredItems.value.length"
+    :class="pharos.theme.components.SearchListItems"
+  >
       <li 
         v-for="item in searchList.filteredItems.value" 
         class="l-search-list-item cursor-pointer overflow-hidden"
@@ -10,13 +14,14 @@
           :key="item"
         ></slot>
       </li>
-    </TransitionGroup>
+  </ul>
 </template>
 
 <script setup>
 import { inject } from 'vue'
 
 const searchList = inject('searchList')
+const pharos = inject('pharos')
 </script>
 
 <style scoped>
