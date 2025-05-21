@@ -82,6 +82,10 @@ export function useTheme(theme) {
     if (prop == "focus") {
         return theme.colors[props[prop]]?.focus
     }
+
+    if (prop == 'border') {
+        return theme.colors[props.color]?.border
+    }
   }
 
   return { theme, getThemeClasses, getThemeClass }

@@ -4,7 +4,7 @@
         <!-- <Button>ok</Button> -->
 
 
-        <SearchList v-model="searchlist" color="orange" :items="items" toSearch="label">
+        <SearchList v-model="searchlist" :items="items" toSearch="label">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="" v-slot="item">
                 <SearchListItem>
@@ -16,9 +16,10 @@
             <EmptyList class="">list is empty</EmptyList>
         </SearchList>
 
-        <SearchList v-model="searchlist2" color="orange" :items="items" toSearch="label">
+        <br>
+        <SearchList v-model="searchlist2" color="red" :items="items" toSearch="label">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="space-y-2" v-slot="item">
+            <SearchListItems class="" v-slot="item">
                 <SearchListItem class="rounded">
                         {{ item.label }}
                 </SearchListItem>

@@ -2,7 +2,7 @@
   <ul 
     class="l-search-list-items overflow-hidden" 
     v-show="searchList.filteredItems.value.length"
-    :class="pharos.theme.components.SearchListItems"
+    :class="[pharos.theme.components.SearchListItems, pharos.getThemeClass(searchList.props, 'border', 'searchListItem')]"
   >
       <li 
         v-for="item in searchList.filteredItems.value" 
@@ -19,6 +19,7 @@
 
 <script setup>
 import { inject } from 'vue'
+import Combobox from '../combobox/Combobox.vue';
 
 const searchList = inject('searchList')
 const pharos = inject('pharos')
