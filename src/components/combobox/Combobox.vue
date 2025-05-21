@@ -11,11 +11,12 @@
 </template>
 
 <script setup>
-import { provide } from 'vue'
+import { provide, ref } from 'vue'
 import { Floating, FloatingTrigger } from '@/components/floating'
 import { ChevronsUpDown } from 'lucide-vue-next';
 
 const model = defineModel()
+const active = ref()
 
 const props = defineProps({
     displayValue: {
@@ -42,7 +43,7 @@ const props = defineProps({
 })
 
 provide('combobox', {
-    model, props
+    model, props, active
 })
 </script>
 

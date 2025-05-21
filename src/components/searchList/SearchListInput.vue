@@ -1,7 +1,7 @@
 <template>
     <input 
         type="text" 
-        class="l-search-list-input px-3 py-1 font-semibold" 
+        class="l-search-list-input px-3 py-1 font-semibold focus:outline-none" 
         v-model="searchList.model.value"
         :class="themeClasses"
         ref="input"
@@ -19,6 +19,6 @@ const searchList = inject('searchList')
 const pharos = inject('pharos')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses({...searchList.props, variant: 'light', focus: true}, 'searchList')
+    return pharos.getThemeClasses({...searchList.props, variant: 'light'}, 'searchListInput')
 })
 </script>

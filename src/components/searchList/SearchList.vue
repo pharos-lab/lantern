@@ -1,11 +1,11 @@
 <template>
-    <div class="l-search-list inline-block">
+    <div class="l-search-list inline-block" :class="pharos.theme.components.SearchList">
         <slot></slot>    
     </div>
 </template>
 
 <script setup>
-import { provide, computed } from 'vue'
+import { provide, computed, inject } from 'vue'
 
 const props = defineProps({
     color: {
@@ -16,7 +16,7 @@ const props = defineProps({
         type: String,
         default: 'base',
         validator(value) {
-            return ['base', 'outline', 'light', 'text'].includes(value)
+            return ['base', 'outline', 'light', 'text', 'none'].includes(value)
         }
     },
     items: Array,
@@ -34,6 +34,8 @@ const props = defineProps({
 })
 
 const model = defineModel()
+
+const pharos = inject('pharos')
 
 const filteredItems = computed(() => {
   const query = model.value?.toLowerCase() || ''

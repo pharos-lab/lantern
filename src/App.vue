@@ -1,7 +1,7 @@
 <template>
     <div class="p-4 space-y-8">
 
-        <Button>ok</Button>
+        <!-- <Button>ok</Button> -->
 
 
         <SearchList v-model="searchlist" color="orange" :items="items" toSearch="label">

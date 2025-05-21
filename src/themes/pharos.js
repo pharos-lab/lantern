@@ -23,7 +23,8 @@ export const pharos = {
     },
     padding: 'p-4',
     components: {
-        SearchListItems: 'p-1 rounded border space-y-2',
+        SearchList: 'space-y-2 bg-white',
+        SearchListItems: 'p-1 rounded border border-slate-400 shadow-lg',
         SearchListItem: 'px-3 py-1 rounded',
         EmptyList: 'px-3 py-1 rounded'
     }
