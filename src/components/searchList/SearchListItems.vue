@@ -2,7 +2,7 @@
   <ul 
     class="l-search-list-items overflow-hidden" 
     v-show="searchList.filteredItems.value.length"
-    :class="[pharos.theme.components.SearchListItems, pharos.getThemeClass(searchList.props, 'border', 'searchListItem')]"
+    :class="[pharos.theme.components.SearchListItems, pharos.theme.colors[searchList.props.color].border]"
   >
       <li 
         v-for="item in searchList.filteredItems.value" 

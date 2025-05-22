@@ -13,7 +13,18 @@
             <TabsContent value="2">the content 2</TabsContent>
             <TabsContent value="3">the content 3</TabsContent>
         </Tabs>
-<!--
+
+        <Tabs color="red">
+            <TabsList>
+                <TabsTrigger value="1">one</TabsTrigger>
+                <TabsTrigger value="2">two</TabsTrigger>
+                <TabsTrigger value="3">three</TabsTrigger>
+            </TabsList>
+            <TabsContent value="1">the content 1</TabsContent>
+            <TabsContent value="2">the content 2</TabsContent>
+            <TabsContent value="3">the content 3</TabsContent>
+        </Tabs>
+
         <SearchList v-model="searchlist" :items="items" toSearch="label">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="" v-slot="item">
@@ -26,7 +37,7 @@
             <EmptyList class="">list is empty</EmptyList>
         </SearchList>
         <br> 
-
+<!--
         <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value">
             <ComboboxTrigger class="px-3 py-2 rounded">
                 Yoooooo
