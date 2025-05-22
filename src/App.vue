@@ -3,7 +3,17 @@
 
         <!-- <Button>ok</Button> -->
 
-
+        <Tabs>
+            <TabsList>
+                <TabsTrigger value="1">one</TabsTrigger>
+                <TabsTrigger value="2">two</TabsTrigger>
+                <TabsTrigger value="3">three</TabsTrigger>
+            </TabsList>
+            <TabsContent value="1">the content 1</TabsContent>
+            <TabsContent value="2">the content 2</TabsContent>
+            <TabsContent value="3">the content 3</TabsContent>
+        </Tabs>
+<!--
         <SearchList v-model="searchlist" :items="items" toSearch="label">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="" v-slot="item">
@@ -15,18 +25,6 @@
             </SearchListItems>
             <EmptyList class="">list is empty</EmptyList>
         </SearchList>
-
-        <br>
-        <SearchList v-model="searchlist2" color="orange" :items="items" toSearch="label">
-            <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="space-y-2" v-slot="item">
-                <SearchListItem class="rounded">
-                        {{ item.label }}
-                </SearchListItem>
-            </SearchListItems>
-            <EmptyList class="p-2 border">list is empty</EmptyList>
-        </SearchList>
-
         <br> 
 
         <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value">
@@ -125,7 +123,7 @@
                 </DropdownContent>
             </Dropdown>
         </div>
-        <!--
+        
         <Stepper>
             <StepList>
                 <StepLabel :index="0">Step 1</StepLabel>
