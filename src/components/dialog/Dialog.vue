@@ -1,5 +1,7 @@
 <template>
+  <div class="l-dialog" :data-open="isOpen">
     <slot></slot>
+  </div>
 </template>
 
 <script setup>

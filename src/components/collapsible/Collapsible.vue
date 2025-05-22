@@ -1,5 +1,5 @@
 <template>
-    <div class="l-collapsible overflow-hidden" :class="[themeClasses]">
+    <div class="l-collapsible overflow-hidden" :class="[themeClasses]" :data-expended="isOpen">
         <slot></slot> 
     </div>
 </template>

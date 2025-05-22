@@ -3,8 +3,9 @@
     v-if="props.label"
     class="l-tabs-trigger"
     v-bind="tabs.props"
-    @click="tabs.active.value = value"
-    :class="[isActive ? pharos.theme.colors[tabs.props.color].active[tabs.props.variant] : null] "
+    @click="handle"
+    :class="[isActive ? pharos.theme.colors[tabs.props.color].active[tabs.props.variant] : null]"
+    data-state
   >
     {{ props.label }}
   </Button>
@@ -14,6 +15,7 @@
     @click="tabs.active.value = value"
     :class="[isActive ? pharos.theme.colors[tabs.props.color].active[tabs.props.variant] : null, themeClasses] "
     class="l-tabs-trigger"
+    :data-state="isActive ? 'active': 'inactive'"
   >
     <slot></slot>
 
@@ -36,6 +38,10 @@ const tabs = inject('tabs')
 const pharos = inject('pharos')
 
 const isActive = computed(() => tabs.active.value === props.value)
+
+const handle = () => {
+  tabs.active.value = value
+}
 
 const themeClasses = computed(() => {
     return pharos.getThemeClasses(tabs.props, 'button')

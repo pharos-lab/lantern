@@ -1,5 +1,5 @@
 <template>
-    <div class="l-floating relative inline-block" :class="themeClasses">
+    <div class="l-floating relative inline-block" :class="themeClasses"  :data-open="isOpen">
         <slot></slot>
     </div>
 </template>

@@ -3,6 +3,7 @@
         ref="inner"
         class="l-collapsible-content overflow-hidden transition-all duration-500 ease-in-out"
         :style="{ maxHeight: heightStyle }"
+        :data-expended="collapsible.isOpen.value"
       >
       <div class="p-4">
           <slot></slot>

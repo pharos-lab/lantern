@@ -37,7 +37,7 @@
             <EmptyList class="">list is empty</EmptyList>
         </SearchList>
         <br> 
-<!--
+
         <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value">
             <ComboboxTrigger class="px-3 py-2 rounded">
                 Yoooooo
@@ -91,7 +91,7 @@
                 <AccordionItemContent>content</AccordionItemContent>
             </AccordionItem>
         </Accordion>
-
+<!--
         <Badge color="red" variant="light" size="small">36</Badge>
         
         <div class="flex gap-4">

@@ -1,5 +1,10 @@
 <template>
-    <SearchListItem @click="handle(props.item)" class="l-combobox-item" :class=" active ? themeClass : 'not'">
+    <SearchListItem 
+        @click="handle(props.item)" 
+        class="l-combobox-item" 
+        :class="active ? themeClass : 'not'"
+        :data-selected="active"
+    >
         <slot></slot>
     </SearchListItem>
 </template>

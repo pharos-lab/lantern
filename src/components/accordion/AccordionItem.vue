@@ -1,5 +1,5 @@
 <template>
-    <Collapsible v-bind="{...accordion.props, rounded: 'none', shadow: false}">
+    <Collapsible v-bind="{...accordion.props, rounded: 'none', shadow: false}" class="l-accordion-item">
         <slot></slot>
     </Collapsible>
 </template>

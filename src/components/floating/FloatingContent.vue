@@ -5,6 +5,7 @@
             class="absolute z-50 l-floating-content min-w-max"
             :class="placementClasses"
             :style="{ transitionDelay: floating.props.delay + 'ms' }"
+            :data-open="floating.isOpen.value"
         >
             <slot></slot>
         </div>

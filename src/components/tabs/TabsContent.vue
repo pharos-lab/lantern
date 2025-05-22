@@ -1,5 +1,9 @@
 <template>
-  <div v-show="isActive" class="l-tabs-content" :class="pharos.theme.components.TabsListContent">
+  <div 
+    v-show="isActive" class="l-tabs-content" 
+    :class="pharos.theme.components.TabsListContent"
+    :data-state="isActive ? 'active' : 'inactive'"
+  >
     <slot></slot>
   </div>
 </template>

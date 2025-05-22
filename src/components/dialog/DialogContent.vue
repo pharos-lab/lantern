@@ -6,6 +6,7 @@
           @click.self="dialog.close"
           @keyup.esc="close"
           tabindex="0"
+          :data-open="dialog.isOpen.value"
         >
             <div class="l-dialog-content bg-white rounded" :class="pharos.theme.padding">
                 <slot></slot>
