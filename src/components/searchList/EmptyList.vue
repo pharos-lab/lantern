@@ -1,5 +1,5 @@
 <template>
-    <div :class="pharos.theme.components.SearchListItems" v-show="!searchList.filteredItems.value.length">
+    <div :class="[pharos.theme.components.SearchListItems, pharos.getThemeClass(searchList.props, 'border', 'searchListItem')]" v-show="!searchList.filteredItems.value.length">
         <div 
             class="l-search-list-empty" 
             :class="[themeClasses, pharos.theme.components.EmptyList]"
@@ -16,7 +16,7 @@ const pharos = inject('pharos')
 const searchList = inject('searchList')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses({...searchList.props, hover: true}, 'searchList')
+    return pharos.getThemeClasses({...searchList.props }, 'searchList')
 })
 </script>
 

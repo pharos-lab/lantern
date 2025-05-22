@@ -7,9 +7,7 @@ export function useTheme(theme) {
     }
 
     if (props.color) {
-        if (props.variant !== 'none') {
-            classes.push(theme.colors[props.color]?.[props.variant])
-        }
+        classes.push(theme.colors[props.color]?.[props.variant])
     }
 
     if (props.hover) {
@@ -42,6 +40,7 @@ export function useTheme(theme) {
         classes.push(theme.colors[props.color]?.focus)
     }
 
+    console.log(classes);
     return classes
   }
 

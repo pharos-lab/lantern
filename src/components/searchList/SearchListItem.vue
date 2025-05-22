@@ -11,6 +11,6 @@ const searchList = inject('searchList')
 const pharos = inject('pharos')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses({...searchList.props, variant: 'none', hover: true}, 'searchListItem')
+    return pharos.getThemeClasses({...searchList.props}, 'searchListItem')
 })
 </script>

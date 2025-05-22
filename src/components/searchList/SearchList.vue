@@ -14,10 +14,14 @@ const props = defineProps({
     },
     variant: {
         type: String,
-        default: 'base',
+        default: 'none',
         validator(value) {
             return ['base', 'outline', 'light', 'text', 'none'].includes(value)
         }
+    },
+    hover: {
+        type: Boolean,
+        default: true
     },
     items: Array,
     toSearch: {

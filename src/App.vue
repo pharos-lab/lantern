@@ -17,9 +17,9 @@
         </SearchList>
 
         <br>
-        <SearchList v-model="searchlist2" color="red" :items="items" toSearch="label">
+        <SearchList v-model="searchlist2" color="orange" :items="items" toSearch="label">
             <SearchListInput placeholder="search..."></SearchListInput>
-            <SearchListItems class="" v-slot="item">
+            <SearchListItems class="space-y-2" v-slot="item">
                 <SearchListItem class="rounded">
                         {{ item.label }}
                 </SearchListItem>

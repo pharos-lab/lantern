@@ -19,7 +19,6 @@
 
 <script setup>
 import { inject } from 'vue'
-import Combobox from '../combobox/Combobox.vue';
 
 const searchList = inject('searchList')
 const pharos = inject('pharos')
