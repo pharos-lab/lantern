@@ -1,7 +1,6 @@
 export function useTheme(options) {
-
     function getColorPart(props, part) {
-        const color = props.color || options.defaultColor
+        const color = props.color || options.defaultColor || 'default'
         return options.theme.colors?.[color]?.[props.variant]?.[part]
     }
 
