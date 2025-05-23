@@ -7,16 +7,16 @@ export function useTheme(theme) {
     }
 
     if (props.color) {
-        classes.push(theme.colors[props.color]?.[props.variant]?.base)
+        classes.push(theme.colors?.[props.color]?.[props.variant]?.base)
     }
 
     if (props.hover) {
         const variant = props.variant == 'none' ? 'plain' : props.variant
-        classes.push(theme.colors[props.color]?.[variant]?.hover)
+        classes.push(theme.colors?.[props.color]?.[variant]?.hover)
     }
 
     if (props.rounded) {
-        classes.push(theme.radius[props.rounded])
+        classes.push(theme.radius?.[props.rounded])
     }
 
     if (props.shadow) {
@@ -28,16 +28,16 @@ export function useTheme(theme) {
     }
 
     if (props.size) {
-        classes.push(theme.sizes[component]?.[props.size])
+        classes.push(theme.sizes?.[component]?.[props.size])
     }
 
     if (props.aspect) {
         const radius = props.aspect === 'circle' ? 'full' : 'large'
-        classes.push(theme.radius[radius])
+        classes.push(theme.radius?.[radius])
     }
 
     if (props.focus) {
-        classes.push(theme.colors[props.color]?.[props.variant]?.focus)
+        classes.push(theme.colors?.[props.color]?.[props.variant]?.focus)
     }
     return classes
   }
@@ -48,15 +48,15 @@ export function useTheme(theme) {
     }
 
     if (prop == "color") {
-        return theme.colors[props[prop]]?.[props.variant]?.base
+        return theme.colors?.[props[prop]]?.[props.variant]?.base
     }
 
     if (prop == "hover") {
-        return theme.colors[props[prop]]?.[props.variant]?.hover
+        return theme.colors?.[props[prop]]?.[props.variant]?.hover
     }
 
     if (prop == "rounded") {
-        return theme.radius[props[prop]]
+        return theme.radius?.[props[prop]]
     }
 
     if (prop == "shadow") {
@@ -68,7 +68,7 @@ export function useTheme(theme) {
     }
 
     if (prop == "size") {
-        return theme.sizes[component][props[prop]]
+        return theme.sizes?.[component]?.[props[prop]]
     }
 
     if (prop == "aspect") {
@@ -77,11 +77,11 @@ export function useTheme(theme) {
     }
 
     if (prop == "focus") {
-        return theme.colors[props[prop]]?.[props.variant]?.focus
+        return theme.colors?.[props[prop]]?.[props.variant]?.focus
     }
 
     if (prop == 'border') {
-        return theme.colors[props.color]?.[props.variant]?.border
+        return theme.colors?.[props.color]?.[props.variant]?.border
     }
   }
 

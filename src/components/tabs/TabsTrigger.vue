@@ -13,7 +13,11 @@
   <div 
     v-else
     @click="tabs.active.value = value"
-    :class="[isActive ? pharos.theme.colors[tabs.props.color]?.[tabs.props.variant]?.active : null, themeClasses, pharos.theme.components.TabsTrigger] "
+    :class="[
+      isActive ? pharos.theme.colors?.[tabs.props.color]?.[tabs.props.variant]?.active : null, 
+      themeClasses, 
+      pharos.theme.components?.TabsTrigger
+    ]"
     class="l-tabs-trigger"
     :data-state="isActive ? 'active': 'inactive'"
   >

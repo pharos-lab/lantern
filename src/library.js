@@ -9,7 +9,7 @@ const lantern = {
         app.component(componentName, component);
       }
 
-      app.provide('pharos', useTheme(options.theme))
+      app.provide('pharos', useTheme(options.theme || {}))
     }
 };
 

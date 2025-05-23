@@ -1,5 +1,5 @@
 <template>
-  <div class="l-tabs-list flex" :class="[pharos.theme.components.TabsList, orientationClass]">
+  <div class="l-tabs-list flex" :class="[pharos.theme.components?.TabsList, orientationClass]">
     <slot></slot>
   </div>
 </template>
@@ -26,6 +26,5 @@ const orientationClass = computed(() => {
     }
     return props.orientation == 'vertical' ? 'flex-col' : 'flex-row'
 })
-
 
 </script>

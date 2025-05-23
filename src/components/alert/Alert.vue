@@ -3,7 +3,7 @@
         <div class="l-alert" :class="[themeClasses, pharos.theme.padding]" v-show="isOpen">
             <X 
                 class="float-right cursor-pointer rounded"
-                :class="[pharos.theme.colors[props.color]?.[props.variant]?.hover]"
+                :class="[pharos.theme.colors?.[props.color]?.[props.variant]?.hover]"
                 v-if="props.dismissible" 
                 @click="isOpen = false"
             ></X>
