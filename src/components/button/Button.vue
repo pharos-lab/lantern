@@ -24,7 +24,6 @@ const props = defineProps({
     href: String,
     color: {
         type: String,
-        default: 'default'
     },
     variant: {
         type: String,

@@ -1,7 +1,7 @@
 <template>
     <div class="p-4 space-y-8">
 
-        <Button color="red">ok</Button>
+        <Button>ok</Button>
 
         <Tabs orientation="horizontal">
             <TabsList>

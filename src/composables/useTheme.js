@@ -1,7 +1,8 @@
-export function useTheme(theme) {
+export function useTheme(options) {
 
     function getColorPart(props, part) {
-        return theme.colors?.[props.color]?.[props.variant]?.[part]
+        const color = props.color || options.defaultColor
+        return options.theme.colors?.[color]?.[props.variant]?.[part]
     }
 
     function getThemeClasses(props, component) {
@@ -27,19 +28,19 @@ export function useTheme(theme) {
             case 'border':
                 return getColorPart(props, 'border')
             case 'rounded':
-                return theme.radius?.[props.rounded]
+                return options.theme.radius?.[props.rounded]
             case 'aspect':
                 const radius = props.aspect === 'circle' ? 'full' : 'large'
-                return theme.radius?.[radius]
+                return options.theme.radius?.[radius]
             case 'shadow':
-                return theme.shadow
+                return options.theme.shadow
             case 'disabled':
                 return 'disabled:bg-slate-200 disabled:text-slate-500 disabled:cursor-not-allowed'
             case 'size':
-                return theme.sizes?.[component]?.[props[prop]]
+                return options.theme.sizes?.[component]?.[props[prop]]
         }
     }
 
-    return { theme, getThemeClasses, getThemeClass }
+    return { theme: options.theme, getThemeClasses, getThemeClass }
 }
   

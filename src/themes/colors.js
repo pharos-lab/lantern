@@ -30,7 +30,7 @@ export const colors = {
       plain: {
         base: 'bg-red-500 text-white',
         hover: 'hover:bg-red-400',
-        active: 'bg-red-600',
+        active: 'bg-red-700',
         focus: 'focus:inset-ring focus:ring-red-500 focus:outline-none',
         border: 'border-red-400'
       },

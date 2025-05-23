@@ -7,6 +7,8 @@
 <script setup>
 import { inject, computed, provide } from 'vue'
 
+const pharos = inject('pharos')
+
 const props = defineProps({
     color: {
         type: String,
@@ -44,7 +46,7 @@ const props = defineProps({
     },
 })
 
-const pharos = inject('pharos')
+
 provide('accordion', { props })
 
 const themeClasses = computed(() => {
