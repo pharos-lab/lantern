@@ -1,11 +1,11 @@
 <template>
-    <div class="l-tabs" :class="pharos.theme.components.Tabs">
+    <div class="l-tabs flex" :class="[pharos.theme.components.Tabs, orientationClass]">
         <slot></slot>
     </div>
 </template>
 
 <script setup>
-import { ref, provide, inject } from 'vue'
+import { ref, provide, inject, computed } from 'vue'
 
 const props = defineProps({
     href: String,
@@ -28,10 +28,20 @@ const props = defineProps({
         type: Boolean,
         default: true
     },
+    orientation: {
+        type: String,
+        default: 'vertical',
+        validator(value) {
+            return ['horizontal', 'vertical'].includes(value)
+        }
+    }
 })
 
 const active = ref("1")
 
+const orientationClass = computed(() => {
+    return props.orientation == 'vertical' ? 'flex-col' : 'flex-row'
+})
 provide('tabs', { active, props })
 
 const pharos = inject('pharos')

@@ -3,7 +3,7 @@
 
         <Button>ok</Button>
 
-        <Tabs>
+        <Tabs orientation="horizontal">
             <TabsList>
                 <TabsTrigger value="1">one</TabsTrigger>
                 <TabsTrigger value="2">two</TabsTrigger>

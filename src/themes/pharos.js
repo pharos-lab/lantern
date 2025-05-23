@@ -27,6 +27,7 @@ export const pharos = {
         SearchListItems: 'p-1 rounded border shadow-lg',
         SearchListItem: 'px-3 py-1 rounded',
         EmptyList: 'px-3 py-1 rounded',
-        TabsListContent: 'border rounded'
+        TabsList: 'flex gap-2',
+        TabsTrigger: 'rounded px-3 py-1',
     }
 }
