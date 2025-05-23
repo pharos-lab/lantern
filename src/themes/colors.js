@@ -20,6 +20,10 @@ export const colors = {
         active: 'bg-slate-200',
         focus: 'focus:inset-ring focus:ring-slate-500 focus:outline-none',
         border: 'border-slate-300'
+      },
+      text: {
+        base: 'text-slate-700',
+        hover: 'hover:bg-slate-200',
       }
     },
     red: {
@@ -43,6 +47,10 @@ export const colors = {
         active: 'bg-red-200',
         focus: 'focus:inset-ring focus:ring-red-500 focus:outline-none',
         border: 'border-red-400'
+      },
+      text: {
+        base: 'text-red-700',
+        hover: 'hover:bg-red-400',
       }
     },
     orange: {
@@ -66,6 +74,10 @@ export const colors = {
         active: 'bg-orange-100',
         focus: 'focus:inset-ring focus:ring-orange-400 focus:outline-none',
         border: 'border-orange-300'
+      },
+      text: {
+        base: 'text-orange-700',
+        hover: 'hover:bg-orange-300',
       }
     }
   }

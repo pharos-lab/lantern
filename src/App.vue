@@ -1,7 +1,7 @@
 <template>
     <div class="p-4 space-y-8">
 
-        <Button>ok</Button>
+        <Button color="red">ok</Button>
 
         <Tabs orientation="horizontal">
             <TabsList>
@@ -25,7 +25,7 @@
             <TabsContent value="3">the content 3</TabsContent>
         </Tabs>
 
-        <SearchList v-model="searchlist" :items="items" toSearch="label">
+        <SearchList v-model="searchlist" :items="items" toSearch="label" color="orange">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="" v-slot="item">
                 <SearchListItem>
