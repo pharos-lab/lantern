@@ -2,7 +2,7 @@
   <ul 
     class="l-search-list-items overflow-hidden" 
     v-show="searchList.filteredItems.value.length"
-    :class="[pharos.theme.components.SearchListItems, pharos.theme.colors[searchList.props.color].border]"
+    :class="[pharos.theme.components.SearchListItems, pharos.theme.colors[searchList.props.color]?.plain?.border]"
   >
       <li 
         v-for="item in searchList.filteredItems.value" 
@@ -22,6 +22,7 @@ import { inject } from 'vue'
 
 const searchList = inject('searchList')
 const pharos = inject('pharos')
+
 </script>
 
 <style scoped>

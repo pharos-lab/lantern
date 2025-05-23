@@ -16,7 +16,7 @@ const props = defineProps({
         type: String,
         default: 'none',
         validator(value) {
-            return ['base', 'outline', 'light', 'text', 'none'].includes(value)
+            return ['plain', 'outline', 'light', 'text', 'none'].includes(value)
         }
     },
     hover: {

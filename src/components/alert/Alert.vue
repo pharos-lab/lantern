@@ -3,7 +3,7 @@
         <div class="l-alert" :class="[themeClasses, pharos.theme.padding]" v-show="isOpen">
             <X 
                 class="float-right cursor-pointer rounded"
-                :class="[pharos.theme.colors[props.color].hover[props.variant]]"
+                :class="[pharos.theme.colors[props.color]?.[props.variant]?.hover]"
                 v-if="props.dismissible" 
                 @click="isOpen = false"
             ></X>
@@ -24,9 +24,9 @@ const props = defineProps({
     },
     variant: {
         type: String,
-        default: 'base',
+        default: 'plain',
         validator(value) {
-            return ['base', 'outline', 'light', 'text'].includes(value)
+            return ['plain', 'outline', 'light', 'text'].includes(value)
         }
     },
     rounded: {
