@@ -1,8 +1,11 @@
 <template>
-    <div :class="[pharos.theme.components?.SearchListItems, pharos.getThemeClass(searchList.props, 'border', 'searchListItem')]" v-show="!searchList.filteredItems.value.length">
+    <div 
+        :class="[pharos.getStaticClass('SearchListItems'), pharos.getThemeClass(searchList.props, 'border', 'searchListItems')]" 
+        v-show="!searchList.filteredItems.value.length"
+    >
         <div 
             class="l-search-list-empty" 
-            :class="[themeClasses, pharos.theme.components?.EmptyList]"
+            :class="[themeClasses, pharos.getStaticClass('EmptyList')]"
             >
             <slot></slot>
         </div>

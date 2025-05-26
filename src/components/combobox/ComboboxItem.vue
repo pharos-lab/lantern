@@ -2,7 +2,7 @@
     <SearchListItem 
         @click="handle(props.item)" 
         class="l-combobox-item" 
-        :class="active ? themeClass : 'not'"
+        :class="[active ? themeClass : '', pharos.getStaticClass('ComboboxItem')]"
         :data-selected="active"
     >
         <slot></slot>
@@ -18,6 +18,7 @@ const props = defineProps({
 })
 const combobox = inject('combobox')
 const floating = inject('floating')
+const pharos = inject('pharos')
 
 const handle = (item) => {
     const  {key, ref_for, ...itemRest} = item
@@ -30,7 +31,7 @@ const active = computed(() => {
     return combobox.active.value?.[combobox.props.displayValue] == props.item[combobox.props.displayValue]
 })
 
-const pharos = inject('pharos')
+
 
 const themeClass = computed(() => {
     return pharos.getThemeClass(combobox.props, 'color', 'comboboxItem')

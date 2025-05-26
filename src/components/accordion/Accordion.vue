@@ -1,5 +1,5 @@
 <template>
-    <div class="l-accordion overflow-hidden" :class="[themeClasses]">
+    <div class="l-accordion overflow-hidden" :class="[themeClasses, pharos.getStaticClass('Accordion')]">
         <slot></slot>
     </div>
 </template>
@@ -41,7 +41,7 @@ const props = defineProps({
 provide('accordion', { props })
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'accordion')
+    return pharos.getThemeClasses(props, 'Accordion')
 })
 </script>
 

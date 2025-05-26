@@ -1,5 +1,9 @@
 <template>
-    <div class="l-collapsible-label cursor-pointer flex items-center justify-between"  @click="collapsible.toggle" :class="[pharos.theme.padding]">
+    <div 
+        class="l-collapsible-label cursor-pointer flex items-center justify-between"  
+        :class="[pharos.theme.padding, pharos.getStaticClass('CollapsibleLabel')]"
+        @click="collapsible.toggle"
+    >
         <slot>trigger</slot>
         <Transition mode="out-in">
             <component :is="icon" v-if="collapsible.icon"></component>

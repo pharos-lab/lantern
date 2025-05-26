@@ -7,6 +7,7 @@
           @keyup.esc="close"
           tabindex="0"
           :data-open="dialog.isOpen.value"
+          :class="pharos.getStaticClass('DialogContent')"
         >
             <div class="l-dialog-content bg-white rounded" :class="pharos.theme.padding">
                 <slot></slot>

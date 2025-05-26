@@ -4,7 +4,11 @@
     class="l-tabs-trigger"
     v-bind="tabs.props"
     @click="handle"
-    :class="[isActive ? pharos.getThemeClass(tabs.props, 'active', 'tabs') : null]"
+    :class="[
+      isActive ? pharos.getThemeClass(tabs.props, 'active', 'tabs') : null,
+      themeClasses,
+      pharos.getStaticClass('TabsTrigger')
+    ]"
     data-state
   >
     {{ props.label }}
@@ -16,7 +20,7 @@
     :class="[
       isActive ? pharos.getThemeClass(tabs.props, 'active', 'tabs') : null, 
       themeClasses, 
-      pharos.theme.components?.TabsTrigger
+      pharos.getStaticClass('TabsTrigger')
     ]"
     class="l-tabs-trigger"
     :data-state="isActive ? 'active': 'inactive'"

@@ -26,15 +26,28 @@ export const pharos = {
         SearchList: {
             class:'bg-white',
         },
-        SearchListItems: 'p-1 rounded border shadow-lg mt-2',
+        SearchListItems: {
+            class: 'p-1 rounded border shadow-lg mt-2',
+        },
         SearchListItem: {
             class: 'px-3 py-1 rounded',
             variant: 'text'
         },
-        EmptyList: 'px-3 py-1 rounded',
-        Tabs: 'gap-2',
-        TabsList: 'flex gap-1',
-        TabsTrigger: 'rounded px-3 py-1',
-        TabsContent: 'p-4'
+        EmptyList: {
+            class: 'px-3 py-1 rounded',
+            variant: 'text'
+        },
+        Tabs: {
+            class: 'gap-2',
+        },
+        TabsList: {
+            class: 'flex gap-1',
+        },
+        TabsTrigger: {
+            class: 'rounded px-3 py-1',
+        },
+        TabsContent: {
+            class: 'p-4'
+        },
     }
 }

@@ -3,7 +3,7 @@
         v-if="props.href"
         :href="props.href" 
         class="l-button flex items-center gap-2 cursor-pointer font-semibold transition disabled:bg-slate-200 disabled:text-slate-500 disabled:cursor-not-allowed" 
-        :class="themeClasses" 
+        :class="[themeClasses, pharos.getStaticClass('Button')]" 
     >
         <slot></slot>
     </a>
@@ -11,7 +11,7 @@
     <button
         v-else
         type="button"
-        :class="themeClasses" 
+        :class="[themeClasses, pharos.getStaticClass('Button')]" 
         class="l-button flex items-center gap-2 cursor-pointer font-semibold transition disabled:bg-slate-200 disabled:text-slate-500 disabled:cursor-not-allowed">
         <slot></slot>
     </button>

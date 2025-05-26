@@ -3,7 +3,7 @@
         type="text" 
         class="l-search-list-input px-3 py-1 font-semibold focus:outline-none" 
         v-model="searchList.model.value"
-        :class="themeClasses"
+        :class="[themeClasses, pharos.getStaticClass('SearchListInput')]"
         ref="input"
     >
 </template>

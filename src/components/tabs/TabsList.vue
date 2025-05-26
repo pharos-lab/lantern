@@ -1,5 +1,5 @@
 <template>
-  <div class="l-tabs-list flex" :class="[pharos.theme.components?.TabsList, orientationClass]">
+  <div class="l-tabs-list flex" :class="[pharos.getStaticClass('TabsList'), orientationClass]">
     <slot></slot>
   </div>
 </template>

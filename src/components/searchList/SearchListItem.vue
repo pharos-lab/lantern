@@ -1,5 +1,5 @@
 <template>
-    <div :class="[themeClasses, pharos.theme.components?.SearchListItem?.class]" class="">
+    <div :class="[themeClasses, pharos.getStaticClass('SearchListItem')]" class="">
         <slot></slot>
     </div>
 </template>

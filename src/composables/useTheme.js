@@ -1,7 +1,19 @@
 export function useTheme(options) {
+    function getPropValue(propName, props, component) {
+        return (
+            props?.[propName] ??
+            options.theme.components?.[component]?.[propName] ??
+            options[`default${capitalize(propName)}`]
+        )
+    }
+      
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1)
+    }
+
     function getColorPart(props, part, component) {
-        const color = props.color || options.theme.components?.[component]?.color || options.defaultColor || 'default'
-        const variant = props.variant || options.theme.components?.[component]?.variant || options.defaultVariant || 'plain'
+        const color = getPropValue('color', props, component) || 'default'
+        const variant = getPropValue('variant', props, component) || 'plain'
 
         if (import.meta.env.DEV && !options.theme.colors?.[color]?.[variant]) {
             console.warn(`[lantern] Couleur "${color}" ou variante "${variant}" introuvable dans le thème. \n Component: ${component}`)
@@ -33,7 +45,8 @@ export function useTheme(options) {
             case 'border':
                 return getColorPart(props, 'border', component)
             case 'rounded':
-                return options.theme.radius?.[props.rounded]
+                const rounded = getPropValue('rounded', props, component)
+                return options.theme.radius?.[rounded]
             case 'aspect':
                 const radius = props.aspect === 'circle' ? 'full' : 'large'
                 return options.theme.radius?.[radius]
@@ -46,6 +59,11 @@ export function useTheme(options) {
         }
     }
 
-    return { theme: options.theme, getThemeClasses, getThemeClass }
+    function getStaticClass(component) {
+        console.log(component);
+        return options.theme.components?.[component]?.class || ''
+    }
+
+    return { theme: options.theme, getThemeClasses, getThemeClass, getStaticClass }
 }
   

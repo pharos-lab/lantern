@@ -1,12 +1,13 @@
 <template>
-  <div class="l-dialog" :data-open="isOpen">
+  <div class="l-dialog" :data-open="isOpen" :class="pharos.getStaticClass('Dialog')">
     <slot></slot>
   </div>
 </template>
 
 <script setup>
-import { ref, provide, onMounted, onUnmounted } from 'vue'
+import { ref, provide, onMounted, onUnmounted, inject } from 'vue'
 
+const pharos = inject('pharos')
 const isOpen = ref(false)
 
 const open = () => {

@@ -16,7 +16,7 @@
 
         <Tabs color="red">
             <TabsList>
-                <TabsTrigger value="1">one</TabsTrigger>
+                <TabsTrigger value="1" label="test ok">one</TabsTrigger>
                 <TabsTrigger value="2">two</TabsTrigger>
                 <TabsTrigger value="3">three</TabsTrigger>
             </TabsList>
@@ -38,7 +38,7 @@
         </SearchList>
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value">
+        <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value" color="orange">
             <ComboboxTrigger class="px-3 py-2 rounded">
                 Yoooooo
             </ComboboxTrigger>

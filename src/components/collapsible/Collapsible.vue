@@ -1,5 +1,5 @@
 <template>
-    <div class="l-collapsible overflow-hidden" :class="[themeClasses]" :data-expended="isOpen">
+    <div class="l-collapsible overflow-hidden" :class="[themeClasses, pharos.getStaticClass('Collapsible')]" :data-expended="isOpen">
         <slot></slot> 
     </div>
 </template>

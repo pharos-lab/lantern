@@ -1,5 +1,5 @@
 <template>
-    <FloatingTrigger trigger="click" class="l-combobox-trigger cursor-pointer w-full" :class="themeClasses">
+    <FloatingTrigger trigger="click" class="l-combobox-trigger cursor-pointer w-full" :class="[themeClasses, pharos.getStaticClass('ComboboxTrigger')]">
         <div v-show="combobox.model.value[combobox.props.displayValue]">
             {{ combobox.model.value[combobox.props.displayValue] }}
         </div>

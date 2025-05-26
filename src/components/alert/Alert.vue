@@ -1,6 +1,6 @@
 <template>
     <Transition>
-        <div class="l-alert" :class="[themeClasses, pharos.theme.padding]" v-show="isOpen">
+        <div class="l-alert" :class="[themeClasses, pharos.theme.padding, pharos.getStaticClass('Alert')]" v-show="isOpen">
             <X 
                 class="float-right cursor-pointer rounded"
                 :class="[pharos.theme.colors?.[props.color]?.[props.variant]?.hover]"

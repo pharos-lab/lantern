@@ -1,5 +1,5 @@
 <template>
-    <div class="l-dialog-trigger inline-block"  @click="dialog.open">
+    <div class="l-dialog-trigger inline-block"  @click="dialog.open" :class="pharos.getStaticClass('DialogTrigger')">
         <slot></slot>
     </div>
   </template>
@@ -8,6 +8,7 @@
   import { inject } from 'vue'
   
   const dialog = inject('dialog')
+  const pharos = inject('pharos')
   </script>
   
   <style scoped>
