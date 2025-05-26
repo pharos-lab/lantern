@@ -9,17 +9,8 @@ import { ref, provide, inject, computed } from 'vue'
 
 const props = defineProps({
     href: String,
-    color: {
-        type: String,
-        default: 'default'
-    },
-    variant: {
-        type: String,
-        default: 'plain',
-        validator(value) {
-            return ['plain', 'outline', 'light', 'text'].includes(value)
-        }
-    },
+    color: String,
+    variant: String,
     unstyle: {
         type: Boolean,
         default: false

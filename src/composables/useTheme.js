@@ -1,7 +1,12 @@
 export function useTheme(options) {
     function getColorPart(props, part) {
         const color = props.color || options.defaultColor || 'default'
-        return options.theme.colors?.[color]?.[props.variant]?.[part]
+        const variant = props.variant || options.defaultVariant || 'plain'
+
+        if (import.meta.env.DEV && !options.theme.colors?.[color]?.[variant]) {
+            console.warn(`[lantern] Couleur "${color}" ou variante "${variant}" introuvable dans le thème.`)
+        }
+        return options.theme.colors?.[color]?.[variant]?.[part]
     }
 
     function getThemeClasses(props, component) {

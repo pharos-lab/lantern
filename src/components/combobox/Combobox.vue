@@ -24,17 +24,8 @@ const props = defineProps({
         default: 'label'
     },
     placeholder: String,
-    color: {
-        type: String,
-        default: 'default'
-    },
-    variant: {
-        type: String,
-        default: 'plain',
-        validator(value) {
-            return ['plain', 'outline', 'light', 'text'].includes(value)
-        }
-    },
+    color: String,
+    variant: String,
     items: Array,
     unstyle: {
         type: Boolean,

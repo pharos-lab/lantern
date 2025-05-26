@@ -10,17 +10,8 @@ import { inject, computed, provide } from 'vue'
 const pharos = inject('pharos')
 
 const props = defineProps({
-    color: {
-        type: String,
-        default: 'default'
-    },
-    variant: {
-        type: String,
-        default: 'plain',
-        validator(value) {
-            return ['plain', 'outline', 'light', 'text'].includes(value)
-        }
-    },
+    color: String,
+    variant: String,
     rounded: {
         type: String,
         default: 'medium',

@@ -8,17 +8,8 @@
 import { provide, computed, inject } from 'vue'
 
 const props = defineProps({
-    color: {
-        type: String,
-        default: 'default'
-    },
-    variant: {
-        type: String,
-        default: 'text',
-        validator(value) {
-            return ['plain', 'outline', 'light', 'text', 'none'].includes(value)
-        }
-    },
+    color: String,
+    variant: String,
     hover: {
         type: Boolean,
         default: true

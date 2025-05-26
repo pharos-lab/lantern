@@ -18,17 +18,8 @@ import { X } from 'lucide-vue-next'
 
 
 const props = defineProps({
-    color: {
-        type: String,
-        default: 'default'
-    },
-    variant: {
-        type: String,
-        default: 'plain',
-        validator(value) {
-            return ['plain', 'outline', 'light', 'text'].includes(value)
-        }
-    },
+    color: String,
+    variant: String,
     rounded: {
         type: String,
         default: 'medium',

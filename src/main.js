@@ -7,4 +7,6 @@ import { pharos } from '@/themes/pharos.js'
 
 createApp(App).use(lantern, {
     theme: pharos,
+    defaultColor: 'red',
+    defaultVariant: 'light'
 }).mount('#app')

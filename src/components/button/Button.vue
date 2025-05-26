@@ -22,16 +22,8 @@ import { inject, computed } from 'vue'
 
 const props = defineProps({
     href: String,
-    color: {
-        type: String,
-    },
-    variant: {
-        type: String,
-        default: 'plain',
-        validator(value) {
-            return ['plain', 'outline', 'light', 'text'].includes(value)
-        }
-    },
+    color: String,
+    variant: String,
     size: {
         type: String,
         default: 'base',
