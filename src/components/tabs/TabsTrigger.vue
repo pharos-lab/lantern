@@ -4,7 +4,7 @@
     class="l-tabs-trigger"
     v-bind="tabs.props"
     @click="handle"
-    :class="[isActive ? pharos.theme.colors[tabs.props.color].active[tabs.props.variant] : null]"
+    :class="[isActive ? pharos.getThemeClass(tabs.props, 'active', 'tabs') : null]"
     data-state
   >
     {{ props.label }}
@@ -14,7 +14,7 @@
     v-else
     @click="tabs.active.value = value"
     :class="[
-      isActive ? pharos.theme.colors?.[tabs.props.color]?.[tabs.props.variant]?.active : null, 
+      isActive ? pharos.getThemeClass(tabs.props, 'active', 'tabs') : null, 
       themeClasses, 
       pharos.theme.components?.TabsTrigger
     ]"

@@ -23,9 +23,14 @@ export const pharos = {
     },
     padding: 'p-4',
     components: {
-        SearchList: 'bg-white',
+        SearchList: {
+            class:'bg-white',
+        },
         SearchListItems: 'p-1 rounded border shadow-lg mt-2',
-        SearchListItem: 'px-3 py-1 rounded',
+        SearchListItem: {
+            class: 'px-3 py-1 rounded',
+            variant: 'text'
+        },
         EmptyList: 'px-3 py-1 rounded',
         Tabs: 'gap-2',
         TabsList: 'flex gap-1',

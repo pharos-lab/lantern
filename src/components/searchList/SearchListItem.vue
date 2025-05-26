@@ -1,5 +1,5 @@
 <template>
-    <div :class="[themeClasses, pharos.theme.components?.SearchListItem]" class="">
+    <div :class="[themeClasses, pharos.theme.components?.SearchListItem?.class]" class="">
         <slot></slot>
     </div>
 </template>
@@ -11,6 +11,6 @@ const searchList = inject('searchList')
 const pharos = inject('pharos')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses({...searchList.props}, 'searchListItem')
+    return pharos.getThemeClasses({...searchList.props}, 'SearchListItem')
 })
 </script>

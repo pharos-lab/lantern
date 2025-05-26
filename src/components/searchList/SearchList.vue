@@ -1,5 +1,5 @@
 <template>
-    <div class="l-search-list inline-block" :class="pharos.theme.components?.SearchList">
+    <div class="l-search-list inline-block" :class="pharos.theme.components?.SearchList?.class">
         <slot></slot>    
     </div>
 </template>

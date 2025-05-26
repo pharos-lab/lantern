@@ -1,15 +1,16 @@
 export function useTheme(options) {
-    function getColorPart(props, part) {
-        const color = props.color || options.defaultColor || 'default'
-        const variant = props.variant || options.defaultVariant || 'plain'
+    function getColorPart(props, part, component) {
+        const color = props.color || options.theme.components?.[component]?.color || options.defaultColor || 'default'
+        const variant = props.variant || options.theme.components?.[component]?.variant || options.defaultVariant || 'plain'
 
         if (import.meta.env.DEV && !options.theme.colors?.[color]?.[variant]) {
-            console.warn(`[lantern] Couleur "${color}" ou variante "${variant}" introuvable dans le thème.`)
+            console.warn(`[lantern] Couleur "${color}" ou variante "${variant}" introuvable dans le thème. \n Component: ${component}`)
         }
         return options.theme.colors?.[color]?.[variant]?.[part]
     }
 
     function getThemeClasses(props, component) {
+        
         if (props.unstyle) return []
 
         return Object.keys(props)
@@ -22,15 +23,15 @@ export function useTheme(options) {
 
         switch (prop) {
             case 'color':
-                return getColorPart(props, 'base')
+                return getColorPart(props, 'base', component)
             case 'hover':
-                return getColorPart(props, 'hover')
+                return getColorPart(props, 'hover', component)
             case 'focus':
-                return getColorPart(props, 'focus')
+                return getColorPart(props, 'focus', component)
             case 'active':
-                return getColorPart(props, 'active')
+                return getColorPart(props, 'active', component)
             case 'border':
-                return getColorPart(props, 'border')
+                return getColorPart(props, 'border', component)
             case 'rounded':
                 return options.theme.radius?.[props.rounded]
             case 'aspect':
