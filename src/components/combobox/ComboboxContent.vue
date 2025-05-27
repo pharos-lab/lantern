@@ -1,6 +1,6 @@
 <template>
     <FloatingContent class="l-combobox-items" :class="[pharos.getStaticClass('ComboboxContent')]">
-        <SearchList class="" :color="combobox.props.color" :items="combobox.props.items" :toSearch="combobox.props.displayValue">
+        <SearchList class="" :color="combobox.props.color" :items="combobox.props.items" :toSearch="combobox.props.displayValue" :variant="combobox.props.variant">
             <SearchListInput placeholder="search..." ref="input"></SearchListInput>
             <slot></slot>
         </SearchList>

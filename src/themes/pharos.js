@@ -9,20 +9,23 @@ export const pharos = {
         full: 'rounded-full'
     },
     shadow: 'shadow-md',
-    sizes: {
-        button: {
-            base: 'px-3 py-2',
-            small: 'px-2 py-1',
-            large: 'px-5 py-3 text-xl'
-        },
-        badge: {
-            base: 'px-3 py-[2px] font-medium',
-            small: 'px-2 py-px font-medium text-sm',
-            large: 'px-4 py-2 text-lg font-semibold'
-        }
-    },
     padding: 'p-4',
     components: {
+        Badge: {
+            sizes: {
+                base: 'px-3 py-2',
+                small: 'px-2 py-1',
+                large: 'px-5 py-3 text-xl'
+            }
+        },
+        Button: {
+            variant: 'plain',
+            sizes: {
+                base: 'px-3 py-2',
+                small: 'px-2 py-1',
+                large: 'px-5 py-3 text-xl'
+            },
+        },
         SearchList: {
             class:'bg-white',
         },
@@ -44,7 +47,7 @@ export const pharos = {
             class: 'flex gap-1',
         },
         TabsTrigger: {
-            class: 'rounded px-3 py-1',
+            class: 'rounded px-3 py-1 flex items-center',
         },
         TabsContent: {
             class: 'p-4'

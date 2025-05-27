@@ -17,6 +17,6 @@ const combobox = inject('combobox')
 const pharos = inject('pharos')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses({...combobox.props, hover: true}, 'combobox')
+    return pharos.getThemeClasses({...combobox.props, hover: true}, 'Combobox')
 })
 </script>

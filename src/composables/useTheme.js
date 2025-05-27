@@ -55,12 +55,11 @@ export function useTheme(options) {
             case 'disabled':
                 return 'disabled:bg-slate-200 disabled:text-slate-500 disabled:cursor-not-allowed'
             case 'size':
-                return options.theme.sizes?.[component]?.[props[prop]]
+                return options.theme.components?.[component]?.sizes?.[props[prop]]
         }
     }
 
     function getStaticClass(component) {
-        console.log(component);
         return options.theme.components?.[component]?.class || ''
     }
 

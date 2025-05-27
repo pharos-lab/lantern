@@ -31,10 +31,8 @@ const active = computed(() => {
     return combobox.active.value?.[combobox.props.displayValue] == props.item[combobox.props.displayValue]
 })
 
-
-
 const themeClass = computed(() => {
-    return pharos.getThemeClass(combobox.props, 'color', 'comboboxItem')
+    return pharos.getThemeClass(combobox.props, 'active', 'ComboboxItem')
 })
 </script>
 

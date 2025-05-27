@@ -55,7 +55,7 @@ const props = defineProps({
 const pharos = inject('pharos')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses(props, 'button')
+    return pharos.getThemeClasses(props, 'Button')
 })
 
 </script>

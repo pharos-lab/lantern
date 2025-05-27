@@ -1,30 +1,33 @@
 <template>
     <div class="p-4 space-y-8">
 
-        <Button color="ok">ok</Button>
+        <Button color="orange">ok</Button>
 
-        <Tabs orientation="horizontal">
-            <TabsList>
-                <TabsTrigger value="1">one</TabsTrigger>
-                <TabsTrigger value="2">two</TabsTrigger>
-                <TabsTrigger value="3">three</TabsTrigger>
-            </TabsList>
-            <TabsContent value="1">the content 1</TabsContent>
-            <TabsContent value="2">the content 2</TabsContent>
-            <TabsContent value="3">the content 3</TabsContent>
-        </Tabs>
+        
 
+            <Tabs orientation="horizontal">
+                <TabsList>
+                    <TabsTrigger value="1">one</TabsTrigger>
+                    <TabsTrigger value="2">two</TabsTrigger>
+                    <TabsTrigger value="3">three</TabsTrigger>
+                </TabsList>
+                <TabsContent value="1">the content 1</TabsContent>
+                <TabsContent value="2">the content 2</TabsContent>
+                <TabsContent value="3">the content 3</TabsContent>
+            </Tabs>
+       
+        <div class="w-1/2">
         <Tabs color="red">
-            <TabsList>
-                <TabsTrigger value="1" label="test ok">one</TabsTrigger>
-                <TabsTrigger value="2">two</TabsTrigger>
-                <TabsTrigger value="3">three</TabsTrigger>
+            <TabsList class="grow">
+                <TabsTrigger value="1" class="grow">one</TabsTrigger>
+                <TabsTrigger value="2" class="grow">two</TabsTrigger>
+                <TabsTrigger value="3" class="grow">three</TabsTrigger>
             </TabsList>
             <TabsContent value="1">the content 1</TabsContent>
             <TabsContent value="2">the content 2</TabsContent>
             <TabsContent value="3">the content 3</TabsContent>
         </Tabs>
-
+    </div>
         <SearchList v-model="searchlist" :items="items" toSearch="label" color="orange">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="" v-slot="item">
@@ -38,7 +41,7 @@
         </SearchList>
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value" color="orange">
+        <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value" color="orange" variant="plain">
             <ComboboxTrigger class="px-3 py-2 rounded">
                 Yoooooo
             </ComboboxTrigger>

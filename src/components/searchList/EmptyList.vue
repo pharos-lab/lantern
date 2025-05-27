@@ -19,7 +19,7 @@ const pharos = inject('pharos')
 const searchList = inject('searchList')
 
 const themeClasses = computed(() => {
-    return pharos.getThemeClasses({...searchList.props }, 'searchList')
+    return pharos.getThemeClasses({...searchList.props }, 'EmptyList')
 })
 </script>
 
