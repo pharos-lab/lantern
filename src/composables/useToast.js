@@ -1,10 +1,10 @@
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 
 const toasts = ref([])
 
 export function useToast(options = {}) {
 
-    const duration = options.duration || 3
+    const duration = options.duration || 5
 
     function toast(data) {
         const id = Date.now() + Math.random()
@@ -17,7 +17,11 @@ export function useToast(options = {}) {
     }
 
     function removeToast(id) {
-        toasts.value = toasts.value.filter(toast => toast.id !== id)
+        const index = toasts.value.findIndex(t => t.id === id)
+        if (index !== -1) {
+            toasts.value.splice(index, 1)
+        }
     }
-    return { toasts, toast }
+
+    return { toasts, toast, removeToast }
 }

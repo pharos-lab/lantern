@@ -1,7 +1,7 @@
 <template>
     <div class="p-4 space-y-8">
-        <Toaster v-slot="toast" :duration="3">
-            <Toast >
+        <Toaster v-slot="toast">
+            <Toast :toast="toast">
                 <h3>{{ toast.title }}</h3>
                 <p>{{ toast.description }}</p>
             </Toast>
@@ -210,7 +210,7 @@ import { ref } from 'vue'
 import { useToast } from '@/components/toast'
 
 const { toast } = useToast({
-    duration: 1
+    // duration: 2
 })
 const searchlist = ref()
 const searchlist2 = ref()
