@@ -8,6 +8,7 @@ import { Dialog, DialogClose, DialogContent, DialogTrigger } from './dialog'
 import { SearchList, SearchListInput, SearchListItems, SearchListItem, EmptyList } from './searchList'
 import { Combobox, ComboboxItem, ComboboxItems, ComboboxTrigger, ComboboxContent } from './combobox'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs'
+import { Toaster, Toast } from './toast'
 import AspectRatio from './AspectRatio.vue'
 import Avatar from './Avatar.vue'
 import Badge from './Badge.vue'
@@ -24,6 +25,7 @@ export {
     SearchList, SearchListInput, SearchListItem, SearchListItems, EmptyList, 
     Combobox, ComboboxItem, ComboboxItems, ComboboxTrigger, ComboboxContent,
     Tabs, TabsContent, TabsList, TabsTrigger,
+    Toast, Toaster,
     AspectRatio,
     Avatar,
     Badge,

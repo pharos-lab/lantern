@@ -1,33 +1,44 @@
 <template>
     <div class="p-4 space-y-8">
+        <Toaster v-slot="toast" :duration="3">
+            <Toast >
+                <h3>{{ toast.title }}</h3>
+                <p>{{ toast.description }}</p>
+            </Toast>
+        </Toaster>
 
-        <Button color="orange">ok</Button>
+        <Button 
+            @click="toast({
+                title: 'yes, it\'s working !',
+                description: 'i am the best',
+            })"
+        >ok</Button>
 
-        
 
-            <Tabs orientation="horizontal">
-                <TabsList>
-                    <TabsTrigger value="1">one</TabsTrigger>
-                    <TabsTrigger value="2">two</TabsTrigger>
-                    <TabsTrigger value="3">three</TabsTrigger>
-                </TabsList>
-                <TabsContent value="1">the content 1</TabsContent>
-                <TabsContent value="2">the content 2</TabsContent>
-                <TabsContent value="3">the content 3</TabsContent>
-            </Tabs>
-       
-        <div class="w-1/2">
-        <Tabs color="red">
-            <TabsList class="grow">
-                <TabsTrigger value="1" class="grow">one</TabsTrigger>
-                <TabsTrigger value="2" class="grow">two</TabsTrigger>
-                <TabsTrigger value="3" class="grow">three</TabsTrigger>
+        <Tabs orientation="horizontal">
+            <TabsList>
+                <TabsTrigger value="1">one</TabsTrigger>
+                <TabsTrigger value="2">two</TabsTrigger>
+                <TabsTrigger value="3">three</TabsTrigger>
             </TabsList>
             <TabsContent value="1">the content 1</TabsContent>
             <TabsContent value="2">the content 2</TabsContent>
             <TabsContent value="3">the content 3</TabsContent>
         </Tabs>
-    </div>
+       
+        <div class="w-1/2">
+            <Tabs color="red">
+                <TabsList class="grow">
+                    <TabsTrigger value="1" class="grow">one</TabsTrigger>
+                    <TabsTrigger value="2" class="grow">two</TabsTrigger>
+                    <TabsTrigger value="3" class="grow">three</TabsTrigger>
+                </TabsList>
+                <TabsContent value="1">the content 1</TabsContent>
+                <TabsContent value="2">the content 2</TabsContent>
+                <TabsContent value="3">the content 3</TabsContent>
+            </Tabs>
+        </div>
+
         <SearchList v-model="searchlist" :items="items" toSearch="label" color="orange">
             <SearchListInput placeholder="search..."></SearchListInput>
             <SearchListItems class="" v-slot="item">
@@ -41,7 +52,7 @@
         </SearchList>
         <br> 
 
-        <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value" color="orange" variant="plain">
+        <Combobox placement="bottom-start" v-model="combobox" :items="items" displayValue="value" color="orange">
             <ComboboxTrigger class="px-3 py-2 rounded">
                 Yoooooo
             </ComboboxTrigger>
@@ -196,7 +207,11 @@ import imgUrl from '@/assets/vue.svg'
 import Parent from '@/components/Parent.vue'
 
 import { ref } from 'vue'
+import { useToast } from '@/components/toast'
 
+const { toast } = useToast({
+    duration: 1
+})
 const searchlist = ref()
 const searchlist2 = ref()
 const combobox = ref({value:'', label: ''})

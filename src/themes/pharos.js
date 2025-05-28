@@ -19,7 +19,7 @@ export const pharos = {
             }
         },
         Button: {
-            variant: 'plain',
+            variant: 'light',
             sizes: {
                 base: 'px-3 py-2',
                 small: 'px-2 py-1',
