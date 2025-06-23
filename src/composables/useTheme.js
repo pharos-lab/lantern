@@ -14,7 +14,7 @@ export function useTheme(options) {
     function getColorPart(props, part, component) {
         const color = getPropValue('color', props, component) || 'default'
         const variant = getPropValue('variant', props, component) || 'plain'
-
+        
         if (import.meta.env.DEV && !options.theme.colors?.[color]?.[variant]) {
             console.warn(`[lantern] Couleur "${color}" ou variante "${variant}" introuvable dans le thème. \n Component: ${component}`)
         }

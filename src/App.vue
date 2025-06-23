@@ -1,6 +1,6 @@
 <template>
     <div class="p-4 space-y-8">
-        <Toaster v-slot="toast">
+        <Toaster v-slot="toast" color="red">
             <Toast :toast="toast">
                 <h3>{{ toast.title }}</h3>
                 <p>{{ toast.description }}</p>
