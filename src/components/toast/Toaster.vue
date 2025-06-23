@@ -3,7 +3,7 @@
         tag="ul"
         name="toast"
         class="l-toaster gap-2 p-4 flex flex-col absolute bottom-0 right-0 overflow-hidden"
-        :class="[pharos.getStaticClass('Toaster')]"
+        :class="[pharos]"
     >
         <li v-for="toast in toasts" :key="toast.id">
             <slot

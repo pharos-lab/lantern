@@ -1,5 +1,7 @@
 <template>
     <div class="p-4 space-y-8">
+        <Button>ok</Button>
+        <!--
         <Toaster v-slot="toast" color="red">
             <Toast :toast="toast">
                 <h3>{{ toast.title }}</h3>
@@ -7,12 +9,7 @@
             </Toast>
         </Toaster>
 
-        <Button 
-            @click="toast({
-                title: 'yes, it\'s working !',
-                description: 'i am the best',
-            })"
-        >ok</Button>
+       
 
 
         <Tabs orientation="horizontal">
@@ -105,7 +102,7 @@
                 <AccordionItemContent>content</AccordionItemContent>
             </AccordionItem>
         </Accordion>
-<!--
+
         <Badge color="red" variant="light" size="small">36</Badge>
         
         <div class="flex gap-4">

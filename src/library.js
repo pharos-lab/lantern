@@ -1,5 +1,6 @@
 import * as components from '@/components';
-import { useTheme } from './composables/useTheme';
+
+import { pharos } from './themes/pharos';
 
 const lantern = {
     install(app, options) {
@@ -9,7 +10,7 @@ const lantern = {
         app.component(componentName, component);
       }
 
-      app.provide('pharos', useTheme(options || {theme: {}}))
+      app.provide('pharos', pharos)
     }
 };
 
