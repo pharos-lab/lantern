@@ -1,19 +1,26 @@
 import type { App, Plugin } from 'vue';
-import type { Theme } from './types';
+import type { PluginOptions } from './types';
+import { defaultTheme } from './themes/default';
+import { merge } from 'lodash-es'
 
 export const THEME_KEY = Symbol('theme');
+export const OPTIONS_KEY = Symbol('options');
 
-export interface ThemeOptions {
-  theme: Theme;
+
+const defaultOptions = {
+    theme: defaultTheme
 }
 
 export const lantern: Plugin = {
-  install(app: App, options: ThemeOptions) {
-    if (!options?.theme) {
-      throw new Error('[Lantern] Theme is required in plugin options');
-    }
+    install(app: App, options?: PluginOptions) {
+        if (!options?.theme) {
+            throw new Error('[Lantern] Theme is required in plugin options');
+        }
 
-    // Provide theme globally
-    app.provide(THEME_KEY, options.theme);
-  }
+        const finaleOptions = merge({}, defaultOptions, options) as PluginOptions
+
+        // Provide theme globally
+        app.provide(THEME_KEY, finaleOptions.theme);
+        app.provide(OPTIONS_KEY, finaleOptions);
+    }
 };

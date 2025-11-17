@@ -15,8 +15,8 @@ export interface Theme {
   
   components: {
     [componentName: string]: {
-      variant: string; // default variant name
-      apply: string[]; // key list to apply from variant
+      variant?: string; // default variant name
+      apply?: string[]; // key list to apply from variant
       class?: string;  // base classes
       defaultProps?: {
         size?: string;
@@ -37,4 +37,14 @@ export interface Theme {
       };
     };
   };
+}
+
+export interface PluginOptions {
+    theme: Theme;
+    defaultVariant?: string
+}
+
+export interface ComponentProps {
+  class?: string
+  [key: string]: unknown
 }

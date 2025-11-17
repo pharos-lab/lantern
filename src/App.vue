@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 import { THEME_KEY } from './plugin';
+
+import { useComponentClasses } from './composables/useComponentClasses';
 const theme = inject(THEME_KEY)
 
-console.log(theme);
+console.log(useComponentClasses('button', {}));
 
 </script>
 

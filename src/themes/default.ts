@@ -37,6 +37,9 @@ export const defaultTheme = {
                     foreground: 'text-slate-700',
                     hover: 'hover:bg-slate-200',
                     border: 'border border-slate-500 custom-class-in-style.css',
+                },
+                primary: {
+                    background: 'bg-blue-500'
                 }
             }, 
             props: { // overide global props
