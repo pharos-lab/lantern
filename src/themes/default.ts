@@ -52,7 +52,7 @@ export const defaultTheme = {
             apply: ['hover', 'focus'], //only thoses will be added to button classes
             class: 'some classes to apply to each button created',
             defaultProps: { //possibilité to choose default prop for component
-                size: 'large',
+                size: 'small',
                 radius: 'small'
             },
             override: {
@@ -82,7 +82,7 @@ export const defaultTheme = {
                             background: 'bg-white',
                             foreground: 'text-blue-500',
                             hover: 'hover:bg-blue-500 text-white',
-                            border: 'border border-slate-500 custom-class-in-style.css',
+                            border: 'border border-slate-500 custom-class-in-style',
                             focus: 'focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-1',
                         }
                         
