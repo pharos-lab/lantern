@@ -2,7 +2,7 @@ export interface Theme {
     colors: {
         [colorName: string]: {
             [variantName: string]: {
-                [key: string]: string; // n'importe quelle clé avec des classes Tailwind
+                [key: string]: string; 
             };
         }
     };
@@ -25,11 +25,13 @@ export interface Theme {
                 size?: string;
                 radius?: string;
             };
-            override: {
+            override?: {
                 colors?: {
-                    [variantName: string]: {
-                        [key: string]: string; // override partiel
-                    };
+                    [colorName: string]: {
+                        [variantName: string]: {
+                            [key: string]: string; 
+                        };
+                    }
                 };
                 props?: {
                     size?: {
