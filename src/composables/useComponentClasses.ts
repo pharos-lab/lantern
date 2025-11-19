@@ -7,7 +7,7 @@ import { resolvePropsClasses } from '../utils/resolvePropsClasses';
 
 export function useComponentClasses(
     props: ComponentProps,
-    spec?: ComponentSpec
+    spec: ComponentSpec
 ) {
     const options = inject<PluginOptions>(OPTIONS_KEY);
 
@@ -18,10 +18,10 @@ export function useComponentClasses(
     const theme = options.theme;
 
     // Resolve color (props > spec.defaultProps > 'default')
-    const color = props.color ?? spec?.defaultProps?.color ?? 'default';
+    const color = props.color ?? spec.defaultProps?.color ?? 'default';
 
     // Resolve variant (props > spec.defaultProps > 'filled')
-    const variant = props.variant ?? spec?.defaultProps?.variant ?? 'filled';
+    const variant = props.variant ?? spec.defaultProps?.variant ?? 'filled';
 
     // Get color classes
     const colorClasses = resolveColorClasses(theme, spec, color, variant);
@@ -31,7 +31,7 @@ export function useComponentClasses(
 
     // Final merge with tailwind-merge
     const classes = twMerge(
-        spec?.class,
+        spec.class,
         colorClasses,
         propsClasses,
         props.class

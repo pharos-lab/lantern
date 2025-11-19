@@ -1,17 +1,7 @@
 export interface Theme {
-    colors: {
-        [colorName: string]: {
-            [variantName: string]: {
-                [key: string]: string;
-            };
-        };
-    };
-    size: {
-        [sizeName: string]: string;
-    };
-    radius: {
-        [radiusName: string]: string;
-    };
+    colors: ThemeColors;
+    size: ThemeSizes;
+    radius: ThemeRadius;
     [propName: string]: Record<string, any> // for other theme props
 }
 
@@ -27,13 +17,9 @@ export interface ComponentSpec {
         [key: string]: string | undefined;
     };
     override?: {
-        colors?: {
-            [colorName: string]: {
-                [variantName: string]: {
-                    [key: string]: string;
-                };
-            };
-        };
+        colors?: ThemeColors;
+        size?: ThemeSizes;
+        radius?: ThemeRadius;
         [propName: string]: Record<string, any> |undefined; // size, radius, etc.
     };
 }
@@ -53,4 +39,20 @@ export interface ComponentProps {
     radius?: string;
     class?: string;
     [key: string]: unknown;
+}
+
+export interface ThemeColors {
+    [colorName: string]: {
+        [variantName: string]: {
+            [key: string]: string;
+        };
+    };
+}
+
+export interface ThemeSizes {
+    [sizeName: string]: string;
+}
+
+export interface ThemeRadius {
+    [radiusName: string]: string;
 }
