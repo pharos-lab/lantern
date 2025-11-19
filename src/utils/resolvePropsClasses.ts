@@ -1,9 +1,9 @@
-import type { Theme, ComponentProps, ComponentSpec } from '../types';
+import type { Theme, ComponentSpec } from '../types';
 
 export function resolvePropsClasses(
     theme: Theme,
     spec: ComponentSpec | undefined,
-    props: ComponentProps
+    props: Record<string, unknown>
 ): string {
     const classes: string[] = [];
     const excludedProps = ['color', 'variant', 'class'];

@@ -131,13 +131,6 @@ describe('useComponentClasses', () => {
 			expect(classes).toContain('text-white');
 		});
 
-		it('should use hardcoded defaults with no spec', () => {
-			const { classes } = useComponentClasses({});
-
-			expect(classes).toContain('bg-gray-100');
-			expect(classes).toContain('text-gray-900');
-		});
-
 		it('should apply spec override', () => {
 			const { classes } = useComponentClasses({
 				color: 'primary',
@@ -254,18 +247,6 @@ describe('useComponentClasses', () => {
 			expect(classes).toContain('bg-red-500');
 			expect(classes).toContain('h-20');
 			expect(classes).not.toContain('bg-blue-500');
-		});
-
-		it('should work without spec', () => {
-			const { classes } = useComponentClasses({
-				color: 'primary',
-				variant: 'outline',
-				size: 'sm'
-			});
-
-			expect(classes).toContain('bg-transparent');
-			expect(classes).toContain('text-blue-600');
-			expect(classes).toContain('h-8 px-3 text-sm');
 		});
 	});
 

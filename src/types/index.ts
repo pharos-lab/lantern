@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from "vue";
+
 export interface Theme {
     colors: ThemeColors;
     size: ThemeSizes;
@@ -31,14 +33,10 @@ export interface PluginOptions {
     defaultVariant?: string
 }
 
-// Component props
-export interface ComponentProps {
+export interface BaseProps {
     color?: string;
     variant?: string;
-    size?: string;
-    radius?: string;
-    class?: string;
-    [key: string]: unknown;
+    class?: HTMLAttributes["class"];
 }
 
 export interface ThemeColors {
