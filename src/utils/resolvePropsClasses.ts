@@ -1,35 +1,35 @@
-import type { Theme, ComponentProps } from '../types';
+import type { Theme, ComponentProps, ComponentSpec } from '../types';
 
 export function resolvePropsClasses(
     theme: Theme,
-    componentName: string,
+    spec: ComponentSpec | undefined,
     props: ComponentProps
 ): string {
-    const config = theme.components[componentName];
     const classes: string[] = [];
+    const excludedProps = ['color', 'variant', 'class'];
 
-    const sizeName = props.size ?? config?.defaultProps?.size;
+    // Loop through props passed to component
+    for (const propName in props) {
+        // Skip excluded props
+        if (excludedProps.includes(propName)) continue;
 
-    if (sizeName) {
-        const sizeClass = config?.override?.props?.size?.[sizeName] ?? theme.size[sizeName];
+        // Resolve value: props > spec.defaultProps
+        const propValue = props[propName] ?? spec?.defaultProps?.[propName];
+        
+        if (!propValue) continue;
 
-        if (sizeClass) {
-            classes.push(sizeClass);
-        } else {
-            console.warn(`[Lantern] Size "${sizeName}" not found in theme`);
+        // Must be a string to index theme/override
+        if (typeof propValue !== 'string') {
+            continue; // ignore numbers, booleans, objects, etc.
         }
-    }
 
-    const radiusName = props.radius ?? config?.defaultProps?.radius;
+        // Find class: spec override > global theme
+        const propClass = spec?.override?.[propName]?.[propValue] ?? theme[propName]?.[propValue];
 
-    if (radiusName) {
-        // Priorité: override component > global
-        const radiusClass = config?.override?.props?.radius?.[radiusName] ?? theme.radius[radiusName];
-
-        if (radiusClass) {
-            classes.push(radiusClass);
+        if (propClass) {
+            classes.push(propClass);
         } else {
-            console.warn(`[Lantern] Radius "${radiusName}" not found in theme`);
+            console.warn(`[Lantern] ${propName} "${propValue}" not found in theme`);
         }
     }
 

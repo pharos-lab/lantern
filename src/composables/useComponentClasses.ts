@@ -1,12 +1,14 @@
-// src/composables/useComponentClasses.ts
 import { inject } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import { OPTIONS_KEY } from '../plugin';
-import type { ComponentProps, PluginOptions } from '../types';
+import type { ComponentProps, PluginOptions, ComponentSpec } from '../types';
 import { resolveColorClasses } from '../utils/resolveColorClasses';
 import { resolvePropsClasses } from '../utils/resolvePropsClasses';
 
-export function useComponentClasses(componentName: string, props: ComponentProps) {
+export function useComponentClasses(
+    props: ComponentProps,
+    spec?: ComponentSpec
+) {
     const options = inject<PluginOptions>(OPTIONS_KEY);
 
     if (!options?.theme) {
@@ -14,21 +16,25 @@ export function useComponentClasses(componentName: string, props: ComponentProps
     }
 
     const theme = options.theme;
-    const config = theme.components[componentName];
 
-    const color = props.color ?? config?.color ?? options.defaultColor ?? 'default';
+    // Resolve color (props > spec.defaultProps > 'default')
+    const color = props.color ?? spec?.defaultProps?.color ?? 'default';
 
-    const variant = props.variant ?? config?.variant ?? options.defaultVariant ?? 'filled';
+    // Resolve variant (props > spec.defaultProps > 'filled')
+    const variant = props.variant ?? spec?.defaultProps?.variant ?? 'filled';
 
-    const colorClasses = resolveColorClasses(theme, componentName, color, variant);
+    // Get color classes
+    const colorClasses = resolveColorClasses(theme, spec, color, variant);
 
-    const propsClasses = resolvePropsClasses(theme, componentName, props);
+    // Get props classes (size, radius, etc.)
+    const propsClasses = resolvePropsClasses(theme, spec, props);
 
+    // Final merge with tailwind-merge
     const classes = twMerge(
-        config?.class,      // base classes du composant
-        colorClasses,       // classes du color/variant
-        propsClasses,       // classes de size, radius, etc.
-        props.class         // classes custom de l'user (dernier mot)
+        spec?.class,
+        colorClasses,
+        propsClasses,
+        props.class
     );
 
     return { classes };

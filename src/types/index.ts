@@ -2,61 +2,55 @@ export interface Theme {
     colors: {
         [colorName: string]: {
             [variantName: string]: {
-                [key: string]: string; 
-            };
-        }
-    };
-  
-    size: {
-        [sizeName: string]: string;
-    };
-  
-    radius: {
-        [radiusName: string]: string;
-    };
-  
-    components: {
-        [componentName: string]: {
-            color?: string
-            variant?: string; // default variant name
-            apply?: string[]; // key list to apply from variant
-            class?: string;  // base classes
-            defaultProps?: {
-                size?: string;
-                radius?: string;
-            };
-            override?: {
-                colors?: {
-                    [colorName: string]: {
-                        [variantName: string]: {
-                            [key: string]: string; 
-                        };
-                    }
-                };
-                props?: {
-                    size?: {
-                        [sizeName: string]: string;
-                    };
-                    radius?: {
-                        [radiusName: string]: string;
-                    };
-                }
+                [key: string]: string;
             };
         };
     };
+    size: {
+        [sizeName: string]: string;
+    };
+    radius: {
+        [radiusName: string]: string;
+    };
+    [propName: string]: Record<string, any> // for other theme props
 }
 
+// Component Spec
+export interface ComponentSpec {
+    apply?: string[];
+    class?: string;
+    defaultProps?: {
+        color?: string;
+        variant?: string;
+        size?: string;
+        radius?: string;
+        [key: string]: string | undefined;
+    };
+    override?: {
+        colors?: {
+            [colorName: string]: {
+                [variantName: string]: {
+                    [key: string]: string;
+                };
+            };
+        };
+        [propName: string]: Record<string, any> |undefined; // size, radius, etc.
+    };
+}
+
+// Plugin options (no more defaultColor/defaultVariant)
 export interface PluginOptions {
     theme: Theme;
-    defaultVariant?: string
-    defaultColor?: string
+    defaultColor: string
+    defaultVariant: string
 }
 
+// Component props
 export interface ComponentProps {
-  class?: string
-  color?: string;
-  variant?: string;
-  size?: string;
-  radius?: string;
-  [key: string]: unknown
+    color?: string;
+    variant?: string;
+    size?: string;
+    radius?: string;
+    class?: string;
+    [key: string]: unknown;
 }
