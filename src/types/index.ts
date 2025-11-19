@@ -41,8 +41,8 @@ export interface ComponentSpec {
 // Plugin options (no more defaultColor/defaultVariant)
 export interface PluginOptions {
     theme: Theme;
-    defaultColor: string
-    defaultVariant: string
+    defaultColor?: string
+    defaultVariant?: string
 }
 
 // Component props
