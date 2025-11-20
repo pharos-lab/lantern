@@ -115,7 +115,7 @@ describe('useComponentClasses', () => {
 
 	describe('Color and variant resolution', () => {
 		it('should use props when provided', () => {
-			const { classes } = useComponentClasses({
+			const classes  = useComponentClasses({
 				color: 'default',
 				variant: 'outline'
 			}, buttonSpec);
@@ -125,14 +125,14 @@ describe('useComponentClasses', () => {
 		});
 
 		it('should use spec defaultProps as fallback', () => {
-			const { classes } = useComponentClasses({}, buttonSpec);
+			const classes = useComponentClasses({}, buttonSpec);
 
 			expect(classes).toContain('bg-blue-500'); // override
 			expect(classes).toContain('text-white');
 		});
 
 		it('should apply spec override', () => {
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				color: 'primary',
 				variant: 'filled'
 			}, buttonSpec);
@@ -142,7 +142,7 @@ describe('useComponentClasses', () => {
 		});
 
 		it('should apply only allowed keys', () => {
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				color: 'primary',
 				variant: 'filled'
 			}, buttonSpec);
@@ -153,7 +153,7 @@ describe('useComponentClasses', () => {
 		});
 
 		it('should always include background + foreground', () => {
-			const { classes } = useComponentClasses({}, cardSpec);
+			const classes = useComponentClasses({}, cardSpec);
 
 			expect(classes).toContain('bg-transparent');
 			expect(classes).toContain('text-gray-900');
@@ -162,7 +162,7 @@ describe('useComponentClasses', () => {
 		it('should warn if color/variant missing', () => {
 			const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
 
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				color: 'x',
 				variant: 'y'
 			}, buttonSpec);
@@ -176,7 +176,7 @@ describe('useComponentClasses', () => {
 
 	describe('Props resolution (size, radius)', () => {
 		it('should use provided props', () => {
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				size: 'lg',
 				radius: 'lg'
 			}, buttonSpec);
@@ -186,7 +186,7 @@ describe('useComponentClasses', () => {
 		});
 
 		it('should apply spec override for size', () => {
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				size: 'sm'
 			}, buttonSpec);
 
@@ -195,7 +195,7 @@ describe('useComponentClasses', () => {
 		});
 
 		it('should fallback to global theme', () => {
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				size: 'lg'
 			}, buttonSpec);
 
@@ -217,14 +217,14 @@ describe('useComponentClasses', () => {
 
 	describe('Class merging', () => {
 		it('should include spec base classes', () => {
-			const { classes } = useComponentClasses({}, buttonSpec);
+			const classes = useComponentClasses({}, buttonSpec);
 
 			expect(classes).toContain('inline-flex');
 			expect(classes).toContain('items-center');
 		});
 
 		it('should merge correctly', () => {
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				color: 'primary',
 				variant: 'filled',
 				size: 'lg',
@@ -238,7 +238,7 @@ describe('useComponentClasses', () => {
 		});
 
 		it('should let user class override', () => {
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				color: 'primary',
 				variant: 'filled',
 				class: 'bg-red-500 h-20'
@@ -252,17 +252,17 @@ describe('useComponentClasses', () => {
 
 	describe('Edge cases', () => {
 		it('should handle empty props', () => {
-			const { classes } = useComponentClasses({}, buttonSpec);
+			const classes = useComponentClasses({}, buttonSpec);
 			expect(classes.length).toBeGreaterThan(0);
 		});
 
 		it('should handle spec with no overrides', () => {
-			const { classes } = useComponentClasses({}, cardSpec);
+			const classes = useComponentClasses({}, cardSpec);
 			expect(classes).toContain('p-4');
 		});
 
 		it('should support only user class', () => {
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				class: 'custom-class'
 			}, buttonSpec);
 
@@ -270,7 +270,7 @@ describe('useComponentClasses', () => {
 		});
 
 		it('should support multiple classes', () => {
-			const { classes } = useComponentClasses({
+			const classes = useComponentClasses({
 				class: 'c1 c2 c3'
 			}, buttonSpec);
 

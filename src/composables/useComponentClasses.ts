@@ -37,5 +37,5 @@ export function useComponentClasses(
         props.class
     );
 
-    return { classes };
+    return classes;
 }

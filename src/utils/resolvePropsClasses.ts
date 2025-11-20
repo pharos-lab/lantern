@@ -18,13 +18,9 @@ export function resolvePropsClasses(
         
         if (!propValue) continue;
 
-        // Must be a string to index theme/override
-        if (typeof propValue !== 'string') {
-            continue; // ignore numbers, booleans, objects, etc.
-        }
-
+        
         // Find class: spec override > global theme
-        const propClass = spec?.override?.[propName]?.[propValue] ?? theme[propName]?.[propValue];
+        const propClass = spec?.override?.[propName]?.[String(propValue)] ?? theme[propName]?.[String(propValue)];
 
         if (propClass) {
             classes.push(propClass);

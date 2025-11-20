@@ -39,6 +39,10 @@ export interface BaseProps {
     class?: HTMLAttributes["class"];
 }
 
+export interface ComponentProps extends BaseProps {
+    [propName: string]: unknown
+}
+
 export interface ThemeColors {
     [colorName: string]: {
         [variantName: string]: {

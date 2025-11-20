@@ -28,7 +28,7 @@ export const defaultTheme = {
         //etc
     },
     radius: {
-        small: 'default-radius-small'
+        small: 'rounded-sm'
         //etc
     },
 }

@@ -2,32 +2,36 @@ import type { ComponentSpec } from '../../types/index.ts'
 
 export const buttonSpecs: ComponentSpec = {
     apply: ['hover', 'focus'], //only thoses will be added to button classes
-    class: 'button-component-class',
+    class: 'l-button',
     defaultProps: { //possibilité to choose default prop for component
         color: 'primary',
         variant: 'filled',
-        size: 'small',
+        size: 'medium',
         radius: 'small'
     },
     override: {
-        colors: { // global variant 
+        colors: { 
             default: {
                 filled: {
-                    background: 'override-default-filled-button-bg',
-                    foreground: 'ovveride-default-filled-button-fg',
+                    background: 'bg-blue-500',
+                    foreground: 'text-white',
                 },
                 
             },
             primary: {
                 filled: {
-                    background: 'override-primary-button-bg',
+                    background: 'bg-sky-500',
                 },
                 
             },
             //etc
         },
         size: {
-            large: 'override-button-size-large'
+            small: 'px-2 py-1',
+            medium: 'px-3 py-2',
+        },
+        loading: {
+            true: 'opacity-70 cursor-wait'
         }
     }
 }
