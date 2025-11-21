@@ -1,5 +1,5 @@
 <template>
-    <Button :class="classes" v-bind="props">
+    <Button v-bind="props" :class="classes">
         <slot></slot>
     </Button>
 </template>

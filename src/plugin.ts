@@ -2,10 +2,7 @@ import type { App, Plugin } from 'vue';
 import type { PluginOptions } from './types';
 import { defaultTheme } from './themes/default';
 import { merge } from 'lodash-es'
-
-export const THEME_KEY = Symbol('theme');
-export const OPTIONS_KEY = Symbol('options');
-
+import { THEME_KEY, OPTIONS_KEY } from './utils/keys';
 
 const defaultOptions = {
     theme: defaultTheme

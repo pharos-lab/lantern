@@ -1,6 +1,6 @@
 import { inject } from 'vue';
 import { twMerge } from 'tailwind-merge';
-import { OPTIONS_KEY } from '../plugin';
+import { OPTIONS_KEY } from '../utils/keys';
 import type { ComponentProps, PluginOptions, ComponentSpec } from '../types';
 import { resolveColorClasses } from '../utils/resolveColorClasses';
 import { resolvePropsClasses } from '../utils/resolvePropsClasses';
