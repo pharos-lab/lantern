@@ -2,7 +2,7 @@ import type { Theme, ComponentSpec } from '../types';
 
 export function resolvePropsClasses(
     theme: Theme,
-    spec: ComponentSpec | undefined,
+    spec: ComponentSpec,
     props: Record<string, unknown>
 ): string {
     const classes: string[] = [];
@@ -14,18 +14,17 @@ export function resolvePropsClasses(
         if (excludedProps.includes(propName)) continue;
 
         // Resolve value: props > spec.defaultProps
-        const propValue = props[propName] ?? spec?.defaultProps?.[propName];
+        const propValue = props[propName] ?? spec.defaultProps?.[propName];
         
         if (!propValue) continue;
 
-        
         // Find class: spec override > global theme
         const propClass = spec?.override?.[propName]?.[String(propValue)] ?? theme[propName]?.[String(propValue)];
 
         if (propClass) {
             classes.push(propClass);
         } else {
-            console.warn(`[Lantern] ${propName} "${propValue}" not found in theme`);
+            console.warn(`[Lantern - theme] ${propName} "${propValue}" not found neither in theme or in "${spec.name}" specs.`);
         }
     }
 

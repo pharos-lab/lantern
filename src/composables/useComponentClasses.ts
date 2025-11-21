@@ -10,6 +10,7 @@ export function useComponentClasses(
     spec: ComponentSpec
 ) {
     const options = inject<PluginOptions>(OPTIONS_KEY);
+    let colorClasses = ''
 
     if (!options?.theme) {
         throw new Error('[Lantern] Theme not found. Did you install the plugin?');
@@ -18,13 +19,15 @@ export function useComponentClasses(
     const theme = options.theme;
 
     // Resolve color (props > spec.defaultProps > 'default')
-    const color = props.color ?? spec.defaultProps?.color ?? 'default';
+    const color = props.color ?? spec.defaultProps?.color ?? options.defaultColor;
 
     // Resolve variant (props > spec.defaultProps > 'filled')
-    const variant = props.variant ?? spec.defaultProps?.variant ?? 'filled';
+    const variant = props.variant ?? spec.defaultProps?.variant ?? options.defaultVariant;
 
-    // Get color classes
-    const colorClasses = resolveColorClasses(theme, spec, color, variant);
+    if (color && variant) {
+       // Get color classes
+        colorClasses = resolveColorClasses(theme, spec, color, variant);
+    }
 
     // Get props classes (size, radius, etc.)
     const propsClasses = resolvePropsClasses(theme, spec, props);

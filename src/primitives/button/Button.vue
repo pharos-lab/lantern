@@ -4,7 +4,6 @@
         :disabled="props.disabled || props.loading"
         :aria-disabled="props.disabled ? 'true' : undefined"
         :aria-busy="props.loading ? 'true' : undefined"
-        :class="props.class"
     >
         <slot />
     </button>
@@ -12,9 +11,9 @@
 
 <script setup lang="ts">
 import type { ButtonHTMLAttributes } from 'vue';
-import type { BaseProps } from '../../types';
+import type { BasePrimitiveProps } from '../../types';
 
-export interface ButtonPrimitiveProps extends BaseProps {
+export interface ButtonPrimitiveProps extends BasePrimitiveProps {
     disabled?: ButtonHTMLAttributes["disabled"]
     loading?: boolean
     type?: 'button' | 'submit' | 'reset'

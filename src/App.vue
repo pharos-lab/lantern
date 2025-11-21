@@ -4,7 +4,10 @@ import Button from './components/button/Button.vue';
 </script>
 
 <template>
-    <Button class="test ok">Bonjour !</Button>
+    <div class="p-8">
+        <Button class="test ok">Bonjour !</Button>
+    </div>
+    
 </template>
 
 

@@ -9,6 +9,7 @@ export interface Theme {
 
 // Component Spec
 export interface ComponentSpec {
+    name:string
     apply?: string[];
     class?: string;
     defaultProps?: {
@@ -22,7 +23,7 @@ export interface ComponentSpec {
         colors?: ThemeColors;
         size?: ThemeSizes;
         radius?: ThemeRadius;
-        [propName: string]: Record<string, any> |undefined; // size, radius, etc.
+        [propName: string]: Record<string, any> | undefined; // size, radius, etc.
     };
 }
 
@@ -33,10 +34,14 @@ export interface PluginOptions {
     defaultVariant?: string
 }
 
-export interface BaseProps {
+export interface BasePrimitiveProps {
+
+}
+
+export interface BaseProps extends BasePrimitiveProps {
+    class?: HTMLAttributes["class"];
     color?: string;
     variant?: string;
-    class?: HTMLAttributes["class"];
 }
 
 export interface ComponentProps extends BaseProps {

@@ -5,16 +5,20 @@
 </template>
 
 <script setup lang="ts">
-import type  { ButtonPrimitiveProps } from '../../primitives/button/Button.vue';
 import { buttonSpecs } from './buttonSpecs.js'
 import { useComponentClasses } from '../../composables/useComponentClasses.js';
-import Button from '../../primitives/button/Button.vue';
+import Button, { type ButtonPrimitiveProps } from '../../primitives/button/Button.vue';
+import type { BaseProps } from '../../types';
+import { computed } from 'vue';
 
 
-interface ButtonProps extends ButtonPrimitiveProps {
+interface ButtonProps extends BaseProps, ButtonPrimitiveProps {
     size?: string
     radius?: string
 }
 const props = defineProps<ButtonProps>()
-const classes = useComponentClasses(props, buttonSpecs)
+
+const classes = computed(() => {
+    return useComponentClasses(props, buttonSpecs)
+})
 </script>

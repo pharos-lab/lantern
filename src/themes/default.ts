@@ -1,34 +1,31 @@
 export const defaultTheme = {
-    colors: { // global variant 
-        default: {
+    colors: {
+        slate: {
             filled: {
-                background: 'default-filled-bg',
-                foreground: 'default-filled-fg',
-                hover: 'default-filled-hover',
-                border: 'default-filled-border',
-                focus: 'default-filled-focus',
+                background: 'bg-slate-500',
+                foreground: 'text-white',
+                hover: 'hover:bg-slate-400',
+                focus: 'focus:ring-2 focus:ring-slate-400 ring-offset-1',
             },
-            
         },
-        primary: {
+        blue: {
             filled: {
-                background: 'primary-filled-bg',
-                foreground: 'primary-filled-fg',
-                hover: 'primary-filled-hover',
-                border: 'primary-filled-border',
-                focus: 'primary-filled-focus',
+                background: 'bg-blue-500',
+                foreground: 'text-white',
+                hover: 'hover:bg-blue-400',
+                focus: 'focus:ring-2 focus:ring-blue-400 ring-offset-1',
             },
-            
         },
         //etc
     },
     size: {
-        small: 'default-size-small',
-        medium: 'default-size-medium'
+        small: 'px-2 py-1',
+        medium: 'px-3 py-2'
         //etc
     },
     radius: {
-        small: 'rounded-sm'
+        small: 'rounded-sm',
+        medium: 'rounded'
         //etc
     },
 }

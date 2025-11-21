@@ -12,7 +12,7 @@ const defaultOptions = {
 }
 
 export const lantern: Plugin = {
-    install(app: App, options?: PluginOptions) {
+    install(app: App, options: PluginOptions) {
         if (!options?.theme) {
             throw new Error('[Lantern] Theme is required in plugin options');
         }

@@ -5,5 +5,5 @@ import { defaultTheme } from './themes/default'
 
 import { lantern } from './plugin'
 createApp(App).use(lantern, {
-    theme: defaultTheme
+    theme: defaultTheme,
 }).mount('#app')

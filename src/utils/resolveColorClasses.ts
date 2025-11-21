@@ -5,7 +5,7 @@ const staticProperties = ['background', 'foreground'];
 
 export function resolveColorClasses(
     theme: Theme,
-    spec: ComponentSpec | undefined,
+    spec: ComponentSpec,
     color: string,
     variant: string
 ): string {
@@ -17,7 +17,7 @@ export function resolveColorClasses(
 
     // 3. If neither global nor override exists, return empty
     if (!globalColorVariant && !overrideColorVariant) {
-        console.warn(`[Lantern] Color "${color}" with variant "${variant}" not found in theme`);
+        console.warn(`[Lantern - theme] Color "${color}" with variant "${variant}" not found neither in theme or "${spec.name}" specs.`);
         return '';
     }
 
