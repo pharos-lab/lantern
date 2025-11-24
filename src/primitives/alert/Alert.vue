@@ -11,34 +11,34 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, provide, ref, type HTMLAttributes } from 'vue';
+import { computed, provide, type HTMLAttributes } from 'vue';
 import type { BasePrimitiveProps } from '../../types';
-import { ALERT_KEY } from '../../utils/keys'
+import type { AlertContext } from '../../types/components'
+import { ALERT_KEY } from '../../utils/keys';
+import { useAlert } from '../../composables/useAlert'
 
 interface AlertPrimitiveProps extends BasePrimitiveProps {
-    role?: HTMLAttributes['role']
-    duration?: number 
+    role?: HTMLAttributes['role'];
+    duration?: number;
 }
 
-const props = defineProps<AlertPrimitiveProps>()
+const props = defineProps<AlertPrimitiveProps>();
 
-const isVisible = ref(true)
+const emit = defineEmits<{
+    dismiss: []
+}>();
+
+const { isVisible, dismiss: dismissAlert } = useAlert({
+    duration: props.duration,
+    onDismiss: () => emit('dismiss')
+});
 
 const state = computed(() => {
-    return isVisible.value ? 'open' : 'closed'
-})
+    return isVisible.value ? 'open' : 'closed';
+});
 
-const setVisible = (value: boolean) => {
-    isVisible.value = value
-}
-
-provide(ALERT_KEY, { isVisible, setVisible })
-
-onMounted(() => {
-    if (props.duration) {
-        setTimeout(() => {
-            isVisible.value = false
-        }, props.duration)
-    }
-})
+provide<AlertContext>(ALERT_KEY, {
+    isVisible,
+    dismiss: dismissAlert
+});
 </script>
