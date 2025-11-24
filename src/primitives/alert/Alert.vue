@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, type HTMLAttributes } from 'vue';
+import { computed, provide, type HTMLAttributes, onMounted, onBeforeUnmount } from 'vue';
 import type { BasePrimitiveProps } from '../../types';
 import type { AlertContext } from '../../types/components'
 import { ALERT_KEY } from '../../utils/keys';
@@ -28,10 +28,12 @@ const emit = defineEmits<{
     dismiss: []
 }>();
 
-const { isVisible, dismiss: dismissAlert } = useAlert({
-    duration: props.duration,
-    onDismiss: () => emit('dismiss')
-});
+const { isVisible, dismiss: baseDismiss } = useAlert();
+
+const dismiss = () => {
+    baseDismiss()
+    emit('dismiss')
+}
 
 const state = computed(() => {
     return isVisible.value ? 'open' : 'closed';
@@ -39,6 +41,20 @@ const state = computed(() => {
 
 provide<AlertContext>(ALERT_KEY, {
     isVisible,
-    dismiss: dismissAlert
+    dismiss
 });
+
+defineExpose({ dismiss })
+
+let timer: number | undefined
+
+onMounted(() => {
+    if (props.duration && props.duration > 0) {
+        timer = window.setTimeout(() => dismiss(), props.duration)
+    }
+})
+
+onBeforeUnmount(() => {
+    if (timer) clearTimeout(timer)
+})
 </script>
