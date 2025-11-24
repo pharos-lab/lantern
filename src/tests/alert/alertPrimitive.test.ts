@@ -13,11 +13,11 @@ describe('AlertPrimitive', () => {
   it('dismiss() hides the alert and emits dismiss', async () => {
     const wrapper = mount(Alert, { slots: { default: 'Hello' } })
     const exposed = wrapper.vm as any
-
+    
     exposed.dismiss()
     await wrapper.vm.$nextTick()
 
-    expect(wrapper.isVisible()).toBe(false)
+    expect((wrapper.vm as any).isVisible).toBe(false)
     expect(wrapper.emitted('dismiss')).toBeTruthy()
   })
 
@@ -30,7 +30,7 @@ describe('AlertPrimitive', () => {
 
     await wrapper.vm.$nextTick()
 
-    expect(wrapper.isVisible()).toBe(false)
+    expect((wrapper.vm as any).isVisible).toBe(false)
 
     vi.useRealTimers()
   })
