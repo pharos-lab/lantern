@@ -28,4 +28,9 @@ export const defaultTheme = {
         medium: 'rounded'
         //etc
     },
+    shadow: {
+        small: 'shadow-sm',
+        medium: 'shadow-md',
+        none: 'shadow-none'
+    }
 }
