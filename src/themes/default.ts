@@ -7,6 +7,13 @@ export const defaultTheme = {
                 hover: 'hover:bg-slate-400',
                 focus: 'focus:ring-2 focus:ring-slate-400 ring-offset-1',
             },
+            light: {
+                background: 'bg-slate-200',
+                foreground: 'text-slate-800',
+                hover: 'hover:bg-slate-100',
+                focus: 'focus:ring-2 focus:ring-slate-400 ring-offset-1',
+                border: 'border border-slate-300'
+            }
         },
         blue: {
             filled: {

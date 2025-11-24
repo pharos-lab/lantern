@@ -3,6 +3,7 @@ import Button from './components/button/Button.vue';
 import Alert from './components/alert/Alert.vue'
 import AlertClose from './components/alert/AlertClose.vue';
 import Card from './components/card/Card.vue'
+import Badge from './components/badge/Badge.vue'
 </script>
 
 <template>
@@ -14,6 +15,8 @@ import Card from './components/card/Card.vue'
         </Alert>
 
         <Card>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, velit?</Card>
+
+        <Badge>new offer</Badge>
     </div>
     
 </template>
