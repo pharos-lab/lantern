@@ -1,30 +1,6 @@
+import { colors } from "./colors"
 export const defaultTheme = {
-    colors: {
-        slate: {
-            filled: {
-                background: 'bg-slate-500',
-                foreground: 'text-white',
-                hover: 'hover:bg-slate-400',
-                focus: 'focus:ring-2 focus:ring-slate-400 ring-offset-1',
-            },
-            light: {
-                background: 'bg-slate-200',
-                foreground: 'text-slate-800',
-                hover: 'hover:bg-slate-100',
-                focus: 'focus:ring-2 focus:ring-slate-400 ring-offset-1',
-                border: 'border border-slate-300'
-            }
-        },
-        blue: {
-            filled: {
-                background: 'bg-blue-500',
-                foreground: 'text-white',
-                hover: 'hover:bg-blue-400',
-                focus: 'focus:ring-2 focus:ring-blue-400 ring-offset-1',
-            },
-        },
-        //etc
-    },
+    colors: colors,
     size: {
         small: 'px-2 py-1',
         medium: 'px-3 py-2'

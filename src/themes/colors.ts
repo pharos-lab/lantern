@@ -152,6 +152,5 @@ export const colors =  {
         light: { background: 'bg-stone-200', foreground: 'text-stone-800', hover: 'hover:bg-stone-100', active: 'active:bg-stone-300', focus: 'focus:ring-2 focus:ring-stone-400 ring-offset-1', border: 'border border-stone-300' },
         dark: { background: 'bg-stone-800', foreground: 'text-white', hover: 'hover:bg-stone-700', active: 'active:bg-stone-900', focus: 'focus:ring-2 focus:ring-stone-500 ring-offset-1', border: 'border border-stone-800' },
         ghost: { background: 'bg-transparent', foreground: 'text-stone-500', hover: 'hover:bg-stone-100', active: 'active:bg-stone-200', focus: 'focus:ring-2 focus:ring-stone-400 ring-offset-1', border: 'border border-transparent' },
-    }, 
+    },
 }
-  

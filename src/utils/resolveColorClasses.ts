@@ -30,7 +30,15 @@ export function resolveColorClasses(
     // 6. Extract classes according to staticProperties + apply
     const colorClasses = [
         ...staticProperties.map(key => mergedColorVariant[key]),
-        ...applyKeys.map(key => mergedColorVariant[key])
+        ...applyKeys.map(key => {
+            if (key.includes(':')) {
+                // format variant:key
+                const [targetVariant, targetKey] = key.split(':');
+                return targetVariant === variant ? mergedColorVariant[targetKey as keyof typeof mergedColorVariant] : null;
+            } else {
+                return mergedColorVariant[key];
+            }
+        })
     ].filter(Boolean).join(' ');
 
     return colorClasses;
