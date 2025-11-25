@@ -7,7 +7,6 @@ export const cardSpecs: ComponentSpec = {
     defaultProps: {
         color: 'slate',
         variant: 'filled',
-        size: 'medium',
         radius: 'medium',
         shadow: 'medium'
     },

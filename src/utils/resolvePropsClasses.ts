@@ -6,7 +6,7 @@ export function resolvePropsClasses(
     props: Record<string, unknown>
 ): string {
     const classes: string[] = [];
-    const excludedProps = ['color', 'variant', 'class'];
+    const excludedProps = ['color', 'variant', 'class', 'role'];
 
     // Loop through props passed to component
     for (const propName in props) {

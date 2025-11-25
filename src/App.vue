@@ -16,7 +16,7 @@ import Badge from './components/badge/Badge.vue'
 
         <Card>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, velit?</Card>
 
-        <Badge>new offer</Badge>
+        <Badge aria-label="test">new offer</Badge>
     </div>
     
 </template>
