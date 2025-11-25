@@ -60,6 +60,7 @@ const mockTheme: Theme = {
 };
 
 const buttonSpec: ComponentSpec = {
+	name:'Button',
 	apply: ['hover', 'focus'],
 	class: 'inline-flex items-center justify-center font-medium transition-colors',
 	defaultProps: {
@@ -83,6 +84,7 @@ const buttonSpec: ComponentSpec = {
 };
 
 const cardSpec: ComponentSpec = {
+	name: 'Card',
 	apply: ['border'],
 	class: 'p-4',
 	defaultProps: {
@@ -278,5 +280,36 @@ describe('useComponentClasses', () => {
 			expect(classes).toContain('c2');
 			expect(classes).toContain('c3');
 		});
+
+		it('should apply variant-specific keys with colon syntax', () => {
+			const outlineSpec: ComponentSpec = {
+				name: 'Button',
+				apply: ['hover', 'focus', 'outline:border'],
+				class: '',
+				defaultProps: { color: 'default', variant: 'outline' }
+			};
+		
+			const classes = useComponentClasses({}, outlineSpec);
+		
+			expect(classes).toContain('hover:bg-gray-100'); // hover appliqué
+			expect(classes).toContain('focus:ring-gray-500'); // focus appliqué
+			expect(classes).toContain('border-2 border-gray-300'); // border appliqué car variant = outline
+		});
+		
+		it('should not apply variant-specific keys if variant does not match', () => {
+			const outlineSpec: ComponentSpec = {
+				name: 'Button',
+				apply: ['hover', 'focus', 'outline:border'],
+				class: '',
+				defaultProps: { color: 'default', variant: 'filled' }
+			};
+		
+			const classes = useComponentClasses({}, outlineSpec);
+		
+			expect(classes).toContain('hover:bg-gray-200'); // hover appliqué
+			expect(classes).toContain('focus:ring-gray-500'); // focus appliqué
+			expect(classes).not.toContain('border-2 border-gray-300'); // border non appliqué car variant != outline
+		});
+		
 	});
 });
