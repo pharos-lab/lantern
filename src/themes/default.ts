@@ -8,7 +8,8 @@ export const defaultTheme = {
     },
     radius: {
         small: 'rounded-sm',
-        medium: 'rounded'
+        medium: 'rounded',
+        circle: 'rounded-full'
         //etc
     },
     shadow: {

@@ -4,9 +4,9 @@ import Alert from './components/alert/Alert.vue'
 import AlertClose from './components/alert/AlertClose.vue';
 import Card from './components/card/Card.vue'
 import Badge from './components/badge/Badge.vue'
-import Avatar from './primitives/avatar/Avatar.vue'
-import AvatarImage from './primitives/avatar/AvatarImage.vue'
-import AvatarFallback from './primitives/avatar/AvatarFallback.vue'
+import Avatar from './components/avatar/Avatar.vue'
+import AvatarImage from './components/avatar/AvatarImage.vue'
+import AvatarFallback from './components/avatar/AvatarFallback.vue'
 </script>
 
 <template>

@@ -6,11 +6,16 @@ export const avatarSpecs: ComponentSpec = {
     class: 'relative inline-flex items-center justify-center overflow-hidden',
     defaultProps: {
         color: 'slate',
-        variant: 'soft',
+        variant: 'light',
         size: 'md',
         radius: 'full'
     },
-    override: {}
+    override: {
+        size: {
+            sm: 'size-5',
+            md: 'size-7'
+        }
+    }
 };
 
 export const avatarImageSpecs: ComponentSpec = {
@@ -23,10 +28,10 @@ export const avatarImageSpecs: ComponentSpec = {
 export const avatarFallbackSpecs: ComponentSpec = {
     name: 'AvatarFallback',
     apply: [],
-    class: 'flex items-center justify-center w-full h-full font-medium text-sm uppercase',
+    class: 'flex items-center justify-center w-full h-full font-medium text-sm uppercase p-2',
     defaultProps: {
         color: 'slate',
-        variant: 'soft'
+        variant: 'light'
     },
     override: {}
 };

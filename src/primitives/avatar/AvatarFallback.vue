@@ -10,7 +10,7 @@ import type { BasePrimitiveProps } from '../../types';
 import type { AvatarContext } from '../../types/components';
 import { AVATAR_KEY } from '../../utils/keys';
 
-interface AvatarFallbackPrimitiveProps extends BasePrimitiveProps {}
+export interface AvatarFallbackPrimitiveProps extends BasePrimitiveProps {}
 
 defineProps<AvatarFallbackPrimitiveProps>();
 
