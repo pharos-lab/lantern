@@ -11,7 +11,8 @@ import AvatarFallback from './components/avatar/AvatarFallback.vue'
 
 <template>
     <div class="p-8 space-y-8">
-        <Button class="test ok" nicce="dfdfd" color="pink" variant="outline">Bonjour !</Button>
+        <!-- <Button class="test ok" nicce="dfdfd" color="pink" variant="outline">Bonjour !</Button>
+
         <Alert role="test">
             <AlertClose>X</AlertClose>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, similique!
@@ -19,9 +20,9 @@ import AvatarFallback from './components/avatar/AvatarFallback.vue'
 
         <Card>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, velit?</Card>
 
-        <Badge aria-label="test">new offer</Badge>
+        <Badge aria-label="test">new offer</Badge> -->
 
-        <Avatar radius="circle" size="large">
+        <Avatar radius="circle" size="large" class="" fallback="ts">
             <AvatarImage src="" alt="alt text"></AvatarImage>
             <AvatarFallback>MD</AvatarFallback>
         </Avatar>

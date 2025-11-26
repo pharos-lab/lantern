@@ -1,5 +1,5 @@
 <template>
-    <Avatar :class="classes" :fallback="fallback">
+    <Avatar v-bind="props" :class="classes" :fallback="fallback">
         <slot />
     </Avatar>
 </template>
@@ -16,5 +16,6 @@ interface AvatarProps extends BaseProps, AvatarPrimitiveProps {
 }
 
 const props = defineProps<AvatarProps>();
+
 const classes = useComponentClasses(props, avatarSpecs);
 </script>
