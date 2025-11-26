@@ -17,7 +17,7 @@ import type { AlertContext } from '../../types/components'
 import { ALERT_KEY } from '../../utils/keys';
 import { useAlert } from '../../composables/useAlert'
 
-interface AlertPrimitiveProps extends BasePrimitiveProps {
+export interface AlertPrimitiveProps extends BasePrimitiveProps {
     role?: HTMLAttributes['role'];
     duration?: number;
 }

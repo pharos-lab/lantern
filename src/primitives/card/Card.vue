@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import type { BasePrimitiveProps } from '../../types'
 
-interface CardPrimitiveProps extends BasePrimitiveProps {}
+export interface CardPrimitiveProps extends BasePrimitiveProps {}
 
 defineProps<CardPrimitiveProps>()
 </script>

@@ -19,7 +19,7 @@ import type { AvatarContext } from '../../types/components';
 import { useAvatar } from '../../composables/useAvatar';
 import { AVATAR_KEY } from '../../utils/keys';
 
-interface AvatarPrimitiveProps extends BasePrimitiveProps {
+export interface AvatarPrimitiveProps extends BasePrimitiveProps {
     fallback?: string;
 }
 

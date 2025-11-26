@@ -12,13 +12,14 @@
 import { inject } from 'vue';
 import type { AvatarContext } from '../../types/components';
 import { AVATAR_KEY } from '../../utils/keys';
+import type { BasePrimitiveProps } from '../../types';
 
-interface AvatarImageProps {
+export interface AvatarImagePrimitiveProps extends BasePrimitiveProps {
     src: string;
     alt: string;
 }
 
-defineProps<AvatarImageProps>();
+defineProps<AvatarImagePrimitiveProps>();
 
 const context = inject<AvatarContext>(AVATAR_KEY);
 </script>

@@ -10,13 +10,13 @@
 </template>
 
 <script setup lang="ts">
-import Alert from '../../primitives/alert/Alert.vue';
+import Alert, { type AlertPrimitiveProps } from '../../primitives/alert/Alert.vue';
 import { useComponentClasses } from '../../composables/useComponentClasses';
 import { alertSpecs } from './alertSpecs';
-import type { BasePrimitiveProps } from '../../types';
+import type { BaseProps } from '../../types';
 import { computed, type HTMLAttributes } from 'vue';
 
-interface AlertProps extends BasePrimitiveProps {
+interface AlertProps extends AlertPrimitiveProps, BaseProps {
     size?: string;
     radius?: string;
     role?: HTMLAttributes['role'];

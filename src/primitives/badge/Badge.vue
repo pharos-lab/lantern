@@ -13,7 +13,7 @@ import { type HTMLAttributes } from 'vue';
 import type { BasePrimitiveProps } from '../../types';
 
 
-interface BadgePrimitiveProps extends BasePrimitiveProps {
+export interface BadgePrimitiveProps extends BasePrimitiveProps {
     role?: HTMLAttributes['role'];
 }
 

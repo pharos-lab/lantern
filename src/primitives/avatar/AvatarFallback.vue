@@ -10,9 +10,9 @@ import type { BasePrimitiveProps } from '../../types';
 import type { AvatarContext } from '../../types/components';
 import { AVATAR_KEY } from '../../utils/keys';
 
-interface AvatarFallbackProps extends BasePrimitiveProps {}
+interface AvatarFallbackPrimitiveProps extends BasePrimitiveProps {}
 
-defineProps<AvatarFallbackProps>();
+defineProps<AvatarFallbackPrimitiveProps>();
 
 const context = inject<AvatarContext>(AVATAR_KEY);
 

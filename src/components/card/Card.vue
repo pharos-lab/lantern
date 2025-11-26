@@ -5,12 +5,12 @@
 </template>
 
 <script setup lang="ts">
-import Card from '../../primitives/card/Card.vue'
+import Card, { type CardPrimitiveProps } from '../../primitives/card/Card.vue'
 import { useComponentClasses } from '../../composables/useComponentClasses'
 import { cardSpecs } from './cardSpecs'
-import type { BasePrimitiveProps, BaseProps } from '../../types'
+import type { BaseProps } from '../../types'
 
-interface CardProps extends BaseProps, BasePrimitiveProps {
+interface CardProps extends BaseProps, CardPrimitiveProps {
     radius?: string
     shadow?: string
 }

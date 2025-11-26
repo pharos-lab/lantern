@@ -9,12 +9,12 @@
 </template>
 
 <script setup lang="ts">
-import Badge from '../../primitives/badge/Badge.vue';
+import Badge, { type BadgePrimitiveProps } from '../../primitives/badge/Badge.vue';
 import { useComponentClasses } from '../../composables/useComponentClasses';
 import { badgeSpecs } from './badgeSpecs';
-import type { BasePrimitiveProps, BaseProps } from '../../types';
+import type { BaseProps } from '../../types';
 
-interface BadgeProps extends BaseProps, BasePrimitiveProps {
+interface BadgeProps extends BaseProps, BadgePrimitiveProps {
     size?: string;
     radius?: string;
 }
