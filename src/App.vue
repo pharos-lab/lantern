@@ -4,6 +4,9 @@ import Alert from './components/alert/Alert.vue'
 import AlertClose from './components/alert/AlertClose.vue';
 import Card from './components/card/Card.vue'
 import Badge from './components/badge/Badge.vue'
+import Avatar from './primitives/avatar/Avatar.vue'
+import AvatarImage from './primitives/avatar/AvatarImage.vue'
+import AvatarFallback from './primitives/avatar/AvatarFallback.vue'
 </script>
 
 <template>
@@ -17,6 +20,12 @@ import Badge from './components/badge/Badge.vue'
         <Card>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, velit?</Card>
 
         <Badge aria-label="test">new offer</Badge>
+
+        <Avatar radius="circle" size="large">
+            <AvatarImage src="" alt="alt text"></AvatarImage>
+            <AvatarFallback>MD</AvatarFallback>
+        </Avatar>
+
     </div>
     
 </template>
