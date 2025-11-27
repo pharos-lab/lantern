@@ -2,7 +2,7 @@
     <img
         :src="src"
         :alt="alt"
-        class="l-avatar-image w-full w-10"
+        class="l-avatar-image"
         @error="context?.onError"
         v-show="!context?.showFallback.value"
     />

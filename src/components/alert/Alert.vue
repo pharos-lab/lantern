@@ -1,5 +1,6 @@
 <template>
     <Alert
+        v-bind="props"
         :class="classes"
         :role="role"
         :duration="duration"
